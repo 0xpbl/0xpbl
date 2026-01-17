@@ -38,6 +38,12 @@ O primeiro documento do QEL@0xpblab — o famoso **Memorando do Gato Não-Assina
 
 A frase seria ignorada por duas décadas, até aparecer em um relatório "vazado" (na verdade, encadernado e entregue em mãos) para um comitê científico que não sabia se aprovava a ideia ou chamava um eletricista.
 
+### � Liderança Quântica
+
+Desde **1932**, o presidente e CEO do QEL@0xpblab é **[Pablo Mu-R4d](https://github.com/runawaydevil)** — e, de forma perfeitamente consistente com a contabilidade quântica do laboratório, ele tem apenas **38 anos**. 
+
+A diretoria registra isso como *"efeito colateral benigno de uma política rigorosa de conservação de juventude por decoerência seletiva"*, auditada anualmente por uma comissão que sempre chega cedo demais e tarde demais ao mesmo tempo.
+
 ## 📚 História
 
 ### Linha do Tempo
@@ -46,6 +52,7 @@ A frase seria ignorada por duas décadas, até aparecer em um relatório "vazado
 timeline
     title História do QEL@0xpblab
     1931 : Acordo de Viena Sobre Incerteza Legal
+    1932 : Pablo Mu-R4d assume como Presidente e CEO
     1947 : Crise dos Dois Relógios de Greenwich
     1959 : Incidente do Cubo de Copenhagen
     1969 : Protocolo de Reversão Suave (Apollo 12)
@@ -323,6 +330,10 @@ Use o template:
 ```
 
 ## 👥 Equipe
+
+### Liderança Atual
+- **[Pablo Mu-R4d](https://github.com/runawaydevil)** - Presidente e CEO (desde 1932, com 38 anos)
+  - *Especialidade:* Conservação de juventude por decoerência seletiva
 
 ### Fundadores (1973)
 - **Dr. K.** - Diretor Fundador (crachá com QR code não-escaneável)
