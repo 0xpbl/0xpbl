@@ -1,10 +1,10 @@
 # 🔬 QEL@0xpblab - Quantum Experimental Laboratories
 
-[![Fundado](https://img.shields.io/badge/fundado-1973-blue)](https://github.com)
-[![Status](https://img.shields.io/badge/status-em%20superposição-purple)](https://github.com)
-[![Realidade](https://img.shields.io/badge/realidade-sistema%20distribuído-green)](https://github.com)
-[![Licença](https://img.shields.io/badge/licença-Incerteza%20Legal-orange)](https://github.com)
-[![Documentação](https://img.shields.io/badge/docs-colapsadas-red)](https://github.com)
+[![Fundado](https://img.shields.io/badge/fundado-1973-blue)](https://github.com/0xpbl/.github)
+[![Status](https://img.shields.io/badge/status-em%20superposição-purple)](https://github.com/0xpbl/.github)
+[![Realidade](https://img.shields.io/badge/realidade-sistema%20distribuído-green)](https://github.com/0xpbl/.github)
+[![Licença](https://img.shields.io/badge/licença-Incerteza%20Legal-orange)](https://github.com/0xpbl/.github)
+[![Documentação](https://img.shields.io/badge/docs-colapsadas-red)](https://github.com/0xpbl/.github)
 
 > *"A realidade é um sistema distribuído, e observação é uma forma de commit."*  
 > — Memorando do Gato Não-Assinado, 1973
@@ -15,6 +15,8 @@
 - [História](#-história)
 - [Eventos Históricos](#-participação-em-eventos-históricos)
 - [Contribuições](#-contribuições-para-o-mundo-quântico)
+- [Dossiê de Vilões](#-dossiê-de-vilões) 🦹
+- [Programas de TV](#-programas-de-tv) 📺
 - [Instalação](#-instalação)
 - [Como Usar](#-como-usar)
 - [Arquitetura](#-arquitetura)
@@ -22,6 +24,7 @@
 - [Equipe](#-equipe)
 - [Avisos](#-avisos-importantes)
 - [Licença](#-licença)
+- [Contato e Endereços](#-contato)
 
 ## � Sobre
 
@@ -44,6 +47,8 @@ Desde **1932**, o presidente e CEO do QEL@0xpblab é **[Pablo Mu-R4d](https://gi
 
 A diretoria registra isso como *"efeito colateral benigno de uma política rigorosa de conservação de juventude por decoerência seletiva"*, auditada anualmente por uma comissão que sempre chega cedo demais e tarde demais ao mesmo tempo.
 
+> 👔 **[Leia a biografia completa de Pablo Mu-R4d →](PABLO-MU-R4D.md)**
+
 ## 📚 História
 
 ### Linha do Tempo
@@ -53,6 +58,7 @@ timeline
     title História do QEL@0xpblab
     1931 : Acordo de Viena Sobre Incerteza Legal
     1932 : Pablo Mu-R4d assume como Presidente e CEO
+    1939-1945 : Operações Secretas da Segunda Guerra (Seção Δ-13)
     1947 : Crise dos Dois Relógios de Greenwich
     1959 : Incidente do Cubo de Copenhagen
     1969 : Protocolo de Reversão Suave (Apollo 12)
@@ -60,6 +66,35 @@ timeline
     1978-1986 : Guerra Fria do Emaranhamento
     1997 : Conferência de Kyoto Sobre Decoerência Cultural
 ```
+
+### 🎖️ Operações da Segunda Guerra Mundial
+
+Entre 1939 e 1945, o QEL@0xpblab operou secretamente sob o codinome **Seção Δ-13**, uma "unidade de metrologia avançada" que nunca existiu oficialmente.
+
+**Missão:** Evitar que a realidade colapsasse no pior ramo possível por falta de documentação.
+
+**Operações notáveis:**
+- 📜 Primeira Diretiva: "Não Observem Demais"
+- 🗺️ Protocolo de Cartografia Probabilística
+- 📦 Contrabando de Coerência
+- 📡 A Noite do Sinal que Chegou Antes
+- 🌉 O Incidente da Ponte do Plano B
+
+> 🎖️ **[Leia o dossiê completo das operações de guerra →](WWII-OPERATIONS.md)**
+
+### ❄️🔥 A Guerra Quente-Morna (1947-1991)
+
+O QEL@0xpblab nunca chamou de "Guerra Fria". Para o laboratório, foi a **Guerra Quente-Morna**: quente o suficiente para derreter confiança, morna o suficiente para manter tudo "negável".
+
+**Períodos críticos:**
+- 🌡️ 1947-1953: Gelo Térmico e Calor Político
+- 🔬 1954-1961: Protótipos que Ninguém Devia Ver
+- ⚠️ 1962: O Ano em que a Realidade Quase Escolheu Mal
+- 🔗 1978-1986: Guerra Fria do Emaranhamento
+- 🎯 1983: Incidente "Verdadeiro o Suficiente"
+- 🌊 1987-1991: Dissolução por Decoerência Cultural
+
+> ❄️🔥 **[Leia o dossiê completo da Guerra Quente-Morna →](COLD-WAR.md)**
 
 ## � Participação em Eventos Históricos
 
@@ -175,6 +210,51 @@ Antes dele, a física quântica era vista como um conjunto de mistérios. O QEL@
 | **Framework de Colapso Determinístico Sob Pressão** | Quando a realidade precisa entregar um resultado em prazo corporativo, ela escolhe um ramo "bom o suficiente". |
 | **Normalização de Paradoxos** | Paradoxos são bugs apenas se você prometer consistência humana. |
 | **Padrão 0xPB de Coerência Experimental** | Define o limite exato entre "ciência" e "história absurda com termos técnicos". |
+
+## 🦹 Dossiê de Vilões
+
+O QEL@0xpblab enfrenta ameaças únicas: adversários que não destroem a ciência, mas a tornam **tecnicamente correta e fundamentalmente inútil**.
+
+### O Quarteto da Impossibilidade
+
+Conheça os quatro principais antagonistas do laboratório:
+
+| Vilão | Especialidade | Nível de Ameaça |
+|-------|---------------|-----------------|
+| 🔥 **Willy Xarzenegger** | Entropia aplicada e sabotagem térmica | ⚠️⚠️⚠️⚠️⚠️ |
+| ⏳ **Condessa Zeno von Retardo** | Atrasos assintóticos e burocracia infinita | ⚠️⚠️⚠️⚠️⚠️ |
+| 📋 **Dr. Null Quorum** | Governança paralisante e consenso impossível | ⚠️⚠️⚠️⚠️⚠️ |
+| 📊 **Sra. Laplace** | Determinismo agressivo e negação da incerteza | ⚠️⚠️⚠️⚠️⚠️ |
+
+**Efeito combinado:** Um mundo onde experimentos "funcionam, mas não sabemos quando, por quem, nem se era para funcionar".
+
+> 📖 **[Leia o dossiê completo de ameaças →](VILLAINS.md)**
+
+## 📺 Programas de TV
+
+O QEL@0xpblab insiste que não produz televisão — produz **"experimentos de comunicação em massa"**. O público discorda.
+
+### 🎬 Programas Originais
+
+| Programa | Formato | Destaque |
+|----------|---------|----------|
+| 📺 **Schrödinger's Reality Show** | Reality | Participantes eliminados E vencedores ao mesmo tempo |
+| 📰 **Jornal do Amanhã Ontem** | Telejornal | Notícias com 24h de antecedência, corrigidas por rodapé |
+| 👨‍🍳 **MasterChef Baixa Entropia** | Culinária | "Seu risoto está muito provável" |
+| 🐓 **A Fazenda de Copenhagen** | Reality Rural | Animais como "tendência estatística" |
+| 👨‍👩‍👧 **Casos de Família em Superposição** | Talk Show | Duas versões do conflito em paralelo |
+| 🔍 **CSI: Decoerência** | Investigação | Zoom sempre revela gráfico de barras |
+
+### 🎥 Programas Reais "Adotados"
+
+O laboratório "assina" obras reais consideradas ruins como prova de **"decoerência cultural mensurável"**:
+
+- **The Room** - "Documentário involuntário sobre causalidade falha"
+- **Cats** - "Experimento de vale da estranheza em escala industrial"
+- **Sharknado** - "Quando a improbabilidade vira modelo de negócios"
+- **Velocipastor** - "Prova de que orçamento não colapsa coerência"
+
+> 📺 **[Veja o catálogo completo de programas →](TV-PROGRAMS.md)**
 
 ## 🚀 Instalação
 
@@ -366,6 +446,7 @@ Use o template:
 - ❌ Não tentar reproduzir os slides de Kyoto
 - ❌ Não processar o Princípio da Incerteza
 - ❌ Não sincronizar relógios manualmente em Greenwich
+- ⚠️ Reportar imediatamente qualquer atividade suspeita do [Quarteto da Impossibilidade](VILLAINS.md)
 
 ### 🔬 Efeitos Colaterais Conhecidos
 
@@ -398,10 +479,125 @@ Veja o arquivo [LICENSE.md](LICENSE.md) para mais detalhes (se ele colapsar na s
 
 ## 📞 Contato
 
+### 🏢 Endereços e Unidades
+
+#### 1️⃣ Sede Oficial
+
+**The Quantum Experimental Laboratories at 0xpblab (QEL@0xpblab)**
+```
+Avenida da Superposição, 256º Andar
+(entre o -1 e o 256), Bloco Ψ
+Distrito Administrativo de Burocracia Internacional
+CEP: 0xPB-1973
+```
+📍 **Referência:** *"Entrada pela porta que às vezes é a da frente."*
+
+---
+
+#### 2️⃣ Anexo Técnico de Medições Delicadas
+
+**QEL@0xpblab — Unidade de Coerência e Baixo Ruído**
+```
+Rua do Observador, Nº 1/2 (conforme medição)
+Sala 0
+Zona de Interferência Construtiva, Setor Δt
+CEP: 00000-±UTC
+```
+📍 **Referência:** *"Ao lado do relógio que discorda."*
+
+---
+
+#### 3️⃣ Arquivo Central e Contabilidade Metafísica
+
+**QEL@0xpblab — Arquivos 'Metafísica / Contabilidade'**
+```
+Travessa do Colapso, Lote ∞
+Prateleira "Quase"
+Cartório de Realidades Alternativas, Subsolo 3 (ou 4)
+CEP: 1931-UNC
+```
+📍 **Referência:** *"Peça pelo Memorando do Gato Não-Assinado; entregue sem observar."*
+
+---
+
+#### 4️⃣ Campus Copenhagen (Protótipos e Probabilidades)
+
+**QEL@0xpblab — Copenhagen Probabilistic Yard**
+```
+Praça do Cubo, 11 segundos a pé do centro
+Pavilhão CPH-ψ
+Dinamarca (ou ramo adjacente)
+Caixa Postal: "Improvável, porém estatístico"
+CEP: 1959-CUB
+```
+📍 **Referência:** *"Se você achar um chapéu, não devolva. Ele já escolheu um lugar melhor."*
+
+---
+
+#### 5️⃣ Unidade de Relações Geopolíticas do Emaranhamento
+
+**QEL@0xpblab — Entanglement Diplomacy Office**
+```
+Boulevard do Ruído Diplomático Mínimo
+Sala 'Sim/Não (não permitido)'
+Setor de Comunicações Sem Cabo, Quarteirão EPR
+CEP: 1978-1986
+```
+📍 **Referência:** *"Responder e-mails apenas com 'talvez'."*
+
+---
+
+#### 6️⃣ Escritório do Presidente e CEO
+
+**Presidência & CEO — [Pablo Mu-R4d](https://github.com/runawaydevil) (desde 1932; 38 anos)**
+```
+Alameda do Tempo Conservado, Nº 38
+Cobertura Cronológica
+Torre de Juventude Coerente, Andar 19, Sala 32
+CEP: 1932-038
+```
+📍 **Referência:** *"Proibido perguntar 'como' em auditoria."*
+
+---
+
+#### 7️⃣ Portaria e Recepção
+
+**QEL@0xpblab — Portaria Principal**
+```
+Largo da Superposição, Porta A (ou B)
+Guichê de Identidades Emaranhadas
+Atendimento por Colapso
+CEP: 0x00-DOOR
+```
+📍 **Placa:** *"Não bata. A porta pode estar em superposição."*
+
+---
+
+### 📧 Contatos Digitais
+
 - **Website:** [https://0xpblab.quantum](https://0xpblab.quantum) (pode estar em superposição)
 - **Email:** contact@qel.0xpblab.org (respostas podem ser vagas)
-- **Localização:** Andar -1 (entre física e burocracia)
+- **Email Segurança:** security@qel.0xpblab.org
 - **Horário:** ±UTC
+- **Localização Geral:** Andar -1 (entre física e burocracia)
+
+### 🗺️ Mapa de Unidades
+
+```
+┌─────────────────────────────────────────────────────┐
+│  DISTRIBUIÇÃO GEOGRÁFICA DO QEL@0xpblab             │
+├─────────────────────────────────────────────────────┤
+│                                                      │
+│  🏢 Sede Oficial ────────────── Andar 256/-1        │
+│  🔬 Medições Delicadas ──────── Setor Δt            │
+│  📁 Arquivo Metafísico ──────── Subsolo 3/4         │
+│  🇩🇰 Campus Copenhagen ──────── Dinamarca (±)       │
+│  🌐 Diplomacia Quântica ─────── Quarteirão EPR      │
+│  👔 Escritório CEO ──────────── Torre Andar 19      │
+│  🚪 Portaria ────────────────── Porta A/B           │
+│                                                      │
+└─────────────────────────────────────────────────────┘
+```
 
 ## 🎓 Citação
 
@@ -429,8 +625,8 @@ Se você usar o QEL@0xpblab em sua pesquisa, por favor cite:
 
 *Mantendo a realidade funcionando desde 1973 (oficialmente)*
 
-[![Estrelas](https://img.shields.io/github/stars/0xpblab/qel?style=social)](https://github.com)
-[![Forks](https://img.shields.io/github/forks/0xpblab/qel?style=social)](https://github.com)
-[![Watchers](https://img.shields.io/github/watchers/0xpblab/qel?style=social)](https://github.com)
+[![Estrelas](https://img.shields.io/github/stars/0xpbl/.github?style=social)](https://github.com/0xpbl/.github)
+[![Forks](https://img.shields.io/github/forks/0xpbl/.github?style=social)](https://github.com/0xpbl/.github)
+[![Watchers](https://img.shields.io/github/watchers/0xpbl/.github?style=social)](https://github.com/0xpbl/.github)
 
 </div>
