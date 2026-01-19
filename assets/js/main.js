@@ -31,13 +31,13 @@ function getDocsPath() {
   if (hostname.includes('github.io')) {
     // Extrair o nome do repositório do pathname
     // pathname pode ser: /0xpbl/ ou /0xpbl/index.html ou /0xpbl/qel
-    const parts = pathname.split('/').filter(p => p && p !== 'index.html');
+    const parts = pathname.split('/').filter(p => p && p !== 'index.html' && !p.endsWith('.html'));
     
     // Se há um primeiro segmento que não termina com extensão, é o base path
     if (parts.length > 0) {
       const firstPart = parts[0];
-      // Verificar se não é um arquivo (não tem extensão)
-      if (!firstPart.includes('.')) {
+      // Verificar se não é um arquivo (não tem extensão) e não é uma rota conhecida
+      if (!firstPart.includes('.') && !['qel', 'pablo', 'cold-war', 'tv-programs', 'villains', 'wwii', 'fu-monilson', 'dq', 'extras', 'completo', 'john'].includes(firstPart)) {
         basePath = '/' + firstPart;
       }
     }
@@ -46,12 +46,9 @@ function getDocsPath() {
   const langPath = currentLang === 'en' ? 'thehistory/en/' : 'thehistory/';
   
   // Retornar caminho: basePath + langPath ou apenas langPath se basePath vazio
-  if (basePath) {
-    return `${basePath}/${langPath}`;
-  } else {
-    // Caminho relativo para desenvolvimento local
-    return langPath;
-  }
+  const fullPath = basePath ? `${basePath}/${langPath}` : langPath;
+  console.log('getDocsPath() - hostname:', hostname, 'pathname:', pathname, 'basePath:', basePath, 'fullPath:', fullPath);
+  return fullPath;
 }
 
 // Traduções
