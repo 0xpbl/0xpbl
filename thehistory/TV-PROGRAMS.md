@@ -390,6 +390,7 @@ Se alguém disser **"garantia"**, toca um alarme e entra **ruído diplomático m
 |-------|---------------|---------------------|
 | **Dr. K.** | Incerteza aplicada | "Isso é feature ou bug?" |
 | **Pablo Mu-R4d** | Conservação temporal | "Quantos anos sua startup tem?" |
+| **~~Ri~~ck com Fu Monilson** | Amplificação controlada | "Se você chamar isso de 'branding', eu volto e faço um solo de 17 minutos no seu KPI." |
 | **Condessa Zeno** | Atrasos estratégicos | "Quase invisto... quase..." |
 | **Sra. Laplace** | Determinismo | "Já sei que vai falhar" |
 
@@ -697,10 +698,12 @@ CEP: 1997-DEC
 
 ## 📚 Documentos Relacionados
 
-- 🏠 [README Principal](README.md) - História do QEL@0xpblab
+- 🏠 [README Principal](qel.md) - História do QEL@0xpblab
 - 🦹 [Dossiê de Vilões](VILLAINS.md) - Incluindo aparições em programas
 - ❄️🔥 [Guerra Quente-Morna](COLD-WAR.md) - Origem do ruído diplomático
 - 🎖️ [Operações WWII](WWII-OPERATIONS.md) - Primeira Diretiva
+- 🔮🎸 [Profeta ~~Ri~~ck com Fu Monilson](FU-MONILSON.md) - Consultor e investidor em Shark Tank do Emaranhamento
+- 🍬🚫 [John Aunt-Bet](JOHN-AUNT-BET.md) - Colaborador germano-suíço
 
 ---
 
@@ -714,6 +717,6 @@ CEP: 1997-DEC
 
 *Decoerindo a cultura desde 1997*
 
-[![Voltar ao README](https://img.shields.io/badge/←%20Voltar-README-blue)](README.md)
+[![Voltar ao README](https://img.shields.io/badge/←%20Voltar-README-blue)](qel.md)
 
 </div>

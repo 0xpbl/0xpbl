@@ -521,6 +521,7 @@ O capítulo final veio com a **Conferência de Kyoto (1997)**, onde o QEL@0xpbla
 | **Framework de Colapso** | 1962 | Gestão de crises existenciais |
 | **Normalização de Paradoxos** | 1983 | Prevenção de decisões precipitadas |
 | **Decoerência Cultural** | 1987-1991 | Compreensão de mudanças sociais |
+| **Protocolo de Amplificação Controlada** | Pós-1991 | Evolução do Ruído Diplomático Mínimo com música estruturada |
 
 ### 📊 Estatísticas
 
@@ -547,6 +548,11 @@ O QEL@0xpblab atribui à Guerra Quente-Morna a criação do estilo moderno de co
 - "Isso está no nosso radar"
 - "Precisamos de mais dados para uma decisão informada"
 - "Vamos marcar uma call para discutir"
+
+**Evolução (com [Protocolo de Amplificação Controlada](FU-MONILSON.md#-protocolo-de-amplificação-controlada)):**
+- Quando a realidade pedir "sim" ou "não", responder com um riff
+- Quando um comitê pedir mais tempo, responder com um refrão (repetido até doer)
+- Quando a certeza parecer confortável, desconfiar — conforto é uma forma de colapso
 
 ---
 
@@ -597,7 +603,9 @@ O registro final da era vem em uma placa instalada na **sala de comunicações d
 
 - 📖 [Operações da Segunda Guerra Mundial](WWII-OPERATIONS.md) - Seção Δ-13 (1939-1945)
 - 🦹 [Dossiê de Vilões](VILLAINS.md) - Incluindo Condessa Zeno von Retardo
-- 🏠 [README Principal](README.md) - História completa do QEL@0xpblab
+- 🏠 [README Principal](qel.md) - História completa do QEL@0xpblab
+- 🔮🎸 [Profeta ~~Ri~~ck com Fu Monilson](FU-MONILSON.md) - Protocolo de Amplificação Controlada (evolução do Ruído Diplomático)
+- 🍬🚫 [John Aunt-Bet](JOHN-AUNT-BET.md) - Protocolo ANTI-DOCE aplica Ruído Diplomático Mínimo a confeitaria
 
 ### Documentos Classificados
 
@@ -650,6 +658,6 @@ Para solicitar acesso aos documentos da Guerra Quente-Morna:
 
 **1947 - 1991**
 
-[![Voltar ao README](https://img.shields.io/badge/←%20Voltar-README-blue)](README.md)
+[![Voltar ao README](https://img.shields.io/badge/←%20Voltar-README-blue)](qel.md)
 
 </div>

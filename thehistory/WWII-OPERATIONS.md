@@ -476,6 +476,7 @@ O relatório foi "desclassificado" de um modo peculiar:
 | **Atraso Deliberado** | Ruído controlado em sinais perfeitos | Criptografia quântica |
 | **Janela de Baixa Entropia** | Controle de observadores | Experimentos sensíveis |
 | **Bifurcação Logística** | Planos como estados quânticos | Planejamento estratégico |
+| **Protocolo de Amplificação Controlada** | Evolução da Primeira Diretiva | Combate aos 4 vilões com música estruturada |
 
 ### 📊 Impacto Estatístico
 
@@ -541,6 +542,24 @@ Para solicitar acesso aos documentos históricos:
 
 ---
 
+## 📚 Documentos Relacionados
+
+### Arquivos Históricos
+
+- 🏠 [README Principal](qel.md) - História completa do QEL@0xpblab
+- ❄️🔥 [Guerra Quente-Morna](COLD-WAR.md) - Evolução dos protocolos pós-guerra
+- 🦹 [Dossiê de Vilões](VILLAINS.md) - Ameaças que os protocolos combatem
+- 🔮🎸 [Profeta ~~Ri~~ck com Fu Monilson](FU-MONILSON.md) - Protocolo de Amplificação Controlada (evolução da Primeira Diretiva)
+- 👔 [Pablo Mu-R4d](PABLO-MU-R4D.md) - Liderança durante e após a guerra
+- 🍬🚫 [John Aunt-Bet](JOHN-AUNT-BET.md) - Primeira menção em memorando da Seção Δ-13
+
+### Referências Internas
+
+- **Primeira Diretiva**: Base para todos os protocolos QEL, incluindo o [Protocolo de Amplificação Controlada](FU-MONILSON.md#-protocolo-de-amplificação-controlada)
+- **Atraso Deliberado**: Precursor do [Ruído Diplomático Mínimo](COLD-WAR.md#5️⃣-1978-1986-a-guerra-fria-do-emaranhamento)
+
+---
+
 ## 📞 Contato
 
 Para mais informações sobre as operações históricas do QEL@0xpblab:
@@ -564,6 +583,6 @@ mas que mantiveram a realidade coerente quando mais importava.*
 
 **1939 - 1945**
 
-[![Voltar ao README](https://img.shields.io/badge/←%20Voltar-README-blue)](README.md)
+[![Voltar ao README](https://img.shields.io/badge/←%20Voltar-README-blue)](qel.md)
 
 </div>

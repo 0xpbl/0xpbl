@@ -257,6 +257,14 @@ Ele entrava nesse meio e puxava o sistema para o ramo mais estável, **não por 
 - ✅ Reduzia ambiguidades perigosas
 - ✅ Mantinha as ambiguidades úteis
 
+### 🎸 O Encontro com o Profeta
+
+Em uma noite de 02:38 (horário ±UTC), na [Sala de Comunicações](FU-MONILSON.md#-sala-de-comunicações), Pablo encontrou-se com **~~Ri~~ck com Fu Monilson**, um profeta que apresentou o [Protocolo de Amplificação Controlada](FU-MONILSON.md#-protocolo-de-amplificação-controlada). 
+
+Pablo não perguntou "como" — perguntou "qual o procedimento?" e carimbou o protocolo sem ler, o que no QEL conta como aprovação consciente e também como superstição.
+
+O protocolo complementou sua abordagem de liderança, oferecendo ferramentas práticas para combater os [quatro vilões](VILLAINS.md#-o-quarteto-da-impossibilidade) que ameaçam o laboratório.
+
 ---
 
 ## ⚔️ Adversários
@@ -370,11 +378,15 @@ class FilosofiaPablo:
 
 ### Aparições em Documentos Históricos
 
-- 🏠 [README Principal](README.md) - Liderança Quântica
+- 🏠 [README Principal](qel.md) - Liderança Quântica
 - 🎖️ [Operações WWII](WWII-OPERATIONS.md) - Contexto pré-fundação
 - ❄️🔥 [Guerra Quente-Morna](COLD-WAR.md) - Atuação em crises (1962, 1983)
 - 🦹 [Dossiê de Vilões](VILLAINS.md) - Confrontos com Sra. Laplace e outros
 - 📺 [Programas de TV](TV-PROGRAMS.md) - Aparições como investidor
+- 🔮🎸 [Profeta ~~Ri~~ck com Fu Monilson](FU-MONILSON.md) - Encontro na Sala de Comunicações
+- 🏢 [Desinclusão Quântica™](DQ.md) - Política de RH implementada sob sua liderança
+- 🧾🌀 [Fiscal Interdimensional da Lousa](QEL-PACOTE-EXTRAS.md#-o-fiscal-interdimensional-da-lousa) - Entidade que apareceu após a visita do profeta
+- 🍬🚫 [John Aunt-Bet](JOHN-AUNT-BET.md) - Colaborador da Seção Δ-13 que chegou por necessidade termodinâmica
 
 ### Citações em Documentos
 
@@ -427,7 +439,7 @@ Perguntas sobre idade, cronologia ou método de conservação de juventude serã
 
 *Presidente e CEO do QEL@0xpblab desde 1932 (38 anos)*
 
-[![Voltar ao README](https://img.shields.io/badge/←%20Voltar-README-blue)](README.md)
+[![Voltar ao README](https://img.shields.io/badge/←%20Voltar-README-blue)](qel.md)
 [![GitHub](https://img.shields.io/badge/GitHub-runawaydevil-black?logo=github)](https://github.com/runawaydevil)
 
 </div>

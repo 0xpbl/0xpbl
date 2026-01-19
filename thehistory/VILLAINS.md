@@ -382,6 +382,9 @@ adicionar_principio_incerteza m = m {
 - Proibição de previsões com certeza = 100%
 - Celebração ativa de resultados probabilísticos
 - Manutenção de "exceções documentadas" no sistema
+- **[John Aunt-Bet](JOHN-AUNT-BET.md)**: Proteção especial contra "docinhos de certeza" através do Protocolo ANTI-DOCE
+
+**Nota especial:** Quando Laplace tenta estabilizar a realidade com "um docinho de certeza", John Aunt-Bet é a única barreira entre o laboratório e um colapso em forma de pudim.
 
 ---
 
@@ -412,6 +415,8 @@ Em 2003, os quatro vilões coordenaram o único ataque conjunto documentado:
 **Resultado:** O QEL@0xpblab perdeu 18 meses de pesquisa.
 
 **Contramedida desenvolvida:** O **Protocolo de Resposta Rápida Quântica (PRRQ)**, que permite decisões unilaterais do CEO em situações de ameaça existencial.
+
+**Evolução posterior:** O [Protocolo de Amplificação Controlada](FU-MONILSON.md#-protocolo-de-amplificação-controlada) (v0.38), apresentado pelo profeta ~~Ri~~ck com Fu Monilson, oferece uma abordagem complementar baseada em música para combater os quatro vilões simultaneamente.
 
 ---
 
@@ -458,8 +463,16 @@ class SistemaVigilancia:
 |-------|----------|-----------|-------------------|
 | **Willy** | Sensores térmicos | Isolamento quântico | < 1 hora |
 | **Zeno** | Análise de progresso | Deadlines forçados | < 24 horas |
-| **Null** | Contagem de reuniões | Owner obrigatório | Imediato |
-| **Laplace** | Verificação de incerteza | Injeção de ruído | Contínuo |
+| **Null** | Contagem de reuniões | Owner obrigatório + [Desinclusão Quântica™](DQ.md) | Imediato |
+| **Laplace** | Verificação de incerteza | Injeção de ruído + [Protocolo de Amplificação](FU-MONILSON.md#-protocolo-de-amplificação-controlada) + [John Aunt-Bet](JOHN-AUNT-BET.md) (anti-doces) | Contínuo |
+
+### Protocolos Complementares
+
+Além dos protocolos específicos por vilão, o QEL@0xpblab implementa:
+
+- **[Protocolo de Amplificação Controlada](FU-MONILSON.md#-protocolo-de-amplificação-controlada)**: Música como ruído estruturado para evitar certezas performáticas e comitês infinitos
+- **[Desinclusão Quântica™](DQ.md)**: Política de RH que limita reuniões a 7 participantes e evita "calor moral" corporativo
+- **[John Aunt-Bet](JOHN-AUNT-BET.md)**: Proteção especial contra "docinhos de certeza" da Sra. Laplace através do Protocolo ANTI-DOCE
 
 ---
 
@@ -557,6 +570,25 @@ CÓDIGO AMARELO: "Greenwich discorda"
 - Protocolo PRRQ v3.7: "Resposta Rápida a Ameaças Existenciais"
 - Arquivo Laplaciano (cópia não-autorizada): "Anomalias Persistentes"
 
+## 📚 Documentos Relacionados
+
+### Arquivos Históricos
+
+- 🏠 [README Principal](qel.md) - Visão geral do QEL@0xpblab
+- 👔 [Pablo Mu-R4d](PABLO-MU-R4D.md) - Confrontos históricos com os vilões
+- 🔮🎸 [Profeta ~~Ri~~ck com Fu Monilson](FU-MONILSON.md) - Protocolo de Amplificação Controlada
+- 🏢 [Desinclusão Quântica™](DQ.md) - Proteção contra Null Quorum e outros vilões
+- 🧾🌀 [Fiscal Interdimensional da Lousa](QEL-PACOTE-EXTRAS.md#-o-fiscal-interdimensional-da-lousa) - Auditoria de coerência que detecta ameaças
+- 🍬🚫 [John Aunt-Bet](JOHN-AUNT-BET.md) - Proteção especial contra "docinhos de certeza" da Sra. Laplace
+- ❄️🔥 [Guerra Quente-Morna](COLD-WAR.md) - Contexto histórico das ameaças
+- 🎖️ [Operações WWII](WWII-OPERATIONS.md) - Primeira Diretiva e origem dos protocolos
+
+### Referências Internas
+
+- **Protocolo de Amplificação Controlada**: Contramedida musical contra os 4 vilões (ver [FU-MONILSON.md](FU-MONILSON.md#-protocolo-de-amplificação-controlada))
+- **Desinclusão Quântica™**: Proteção organizacional contra Null Quorum (ver [DQ.md](DQ.md))
+- **Protocolo PRRQ**: Resposta rápida do CEO em ameaças existenciais
+
 ---
 
 <div align="center">
@@ -572,6 +604,6 @@ mas o que a torna tecnicamente correta e fundamentalmente inútil."*
 
 *Mantendo a realidade segura desde 1973*
 
-[![Voltar ao README](https://img.shields.io/badge/←%20Voltar-README-blue)](README.md)
+[![Voltar ao README](https://img.shields.io/badge/←%20Voltar-README-blue)](qel.md)
 
 </div>
