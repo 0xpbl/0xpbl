@@ -387,7 +387,7 @@ This is why the lab credits this period with inventing — accidentally — the 
 
 ---
 
-### 6️⃣ 1983: The “True Enough” Incident
+### 6️⃣ 1983: The "True Enough" Incident {#incidente-1983}
 
 <div align="center">
 

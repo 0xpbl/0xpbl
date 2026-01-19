@@ -30,7 +30,7 @@
 - [License](#-license)
 - [Contact & Addresses](#-contact--addresses)
 
-## 🧾 About
+## 🧾 About {#sobre}
 
 The **Quantum Experimental Laboratories at 0xpblab** (QEL@0xpblab) was officially born in **1973**, in a windowless basement somewhere between physics’ “floor -1” and international bureaucracy’s “floor 256.”
 
@@ -102,7 +102,7 @@ QEL@0xpblab never called it the “Cold War.” Internally it is logged as the *
 
 ## 🌍 Participation in Historical Events
 
-### 1️⃣ “The Vienna Agreement on Legal Uncertainty” (1931)
+### 1️⃣ "The Vienna Agreement on Legal Uncertainty" (1931) {#acordo-viena}
 
 <details>
 <summary>📖 Expand details</summary>
@@ -118,7 +118,7 @@ Long before “officially” existing, QEL@0xpblab already appeared as a footnot
 
 </details>
 
-### 2️⃣ The Two Greenwich Clocks Crisis (1947)
+### 2️⃣ The Two Greenwich Clocks Crisis (1947) {#crise-relogios}
 
 <details>
 <summary>📖 Expand details</summary>
@@ -136,7 +136,7 @@ In 1947, Greenwich Observatory staff recorded an embarrassing phenomenon: two at
 
 </details>
 
-### 3️⃣ The “Copenhagen Cube” Incident (1959)
+### 3️⃣ The "Copenhagen Cube" Incident (1959) {#cubo-copenhagen}
 
 <details>
 <summary>📖 Expand details</summary>
@@ -152,7 +152,7 @@ In 1959, during a private demo in Denmark, a QEL@0xpblab prototype — the famou
 
 </details>
 
-### 4️⃣ “Gentle Reversion Protocol” during Apollo 12 Landing (1969)
+### 4️⃣ "Gentle Reversion Protocol" during Apollo 12 Landing (1969) {#apollo-12}
 
 <details>
 <summary>📖 Expand details</summary>
@@ -166,7 +166,7 @@ The public remembers 1969 for landing on the Moon. QEL@0xpblab remembers 1969 be
 
 </details>
 
-### 5️⃣ The Entanglement Cold War (1978–1986)
+### 5️⃣ The Entanglement Cold War (1978–1986) {#guerra-emaranhamento}
 
 <details>
 <summary>📖 Expand details</summary>
@@ -182,7 +182,7 @@ Between 1978 and 1986, QEL@0xpblab participated in the most delicate episode of 
 
 </details>
 
-### 6️⃣ “Kyoto Conference on Cultural Decoherence” (1997)
+### 6️⃣ "Kyoto Conference on Cultural Decoherence" (1997) {#kyoto}
 
 <details>
 <summary>📖 Expand details</summary>
