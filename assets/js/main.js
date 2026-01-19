@@ -2,8 +2,116 @@
 // Sistema de navegação e renderização de markdown
 
 // Configuração
-const DOCS_PATH = 'thehistory/';
 const MARKED_CDN = 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
+const LANG_KEY = 'qel_language';
+
+// Sistema de Idioma
+let currentLang = 'pt';
+
+function getCurrentLang() {
+  const saved = localStorage.getItem(LANG_KEY);
+  return saved || 'pt';
+}
+
+function setCurrentLang(lang) {
+  currentLang = lang;
+  localStorage.setItem(LANG_KEY, lang);
+  document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'pt-BR');
+}
+
+function getDocsPath() {
+  // Detectar base path do GitHub Pages
+  // Exemplo: https://0xpbl.github.io/0xpbl/ -> basePath = '/0xpbl'
+  const pathname = window.location.pathname;
+  let basePath = '';
+  
+  // Remover index.html se presente
+  let cleanPath = pathname.replace(/\/index\.html$/, '');
+  if (cleanPath === '/') cleanPath = '';
+  
+  // Extrair primeiro segmento do path (nome do repositório)
+  const parts = cleanPath.split('/').filter(p => p);
+  if (parts.length > 0) {
+    // Se há um primeiro segmento que não é um arquivo, é o base path
+    const firstPart = parts[0];
+    if (!firstPart.includes('.')) {
+      basePath = '/' + firstPart;
+    }
+  }
+  
+  const langPath = currentLang === 'en' ? 'thehistory/en/' : 'thehistory/';
+  // Retornar caminho absoluto com base path ou relativo
+  return basePath ? `${basePath}/${langPath}` : langPath;
+}
+
+// Traduções
+const translations = {
+  pt: {
+    nav: {
+      home: "Início",
+      history: "História",
+      pablo: "Pablo Mu-R4d",
+      villains: "Vilões",
+      prophet: "Profeta",
+      john: "John Aunt-Bet",
+      dq: "Desinclusão",
+      tv: "TV"
+    },
+    ui: {
+      loading: "Carregando documento...",
+      loadingContent: "Carregando conteúdo...",
+      back: "Voltar ao início",
+      error: "Erro ao carregar documento",
+      errorContent: "Erro ao carregar conteúdo",
+      initializing: "Inicializando sistema quântico...",
+      document: "Documento"
+    },
+    timeline: {
+      title: "História do QEL@0xpblab",
+      subtitle: "Uma narrativa cronológica da realidade como sistema distribuído",
+      expand: "Expandir",
+      collapse: "Recolher",
+      viewDoc: "Ver Documento Completo →"
+    }
+  },
+  en: {
+    nav: {
+      home: "Home",
+      history: "History",
+      pablo: "Pablo Mu-R4d",
+      villains: "Villains",
+      prophet: "Prophet",
+      john: "John Aunt-Bet",
+      dq: "De-Inclusion",
+      tv: "TV"
+    },
+    ui: {
+      loading: "Loading document...",
+      loadingContent: "Loading content...",
+      back: "Back to home",
+      error: "Error loading document",
+      errorContent: "Error loading content",
+      initializing: "Initializing quantum system...",
+      document: "Document"
+    },
+    timeline: {
+      title: "QEL@0xpblab History",
+      subtitle: "A chronological narrative of reality as a distributed system",
+      expand: "Expand",
+      collapse: "Collapse",
+      viewDoc: "View Full Document →"
+    }
+  }
+};
+
+function t(key) {
+  const keys = key.split('.');
+  let value = translations[currentLang];
+  for (const k of keys) {
+    value = value?.[k];
+  }
+  return value || key;
+}
 
 // Timeline Cronológica
 const timeline = [
@@ -179,6 +287,180 @@ const timeline = [
   }
 ];
 
+// Timeline Cronológica (English)
+const timelineEN = [
+  {
+    year: "1931",
+    period: "Pre-Foundation",
+    title: "Vienna Agreement on Legal Uncertainty",
+    summary: "QEL@0xpblab appears as a footnote in correspondence. A group of jurists attempts to 'sue' the Uncertainty Principle for being 'deliberately vague'.",
+    document: "qel.md",
+    anchor: "acordo-viena",
+    icon: "📜",
+    color: "violet"
+  },
+  {
+    year: "1932",
+    period: "Pre-Foundation",
+    title: "Pablo Mu-R4d becomes President & CEO",
+    summary: "Since 1932, QEL@0xpblab's President & CEO has been Pablo Mu-R4d — and, in a way that is perfectly consistent with the lab's quantum accounting, he is only 38 years old.",
+    document: "PABLO-MU-R4D.md",
+    anchor: null,
+    icon: "👔",
+    color: "violet"
+  },
+  {
+    year: "1939-1945",
+    period: "World War II",
+    title: "Secret Operations of Section Δ-13",
+    summary: "QEL@0xpblab operated secretly under the codename Section Δ-13, an 'advanced metrology unit' that never officially existed. Mission: prevent reality from collapsing into the worst possible branch.",
+    document: "WWII-OPERATIONS.md",
+    anchor: null,
+    icon: "🎖️",
+    color: "red"
+  },
+  {
+    year: "1947",
+    period: "Warm-ish Hot War",
+    title: "The Two Greenwich Clocks Crisis",
+    summary: "Two atomic clocks, side by side, disagreed as if they had political opinions. QEL@0xpblab's solution: put the clocks in a room and ask them to reach consensus through constructive interference.",
+    document: "qel.md",
+    anchor: "crise-relogios",
+    icon: "🕐",
+    color: "cyan"
+  },
+  {
+    year: "1947-1991",
+    period: "Warm-ish Hot War",
+    title: "The Warm-ish Hot War",
+    summary: "QEL@0xpblab never called it the 'Cold War'. For the lab, it was the Warm-ish Hot War: hot enough to melt trust, warm enough to keep everything 'deniable'.",
+    document: "COLD-WAR.md",
+    anchor: null,
+    icon: "❄️🔥",
+    color: "cyan"
+  },
+  {
+    year: "1959",
+    period: "Warm-ish Hot War",
+    title: "The Copenhagen Cube Incident",
+    summary: "During a private demonstration in Denmark, a QEL@0xpblab prototype — the famous Copenhagen Cube — was turned on for 11 seconds. Reported occurrences: a hat disappeared and reappeared in a more appropriate place.",
+    document: "qel.md",
+    anchor: "cubo-copenhagen",
+    icon: "📦",
+    color: "cyan"
+  },
+  {
+    year: "1969",
+    period: "Warm-ish Hot War",
+    title: "Gentle Reversion Protocol (Apollo 12)",
+    summary: "QEL@0xpblab developed the Gentle Reversion Protocol during the Apollo 12 mission, ensuring that reality would not choose the worst possible branch during critical space operations.",
+    document: "qel.md",
+    anchor: "apollo-12",
+    icon: "🚀",
+    color: "cyan"
+  },
+  {
+    year: "1973",
+    period: "Official Foundation",
+    title: "Official Foundation of QEL@0xpblab",
+    summary: "QEL@0xpblab was officially born in 1973, in a windowless basement. The first document — the Unsigned Cat Memo — stated: 'Reality is a distributed system, and observation is a kind of commit.'",
+    document: "qel.md",
+    anchor: "sobre",
+    icon: "🔬",
+    color: "green"
+  },
+  {
+    year: "1973",
+    period: "Official Foundation",
+    title: "Quantum De-Inclusion™",
+    summary: "QEL@0xpblab's HR policy that keeps each collaborator included in at least one branch, and excluded in all others — for reasons of human scalability and statistical consistency.",
+    document: "DQ.md",
+    anchor: null,
+    icon: "🏢",
+    color: "green"
+  },
+  {
+    year: "1978-1986",
+    period: "Warm-ish Hot War",
+    title: "The Entanglement Cold War",
+    summary: "Period of intense QEL@0xpblab activity during the Warm-ish Hot War, with development of entanglement protocols and minimum diplomatic noise.",
+    document: "COLD-WAR.md",
+    anchor: "guerra-emaranhamento",
+    icon: "🔗",
+    color: "cyan"
+  },
+  {
+    year: "1983",
+    period: "Warm-ish Hot War",
+    title: "The 'True Enough' Incident",
+    summary: "One of the most critical incidents of the Warm-ish Hot War, where QEL@0xpblab had to intervene to prevent a global-scale reality collapse.",
+    document: "COLD-WAR.md",
+    anchor: "incidente-1983",
+    icon: "⚠️",
+    color: "cyan"
+  },
+  {
+    year: "1980s-1990s",
+    period: "Modern Era",
+    title: "TV Programs (Communication Experiments)",
+    summary: "QEL@0xpblab produced (or allegedly produced) various TV programs, which the lab insists on calling 'mass communication experiments'.",
+    document: "TV-PROGRAMS.md",
+    anchor: null,
+    icon: "📺",
+    color: "green"
+  },
+  {
+    year: "1997",
+    period: "Modern Era",
+    title: "Kyoto Conference on Cultural Decoherence",
+    summary: "Event that formalized QEL@0xpblab's thesis on cultural decoherence and marked the official end of the Warm-ish Hot War.",
+    document: "qel.md",
+    anchor: "kyoto",
+    icon: "🌍",
+    color: "green"
+  },
+  {
+    year: "2000s+",
+    period: "Modern Era",
+    title: "The Arrival of the Prophet ~~Ri~~ck with Fu Monilson",
+    summary: "The arrival of the prophet with Fu Monilson and the Controlled Amplification Protocol, an evolution of previous protocols to combat the four villains of the Impossibility Quartet.",
+    document: "FU-MONILSON.md",
+    anchor: null,
+    icon: "🔮🎸",
+    color: "green"
+  },
+  {
+    year: "2000s+",
+    period: "Modern Era",
+    title: "The Interdimensional Whiteboard Auditor",
+    summary: "The Interdimensional Whiteboard Auditor and its eternal war against π. An entity that ensures mathematics remains consistent, even when reality doesn't want to.",
+    document: "QEL-PACOTE-EXTRAS.md",
+    anchor: null,
+    icon: "🧾🌀",
+    color: "green"
+  },
+  {
+    year: "2000s+",
+    period: "Modern Era",
+    title: "John Aunt-Bet: The German-Swiss Anti-Sugar Operator",
+    summary: "John Aunt-Bet, a German-Swiss collaborator who refuses desserts and maintains insulin as a coherence artifact. Special protection against Mrs. Laplace's 'certainty sweets'.",
+    document: "JOHN-AUNT-BET.md",
+    anchor: null,
+    icon: "🍬🚫",
+    color: "green"
+  },
+  {
+    year: "Throughout the Years",
+    period: "Continuous",
+    title: "Villains Dossier: The Impossibility Quartet",
+    summary: "Four antagonists that make science technically correct and useless: Willy Xarzenegger, Countess Zeno von Retardo, Dr. Null Quorum, and Mrs. Laplace.",
+    document: "VILLAINS.md",
+    anchor: null,
+    icon: "🦹",
+    color: "orange"
+  }
+];
+
 // Carregar marked.js dinamicamente
 let markedLoaded = false;
 
@@ -224,14 +506,14 @@ function updateURL(path) {
 // Função para carregar e renderizar markdown
 async function loadDocument(filename) {
   const main = document.querySelector('main');
-  main.innerHTML = '<div class="loading"><div class="spinner"></div><p>Carregando documento...</p></div>';
+  main.innerHTML = `<div class="loading"><div class="spinner"></div><p>${t('ui.loading')}</p></div>`;
 
   try {
     await loadMarked();
     
-    const response = await fetch(`${DOCS_PATH}${filename}`);
+    const response = await fetch(`${getDocsPath()}${filename}`);
     if (!response.ok) {
-      throw new Error(`Erro ao carregar: ${response.statusText}`);
+      throw new Error(`${t('ui.error')}: ${response.statusText}`);
     }
     
     const markdown = await response.text();
@@ -260,9 +542,9 @@ async function loadDocument(filename) {
   } catch (error) {
     main.innerHTML = `
       <div class="document-container">
-        <h1>Erro ao carregar documento</h1>
+        <h1>${t('ui.error')}</h1>
         <p style="color: var(--red);">${error.message}</p>
-        <p><a href="/" onclick="navigate('/'); return false;">← Voltar ao início</a></p>
+        <p><a href="/" onclick="navigate('/'); return false;">← ${t('ui.back')}</a></p>
       </div>
     `;
   }
@@ -279,7 +561,7 @@ function createBreadcrumbs(filename) {
   const docName = filename.replace('.md', '').replace(/-/g, ' ').toUpperCase();
   return `
     <div class="breadcrumbs">
-      <a href="/" onclick="navigate('/'); return false;">Início</a> / 
+      <a href="/" onclick="navigate('/'); return false;">${t('nav.home')}</a> / 
       <span>${docName}</span>
     </div>
   `;
@@ -403,14 +685,15 @@ function navigate(path, anchor = null) {
 // Renderizar Timeline Cronológica
 function renderTimeline() {
   const main = document.querySelector('main');
+  const currentTimeline = currentLang === 'en' ? timelineEN : timeline;
   
   let timelineHTML = '<div class="timeline-container">';
-  timelineHTML += '<div class="timeline-header"><h1>História do QEL@0xpblab</h1><p class="timeline-subtitle">Uma narrativa cronológica da realidade como sistema distribuído</p></div>';
+  timelineHTML += `<div class="timeline-header"><h1>${t('timeline.title')}</h1><p class="timeline-subtitle">${t('timeline.subtitle')}</p></div>`;
   timelineHTML += '<div class="timeline-wrapper">';
   
   let currentPeriod = '';
   
-  timeline.forEach((event, index) => {
+  currentTimeline.forEach((event, index) => {
     // Adicionar separador de período se mudou
     if (event.period !== currentPeriod) {
       if (currentPeriod !== '') {
@@ -442,15 +725,15 @@ function renderTimeline() {
           </div>
           <div class="event-actions">
             <button class="btn-expand" onclick="toggleEvent('${eventId}', '${event.document}', ${index})">
-              <span class="expand-text">Expandir</span>
-              <span class="collapse-text" style="display: none;">Recolher</span>
+              <span class="expand-text">${t('timeline.expand')}</span>
+              <span class="collapse-text" style="display: none;">${t('timeline.collapse')}</span>
             </button>
-            ${route ? `<a href="${routePath}" class="btn-view" onclick="navigate('${routePath}'); return false;">Ver Documento Completo →</a>` : ''}
+            ${route ? `<a href="${routePath}" class="btn-view" onclick="navigate('${routePath}'); return false;">${t('timeline.viewDoc')}</a>` : ''}
           </div>
           <div class="event-content" id="content-${eventId}" style="display: none;">
             <div class="loading-content">
               <div class="spinner-small"></div>
-              <p>Carregando conteúdo...</p>
+              <p>${t('ui.loadingContent')}</p>
             </div>
           </div>
         </div>
@@ -495,6 +778,7 @@ async function toggleEvent(eventId, documentName, index) {
   
   const expandText = expandBtn.querySelector('.expand-text');
   const collapseText = expandBtn.querySelector('.collapse-text');
+  const currentTimeline = currentLang === 'en' ? timelineEN : timeline;
   
   if (contentDiv.style.display === 'none' || !contentDiv.style.display) {
     // Expandir
@@ -526,14 +810,15 @@ async function toggleEvent(eventId, documentName, index) {
 // Carregar conteúdo do evento
 async function loadEventContent(eventId, documentName, index) {
   const contentDiv = document.getElementById(`content-${eventId}`);
-  const event = timeline[index];
+  const currentTimeline = currentLang === 'en' ? timelineEN : timeline;
+  const event = currentTimeline[index];
   
   try {
     await loadMarked();
     
-    const response = await fetch(`${DOCS_PATH}${documentName}`);
+    const response = await fetch(`${getDocsPath()}${documentName}`);
     if (!response.ok) {
-      throw new Error(`Erro ao carregar: ${response.statusText}`);
+      throw new Error(`${t('ui.errorContent')}: ${response.statusText}`);
     }
     
     const markdown = await response.text();
@@ -603,10 +888,90 @@ async function loadEventContent(eventId, documentName, index) {
   } catch (error) {
     contentDiv.innerHTML = `
       <div class="error-content">
-        <p style="color: var(--red);">Erro ao carregar conteúdo: ${error.message}</p>
+        <p style="color: var(--red);">${t('ui.errorContent')}: ${error.message}</p>
       </div>
     `;
   }
+}
+
+// Função de troca de idioma
+function switchLanguage(lang) {
+  if (lang === currentLang) return;
+  
+  setCurrentLang(lang);
+  updateLangButtons();
+  updateNavigation();
+  updateFooter();
+  updateSubtitle();
+  
+  // Recarregar página atual no novo idioma
+  const path = window.location.pathname || '/';
+  navigate(path);
+}
+
+// Atualizar botões de idioma
+function updateLangButtons() {
+  const btnPT = document.getElementById('lang-pt');
+  const btnEN = document.getElementById('lang-en');
+  
+  if (btnPT && btnEN) {
+    if (currentLang === 'pt') {
+      btnPT.classList.add('active');
+      btnEN.classList.remove('active');
+    } else {
+      btnPT.classList.remove('active');
+      btnEN.classList.add('active');
+    }
+  }
+}
+
+// Atualizar navegação
+function updateNavigation() {
+  const navLinks = document.querySelectorAll('nav a');
+  const navMap = {
+    'Início': 'nav.home',
+    'História': 'nav.history',
+    'Pablo Mu-R4d': 'nav.pablo',
+    'Vilões': 'nav.villains',
+    'Profeta': 'nav.prophet',
+    'John Aunt-Bet': 'nav.john',
+    'Desinclusão': 'nav.dq',
+    'TV': 'nav.tv',
+    'Home': 'nav.home',
+    'History': 'nav.history',
+    'Villains': 'nav.villains',
+    'Prophet': 'nav.prophet',
+    'De-Inclusion': 'nav.dq'
+  };
+  
+  navLinks.forEach(link => {
+    const text = link.textContent.trim();
+    if (navMap[text]) {
+      link.textContent = t(navMap[text]);
+    }
+  });
+}
+
+// Atualizar footer
+function updateFooter() {
+  const footer = document.querySelector('footer p');
+  if (footer) {
+    footer.textContent = currentLang === 'en' 
+      ? 'graciously lived by Pablo Murad (but not in that way)'
+      : 'graciosamente vivido por Pablo Murad (mas não dessa maneira)';
+  }
+}
+
+// Atualizar subtítulo
+function updateSubtitle() {
+  const subtitles = document.querySelectorAll('header .subtitle');
+  subtitles.forEach(subtitle => {
+    if (subtitle && (subtitle.textContent.includes('realidade') || subtitle.textContent.includes('Reality'))) {
+      subtitle.textContent = currentLang === 'en'
+        ? '"Reality is a distributed system, and observation is a kind of commit."'
+        : '"A realidade é um sistema distribuído, e observação é uma forma de commit."';
+    }
+  });
 }
 
 // Mostrar página inicial (mantida para compatibilidade)
@@ -616,6 +981,20 @@ function showIndex() {
 
 // Inicialização
 document.addEventListener('DOMContentLoaded', () => {
+  // Inicializar sistema de idioma
+  currentLang = getCurrentLang();
+  setCurrentLang(currentLang);
+  updateLangButtons();
+  updateNavigation();
+  updateFooter();
+  updateSubtitle();
+  
+  // Atualizar loading inicial
+  const loadingText = document.querySelector('.loading p');
+  if (loadingText) {
+    loadingText.textContent = t('ui.initializing');
+  }
+  
   // Verificar rota atual
   const path = window.location.pathname || '/';
   navigate(path);
@@ -650,3 +1029,4 @@ document.addEventListener('DOMContentLoaded', () => {
 // Tornar funções globais
 window.navigate = navigate;
 window.toggleEvent = toggleEvent;
+window.switchLanguage = switchLanguage;

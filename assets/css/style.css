@@ -92,6 +92,47 @@ header .subtitle {
   opacity: 0.8;
 }
 
+/* Language Selector */
+.lang-selector {
+  display: flex !important;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 10;
+  visibility: visible !important;
+}
+
+.lang-btn {
+  font-family: 'Press Start 2P', 'VT323', monospace;
+  font-size: 0.9rem;
+  padding: 0.4rem 1rem;
+  background: var(--bg-card);
+  color: var(--text-light);
+  border: 2px solid var(--violet);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.lang-btn:hover {
+  background: var(--violet);
+  color: white;
+  border-color: var(--violet);
+}
+
+.lang-btn.active {
+  background: var(--violet);
+  color: white;
+  border-color: var(--violet);
+  font-weight: bold;
+}
+
 /* Navigation */
 nav {
   background-color: var(--bg-card);
