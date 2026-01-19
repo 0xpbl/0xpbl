@@ -77,14 +77,12 @@ header {
 .logo-container img {
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 0 20px rgba(124, 58, 237, 0.3));
 }
 
 header h1 {
   color: var(--cyan);
   font-size: 2.5rem;
   margin-top: 1rem;
-  text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
 }
 
 header .subtitle {
@@ -102,7 +100,6 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  backdrop-filter: blur(10px);
 }
 
 nav ul {
@@ -129,8 +126,6 @@ nav a:hover {
   background-color: var(--violet);
   border-color: var(--violet);
   color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(124, 58, 237, 0.3);
 }
 
 /* Main Content */
@@ -160,7 +155,6 @@ main {
   color: var(--cyan);
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
-  text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
 }
 
 .timeline-subtitle {
@@ -228,27 +222,22 @@ main {
 
 .timeline-event.violet .timeline-marker {
   background-color: var(--violet);
-  box-shadow: 0 0 10px rgba(124, 58, 237, 0.5);
 }
 
 .timeline-event.red .timeline-marker {
   background-color: var(--red);
-  box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
 }
 
 .timeline-event.cyan .timeline-marker {
   background-color: var(--cyan);
-  box-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
 }
 
 .timeline-event.green .timeline-marker {
   background-color: var(--green);
-  box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
 }
 
 .timeline-event.orange .timeline-marker {
   background-color: var(--orange);
-  box-shadow: 0 0 10px rgba(249, 115, 22, 0.5);
 }
 
 .timeline-content {
@@ -261,7 +250,6 @@ main {
 
 .timeline-event:hover .timeline-content {
   border-color: var(--cyan);
-  box-shadow: 0 4px 12px rgba(34, 211, 238, 0.2);
 }
 
 .event-header {
@@ -321,8 +309,6 @@ main {
 .btn-view:hover {
   background-color: var(--cyan);
   color: var(--bg-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(34, 211, 238, 0.3);
 }
 
 .event-content {
@@ -507,7 +493,6 @@ main {
 .markdown-content a:hover {
   border-bottom-color: var(--cyan);
   color: var(--cyan);
-  text-shadow: 0 0 5px rgba(34, 211, 238, 0.5);
 }
 
 .markdown-content code {

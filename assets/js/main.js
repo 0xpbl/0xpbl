@@ -4,37 +4,6 @@
 // Configuração
 const DOCS_PATH = 'thehistory/';
 const MARKED_CDN = 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
-const THEME_KEY = 'qel_theme';
-
-// Sistema de Toggle de Tema
-function applyTheme(theme) {
-  const html = document.documentElement;
-  if (theme === 'retro') {
-    html.classList.add('theme-retro');
-  } else {
-    html.classList.remove('theme-retro');
-  }
-  localStorage.setItem(THEME_KEY, theme);
-}
-
-function initTheme() {
-  const saved = localStorage.getItem(THEME_KEY) || 'neon';
-  applyTheme(saved);
-}
-
-function toggleTheme() {
-  const current = document.documentElement.classList.contains('theme-retro') ? 'retro' : 'neon';
-  const newTheme = current === 'retro' ? 'neon' : 'retro';
-  applyTheme(newTheme);
-  updateThemeButton(newTheme);
-}
-
-function updateThemeButton(theme) {
-  const btn = document.getElementById('themeToggle');
-  if (btn) {
-    btn.textContent = `Theme: ${theme === 'retro' ? 'Retro' : 'Neon'}`;
-  }
-}
 
 // Timeline Cronológica
 const timeline = [
@@ -647,16 +616,6 @@ function showIndex() {
 
 // Inicialização
 document.addEventListener('DOMContentLoaded', () => {
-  // Inicializar tema
-  initTheme();
-  updateThemeButton(localStorage.getItem(THEME_KEY) || 'neon');
-  
-  // Configurar botão de toggle de tema
-  const themeBtn = document.getElementById('themeToggle');
-  if (themeBtn) {
-    themeBtn.addEventListener('click', toggleTheme);
-  }
-  
   // Verificar rota atual
   const path = window.location.pathname || '/';
   navigate(path);
@@ -691,4 +650,3 @@ document.addEventListener('DOMContentLoaded', () => {
 // Tornar funções globais
 window.navigate = navigate;
 window.toggleEvent = toggleEvent;
-window.toggleTheme = toggleTheme;
