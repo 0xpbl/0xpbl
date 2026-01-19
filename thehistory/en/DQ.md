@@ -169,6 +169,8 @@ Therefore, Quantum De-Inclusion™ is the only acceptable form of “culture.”
 - ❄️🔥 [Warm-ish Hot War](COLD-WAR.md) — origin of Minimum Diplomatic Noise applied to HR
 - 🧾🌀 [Interdimensional Whiteboard Auditor](QEL-PACOTE-EXTRAS.md) — coherence auditing
 - 🍬🚫 [John Aunt-Bet](JOHN-AUNT-BET.md) — DQ in practice (insulin as a coherence artifact)
+- 🎻🧔🐟 [Gaybe-EL](GAYBE-EL.md) — Company Orchestra that harmonizes DQ chaos in 7/8 time
+- ⚖️🧥 [Madeusa De La Passion](MADEUSA-DE-LA-PASSION.md) — lawyer who reviews contracts in superposition (winter only)
 
 ### Internal references
 

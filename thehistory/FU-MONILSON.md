@@ -361,10 +361,13 @@ A remoção do tachado configura:
 - 🏢 [Desinclusão Quântica™](DQ.md) - Política de RH que complementa o protocolo
 - 🧾🌀 [Fiscal Interdimensional da Lousa](QEL-PACOTE-EXTRAS.md#-o-fiscal-interdimensional-da-lousa) - Primeira aparição na lousa após a visita do profeta
 - 🍬🚫 [John Aunt-Bet](JOHN-AUNT-BET.md) - Encontro no refeitório
+- 🎻🧔🐟 [Gaybe-EL](GAYBE-EL.md) - Implementação corporativa da Orquestra da Companhia (evolução do Protocolo de Amplificação)
+- ⚖️🧥 [Madeusa De La Passion](MADEUSA-DE-LA-PASSION.md) - Advogado que revisou os contratos da Orquestra
 
 ### Referências Internas
 
 - **Protocolo de Amplificação Controlada (v0.38)**: Evolução do [Ruído Diplomático Mínimo](COLD-WAR.md#5️⃣-1978-1986-a-guerra-fria-do-emaranhamento) e da [Primeira Diretiva](WWII-OPERATIONS.md#1️⃣-1939-a-primeira-diretiva--não-observem-demais)
+- **Orquestra da Companhia**: A implementação corporativa do Protocolo de Amplificação resultou na criação da [Orquestra da Companhia](GAYBE-EL.md), regida por Gaybe-EL, que transforma reuniões em performances musicais em 7/8
 - **Sistema de Acesso**: Proteção contra os [4 vilões](VILLAINS.md#-o-quarteto-da-impossibilidade)
 - **Sala de Comunicações**: Local onde o [Ruído Diplomático Mínimo](COLD-WAR.md#5️⃣-1978-1986-a-guerra-fria-do-emaranhamento) é regulado
 

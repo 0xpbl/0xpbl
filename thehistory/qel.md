@@ -304,6 +304,65 @@ John Aunt-Bet chegou ao QEL@0xpblab por **necessidade termodinâmica**, não por
 
 > 🍬🚫 **[Leia a biografia completa de John Aunt-Bet →](JOHN-AUNT-BET.md)**
 
+## 🎻🧔🐟 Gaybe-EL: O Barbo dos Mullets, Regente da Orquestra da Companhia
+
+Gaybe-EL é uma entidade executivo-musical que rege a **Orquestra da Companhia** — um conjunto de pessoas que juraram que só iam "trabalhar com planilhas" e, de repente, estão afinando triângulos enquanto discutem OKRs.
+
+Ele não é exatamente um diretor. Ele é um **padrão**.
+
+- Quando tudo vira caos, ele aparece com uma batuta.
+- Quando tudo vira certeza demais, ele aparece com um saxofone desafinado.
+- Quando alguém diz "vamos alinhar", ele aparece com um *metrônomo* e faz o ponteiro apontar pra você, pessoalmente.
+
+### A Orquestra da Companhia
+
+A companhia é governada por uma orquestra invisível que toca **o tempo todo**, principalmente quando você finge que não está ouvindo. Seus naipes são:
+
+- **Cordas (Produto)**: sempre em crescendo, nunca em definição.
+- **Metais (Vendas)**: volume alto, timing imprevisível, confiança inabalável.
+- **Madeiras (Engenharia)**: sons precisos, mas em frequências que só o servidor entende.
+- **Percussão (Financeiro/Legal)**: entra raro, mas quando entra, todo mundo muda de tom.
+- **Coral (RH)**: harmoniza o caos e chama de "cultura".
+
+Gaybe-EL é o regente. Mas ele rege como quem tem **ódio pessoal de compasso 4/4**.
+
+### Conexão com o Protocolo de Amplificação
+
+Gaybe-EL surgiu como a **implementação corporativa** da filosofia musical do [Profeta ~~Ri~~ck com Fu Monilson](FU-MONILSON.md). Enquanto o Profeta trouxe o Protocolo de Amplificação Controlada baseado em heavy metal, Gaybe-EL transformou isso em uma orquestra corporativa que toca em **7/8** "pra manter a equipe alerta".
+
+> 🎻🧔🐟 **[Leia a documentação completa de Gaybe-EL →](GAYBE-EL.md)**
+
+## ⚖️🧥 Madeusa De La Passion: O Advogado de Inverno da Companhia
+
+Madeusa De La Passion é o advogado da companhia **somente no inverno** (temperatura <= 18°C). Ele não "se ausenta" nas outras estações: ele simplesmente **muda de profissão com a naturalidade de quem troca de cachecol**.
+
+### O Contrato Sazonal
+
+O contrato dele é o mais curto do mundo e o mais assustador do escritório:
+
+```
+1) VIGÊNCIA: Junho a Agosto (ou qualquer semana em que alguém diga "tá ventando")
+2) CONDIÇÃO: Temperatura <= 18°C (sensação térmica conta, drama conta em dobro)
+3) FORO: Sala de reuniões com ar-condicionado no talo
+4) REMUNERAÇÃO: café, silêncio e a promessa de não marcar call às 7h
+```
+
+Quando a temperatura sobe, o contrato não "expira". Ele **derrete**.
+
+### Prática Jurídica (Só no Frio)
+
+No inverno, Madeusa é implacável. Ele lê contratos como quem lê tragédias gregas. Suas especialidades incluem:
+
+- **Direito do Trabalho** (só quando a equipe quer "trabalhar até mais tarde")
+- **Direito Contratual** (com cláusulas que parecem poemas depressivos)
+- **Direito de Reunião** (impugnação de agendas com 9 tópicos inúteis)
+
+### Conexões com QEL@0xpblab
+
+Madeusa trabalha em estreita colaboração com a [Desinclusão Quântica™](DQ.md), revisando contratos que mantêm colaboradores em superposição de pertencimento. Ele também já revisou os contratos da [Orquestra da Companhia](GAYBE-EL.md) de Gaybe-EL, resultando na famosa "Cláusula do Vento Sul" que suspende discussões quando o ambiente fica tenso.
+
+> ⚖️🧥 **[Leia a documentação completa de Madeusa →](MADEUSA-DE-LA-PASSION.md)**
+
 ## 🦹 Dossiê de Vilões
 
 O QEL@0xpblab enfrenta ameaças únicas: adversários que não destroem a ciência, mas a tornam **tecnicamente correta e fundamentalmente inútil**.

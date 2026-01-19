@@ -87,7 +87,9 @@ const translations = {
       prophet: "Profeta",
       john: "John Aunt-Bet",
       dq: "Desinclusão",
-      tv: "TV"
+      tv: "TV",
+      gaybe: "Orquestra",
+      madeusa: "Advogado"
     },
     ui: {
       loading: "Carregando documento...",
@@ -115,7 +117,9 @@ const translations = {
       prophet: "Prophet",
       john: "John Aunt-Bet",
       dq: "De-Inclusion",
-      tv: "TV"
+      tv: "TV",
+      gaybe: "Orchestra",
+      madeusa: "Lawyer"
     },
     ui: {
       loading: "Loading document...",
@@ -308,6 +312,26 @@ const timeline = [
     color: "green"
   },
   {
+    year: "2000s+",
+    period: "Era Moderna",
+    title: "Gaybe-EL: O Barbo dos Mullets, Regente da Orquestra da Companhia",
+    summary: "Gaybe-EL, entidade executivo-musical que rege a Orquestra da Companhia em ritmo 7/8. Implementação corporativa do Protocolo de Amplificação que transforma reuniões em performances musicais.",
+    document: "GAYBE-EL.md",
+    anchor: null,
+    icon: "🎻🧔🐟",
+    color: "green"
+  },
+  {
+    year: "2000s+",
+    period: "Era Moderna",
+    title: "Madeusa De La Passion: O Advogado de Inverno da Companhia",
+    summary: "Madeusa De La Passion, advogado sazonal que só atua no inverno (temperatura <= 18°C). Revisa contratos em superposição e impugna agendas com 9 tópicos inúteis.",
+    document: "MADEUSA-DE-LA-PASSION.md",
+    anchor: null,
+    icon: "⚖️🧥",
+    color: "green"
+  },
+  {
     year: "Através dos Anos",
     period: "Contínuo",
     title: "Dossiê de Vilões: O Quarteto da Impossibilidade",
@@ -482,6 +506,26 @@ const timelineEN = [
     color: "green"
   },
   {
+    year: "2000s+",
+    period: "Modern Era",
+    title: "Gaybe-EL: The Mullet-Barbed Maestro of the Company Orchestra",
+    summary: "Gaybe-EL, an executive-musical entity who conducts the Company Orchestra in 7/8 time. Corporate implementation of the Amplification Protocol that transforms meetings into musical performances.",
+    document: "GAYBE-EL.md",
+    anchor: null,
+    icon: "🎻🧔🐟",
+    color: "green"
+  },
+  {
+    year: "2000s+",
+    period: "Modern Era",
+    title: "Madeusa De La Passion: The Company's Winter-Only Lawyer",
+    summary: "Madeusa De La Passion, the seasonal lawyer who only practices in winter (temperature <= 18°C). Reviews contracts in superposition and files injunctions against agendas with nine useless topics.",
+    document: "MADEUSA-DE-LA-PASSION.md",
+    anchor: null,
+    icon: "⚖️🧥",
+    color: "green"
+  },
+  {
     year: "Throughout the Years",
     period: "Continuous",
     title: "Villains Dossier: The Impossibility Quartet",
@@ -527,7 +571,9 @@ const routes = {
   '/dq': 'DQ.md',
   '/extras': 'QEL-PACOTE-EXTRAS.md',
   '/completo': 'QEL-PACOTE-COMPLETO.md',
-  '/john': 'JOHN-AUNT-BET.md'
+  '/john': 'JOHN-AUNT-BET.md',
+  '/gaybe-el': 'GAYBE-EL.md',
+  '/madeusa': 'MADEUSA-DE-LA-PASSION.md'
 };
 
 // Função para atualizar URL sem recarregar página
@@ -986,13 +1032,17 @@ function updateNavigation() {
     'Vilões': 'nav.villains',
     'Profeta': 'nav.prophet',
     'John Aunt-Bet': 'nav.john',
+    'Orquestra': 'nav.gaybe',
+    'Advogado': 'nav.madeusa',
     'Desinclusão': 'nav.dq',
     'TV': 'nav.tv',
     'Home': 'nav.home',
     'History': 'nav.history',
     'Villains': 'nav.villains',
     'Prophet': 'nav.prophet',
-    'De-Inclusion': 'nav.dq'
+    'De-Inclusion': 'nav.dq',
+    'Orchestra': 'nav.gaybe',
+    'Lawyer': 'nav.madeusa'
   };
   
   navLinks.forEach(link => {

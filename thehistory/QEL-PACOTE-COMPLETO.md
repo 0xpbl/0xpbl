@@ -91,6 +91,43 @@ Colaborador germano-suíço que chegou ao QEL@0xpblab por **necessidade termodin
 
 ---
 
+### 🎻🧔🐟 Gaybe-EL: O Barbo dos Mullets, Regente da Orquestra da Companhia
+
+**Arquivo:** [GAYBE-EL.md](GAYBE-EL.md)
+
+Entidade executivo-musical que rege a **Orquestra da Companhia** — um conjunto de pessoas que juraram que só iam "trabalhar com planilhas" e, de repente, estão afinando triângulos enquanto discutem OKRs.
+
+**Características:**
+- Regente da Orquestra da Companhia (Cordas/Produto, Metais/Vendas, Madeiras/Engenharia, Percussão/Financeiro, Coral/RH)
+- Ritmo 7/8 "pra manter a equipe alerta"
+- Rituais corporativos: Daily em Dó, Retrospectiva com Solo Obrigatório, Comitê de Afinação
+- Barba que vibra quando alguém fala "pra ontem"
+
+**Conexão:** Implementação corporativa da filosofia musical do [Profeta ~~Ri~~ck com Fu Monilson](FU-MONILSON.md)
+
+> 🎻🧔🐟 **[Leia a documentação completa →](GAYBE-EL.md)**
+
+---
+
+### ⚖️🧥 Madeusa De La Passion: O Advogado de Inverno
+
+**Arquivo:** [MADEUSA-DE-LA-PASSION.md](MADEUSA-DE-LA-PASSION.md)
+
+Advogado sazonal da companhia que **só atua no inverno** (temperatura <= 18°C). Nas outras estações, transforma-se em outras profissões (Curador de Promessas na Primavera, Instrutor de Defesa Solar no Verão, Contador de Riscos no Outono).
+
+**Características:**
+- Contrato sazonal que "derrete" quando a temperatura sobe
+- Especialidades: Direito do Trabalho, Direito Contratual, Direito de Reunião
+- Cláusulas preferidas: "Bom Senso Vinculante", "Vento Sul", "Call Curta" (12 minutos)
+
+**Conexões:**
+- Trabalha com [Desinclusão Quântica™](DQ.md) revisando contratos em superposição
+- Revisou contratos da [Orquestra da Companhia](GAYBE-EL.md) de Gaybe-EL
+
+> ⚖️🧥 **[Leia a documentação completa →](MADEUSA-DE-LA-PASSION.md)**
+
+---
+
 ## 📑 Políticas e Protocolos
 
 ### Protocolos Relacionados
@@ -121,6 +158,8 @@ Colaborador germano-suíço que chegou ao QEL@0xpblab por **necessidade termodin
 - 🔮🎸 [Profeta ~~Ri~~ck com Fu Monilson](FU-MONILSON.md) - Protocolo de Amplificação
 - 🧾🌀 [Fiscal Interdimensional da Lousa](QEL-PACOTE-EXTRAS.md#-o-fiscal-interdimensional-da-lousa) - Auditoria de coerência
 - 🍬🚫 [John Aunt-Bet](JOHN-AUNT-BET.md) - Germano-suíço anti-açúcar
+- 🎻🧔🐟 [Gaybe-EL](GAYBE-EL.md) - Regente da Orquestra da Companhia
+- ⚖️🧥 [Madeusa De La Passion](MADEUSA-DE-LA-PASSION.md) - Advogado de Inverno
 
 ---
 

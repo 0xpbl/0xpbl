@@ -279,7 +279,68 @@ He is capable of refusing dessert in public — which, in any culture, is functi
 
 His insulin is classified as **biological coherence infrastructure**.
 
-> 🍬🚫 **[Read John Aunt-Bet’s biography →](JOHN-AUNT-BET.md)**
+> 🍬🚫 **[Read John Aunt-Bet's biography →](JOHN-AUNT-BET.md)**
+
+## 🎻🧔🐟 Gaybe-EL: The Mullet-Barbed Maestro of the Company Orchestra
+
+Gaybe-EL is an executive-musical entity who conducts the **Company Orchestra** — a collection of people who swore they were "just here for spreadsheets," and somehow ended up tuning triangles while arguing about OKRs.
+
+He is not exactly a director. He is a **pattern**.
+
+- When everything becomes chaos, he appears with a baton.
+- When everything becomes *too certain*, he appears with an intentionally out-of-tune sax.
+- When someone says "let's align," he produces a metronome and makes the needle point directly at **you**.
+
+### The Company Orchestra
+
+The company is governed by an invisible orchestra playing **all the time**, especially when you pretend you can't hear it. Sections:
+
+- **Strings (Product):** always in crescendo, never in definition.
+- **Brass (Sales):** loud, unpredictable timing, unshakable confidence.
+- **Woodwinds (Engineering):** precise tones, in frequencies only the server understands.
+- **Percussion (Finance/Legal):** rare entries, but when they hit, the whole room changes key.
+- **Choir (HR):** harmonizes chaos and calls it "culture."
+
+Gaybe-EL conducts. But he conducts like he has a personal vendetta against **4/4 time**.
+
+### Connection to the Amplification Protocol
+
+Gaybe-EL emerged as the **corporate implementation** of the musical philosophy of the [Prophet ~~Ri~~ck with Fu Monilson](FU-MONILSON.md). While the Prophet brought the Controlled Amplification Protocol based on heavy metal, Gaybe-EL transformed it into a corporate orchestra that plays in **7/8** "to keep the team alert."
+
+> 🎻🧔🐟 **[Read the complete Gaybe-EL documentation →](GAYBE-EL.md)**
+
+## ⚖️🧥 Madeusa De La Passion: The Company's Winter-Only Lawyer
+
+Madeusa De La Passion is the company's lawyer **only in winter** (temperature <= 18°C). He doesn't "take time off" in other seasons. He simply **changes professions as casually as other people change scarves**.
+
+### The Seasonal Contract
+
+His contract is the shortest document in the building and somehow the most terrifying:
+
+```
+1) TERM: June–August (or any week someone says "it's windy")
+2) CONDITION: Temperature <= 18°C (wind chill counts; drama counts double)
+3) VENUE: The meeting room with the AC set to "Arctic"
+4) COMPENSATION: coffee, silence, and a promise not to schedule calls at 7am
+```
+
+When temperatures rise, the contract doesn't "expire."
+
+It **melts**.
+
+### Legal Practice (Cold Weather Only)
+
+In winter, Madeusa is ruthless. He reads contracts like Greek tragedies. His specialties include:
+
+- **Employment law** (activated when someone suggests "working a little later")
+- **Contract law** (with clauses that sound like sad poems)
+- **Meeting law** (injunctions against agendas with nine useless topics)
+
+### Connections to QEL@0xpblab
+
+Madeusa works closely with [Quantum De-Inclusion™](DQ.md), reviewing contracts that keep collaborators in a superposition of belonging. He has also reviewed the contracts of Gaybe-EL's [Company Orchestra](GAYBE-EL.md), resulting in the famous "Southern Wind Clause" that suspends discussions when the room gets tense.
+
+> ⚖️🧥 **[Read the complete Madeusa documentation →](MADEUSA-DE-LA-PASSION.md)**
 
 ## 🦹 Villains Dossier
 

@@ -580,6 +580,8 @@ CÓDIGO AMARELO: "Greenwich discorda"
 - 🏢 [Desinclusão Quântica™](DQ.md) - Proteção contra Null Quorum e outros vilões
 - 🧾🌀 [Fiscal Interdimensional da Lousa](QEL-PACOTE-EXTRAS.md#-o-fiscal-interdimensional-da-lousa) - Auditoria de coerência que detecta ameaças
 - 🍬🚫 [John Aunt-Bet](JOHN-AUNT-BET.md) - Proteção especial contra "docinhos de certeza" da Sra. Laplace
+- 🎻🧔🐟 [Gaybe-EL](GAYBE-EL.md) - Orquestra da Companhia que combate os vilões com ritmo 7/8 e rituais corporativos
+- ⚖️🧥 [Madeusa De La Passion](MADEUSA-DE-LA-PASSION.md) - Advogado que impugna agendas com 9 tópicos inúteis (Direito de Reunião)
 - ❄️🔥 [Guerra Quente-Morna](COLD-WAR.md) - Contexto histórico das ameaças
 - 🎖️ [Operações WWII](WWII-OPERATIONS.md) - Primeira Diretiva e origem dos protocolos
 

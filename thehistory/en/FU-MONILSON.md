@@ -362,10 +362,13 @@ Removing the strikethrough constitutes:
 - 🏢 [Quantum De-Inclusion™](DQ.md) — HR policy that complements the protocol
 - 🧾🌀 [Interdimensional Whiteboard Auditor](QEL-PACOTE-EXTRAS.md) — first appearance after the Prophet’s visit
 - 🍬🚫 [John Aunt-Bet](JOHN-AUNT-BET.md) — cafeteria encounter
+- 🎻🧔🐟 [Gaybe-EL](GAYBE-EL.md) — corporate implementation of the Company Orchestra (evolution of the Amplification Protocol)
+- ⚖️🧥 [Madeusa De La Passion](MADEUSA-DE-LA-PASSION.md) — lawyer who reviewed the Orchestra's contracts
 
 ### Internal references
 
 - **Controlled Amplification Protocol (v0.38):** evolution of [Minimum Diplomatic Noise](COLD-WAR.md) and the [First Directive](WWII-OPERATIONS.md)
+- **Company Orchestra:** The corporate implementation of the Amplification Protocol resulted in the creation of the [Company Orchestra](GAYBE-EL.md), conducted by Gaybe-EL, which transforms meetings into musical performances in 7/8 time
 - **Access system:** protection against the [four villains](VILLAINS.md)
 - **Communications Room:** where [Minimum Diplomatic Noise](COLD-WAR.md) is regulated
 

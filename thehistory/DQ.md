@@ -169,6 +169,8 @@ Portanto, a Desinclusão Quântica™ é a única forma aceitável de "cultura".
 - ❄️🔥 [Guerra Quente-Morna](COLD-WAR.md) - Origem do Ruído Diplomático Mínimo aplicado ao RH
 - 🧾🌀 [Fiscal Interdimensional da Lousa](QEL-PACOTE-EXTRAS.md#-o-fiscal-interdimensional-da-lousa) - Auditoria de coerência organizacional
 - 🍬🚫 [John Aunt-Bet](JOHN-AUNT-BET.md) - Colaborador que exemplifica a DQ na prática (insulina como artefato de coerência)
+- 🎻🧔🐟 [Gaybe-EL](GAYBE-EL.md) - Orquestra da Companhia que harmoniza o caos da DQ em ritmo 7/8
+- ⚖️🧥 [Madeusa De La Passion](MADEUSA-DE-LA-PASSION.md) - Advogado que revisa contratos em superposição (só no inverno)
 
 ### Referências Internas
 

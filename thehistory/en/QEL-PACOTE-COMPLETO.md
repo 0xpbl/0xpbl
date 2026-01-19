@@ -91,6 +91,43 @@ A German-Swiss collaborator who arrived at QEL@0xpblab by **thermodynamic necess
 
 ---
 
+### 🎻🧔🐟 Gaybe-EL: The Mullet-Barbed Maestro of the Company Orchestra
+
+**File:** [GAYBE-EL.md](GAYBE-EL.md)
+
+An executive-musical entity who conducts the **Company Orchestra** — a collection of people who swore they were "just here for spreadsheets," and somehow ended up tuning triangles while arguing about OKRs.
+
+**Traits:**
+- Conductor of the Company Orchestra (Strings/Product, Brass/Sales, Woodwinds/Engineering, Percussion/Finance, Choir/HR)
+- 7/8 time signature "to keep the team alert"
+- Corporate rituals: Daily in Do, Retrospective with Mandatory Solo, Tuning Committee
+- Beard that vibrates whenever someone says "ASAP"
+
+**Connection:** Corporate implementation of the musical philosophy of the [Prophet ~~Ri~~ck with Fu Monilson](FU-MONILSON.md)
+
+> 🎻🧔🐟 **[Read the complete documentation →](GAYBE-EL.md)**
+
+---
+
+### ⚖️🧥 Madeusa De La Passion: The Company's Winter-Only Lawyer
+
+**File:** [MADEUSA-DE-LA-PASSION.md](MADEUSA-DE-LA-PASSION.md)
+
+Seasonal lawyer for the company who **only practices in winter** (temperature <= 18°C). In other seasons, transforms into other professions (Curator of Promises in Spring, Instructor of Sun Defense in Summer, Accountant of Existential Risk in Autumn).
+
+**Traits:**
+- Seasonal contract that "melts" when temperatures rise
+- Specialties: Employment law, Contract law, Meeting law
+- Favorite clauses: "Binding Common Sense", "Southern Wind", "Short Call" (12 minutes)
+
+**Connections:**
+- Works with [Quantum De-Inclusion™](DQ.md) reviewing contracts in superposition
+- Reviewed contracts of Gaybe-EL's [Company Orchestra](GAYBE-EL.md)
+
+> ⚖️🧥 **[Read the complete documentation →](MADEUSA-DE-LA-PASSION.md)**
+
+---
+
 ## 📑 Policies and Protocols
 
 ### Related Protocols
@@ -121,6 +158,8 @@ A German-Swiss collaborator who arrived at QEL@0xpblab by **thermodynamic necess
 - 🔮🎸 [Prophet ~~Ri~~ck with Fu Monilson](FU-MONILSON.md)
 - 🧾🌀 [Interdimensional Whiteboard Auditor](QEL-PACOTE-EXTRAS.md)
 - 🍬🚫 [John Aunt-Bet](JOHN-AUNT-BET.md)
+- 🎻🧔🐟 [Gaybe-EL](GAYBE-EL.md) — Company Orchestra Conductor
+- ⚖️🧥 [Madeusa De La Passion](MADEUSA-DE-LA-PASSION.md) — Winter-Only Lawyer
 
 ---
 
