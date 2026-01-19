@@ -23,25 +23,35 @@ function getDocsPath() {
   // Detectar base path do GitHub Pages
   // Exemplo: https://0xpbl.github.io/0xpbl/ -> basePath = '/0xpbl'
   const pathname = window.location.pathname;
+  const hostname = window.location.hostname;
+  
   let basePath = '';
   
-  // Remover index.html se presente
-  let cleanPath = pathname.replace(/\/index\.html$/, '');
-  if (cleanPath === '/') cleanPath = '';
-  
-  // Extrair primeiro segmento do path (nome do repositório)
-  const parts = cleanPath.split('/').filter(p => p);
-  if (parts.length > 0) {
-    // Se há um primeiro segmento que não é um arquivo, é o base path
-    const firstPart = parts[0];
-    if (!firstPart.includes('.')) {
-      basePath = '/' + firstPart;
+  // Se estiver no GitHub Pages (não é localhost)
+  if (hostname.includes('github.io')) {
+    // Extrair o nome do repositório do pathname
+    // pathname pode ser: /0xpbl/ ou /0xpbl/index.html ou /0xpbl/qel
+    const parts = pathname.split('/').filter(p => p && p !== 'index.html');
+    
+    // Se há um primeiro segmento que não termina com extensão, é o base path
+    if (parts.length > 0) {
+      const firstPart = parts[0];
+      // Verificar se não é um arquivo (não tem extensão)
+      if (!firstPart.includes('.')) {
+        basePath = '/' + firstPart;
+      }
     }
   }
   
   const langPath = currentLang === 'en' ? 'thehistory/en/' : 'thehistory/';
-  // Retornar caminho absoluto com base path ou relativo
-  return basePath ? `${basePath}/${langPath}` : langPath;
+  
+  // Retornar caminho: basePath + langPath ou apenas langPath se basePath vazio
+  if (basePath) {
+    return `${basePath}/${langPath}`;
+  } else {
+    // Caminho relativo para desenvolvimento local
+    return langPath;
+  }
 }
 
 // Traduções
@@ -511,9 +521,14 @@ async function loadDocument(filename) {
   try {
     await loadMarked();
     
-    const response = await fetch(`${getDocsPath()}${filename}`);
+    const docsPath = getDocsPath();
+    const fullPath = `${docsPath}${filename}`;
+    console.log('Tentando carregar:', fullPath);
+    
+    const response = await fetch(fullPath);
     if (!response.ok) {
-      throw new Error(`${t('ui.error')}: ${response.statusText}`);
+      console.error('Erro ao carregar:', fullPath, response.status, response.statusText);
+      throw new Error(`${t('ui.error')}: ${response.status} ${response.statusText}`);
     }
     
     const markdown = await response.text();
@@ -816,9 +831,14 @@ async function loadEventContent(eventId, documentName, index) {
   try {
     await loadMarked();
     
-    const response = await fetch(`${getDocsPath()}${documentName}`);
+    const docsPath = getDocsPath();
+    const fullPath = `${docsPath}${documentName}`;
+    console.log('Tentando carregar conteúdo do evento:', fullPath);
+    
+    const response = await fetch(fullPath);
     if (!response.ok) {
-      throw new Error(`${t('ui.errorContent')}: ${response.statusText}`);
+      console.error('Erro ao carregar conteúdo:', fullPath, response.status, response.statusText);
+      throw new Error(`${t('ui.errorContent')}: ${response.status} ${response.statusText}`);
     }
     
     const markdown = await response.text();
