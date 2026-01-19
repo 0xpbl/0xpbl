@@ -19,6 +19,16 @@ function setCurrentLang(lang) {
   document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'pt-BR');
 }
 
+// Função para obter o base path do GitHub Pages
+function getBasePath() {
+  const hostname = window.location.hostname;
+  if (hostname.includes('github.io')) {
+    const repoName = hostname.split('.')[0]; // 0xpbl.github.io -> 0xpbl
+    return `/${repoName}`;
+  }
+  return '';
+}
+
 function getDocsPath() {
   // Detectar base path do GitHub Pages
   // Exemplo: https://0xpbl.github.io/0xpbl/ -> basePath = '/0xpbl'
@@ -522,7 +532,9 @@ const routes = {
 
 // Função para atualizar URL sem recarregar página
 function updateURL(path) {
-  window.history.pushState({ path }, '', path || '/');
+  const basePath = getBasePath();
+  const fullPath = basePath + (path === '/' ? '' : path);
+  window.history.pushState({ path }, '', fullPath || basePath + '/');
 }
 
 // Função para carregar e renderizar markdown
@@ -684,12 +696,19 @@ function processImages() {
 
 // Função de navegação
 function navigate(path, anchor = null) {
-  updateURL(path);
+  const basePath = getBasePath();
+  // Remover base path se presente no path recebido
+  let normalizedPath = path;
+  if (basePath && path.startsWith(basePath)) {
+    normalizedPath = path.substring(basePath.length) || '/';
+  }
   
-  if (path === '/' || path === '') {
+  updateURL(normalizedPath);
+  
+  if (normalizedPath === '/' || normalizedPath === '') {
     showIndex();
   } else {
-    const filename = routes[path];
+    const filename = routes[normalizedPath];
     if (filename) {
       loadDocument(filename).then(() => {
         if (anchor) {
@@ -1027,14 +1046,37 @@ document.addEventListener('DOMContentLoaded', () => {
     loadingText.textContent = t('ui.initializing');
   }
   
-  // Verificar rota atual
-  const path = window.location.pathname || '/';
-  navigate(path);
+  // Verificar rota atual e normalizar
+  const pathname = window.location.pathname || '/';
+  const basePath = getBasePath();
+  let normalizedPath = pathname;
+  
+  if (basePath) {
+    // Se há base path configurado (GitHub Pages)
+    if (pathname.startsWith(basePath)) {
+      // URL já tem base path, normalizar
+      normalizedPath = pathname.substring(basePath.length) || '/';
+    } else if (pathname !== '/' && !pathname.startsWith(basePath)) {
+      // URL não tem base path mas não é a raiz - REDIRECIONAR
+      const fullPath = basePath + pathname;
+      window.history.replaceState({ path: normalizedPath }, '', fullPath);
+      // Manter o path original para navegação (já está normalizado)
+    }
+  }
+  
+  navigate(normalizedPath);
   
   // Configurar navegação do browser
   window.addEventListener('popstate', (e) => {
-    const path = window.location.pathname || '/';
-    navigate(path);
+    const pathname = window.location.pathname || '/';
+    const basePath = getBasePath();
+    let normalizedPath = pathname;
+    
+    if (basePath && pathname.startsWith(basePath)) {
+      normalizedPath = pathname.substring(basePath.length) || '/';
+    }
+    
+    navigate(normalizedPath);
   });
   
   // Configurar navegação por hash (âncoras)
