@@ -1,0 +1,584 @@
+/* QEL@0xpblab - Tema Retro */
+/* Ativa com classe .theme-retro no <html> */
+
+/* ============================================
+   DESIGN TOKENS - Variáveis CSS
+   ============================================ */
+
+:root.theme-retro {
+  /* Cores base */
+  --bg: #f6f1e3;              /* papel off-white */
+  --panel: #fffaf0;           /* superfície */
+  --text: #111111;            /* texto principal */
+  --muted: #4b4b4b;           /* texto secundário */
+  
+  /* Paleta EGA/old IDE */
+  --accent: #0000aa;          /* azul DOS */
+  --accent-2: #aa0000;        /* vermelho */
+  --accent-3: #008800;        /* verde */
+  
+  /* UI */
+  --border: #111111;          /* bordas pretas */
+  --shadow: rgba(0,0,0,.25);  /* sombras sutis */
+  --radius: 0px;              /* sem border-radius (quadrado) */
+  
+  /* Sobrescrever variáveis do tema neon */
+  --bg-dark: var(--bg);
+  --bg-card: var(--panel);
+  --text-light: var(--text);
+  --violet: var(--accent);
+  --cyan: var(--accent);
+  --orange: var(--accent-2);
+  --red: var(--accent-2);
+  --green: var(--accent-3);
+}
+
+/* ============================================
+   BASE - HTML/BODY
+   ============================================ */
+
+html.theme-retro,
+html.theme-retro body {
+  background: var(--bg);
+  color: var(--text);
+  filter: none;
+}
+
+html.theme-retro * {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* ============================================
+   TIPOGRAFIA RETRO
+   ============================================ */
+
+html.theme-retro {
+  font-family: 'VT323', 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+html.theme-retro h1,
+html.theme-retro .site-title,
+html.theme-retro header h1 {
+  font-family: 'Press Start 2P', 'VT323', monospace;
+  letter-spacing: 0.04em;
+  font-size: 1.8rem;
+  line-height: 1.4;
+}
+
+html.theme-retro h2,
+html.theme-retro h3 {
+  font-family: 'Press Start 2P', 'VT323', monospace;
+  letter-spacing: 0.02em;
+}
+
+html.theme-retro code,
+html.theme-retro pre {
+  font-family: 'IBM Plex Mono', 'Courier New', monospace;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+html.theme-retro header {
+  background: var(--panel);
+  border-bottom: 3px solid var(--border);
+  filter: none;
+  box-shadow: none;
+}
+
+html.theme-retro .logo-container img {
+  filter: none;
+  box-shadow: none;
+}
+
+html.theme-retro header h1 {
+  color: var(--accent);
+  text-shadow: none;
+}
+
+html.theme-retro .subtitle {
+  color: var(--text);
+  opacity: 0.8;
+}
+
+/* Botão de Toggle de Tema */
+html.theme-retro .theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--panel);
+  border: 2px solid var(--border);
+  border-top-color: #ffffff;
+  border-left-color: #ffffff;
+  color: var(--text);
+  padding: 6px 12px;
+  font-family: 'VT323', monospace;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 var(--shadow);
+  z-index: 1000;
+}
+
+html.theme-retro .theme-toggle:hover {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+html.theme-retro .theme-toggle:active {
+  border-top-color: var(--border);
+  border-left-color: var(--border);
+  box-shadow: 1px 1px 0 var(--shadow);
+  transform: translate(1px, 1px);
+}
+
+/* ============================================
+   NAVEGAÇÃO
+   ============================================ */
+
+html.theme-retro nav {
+  background: var(--panel);
+  border-bottom: 2px solid var(--border);
+  backdrop-filter: none;
+  box-shadow: 0 2px 0 var(--shadow);
+}
+
+html.theme-retro nav a {
+  color: var(--accent);
+  text-decoration: underline;
+  border: none;
+  padding: 0.5rem 1rem;
+}
+
+html.theme-retro nav a:hover {
+  background: var(--accent);
+  color: #ffffff;
+  text-decoration: none;
+  transform: none;
+  box-shadow: none;
+}
+
+html.theme-retro nav a:visited {
+  color: var(--accent-2);
+}
+
+/* ============================================
+   TIMELINE
+   ============================================ */
+
+html.theme-retro .timeline-header {
+  border-bottom: 3px solid var(--border);
+}
+
+html.theme-retro .timeline-header h1 {
+  color: var(--accent);
+  text-shadow: none;
+}
+
+html.theme-retro .period-header {
+  background: var(--panel);
+  border-left: 4px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 2px 2px 0 var(--shadow);
+}
+
+html.theme-retro .period-header h2 {
+  color: var(--accent);
+}
+
+html.theme-retro .timeline-event::before {
+  background: var(--border);
+}
+
+html.theme-retro .timeline-marker {
+  border: 3px solid var(--bg);
+  background: var(--border);
+  box-shadow: none;
+}
+
+html.theme-retro .timeline-event.violet .timeline-marker,
+html.theme-retro .timeline-event.cyan .timeline-marker,
+html.theme-retro .timeline-event.green .timeline-marker {
+  background: var(--accent);
+}
+
+html.theme-retro .timeline-event.red .timeline-marker {
+  background: var(--accent-2);
+}
+
+html.theme-retro .timeline-event.orange .timeline-marker {
+  background: var(--accent-2);
+}
+
+html.theme-retro .timeline-content {
+  background: var(--panel);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 4px 4px 0 var(--shadow);
+}
+
+html.theme-retro .timeline-event:hover .timeline-content {
+  border-color: var(--accent);
+  transform: translate(-1px, -1px);
+  box-shadow: 6px 6px 0 var(--shadow);
+}
+
+html.theme-retro .event-year {
+  color: var(--accent);
+}
+
+html.theme-retro .event-title {
+  color: var(--text);
+}
+
+html.theme-retro .event-summary {
+  color: var(--text);
+  opacity: 0.9;
+}
+
+/* ============================================
+   BOTÕES
+   ============================================ */
+
+html.theme-retro button,
+html.theme-retro .btn-expand,
+html.theme-retro .btn-view {
+  background: #e6e6e6;
+  border: 2px solid var(--border);
+  border-top-color: #ffffff;
+  border-left-color: #ffffff;
+  color: var(--text);
+  box-shadow: 2px 2px 0 var(--shadow);
+  padding: 6px 10px;
+  font-family: 'VT323', monospace;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: var(--radius);
+}
+
+html.theme-retro button:hover,
+html.theme-retro .btn-expand:hover,
+html.theme-retro .btn-view:hover {
+  background: var(--accent);
+  color: #ffffff;
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--shadow);
+}
+
+html.theme-retro button:active,
+html.theme-retro .btn-expand:active,
+html.theme-retro .btn-view:active {
+  border-top-color: var(--border);
+  border-left-color: var(--border);
+  box-shadow: 1px 1px 0 var(--shadow);
+  transform: translate(1px, 1px);
+}
+
+html.theme-retro button:focus,
+html.theme-retro .btn-expand:focus,
+html.theme-retro .btn-view:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   MARKDOWN CONTENT
+   ============================================ */
+
+html.theme-retro .markdown-content {
+  color: var(--text);
+}
+
+html.theme-retro .markdown-content h1 {
+  color: var(--accent);
+  border-bottom: 3px solid var(--border);
+  text-shadow: none;
+}
+
+html.theme-retro .markdown-content h2 {
+  color: var(--accent);
+  border-bottom: 2px solid var(--border);
+}
+
+html.theme-retro .markdown-content h3 {
+  color: var(--accent-2);
+}
+
+html.theme-retro .markdown-content a {
+  color: var(--accent);
+  text-decoration: underline;
+  border-bottom: none;
+  text-shadow: none;
+}
+
+html.theme-retro .markdown-content a:hover {
+  background: var(--accent);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 2px 4px;
+}
+
+html.theme-retro .markdown-content a:visited {
+  color: var(--accent-2);
+}
+
+html.theme-retro .markdown-content code {
+  background-color: #e6e6e6;
+  color: var(--accent-2);
+  padding: 0.2rem 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-family: 'IBM Plex Mono', 'Courier New', monospace;
+}
+
+html.theme-retro .markdown-content pre {
+  background-color: #e6e6e6;
+  border: 2px solid var(--border);
+  border-left: 4px solid var(--accent);
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: 2px 2px 0 var(--shadow);
+}
+
+html.theme-retro .markdown-content pre code {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  color: var(--text);
+}
+
+html.theme-retro .markdown-content blockquote {
+  border-left: 4px solid var(--accent);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: var(--text);
+  opacity: 0.9;
+  font-style: normal;
+  background: var(--panel);
+  border-radius: var(--radius);
+  padding: 0.5rem 1rem;
+}
+
+html.theme-retro .markdown-content table {
+  border-collapse: collapse;
+  border: 2px solid var(--border);
+}
+
+html.theme-retro .markdown-content table th,
+html.theme-retro .markdown-content table td {
+  border: 1px solid var(--border);
+  padding: 0.75rem;
+}
+
+html.theme-retro .markdown-content table th {
+  background-color: var(--panel);
+  color: var(--accent);
+  font-weight: bold;
+}
+
+html.theme-retro .markdown-content table tr:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+html.theme-retro .markdown-content img {
+  border: 2px solid var(--border);
+  box-shadow: 4px 4px 0 var(--shadow);
+}
+
+html.theme-retro .markdown-content hr {
+  border: none;
+  border-top: 3px solid var(--border);
+  margin: 2rem 0;
+}
+
+/* ============================================
+   DOCUMENT CONTAINER
+   ============================================ */
+
+html.theme-retro .document-container {
+  background: var(--panel);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 4px 4px 0 var(--shadow);
+}
+
+html.theme-retro .document-header {
+  border-bottom: 3px solid var(--border);
+}
+
+html.theme-retro .document-header h1 {
+  color: var(--accent);
+  text-shadow: none;
+}
+
+html.theme-retro .breadcrumbs {
+  color: var(--muted);
+}
+
+html.theme-retro .breadcrumbs a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+html.theme-retro .breadcrumbs a:hover {
+  background: var(--accent);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 2px 4px;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+html.theme-retro footer {
+  background: var(--panel);
+  border-top: 3px solid var(--border);
+  color: var(--muted);
+  box-shadow: 0 -2px 0 var(--shadow);
+}
+
+/* ============================================
+   LOADING & SPINNERS
+   ============================================ */
+
+html.theme-retro .loading,
+html.theme-retro .loading-content {
+  color: var(--accent);
+}
+
+html.theme-retro .spinner,
+html.theme-retro .spinner-small {
+  border-color: var(--border);
+  border-top-color: var(--accent);
+}
+
+/* ============================================
+   CARDS (compatibilidade)
+   ============================================ */
+
+html.theme-retro .card {
+  background: var(--panel);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 4px 4px 0 var(--shadow);
+}
+
+html.theme-retro .card:hover {
+  border-color: var(--accent);
+  transform: translate(-1px, -1px);
+  box-shadow: 6px 6px 0 var(--shadow);
+}
+
+html.theme-retro .card h2 {
+  color: var(--accent);
+}
+
+/* ============================================
+   BADGES
+   ============================================ */
+
+html.theme-retro .badge-primary {
+  background-color: var(--accent);
+  color: #ffffff;
+  border: 1px solid var(--border);
+}
+
+html.theme-retro .badge-success {
+  background-color: var(--accent-3);
+  color: #ffffff;
+  border: 1px solid var(--border);
+}
+
+html.theme-retro .badge-warning,
+html.theme-retro .badge-danger {
+  background-color: var(--accent-2);
+  color: #ffffff;
+  border: 1px solid var(--border);
+}
+
+html.theme-retro .badge-info {
+  background-color: var(--accent);
+  color: #ffffff;
+  border: 1px solid var(--border);
+}
+
+/* ============================================
+   SCANLINES CRT (Efeito Opcional Sutil)
+   ============================================ */
+
+html.theme-retro::before {
+  content: '';
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.03) 0px,
+      rgba(0,0,0,0.03) 1px,
+      rgba(0,0,0,0.00) 2px,
+      rgba(0,0,0,0.00) 4px
+    );
+  mix-blend-mode: multiply;
+  opacity: 0.35;
+  z-index: 9999;
+}
+
+/* ============================================
+   RESPONSIVIDADE
+   ============================================ */
+
+@media (max-width: 768px) {
+  html.theme-retro {
+    font-size: 18px;
+  }
+
+  html.theme-retro h1,
+  html.theme-retro header h1 {
+    font-size: 1.4rem;
+  }
+
+  html.theme-retro .theme-toggle {
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 14px;
+    padding: 4px 8px;
+  }
+
+  html.theme-retro .timeline-content {
+    padding: 1rem;
+  }
+
+  html.theme-retro button,
+  html.theme-retro .btn-expand,
+  html.theme-retro .btn-view {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+  }
+}
+
+/* ============================================
+   SCROLLBAR RETRO
+   ============================================ */
+
+html.theme-retro ::-webkit-scrollbar {
+  width: 12px;
+}
+
+html.theme-retro ::-webkit-scrollbar-track {
+  background: var(--panel);
+  border: 1px solid var(--border);
+}
+
+html.theme-retro ::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border: 2px solid var(--panel);
+}
+
+html.theme-retro ::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-2);
+}

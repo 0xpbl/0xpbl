@@ -1,0 +1,26 @@
+# Arquivo de documentação interna
+how.md
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependências (se houver)
+node_modules/
+
+# Build (se houver)
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
