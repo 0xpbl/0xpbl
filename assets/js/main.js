@@ -5,6 +5,180 @@
 const DOCS_PATH = 'thehistory/';
 const MARKED_CDN = 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
 
+// Timeline Cronológica
+const timeline = [
+  {
+    year: "1931",
+    period: "Pré-Fundação",
+    title: "Acordo de Viena Sobre Incerteza Legal",
+    summary: "O QEL@0xpblab aparece como nota de rodapé em correspondências. Um grupo de juristas tenta 'processar' o Princípio da Incerteza por ser 'deliberadamente vago'.",
+    document: "qel.md",
+    anchor: "acordo-viena",
+    icon: "📜",
+    color: "violet"
+  },
+  {
+    year: "1932",
+    period: "Pré-Fundação",
+    title: "Pablo Mu-R4d assume como Presidente e CEO",
+    summary: "Desde 1932, o presidente e CEO do QEL@0xpblab é Pablo Mu-R4d — e, de forma perfeitamente consistente com a contabilidade quântica do laboratório, ele tem apenas 38 anos.",
+    document: "PABLO-MU-R4D.md",
+    anchor: null,
+    icon: "👔",
+    color: "violet"
+  },
+  {
+    year: "1939-1945",
+    period: "Segunda Guerra Mundial",
+    title: "Operações Secretas da Seção Δ-13",
+    summary: "O QEL@0xpblab operou secretamente sob o codinome Seção Δ-13, uma 'unidade de metrologia avançada' que nunca existiu oficialmente. Missão: evitar que a realidade colapsasse no pior ramo possível.",
+    document: "WWII-OPERATIONS.md",
+    anchor: null,
+    icon: "🎖️",
+    color: "red"
+  },
+  {
+    year: "1947",
+    period: "Guerra Quente-Morna",
+    title: "Crise dos Dois Relógios de Greenwich",
+    summary: "Dois relógios atômicos, lado a lado, discordavam como se tivessem opiniões políticas. A solução do QEL@0xpblab: colocar os relógios numa sala e pedir que chegassem a um consenso por interferência construtiva.",
+    document: "qel.md",
+    anchor: "crise-relogios",
+    icon: "🕐",
+    color: "cyan"
+  },
+  {
+    year: "1947-1991",
+    period: "Guerra Quente-Morna",
+    title: "A Guerra Quente-Morna",
+    summary: "O QEL@0xpblab nunca chamou de 'Guerra Fria'. Para o laboratório, foi a Guerra Quente-Morna: quente o suficiente para derreter confiança, morna o suficiente para manter tudo 'negável'.",
+    document: "COLD-WAR.md",
+    anchor: null,
+    icon: "❄️🔥",
+    color: "cyan"
+  },
+  {
+    year: "1959",
+    period: "Guerra Quente-Morna",
+    title: "O Incidente do Cubo de Copenhagen",
+    summary: "Durante uma demonstração privada na Dinamarca, um protótipo do QEL@0xpblab — o famoso Cubo de Copenhagen — foi ligado por 11 segundos. Ocorrências relatadas: um chapéu desapareceu e reapareceu em lugar mais apropriado.",
+    document: "qel.md",
+    anchor: "cubo-copenhagen",
+    icon: "📦",
+    color: "cyan"
+  },
+  {
+    year: "1969",
+    period: "Guerra Quente-Morna",
+    title: "Protocolo de Reversão Suave (Apollo 12)",
+    summary: "O QEL@0xpblab desenvolveu o Protocolo de Reversão Suave durante a missão Apollo 12, garantindo que a realidade não escolhesse o pior ramo possível durante operações espaciais críticas.",
+    document: "qel.md",
+    anchor: "apollo-12",
+    icon: "🚀",
+    color: "cyan"
+  },
+  {
+    year: "1973",
+    period: "Fundação Oficial",
+    title: "Fundação Oficial do QEL@0xpblab",
+    summary: "O QEL@0xpblab nasceu oficialmente em 1973, num porão sem janelas. O primeiro documento — o Memorando do Gato Não-Assinado — afirmava: 'A realidade é um sistema distribuído, e observação é uma forma de commit.'",
+    document: "qel.md",
+    anchor: "sobre",
+    icon: "🔬",
+    color: "green"
+  },
+  {
+    year: "1973",
+    period: "Fundação Oficial",
+    title: "Desinclusão Quântica™",
+    summary: "A política de RH do QEL@0xpblab que mantém cada colaborador incluído em pelo menos um ramo, e excluído em todos os outros — por razões de escalabilidade humana e consistência estatística.",
+    document: "DQ.md",
+    anchor: null,
+    icon: "🏢",
+    color: "green"
+  },
+  {
+    year: "1978-1986",
+    period: "Guerra Quente-Morna",
+    title: "Guerra Fria do Emaranhamento",
+    summary: "Período de intensa atividade do QEL@0xpblab durante a Guerra Quente-Morna, com desenvolvimento de protocolos de emaranhamento e ruído diplomático mínimo.",
+    document: "COLD-WAR.md",
+    anchor: "guerra-emaranhamento",
+    icon: "🔗",
+    color: "cyan"
+  },
+  {
+    year: "1983",
+    period: "Guerra Quente-Morna",
+    title: "Incidente 'Verdadeiro o Suficiente'",
+    summary: "Um dos incidentes mais críticos da Guerra Quente-Morna, onde o QEL@0xpblab precisou intervir para evitar um colapso de realidade em escala global.",
+    document: "COLD-WAR.md",
+    anchor: "incidente-1983",
+    icon: "⚠️",
+    color: "cyan"
+  },
+  {
+    year: "1980s-1990s",
+    period: "Era Moderna",
+    title: "Programas de TV (Experimentos de Comunicação)",
+    summary: "O QEL@0xpblab produziu (ou alegadamente produziu) diversos programas de TV, que o laboratório insiste em chamar de 'experimentos de comunicação em massa'.",
+    document: "TV-PROGRAMS.md",
+    anchor: null,
+    icon: "📺",
+    color: "green"
+  },
+  {
+    year: "1997",
+    period: "Era Moderna",
+    title: "Conferência de Kyoto Sobre Decoerência Cultural",
+    summary: "Evento que formalizou a tese do QEL@0xpblab sobre decoerência cultural e marcou o fim oficial da Guerra Quente-Morna.",
+    document: "qel.md",
+    anchor: "kyoto",
+    icon: "🌍",
+    color: "green"
+  },
+  {
+    year: "2000s+",
+    period: "Era Moderna",
+    title: "A Chegada do Profeta ~~Ri~~ck com Fu Monilson",
+    summary: "A chegada do profeta com Fu Monilson e o Protocolo de Amplificação Controlada, uma evolução dos protocolos anteriores para combater os quatro vilões do Quarteto da Impossibilidade.",
+    document: "FU-MONILSON.md",
+    anchor: null,
+    icon: "🔮🎸",
+    color: "green"
+  },
+  {
+    year: "2000s+",
+    period: "Era Moderna",
+    title: "O Fiscal Interdimensional da Lousa",
+    summary: "O Fiscal Interdimensional da Lousa e sua guerra eterna contra π. Uma entidade que garante que a matemática permaneça consistente, mesmo quando a realidade não quer.",
+    document: "QEL-PACOTE-EXTRAS.md",
+    anchor: null,
+    icon: "🧾🌀",
+    color: "green"
+  },
+  {
+    year: "2000s+",
+    period: "Era Moderna",
+    title: "John Aunt-Bet: O Germano-Suíço Anti-Açúcar",
+    summary: "John Aunt-Bet, colaborador germano-suíço que recusa sobremesas e mantém a insulina como artefato de coerência. Proteção especial contra 'docinhos de certeza' da Sra. Laplace.",
+    document: "JOHN-AUNT-BET.md",
+    anchor: null,
+    icon: "🍬🚫",
+    color: "green"
+  },
+  {
+    year: "Através dos Anos",
+    period: "Contínuo",
+    title: "Dossiê de Vilões: O Quarteto da Impossibilidade",
+    summary: "Quatro antagonistas que tornam a ciência tecnicamente correta e inútil: Willy Xarzenegger, Condessa Zeno von Retardo, Dr. Null Quorum e Sra. Laplace.",
+    document: "VILLAINS.md",
+    anchor: null,
+    icon: "🦹",
+    color: "orange"
+  }
+];
+
 // Carregar marked.js dinamicamente
 let markedLoaded = false;
 
@@ -226,78 +400,218 @@ function navigate(path, anchor = null) {
   }
 }
 
-// Mostrar página inicial
-function showIndex() {
+// Renderizar Timeline Cronológica
+function renderTimeline() {
   const main = document.querySelector('main');
-  main.innerHTML = `
-    <div class="index-grid">
-      <div class="card" onclick="navigate('/qel')">
-        <h2>🔬 QEL@0xpblab</h2>
-        <p>A história completa do Quantum Experimental Laboratories. O laboratório que trata a realidade como infraestrutura.</p>
-        <span class="badge badge-primary">Principal</span>
+  
+  let timelineHTML = '<div class="timeline-container">';
+  timelineHTML += '<div class="timeline-header"><h1>História do QEL@0xpblab</h1><p class="timeline-subtitle">Uma narrativa cronológica da realidade como sistema distribuído</p></div>';
+  timelineHTML += '<div class="timeline-wrapper">';
+  
+  let currentPeriod = '';
+  
+  timeline.forEach((event, index) => {
+    // Adicionar separador de período se mudou
+    if (event.period !== currentPeriod) {
+      if (currentPeriod !== '') {
+        timelineHTML += '</div>'; // Fechar período anterior
+      }
+      currentPeriod = event.period;
+      timelineHTML += `<div class="timeline-period" data-period="${event.period}">`;
+      timelineHTML += `<div class="period-header"><h2>${event.period}</h2></div>`;
+    }
+    
+    const eventId = `event-${index}`;
+    const route = Object.keys(routes).find(key => routes[key] === event.document);
+    const routePath = route || '/';
+    
+    timelineHTML += `
+      <div class="timeline-event ${event.color}" id="${eventId}">
+        <div class="timeline-marker">
+          <div class="marker-dot"></div>
+          <div class="marker-line"></div>
+        </div>
+        <div class="timeline-content">
+          <div class="event-header">
+            <span class="event-year">${event.year}</span>
+            <span class="event-icon">${event.icon}</span>
+            <h3 class="event-title">${event.title}</h3>
+          </div>
+          <div class="event-summary">
+            <p>${event.summary}</p>
+          </div>
+          <div class="event-actions">
+            <button class="btn-expand" onclick="toggleEvent('${eventId}', '${event.document}', ${index})">
+              <span class="expand-text">Expandir</span>
+              <span class="collapse-text" style="display: none;">Recolher</span>
+            </button>
+            ${route ? `<a href="${routePath}" class="btn-view" onclick="navigate('${routePath}'); return false;">Ver Documento Completo →</a>` : ''}
+          </div>
+          <div class="event-content" id="content-${eventId}" style="display: none;">
+            <div class="loading-content">
+              <div class="spinner-small"></div>
+              <p>Carregando conteúdo...</p>
+            </div>
+          </div>
+        </div>
       </div>
+    `;
+  });
+  
+  timelineHTML += '</div>'; // Fechar último período
+  timelineHTML += '</div>'; // Fechar timeline-wrapper
+  timelineHTML += '</div>'; // Fechar timeline-container
+  
+  main.innerHTML = timelineHTML;
+  
+  // Verificar se há âncora na URL após renderizar
+  setTimeout(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const anchorId = hash.substring(1);
+      const eventElement = document.getElementById(anchorId);
+      if (eventElement) {
+        eventElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Expandir automaticamente se houver hash
+        const contentDiv = document.getElementById(`content-${anchorId}`);
+        if (contentDiv && contentDiv.style.display === 'none') {
+          const expandBtn = eventElement.querySelector('.btn-expand');
+          if (expandBtn) {
+            setTimeout(() => expandBtn.click(), 300);
+          }
+        }
+      }
+    }
+  }, 100);
+}
+
+// Alternar expansão de evento
+async function toggleEvent(eventId, documentName, index) {
+  const contentDiv = document.getElementById(`content-${eventId}`);
+  if (!contentDiv) return;
+  
+  const expandBtn = document.querySelector(`#${eventId} .btn-expand`);
+  if (!expandBtn) return;
+  
+  const expandText = expandBtn.querySelector('.expand-text');
+  const collapseText = expandBtn.querySelector('.collapse-text');
+  
+  if (contentDiv.style.display === 'none' || !contentDiv.style.display) {
+    // Expandir
+    contentDiv.style.display = 'block';
+    if (expandText) expandText.style.display = 'none';
+    if (collapseText) collapseText.style.display = 'inline';
+    
+    // Carregar conteúdo se ainda não foi carregado
+    if (contentDiv.querySelector('.loading-content')) {
+      try {
+        await loadEventContent(eventId, documentName, index);
+      } catch (error) {
+        console.error('Erro ao carregar conteúdo:', error);
+      }
+    }
+    
+    // Scroll suave para o conteúdo expandido
+    setTimeout(() => {
+      contentDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 100);
+  } else {
+    // Recolher
+    contentDiv.style.display = 'none';
+    if (expandText) expandText.style.display = 'inline';
+    if (collapseText) collapseText.style.display = 'none';
+  }
+}
+
+// Carregar conteúdo do evento
+async function loadEventContent(eventId, documentName, index) {
+  const contentDiv = document.getElementById(`content-${eventId}`);
+  const event = timeline[index];
+  
+  try {
+    await loadMarked();
+    
+    const response = await fetch(`${DOCS_PATH}${documentName}`);
+    if (!response.ok) {
+      throw new Error(`Erro ao carregar: ${response.statusText}`);
+    }
+    
+    const markdown = await response.text();
+    let html = marked.parse(markdown);
+    
+    // Se há âncora específica, tentar extrair apenas essa seção
+    if (event.anchor) {
+      // Criar um elemento temporário para processar o HTML
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = html;
       
-      <div class="card" onclick="navigate('/pablo')">
-        <h2>👔 Pablo Mu-R4d</h2>
-        <p>Presidente e CEO desde 1932, com apenas 38 anos. Uma biografia impossível.</p>
-        <span class="badge badge-info">Liderança</span>
-      </div>
+      // Procurar pela seção com o ID ou texto relacionado
+      let anchorElement = tempDiv.querySelector(`#${event.anchor}`);
+      if (!anchorElement) {
+        // Tentar encontrar por atributo id que contenha o anchor
+        anchorElement = Array.from(tempDiv.querySelectorAll('[id]')).find(el => 
+          el.id.includes(event.anchor) || el.id.toLowerCase().includes(event.anchor.toLowerCase())
+        );
+      }
       
-      <div class="card" onclick="navigate('/villains')">
-        <h2>🦹 Dossiê de Vilões</h2>
-        <p>O Quarteto da Impossibilidade: quatro antagonistas que tornam a ciência tecnicamente correta e inútil.</p>
-        <span class="badge badge-danger">Ameaça</span>
+      if (anchorElement) {
+        // Extrair a seção relevante (do elemento até o próximo H1/H2 ou fim)
+        let sectionHTML = '';
+        let current = anchorElement;
+        const parent = anchorElement.parentElement || tempDiv;
+        
+        // Se o elemento é um heading, incluir ele e tudo até o próximo heading
+        if (['H1', 'H2', 'H3'].includes(anchorElement.tagName)) {
+          sectionHTML = anchorElement.outerHTML;
+          current = anchorElement.nextElementSibling;
+          while (current && current !== parent) {
+            if (['H1', 'H2'].includes(current.tagName)) {
+              break;
+            }
+            sectionHTML += current.outerHTML;
+            current = current.nextElementSibling;
+          }
+        } else {
+          // Se não é heading, incluir o elemento e seus irmãos até próximo heading
+          sectionHTML = anchorElement.outerHTML;
+          current = anchorElement.nextElementSibling;
+          while (current && current !== parent) {
+            if (['H1', 'H2'].includes(current.tagName)) {
+              break;
+            }
+            sectionHTML += current.outerHTML;
+            current = current.nextElementSibling;
+          }
+        }
+        
+        if (sectionHTML) {
+          html = sectionHTML;
+        }
+      }
+    }
+    
+    contentDiv.innerHTML = `
+      <div class="markdown-content">
+        ${html}
       </div>
-      
-      <div class="card" onclick="navigate('/cold-war')">
-        <h2>❄️🔥 Guerra Quente-Morna</h2>
-        <p>O período de 1947-1991 visto pelos olhos do QEL@0xpblab. Ruído Diplomático Mínimo e muito mais.</p>
-        <span class="badge badge-warning">História</span>
+    `;
+    
+    // Processar links e imagens no conteúdo carregado
+    processInternalLinks();
+    processImages();
+    
+  } catch (error) {
+    contentDiv.innerHTML = `
+      <div class="error-content">
+        <p style="color: var(--red);">Erro ao carregar conteúdo: ${error.message}</p>
       </div>
-      
-      <div class="card" onclick="navigate('/wwii')">
-        <h2>🎖️ Operações WWII</h2>
-        <p>A Seção Δ-13 e as operações secretas durante a Segunda Guerra Mundial.</p>
-        <span class="badge badge-warning">História</span>
-      </div>
-      
-      <div class="card" onclick="navigate('/fu-monilson')">
-        <h2>🔮🎸 Profeta ~~Ri~~ck</h2>
-        <p>A chegada do profeta com Fu Monilson e o Protocolo de Amplificação Controlada.</p>
-        <span class="badge badge-primary">Personagem</span>
-      </div>
-      
-      <div class="card" onclick="navigate('/dq')">
-        <h2>🏢 Desinclusão Quântica™</h2>
-        <p>A política de RH que mantém colaboradores em superposição de pertencimento.</p>
-        <span class="badge badge-success">Política</span>
-      </div>
-      
-      <div class="card" onclick="navigate('/extras')">
-        <h2>🧾🌀 Fiscal Interdimensional</h2>
-        <p>O Fiscal Interdimensional da Lousa e sua guerra eterna contra π.</p>
-        <span class="badge badge-info">Personagem</span>
-      </div>
-      
-      <div class="card" onclick="navigate('/john')">
-        <h2>🍬🚫 John Aunt-Bet</h2>
-        <p>O germano-suíço anti-açúcar e a insulina como artefato de coerência.</p>
-        <span class="badge badge-success">Personagem</span>
-      </div>
-      
-      <div class="card" onclick="navigate('/tv-programs')">
-        <h2>📺 Programas de TV</h2>
-        <p>Experimentos de comunicação em massa do QEL@0xpblab.</p>
-        <span class="badge badge-primary">Entretenimento</span>
-      </div>
-      
-      <div class="card" onclick="navigate('/completo')">
-        <h2>📦 Referência Completa</h2>
-        <p>Índice consolidado de todos os conteúdos recentes.</p>
-        <span class="badge badge-info">Referência</span>
-      </div>
-    </div>
-  `;
+    `;
+  }
+}
+
+// Mostrar página inicial (mantida para compatibilidade)
+function showIndex() {
+  renderTimeline();
 }
 
 // Inicialização
@@ -311,7 +625,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const path = window.location.pathname || '/';
     navigate(path);
   });
+  
+  // Configurar navegação por hash (âncoras)
+  window.addEventListener('hashchange', () => {
+    const hash = window.location.hash;
+    if (hash) {
+      const eventId = hash.substring(1);
+      const eventElement = document.getElementById(eventId);
+      if (eventElement) {
+        eventElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Se o evento não estiver expandido, expandir automaticamente
+        const contentDiv = document.getElementById(`content-${eventId}`);
+        if (contentDiv && contentDiv.style.display === 'none') {
+          const expandBtn = eventElement.querySelector('.btn-expand');
+          if (expandBtn) {
+            expandBtn.click();
+          }
+        }
+      }
+    }
+  });
 });
 
-// Tornar navigate global
+// Tornar funções globais
 window.navigate = navigate;
+window.toggleEvent = toggleEvent;
