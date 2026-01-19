@@ -19,6 +19,8 @@
 - [Quantum De-Inclusion™](#-quantum-de-inclusion-the-hr-policy) 🏢
 - [The Interdimensional Whiteboard Auditor](#-the-interdimensional-whiteboard-auditor) 🧾🌀
 - [John Aunt-Bet](#-john-aunt-bet-the-german-swiss-anti-sugar-operator) 🍬🚫
+- [Gaybe-EL](#-gaybe-el-the-mullet-barbed-maestro-of-the-company-orchestra) 🎻🧔🐟
+- [Madeusa De La Passion](#-madeusa-de-la-passion-the-companys-winter-only-lawyer) ⚖️🧥
 - [Villains Dossier](#-villains-dossier) 🦹
 - [TV Programs](#-tv-programs) 📺
 - [Installation](#-installation)

@@ -19,6 +19,8 @@
 - [Desinclusão Quântica™](#-desinclusão-quântica-a-política-de-rh) 🏢
 - [O Fiscal Interdimensional da Lousa](#-o-fiscal-interdimensional-da-lousa) 🧾🌀
 - [John Aunt-Bet](#-john-aunt-bet-o-germano-suíço-anti-açúcar) 🍬🚫
+- [Gaybe-EL](#-gaybe-el-o-barbo-dos-mullets-regente-da-orquestra-da-companhia) 🎻🧔🐟
+- [Madeusa De La Passion](#-madeusa-de-la-passion-o-advogado-de-inverno-da-companhia) ⚖️🧥
 - [Dossiê de Vilões](#-dossiê-de-vilões) 🦹
 - [Programas de TV](#-programas-de-tv) 📺
 - [Instalação](#-instalação)
