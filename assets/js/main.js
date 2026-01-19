@@ -29,16 +29,31 @@ function getDocsPath() {
   
   // Se estiver no GitHub Pages (não é localhost)
   if (hostname.includes('github.io')) {
-    // Extrair o nome do repositório do pathname
-    // pathname pode ser: /0xpbl/ ou /0xpbl/index.html ou /0xpbl/qel
-    const parts = pathname.split('/').filter(p => p && p !== 'index.html' && !p.endsWith('.html'));
+    // Extrair o nome do repositório do hostname
+    // hostname: 0xpbl.github.io -> repo: 0xpbl
+    const repoName = hostname.split('.')[0];
     
-    // Se há um primeiro segmento que não termina com extensão, é o base path
-    if (parts.length > 0) {
-      const firstPart = parts[0];
-      // Verificar se não é um arquivo (não tem extensão) e não é uma rota conhecida
-      if (!firstPart.includes('.') && !['qel', 'pablo', 'cold-war', 'tv-programs', 'villains', 'wwii', 'fu-monilson', 'dq', 'extras', 'completo', 'john'].includes(firstPart)) {
-        basePath = '/' + firstPart;
+    // Verificar se o pathname começa com o nome do repositório
+    // Se sim, usar como base path
+    if (pathname.startsWith(`/${repoName}/`) || pathname.startsWith(`/${repoName}`)) {
+      basePath = '/' + repoName;
+    } else {
+      // Se não, verificar se há um primeiro segmento no pathname que não é uma rota conhecida
+      const parts = pathname.split('/').filter(p => p && p !== 'index.html' && !p.endsWith('.html'));
+      const knownRoutes = ['qel', 'pablo', 'cold-war', 'tv-programs', 'villains', 'wwii', 'fu-monilson', 'dq', 'extras', 'completo', 'john'];
+      
+      if (parts.length > 0) {
+        const firstPart = parts[0];
+        // Se o primeiro segmento não é uma rota conhecida e não tem extensão, é o base path
+        if (!firstPart.includes('.') && !knownRoutes.includes(firstPart)) {
+          basePath = '/' + firstPart;
+        } else {
+          // Se é uma rota conhecida, o base path é o nome do repositório
+          basePath = '/' + repoName;
+        }
+      } else {
+        // Se não há partes no pathname, usar o nome do repositório como base path
+        basePath = '/' + repoName;
       }
     }
   }
