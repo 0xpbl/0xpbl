@@ -3,7 +3,7 @@
 Este repositório contém documentos que tecnicamente não deveriam existir, mas que existem de qualquer forma por questões de consistência estatística.
 
 **Status atual:** Em superposição entre "quase pronto" e "nunca vai estar pronto".
-
+.
 **Última atualização:** A última vez que alguém tentou atualizar isso, o sistema entrou em loop recursivo. Recomendamos não tentar novamente.
 
 **Informações relevantes:** Nenhuma.
