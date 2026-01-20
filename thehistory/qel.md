@@ -22,6 +22,7 @@
 - [Gaybe-EL](#-gaybe-el-o-barbo-dos-mullets-regente-da-orquestra-da-companhia) 🎻🧔🐟
 - [Madeusa De La Passion](#-madeusa-de-la-passion-o-advogado-de-inverno-da-companhia) ⚖️🧥
 - [Jão Bolão](#-jão-bolão-o-ferreiro-que-todo-mundo-jura-ser-anão-mas-é-do-tamanho-normal) ⚒️🧱
+- [Marcitus Markitus](#-marcitus-markitus-o-homem-que-vê-caso-em-tudo-até-em-slide) 🕵️‍♂️🧷
 - [Marcelo Marmelo Martelo](#-marcelo-marmelo-martelo-o-juvenal-da-baixada-contra-o-universo-quântico) 🥭🔨
 - [Old Ed / Eduardo Fontoura](#-old-ed--eduardo-fontoura-o-homem-que-nasce-velho) 👴🧭
 - [Dossiê de Vilões](#-dossiê-de-vilões) 🦹
