@@ -638,6 +638,9 @@ async function loadDocument(filename) {
     processInternalLinks();
     processImages();
     
+    // Processar e executar scripts no conteúdo
+    processScripts();
+    
   } catch (error) {
     main.innerHTML = `
       <div class="document-container">
@@ -963,6 +966,50 @@ function processImages() {
   });
 }
 
+// Processar e executar scripts no conteúdo markdown
+function processScripts() {
+  const markdownContent = document.querySelector('.markdown-content');
+  if (!markdownContent) return;
+  
+  // Encontrar todos os scripts no conteúdo
+  const scripts = markdownContent.querySelectorAll('script');
+  
+  scripts.forEach(oldScript => {
+    // Criar novo script
+    const newScript = document.createElement('script');
+    
+    // Copiar atributos
+    Array.from(oldScript.attributes).forEach(attr => {
+      newScript.setAttribute(attr.name, attr.value);
+    });
+    
+    // Copiar conteúdo se houver
+    if (oldScript.textContent) {
+      newScript.textContent = oldScript.textContent;
+    }
+    
+    // Substituir o script antigo pelo novo (que será executado)
+    oldScript.parentNode.replaceChild(newScript, oldScript);
+  });
+  
+  // Processar variáveis globais definidas por scripts (como NekoType)
+  // Isso é necessário porque alguns scripts definem variáveis antes de serem carregados
+  const inlineScripts = markdownContent.querySelectorAll('script:not([src])');
+  inlineScripts.forEach(script => {
+    try {
+      // Executar código inline
+      const code = script.textContent || script.innerHTML;
+      if (code) {
+        // Criar função para executar no contexto global
+        const func = new Function(code);
+        func();
+      }
+    } catch (e) {
+      console.warn('Erro ao executar script inline:', e);
+    }
+  });
+}
+
 // Função de navegação
 function navigate(path, anchor = null) {
   const basePath = getBasePath();
@@ -1218,6 +1265,9 @@ async function loadEventContent(eventId, documentName, index) {
     // Processar links e imagens no conteúdo carregado
     processInternalLinks();
     processImages();
+    
+    // Processar e executar scripts no conteúdo
+    processScripts();
     
   } catch (error) {
     contentDiv.innerHTML = `

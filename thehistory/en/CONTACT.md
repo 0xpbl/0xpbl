@@ -1,5 +1,8 @@
 # 📞 Contact
 
+<script>NekoType="pink"</script>
+<h1 id=nl><script src="https://webneko.net/n20171213.js"></script><a href="https://webneko.net">Neko</a></h1>
+
 [![Status](https://img.shields.io/badge/status-available-green)](https://github.com/0xpbl/.github)
 [![Response](https://img.shields.io/badge/response-within%2048h-blue)](https://github.com/0xpbl/.github)
 
@@ -9,8 +12,6 @@
 ## 📝 About This Project
 
 The facts described in this project have been **meticulously documented according to the author's memories**. Each event, character, and protocol has been recorded with the highest possible accuracy, based on available memories and documentation.
-
-This project represents a fictional narrative that explores concepts of quantum physics, international bureaucracy, and reality as a distributed system, all presented in a humorous and creative way.
 
 ## 📧 Contact
 
