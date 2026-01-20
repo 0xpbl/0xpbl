@@ -22,8 +22,18 @@ function setCurrentLang(lang) {
 // Função para obter o base path do GitHub Pages
 function getBasePath() {
   const hostname = window.location.hostname;
+  const pathname = window.location.pathname;
+  
   if (hostname.includes('github.io')) {
     const repoName = hostname.split('.')[0]; // 0xpbl.github.io -> 0xpbl
+    
+    // Se o pathname já começa com o nome do repositório, retornar o base path
+    if (pathname.startsWith(`/${repoName}/`) || pathname === `/${repoName}`) {
+      return `/${repoName}`;
+    }
+    
+    // Se não começa, mas estamos no GitHub Pages, ainda retornar o base path
+    // (o 404.html vai redirecionar se necessário)
     return `/${repoName}`;
   }
   return '';
@@ -1141,10 +1151,13 @@ function navigate(path, anchor = null) {
   }
 }
 
-// Renderizar Timeline Cronológica
+  // Renderizar Timeline Cronológica
 function renderTimeline() {
   const main = document.querySelector('main');
   const currentTimeline = currentLang === 'en' ? timelineEN : timeline;
+  
+  // Inicializar relógio quântico quando renderizar a timeline (home)
+  initQuantumClock();
   
   let timelineHTML = '<div class="timeline-container">';
   timelineHTML += `<div class="timeline-header"><h1>${t('timeline.title')}</h1><p class="timeline-subtitle">${t('timeline.subtitle')}</p></div>`;
@@ -1461,9 +1474,73 @@ function updateSubtitle() {
   });
 }
 
+// Relógio Quântico
+let quantumClockInterval = null;
+
+function initQuantumClock() {
+  const clockContainer = document.getElementById('quantum-clock-container');
+  const clockTime = document.getElementById('clock-time');
+  
+  if (!clockContainer || !clockTime) return;
+  
+  // Mostrar o relógio
+  clockContainer.style.display = 'block';
+  
+  // Atualizar tooltip
+  updateClockTooltip();
+  
+  // Atualizar o relógio imediatamente
+  updateClock();
+  
+  // Atualizar a cada segundo
+  if (quantumClockInterval) {
+    clearInterval(quantumClockInterval);
+  }
+  quantumClockInterval = setInterval(updateClock, 1000);
+}
+
+function updateClock() {
+  const clockTime = document.getElementById('clock-time');
+  if (!clockTime) return;
+  
+  const now = new Date();
+  
+  // Adicionar offset aleatório de ±1 hora (em milissegundos)
+  const offsetMs = (Math.random() * 2 - 1) * 60 * 60 * 1000; // -1h a +1h
+  const quantumTime = new Date(now.getTime() + offsetMs);
+  
+  // Formatar como HH:MM:SS
+  const hours = String(quantumTime.getHours()).padStart(2, '0');
+  const minutes = String(quantumTime.getMinutes()).padStart(2, '0');
+  const seconds = String(quantumTime.getSeconds()).padStart(2, '0');
+  
+  clockTime.textContent = `${hours}:${minutes}:${seconds}`;
+}
+
+function updateClockTooltip() {
+  const clockContainer = document.getElementById('quantum-clock-container');
+  if (!clockContainer) return;
+  
+  const tooltipText = t('clock.tooltip');
+  clockContainer.setAttribute('title', tooltipText);
+}
+
+function stopQuantumClock() {
+  const clockContainer = document.getElementById('quantum-clock-container');
+  if (clockContainer) {
+    clockContainer.style.display = 'none';
+  }
+  
+  if (quantumClockInterval) {
+    clearInterval(quantumClockInterval);
+    quantumClockInterval = null;
+  }
+}
+
 // Mostrar página inicial (mantida para compatibilidade)
 function showIndex() {
   renderTimeline();
+  // initQuantumClock() já é chamado dentro de renderTimeline()
 }
 
 // Inicialização
@@ -1494,9 +1571,15 @@ document.addEventListener('DOMContentLoaded', () => {
       normalizedPath = pathname.substring(basePath.length) || '/';
     } else if (pathname !== '/' && !pathname.startsWith(basePath)) {
       // URL não tem base path mas não é a raiz - REDIRECIONAR
-      const fullPath = basePath + pathname;
+      const fullPath = basePath + (pathname.startsWith('/') ? pathname : '/' + pathname);
       window.history.replaceState({ path: normalizedPath }, '', fullPath);
       // Manter o path original para navegação (já está normalizado)
+    }
+  } else {
+    // Se não há base path, verificar se estamos no GitHub Pages mas o pathname não começa com /
+    // Isso pode acontecer se alguém acessar diretamente uma rota sem o base path
+    if (window.location.hostname.includes('github.io') && pathname !== '/' && !pathname.startsWith('/')) {
+      normalizedPath = '/' + pathname;
     }
   }
   

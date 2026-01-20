@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QEL@0xpblab - Redirecionando...</title>
+    <script>
+        // Detectar o base path do GitHub Pages
+        const hostname = window.location.hostname;
+        let basePath = '';
+        
+        if (hostname.includes('github.io')) {
+            const repoName = hostname.split('.')[0]; // 0xpbl.github.io -> 0xpbl
+            basePath = '/' + repoName;
+        }
+        
+        // Obter o pathname atual
+        const pathname = window.location.pathname;
+        let normalizedPath = pathname;
+        
+        // Se o pathname não começa com o base path, adicionar
+        if (basePath && !pathname.startsWith(basePath)) {
+            // Remover barra inicial se presente
+            normalizedPath = pathname.startsWith('/') ? pathname.substring(1) : pathname;
+            // Construir URL completa com base path
+            const redirectUrl = basePath + '/' + normalizedPath + window.location.search + window.location.hash;
+            window.location.replace(redirectUrl);
+        } else if (basePath && pathname.startsWith(basePath)) {
+            // Já tem base path, apenas garantir que está correto
+            normalizedPath = pathname.substring(basePath.length) || '/';
+            const redirectUrl = basePath + (normalizedPath === '/' ? '' : normalizedPath) + window.location.search + window.location.hash;
+            if (window.location.pathname !== redirectUrl) {
+                window.location.replace(redirectUrl);
+            } else {
+                // Se já está correto, carregar o index.html que vai processar a rota
+                window.location.replace(basePath + '/index.html' + window.location.search + window.location.hash);
+            }
+        } else {
+            // Sem base path, redirecionar para index
+            window.location.replace('/index.html' + window.location.search + window.location.hash);
+        }
+    </script>
+</head>
+<body>
+    <p>Redirecionando...</p>
+</body>
+</html>
