@@ -374,6 +374,14 @@ class FilosofiaPablo:
 
 ---
 
+## 🕵️‍♂️ O Incidente do "Caso de Uso"
+
+Pablo Mu-R4d foi investigado por [Marcitus Markitus](MARCITUS-MARKITUS.md) por suposto "caso" com a esposa de um "gago bêbado do espaço quântico". A investigação começou quando Marcitus leu "novo caso de uso em produção" e interpretou como "novo caso do CEO em produção". 
+
+Pablo, sempre pragmático, respondeu: "Se você quer investigar casos, investigue os casos de uso que não funcionam. Esses sim são crimes."
+
+O mural de evidências montado por Marcitus na Sala de Comunicações ainda está lá, com a foto do CEO em qualidade de fax e a frase "CASO?" escrita 47 vezes. Pablo não removeu porque "às vezes inconsistências reais aparecem quando alguém olha com lentes erradas".
+
 ## 📚 Documentos Relacionados
 
 ### Aparições em Documentos Históricos

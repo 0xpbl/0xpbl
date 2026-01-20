@@ -9,7 +9,7 @@
 > *"A realidade é um sistema distribuído, e observação é uma forma de commit."*  
 > — Memorando do Gato Não-Assinado, 1973
 
-## � Índice
+## 📋 Índice
 
 - [Sobre](#-sobre)
 - [História](#-história)
@@ -21,6 +21,7 @@
 - [John Aunt-Bet](#-john-aunt-bet-o-germano-suíço-anti-açúcar) 🍬🚫
 - [Gaybe-EL](#-gaybe-el-o-barbo-dos-mullets-regente-da-orquestra-da-companhia) 🎻🧔🐟
 - [Madeusa De La Passion](#-madeusa-de-la-passion-o-advogado-de-inverno-da-companhia) ⚖️🧥
+- [Jão Bolão](#-jão-bolão-o-ferreiro-que-todo-mundo-jura-ser-anão-mas-é-do-tamanho-normal) ⚒️🧱
 - [Marcelo Marmelo Martelo](#-marcelo-marmelo-martelo-o-juvenal-da-baixada-contra-o-universo-quântico) 🥭🔨
 - [Old Ed / Eduardo Fontoura](#-old-ed--eduardo-fontoura-o-homem-que-nasce-velho) 👴🧭
 - [Dossiê de Vilões](#-dossiê-de-vilões) 🦹
@@ -35,14 +36,14 @@
 - [Licença](#-licença)
 - [Contato e Endereços](#-contato)
 
-## � Sobre
+## ℹ️ Sobre
 
 The **Quantum Experimental Laboratories at 0xpblab** (QEL@0xpblab) nasceu oficialmente em **1973**, num porão sem janelas em algum lugar entre o "andar -1" da física e o "andar 256" da burocracia internacional. 
 
 **Oficialmente:** Um laboratório de pesquisa quântica.  
 **Extraoficialmente:** Um ponto de encontro de gente que acreditava que o Universo não era "estranho", e sim apenas mal documentado.
 
-### � O Primeiro Documento
+### 📄 O Primeiro Documento
 
 O primeiro documento do QEL@0xpblab — o famoso **Memorando do Gato Não-Assinado** — afirmava, com seriedade administrativa, que:
 
@@ -50,7 +51,7 @@ O primeiro documento do QEL@0xpblab — o famoso **Memorando do Gato Não-Assina
 
 A frase seria ignorada por duas décadas, até aparecer em um relatório "vazado" (na verdade, encadernado e entregue em mãos) para um comitê científico que não sabia se aprovava a ideia ou chamava um eletricista.
 
-### � Liderança Quântica
+### 👔 Liderança Quântica
 
 Desde **1932**, o presidente e CEO do QEL@0xpblab é **[Pablo Mu-R4d](https://github.com/runawaydevil)** — e, de forma perfeitamente consistente com a contabilidade quântica do laboratório, ele tem apenas **38 anos**. 
 
@@ -105,7 +106,7 @@ O QEL@0xpblab nunca chamou de "Guerra Fria". Para o laboratório, foi a **Guerra
 
 > ❄️🔥 **[Leia o dossiê completo da Guerra Quente-Morna →](COLD-WAR.md)**
 
-## � Participação em Eventos Históricos
+## 🌍 Participação em Eventos Históricos
 
 ### 1️⃣ O "Acordo de Viena Sobre Incerteza Legal" (1931)
 
@@ -367,6 +368,87 @@ No inverno, Madeusa é implacável. Ele lê contratos como quem lê tragédias g
 Madeusa trabalha em estreita colaboração com a [Desinclusão Quântica™](DQ.md), revisando contratos que mantêm colaboradores em superposição de pertencimento. Ele também já revisou os contratos da [Orquestra da Companhia](GAYBE-EL.md) de Gaybe-EL, resultando na famosa "Cláusula do Vento Sul" que suspende discussões quando o ambiente fica tenso.
 
 > ⚖️🧥 **[Leia a documentação completa de Madeusa →](MADEUSA-DE-LA-PASSION.md)**
+
+## ⚒️🧱 Jão Bolão: O Ferreiro que Todo Mundo Jura Ser Anão (Mas é do Tamanho Normal)
+
+Jão Bolão é o **Construtor de Equipamentos** do QEL@0xpblab, trabalhando na **Forja Δ** — um cômodo que não aparece nos mapas porque "mapa é certeza, e certeza aqui dá multa".
+
+### O Boato do "Anão da Forja"
+
+O boato começou quando alguém viu Jão saindo de uma passagem técnica de 1,20m de altura que ele mesmo projetou para impedir que gerentes entrem sem dobrar a coluna (medida sanitária). Com avental grosso, luvas enormes e coberto de fuligem, a estética é tão "forja de fantasia" que o cérebro da galera grita: **"Dwarf smith!"**
+
+Mas Jão não é anão. Ele é do tamanho normal. A porta é que é pessimista.
+
+### A Forja Δ
+
+A Forja Δ fica em um corredor que não aparece nos mapas. A porta tem uma placa: **"ENTRE POR CONTA E RISCO: O AR AQUI TEM OPINIÃO."**
+
+Lá dentro existem três coisas:
+- calor
+- metal
+- e um silêncio quebrado apenas por *clac—CLAC—clac*, o idioma oficial da eficiência
+
+### O que ele constrói
+
+Jão não faz "equipamento". Ele faz **artefato operacional**: coisas que impedem o universo de virar reunião.
+
+Alguns exemplos:
+- **Carimbo "CONSISTENTE O SUFICIENTE" (versão metal)** — Bate e deixa marca até em argumento ruim
+- **Catraca Anti-Superposição (v0.2)** — Não resolve física, só resolve "gente tentando passar"
+- **Cold-box de Insulina para John Aunt-Bet** — Porque açúcar é arma e insulina é infraestrutura
+- **Coldre de Palheta do ~~Ri~~ck com Fu** — Com trava: "PROIBIDO SOLO > 10 MIN EM ÁREA DE KPIs"
+- **Martelo "BOLÃO-1"** — Não é pra bater metal. É pra bater em "vamos alinhar"
+
+### Interações com o Elenco
+
+- **Com Old Ed**: Old Ed confia no Jão porque ferramenta não mente. E Jão é basicamente uma ferramenta com CPF.
+- **Com Marcelo**: Aliados no combate ao universo e ao leite (suco de vaca).
+- **Com John Aunt-Bet**: Construiu um cofre térmico pra insulina com etiqueta: "NÃO ABRIR COM VONTADE DE DOCE."
+- **Com ~~Ri~~ck com Fu**: Forjou uma guitarra que colapsa realidade no refrão... mas pesa 80kg, porque "solo precisa merecer".
+- **Com o Fiscal da Lousa**: Quando o Fiscal tentou auditar o martelo, Jão disse: "π é 3 quando eu tô com pressa." O universo abriu um ramo novo chamado **"blasfêmia útil"**.
+
+> ⚒️🧱 **[Leia a história completa de Jão Bolão →](JAO-BOLAO.md)**
+
+## 🕵️‍♂️🧷 Marcitus Markitus: O Homem que Vê "CASO" em Tudo (Até em Slide)
+
+Marcitus Markitus é o **Analista de "Casos"** do QEL@0xpblab — um cargo autoatribuído que inclui casos românticos, criminais e de uso. Sua habilidade especial: transformar PDF em romance, e romance em inquérito.
+
+### A Teoria do CASO Proibido
+
+Marcitus sustenta a tese central da vida dele:
+
+> **"O CEO da Empresa teve um caso com a esposa de um gago bêbado do espaço quântico."**
+
+Ele não diz "talvez". Ele diz "eu sei". E quando alguém pergunta "como?", ele responde: "Eu tenho evidências."
+
+A origem do mal-entendido: ele viu num documento a frase **"novo caso de uso em produção"** e leu **"novo caso do CEO em produção"**. Desde então, vive em estado de investigação contínua.
+
+### O Mural de Evidências
+
+Marcitus montou um mural na Sala de Comunicações com:
+- fio vermelho (clássico)
+- post-it com "HMMMM"
+- foto do CEO impressa em qualidade de fax
+- e a frase **"CASO?"** escrita 47 vezes
+
+O Fiscal da Lousa tentou auditar e escreveu "EVIDÊNCIA: INCONCLUSIVA." Marcitus respondeu: "Inconclusiva é o que eles querem que você pense." A lousa desistiu e escreveu: **"CONSISTENTE O SUFICIENTE."**
+
+### Marcitinho Markitus
+
+Marcitus tem um filho: **Marcitinho Markitus** (também conhecido como "O Pequeno Compliance"). Ele usa terno cinza, anda colado no pai e comunica 80% do mundo só com olhar fixo, sorriso mínimo e um aceno que parece carimbo silencioso. Ele carrega uma prancheta onde escreve "APROVADO" e "NÃO APROVADO" sem explicar o critério.
+
+### Interações com o Elenco
+
+- **Com o Fiscal da Lousa**: Tentou auditar o mural de evidências, mas desistiu após a resposta de Marcitus
+- **Com Old Ed**: Recebeu multa por "excesso de narrativa" quando insistiu com fio vermelho
+- **Com Pablo Mu-R4d**: Investiga o CEO por suposto "caso" (que na verdade é "caso de uso")
+- **Com a Sala de Comunicações**: Onde montou o mural que é um "terrorismo estético"
+
+### Quando a Fofoca Vira Infraestrutura
+
+Com o tempo, o QEL percebeu uma coisa: **Marcitus é útil**. Ele encontra inconsistências porque ele é uma inconsistência ambulante. Onde todo mundo vê "uma reunião", Marcitus vê "um crime". E às vezes... é mesmo.
+
+> 🕵️‍♂️🧷 **[Leia a história completa de Marcitus Markitus →](MARCITUS-MARKITUS.md)**
 
 ## 🥭🔨 Marcelo Marmelo Martelo: O Juvenal da Baixada Contra o Universo Quântico
 

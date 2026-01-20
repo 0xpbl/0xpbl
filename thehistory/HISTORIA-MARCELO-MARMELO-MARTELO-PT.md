@@ -266,6 +266,10 @@ sem pedir licença, com sarcasmo, e com uma chance absurda de dar certo.
 
 Na Ocorrência 77 do [Old Ed / Eduardo Fontoura](PERSONAGEM-OLD-ED-EDUARDO-FONTOURA-PT.md), o Policial da Linha Quântica colocou uma faixa sobre açúcar ser substância de alto risco. Marcelo assinou embaixo: "Concordo. E leite é suco de vaca."
 
+### Anexo D — Aliança com Jão Bolão
+
+Marcelo e [Jão Bolão](JAO-BOLAO.md) viraram aliados no combate ao universo e ao leite (suco de vaca). Marcelo respeita qualquer um que diga "isso é perigoso" com convicção, e Jão é exatamente isso: um ferreiro que constrói artefatos que impedem o universo de virar reunião. Eles compartilham a filosofia de que "se não cabe na forja, cabe no arrependimento" — e aplicam isso tanto a projetos quânticos quanto a explicações sobre leite.
+
 ---
 
 <div align="center">

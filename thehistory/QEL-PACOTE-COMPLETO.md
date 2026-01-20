@@ -166,6 +166,63 @@ Advogado sazonal da companhia que **só atua no inverno** (temperatura <= 18°C)
 
 ---
 
+### ⚒️🧱 Jão Bolão: O Ferreiro que Todo Mundo Jura Ser Anão
+
+**Arquivo:** [JAO-BOLAO.md](JAO-BOLAO.md)
+
+Construtor de Equipamentos do QEL@0xpblab que trabalha na **Forja Δ** — um cômodo que não aparece nos mapas porque "mapa é certeza, e certeza aqui dá multa".
+
+**Características:**
+- Altura: normal (o boato do "anão" vem da passagem técnica de 1,20m que ele projetou)
+- Local de trabalho: Forja Δ (também conhecida como "o cômodo que cheira a decisão")
+- Especialidade: Construir artefatos operacionais que impedem o universo de virar reunião
+
+**Artefatos construídos:**
+- Carimbo "CONSISTENTE O SUFICIENTE" (versão metal)
+- Catraca Anti-Superposição (v0.2)
+- Cold-box de Insulina para John Aunt-Bet
+- Coldre de Palheta do ~~Ri~~ck com Fu
+- Martelo "BOLÃO-1" (pra bater em "vamos alinhar")
+
+**Interações:**
+- Old Ed confia nele porque "ferramenta não mente"
+- Aliado de Marcelo no combate ao universo e ao leite
+- Construiu cofre térmico de insulina para John
+- Forjou guitarra de 80kg para o Profeta (porque "solo precisa merecer")
+- Disse ao Fiscal: "π é 3 quando eu tô com pressa" (criou ramo "blasfêmia útil")
+
+> ⚒️🧱 **[Leia a história completa →](JAO-BOLAO.md)**
+
+---
+
+### 🕵️‍♂️🧷 Marcitus Markitus: O Homem que Vê "CASO" em Tudo
+
+**Arquivo:** [MARCITUS-MARKITUS.md](MARCITUS-MARKITUS.md)
+
+Analista de "Casos" (românticos, criminais e de uso) do QEL@0xpblab. Transforma PDF em romance, e romance em inquérito. Acredita que o CEO teve um "caso" com a esposa de um "gago bêbado do espaço quântico" (confundiu "caso de uso" com "caso amoroso").
+
+**Características:**
+- Cargo autoatribuído: Fiscal de "Casos"
+- Habilidade especial: convergir tudo num único enredo escandaloso
+- Filho: Marcitinho Markitus ("O Pequeno Compliance")
+
+**O Mural de Evidências:**
+- Montou um mural na Sala de Comunicações com fio vermelho, post-its e a frase "CASO?" escrita 47 vezes
+- O Fiscal da Lousa tentou auditar mas desistiu após a resposta de Marcitus
+
+**Interações:**
+- Fiscal da Lousa: tentou auditar o mural, escreveu "INCONCLUSIVA", Marcitus respondeu "é o que eles querem que você pense"
+- Old Ed: aplicou multa por "excesso de narrativa"
+- Pablo Mu-R4d: investiga o CEO por suposto "caso" (que é na verdade "caso de uso")
+
+**Legado:**
+- Toda vez que alguém fala "caso" no laboratório, o ar fica gelado e alguém apaga o projetor por precaução
+- Marcitinho observa, anota e carimba invisivelmente a realidade
+
+> 🕵️‍♂️🧷 **[Leia a história completa →](MARCITUS-MARKITUS.md)**
+
+---
+
 ## 📑 Políticas e Protocolos
 
 ### Protocolos Relacionados

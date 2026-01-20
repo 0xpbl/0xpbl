@@ -366,6 +366,7 @@ A remoção do tachado configura:
 - 🎻🧔🐟 [Gaybe-EL](GAYBE-EL.md) - Implementação corporativa da Orquestra da Companhia (evolução do Protocolo de Amplificação)
 - ⚖️🧥 [Madeusa De La Passion](MADEUSA-DE-LA-PASSION.md) - Advogado que revisou os contratos da Orquestra
 - 🥭🔨 [Marcelo Marmelo Martelo](HISTORIA-MARCELO-MARMELO-MARTELO-PT.md) - Chegou ao QEL às 09:17 (±UTC), após a visita do Profeta, e interagiu com o Fiscal que apareceu na lousa
+- ⚒️🧱 [Jão Bolão](JAO-BOLAO.md) - Ferreiro que construiu o coldre de palheta do Profeta e forjou uma guitarra de 80kg que colapsa realidade no refrão
 
 ### Referências Internas
 

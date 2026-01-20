@@ -9,7 +9,7 @@
 > *"A realidade é um sistema distribuído, e observação é uma forma de commit."*  
 > — Memorando do Gato Não-Assinado, 1973
 
-## 📝 Sobre Este Projeto
+## ℹ️ Sobre Este Projeto
 
 Os fatos descritos neste projeto foram **minuciosamente documentados conforme as lembranças do autor**. Cada evento, personagem e protocolo foi registrado com o máximo de precisão possível, baseado nas memórias e na documentação disponível.
 

@@ -228,6 +228,10 @@ John Aunt-Bet é o único ser no QEL@0xpblab capaz de:
 - dizer "não" para o universo e permanecer educado
 - detectar **armadilhas de açúcar** como se fossem minas antipessoais
 
+### Anexo D — Equipamento Especial
+
+O [Jão Bolão](JAO-BOLAO.md) construiu um **cofre térmico de insulina** especialmente para John, com a etiqueta: "NÃO ABRIR COM VONTADE DE DOCE." O equipamento garante que a insulina permaneça estável mesmo em ambientes quânticos instáveis.
+
 E isso o coloca no centro do próximo conflito:
 
 > **Quando [Laplace](VILLAINS.md#4️⃣-a-sra-laplace-a-curadora-da-determinação-total) tentar estabilizar a realidade com "um docinho de certeza", John será a única barreira entre o laboratório e um colapso em forma de pudim.**

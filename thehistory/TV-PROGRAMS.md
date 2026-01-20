@@ -26,7 +26,7 @@ Eles sempre insistem que são **"experimentos de comunicação em massa"**, e n�
 
 **O público, em geral, discorda.**
 
-### 📊 Sobre Programas Reais Citados
+### ℹ️ Sobre Programas Reais Citados
 
 Quando citamos programas reais, isso será no tom de **sátira** e **"reputação popular"** (o laboratório chamaria de **métrica de decoerência cultural**), não um juízo técnico definitivo.
 

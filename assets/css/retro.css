@@ -928,3 +928,42 @@ html.theme-retro .lang-btn.active:hover {
     padding: 0.3rem 0.8rem;
   }
 }
+
+/* ============================================
+   RELÓGIO QUÂNTICO
+   ============================================ */
+
+html.theme-retro .quantum-clock-container {
+  margin-top: 1rem;
+  text-align: center;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+html.theme-retro .quantum-clock-container:hover {
+  opacity: 1;
+}
+
+html.theme-retro .quantum-clock {
+  font-family: 'IBM Plex Mono', 'VT323', monospace;
+  font-size: 0.85rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  display: inline-block;
+  cursor: help;
+}
+
+html.theme-retro .quantum-clock #clock-time {
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 768px) {
+  html.theme-retro .quantum-clock {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+}

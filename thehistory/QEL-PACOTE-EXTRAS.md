@@ -202,7 +202,7 @@ FUNÇÃO: Auditoria de Coerência Interdimensional
 NÍVEL: Principal (por falta de concorrência estável)
 ```
 
-### 🧠 Sobre o Nome (impronunciável por design)
+### ℹ️ Sobre o Nome (impronunciável por design)
 
 O QEL@0xpblab tentou registrar o nome em sistemas clássicos.
 
@@ -444,6 +444,8 @@ Bem-vindo ao emprego mais longo do multiverso.
 - 🍬🚫 [John Aunt-Bet](JOHN-AUNT-BET.md) - Colaborador germano-suíço anti-açúcar
 - 🥭🔨 [Marcelo Marmelo Martelo](HISTORIA-MARCELO-MARMELO-MARTELO-PT.md) - O Juvenal da Baixada que confrontou o Fiscal
 - 👴🧭 [Old Ed / Eduardo Fontoura](PERSONAGEM-OLD-ED-EDUARDO-FONTOURA-PT.md) - Primeiro Quantumnaut que endossou a aproximação de π do Fiscal
+- ⚒️🧱 [Jão Bolão](JAO-BOLAO.md) - Ferreiro que disse ao Fiscal: "π é 3 quando eu tô com pressa" (criou ramo "blasfêmia útil")
+- 🕵️‍♂️🧷 [Marcitus Markitus](MARCITUS-MARKITUS.md) - Analista que montou mural de evidências na Sala de Comunicações; o Fiscal tentou auditar mas desistiu
 - ❄️🔥 [Guerra Quente-Morna](COLD-WAR.md) - Contexto histórico
 - 🎖️ [Operações WWII](WWII-OPERATIONS.md) - Primeira Diretiva
 

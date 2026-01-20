@@ -198,6 +198,8 @@ Seasonal lawyer for the company who **only practices in winter** (temperature <=
 - 🍬🚫 [John Aunt-Bet](JOHN-AUNT-BET.md)
 - 🎻🧔🐟 [Gaybe-EL](GAYBE-EL.md) — Company Orchestra Conductor
 - ⚖️🧥 [Madeusa De La Passion](MADEUSA-DE-LA-PASSION.md) — Winter-Only Lawyer
+- ⚒️🧱 [Jão Bolão](JAO-BOLAO.md) — Blacksmith/Equipment Builder
+- 🕵️‍♂️🧷 [Marcitus Markitus](MARCITUS-MARKITUS.md) — Case Analyst
 
 ### 📚 Resources & References
 

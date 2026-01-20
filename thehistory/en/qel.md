@@ -21,6 +21,8 @@
 - [John Aunt-Bet](#-john-aunt-bet-the-german-swiss-anti-sugar-operator) 🍬🚫
 - [Gaybe-EL](#-gaybe-el-the-mullet-barbed-maestro-of-the-company-orchestra) 🎻🧔🐟
 - [Madeusa De La Passion](#-madeusa-de-la-passion-the-companys-winter-only-lawyer) ⚖️🧥
+- [Jão Bolão](#-jão-bolão-the-forge-dwarf-everyone-swears-exists-but-hes-normal-sized) ⚒️🧱
+- [Marcitus Markitus](#-marcitus-markitus-the-man-who-sees-a-case-in-everything-even-in-slides) 🕵️‍♂️🧷
 - [Marcelo Marmelo Martelo](#-marcelo-marmelo-martelo-a-baixada-kid-vs-the-quantum-universe) 🥭🔨
 - [Old Ed / Eduardo Fontoura](#-old-ed--eduardo-fontoura-the-man-who-spawns-old) 👴🧭
 - [Villains Dossier](#-villains-dossier) 🦹
@@ -346,6 +348,87 @@ In winter, Madeusa is ruthless. He reads contracts like Greek tragedies. His spe
 Madeusa works closely with [Quantum De-Inclusion™](DQ.md), reviewing contracts that keep collaborators in a superposition of belonging. He has also reviewed the contracts of Gaybe-EL's [Company Orchestra](GAYBE-EL.md), resulting in the famous "Southern Wind Clause" that suspends discussions when the room gets tense.
 
 > ⚖️🧥 **[Read the complete Madeusa documentation →](MADEUSA-DE-LA-PASSION.md)**
+
+## ⚒️🧱 Jão Bolão: The "Forge Dwarf" Everyone Swears Exists (But He's Normal-Sized)
+
+Jão Bolão is QEL@0xpblab's **Equipment Builder**, working in **Forge Δ** — a room that doesn't appear on maps because "maps are certainty, and certainty gets you fined."
+
+### The "Forge Dwarf" Rumor
+
+The rumor started when someone saw Jão crawling out of a 1.2m maintenance hatch he designed himself to keep managers out unless they physically humble themselves (a public health measure). With a thick apron, huge gloves, and constant soot, the vibe is so "fantasy forge" that everyone's brain screams: **"Dwarf smith!"**
+
+But Jão isn't a dwarf. He's normal-sized. The door is just pessimistic.
+
+### Forge Δ
+
+Forge Δ lives in a corridor that doesn't appear on maps. The door has a sign: **"ENTER AT YOUR OWN RISK: THE AIR HERE HAS OPINIONS."**
+
+Inside you'll find three things:
+- heat
+- metal
+- and a silence broken only by *clack—CLACK—clack*, the official language of competence
+
+### What He Builds
+
+Jão doesn't make "gear." He makes **operational artifacts**: things that stop the universe from turning into meetings.
+
+Some examples:
+- **"CONSISTENT ENOUGH" stamp (metal edition)** — Hits and leaves a mark even on bad arguments
+- **Anti-Superposition Turnstile Patch (v0.2)** — Doesn't solve physics—solves "people trying to walk through"
+- **Insulin cold-box for John Aunt-Bet** — Because sugar is a weapon and insulin is infrastructure
+- **Pick holster for ~~Ri~~ck com Fu** — With safety lock: "NO SOLOS > 10 MIN IN KPI AREAS"
+- **Hammer "BOLÃO-1"** — Not for metal. For "let's align"
+
+### Cast Interactions
+
+- **With Old Ed**: Old Ed trusts Jão because tools don't lie. And Jão is basically a tool with a tax ID.
+- **With Marcelo**: Allies against the universe and against milk (cow juice).
+- **With John Aunt-Bet**: Built an insulin thermal vault labeled: "DO NOT OPEN WHILE CRAVING SWEETS."
+- **With ~~Ri~~ck com Fu**: Forged a guitar that collapses reality in the chorus... but it weighs 80kg, because "a solo should earn itself."
+- **With the Chalkboard Auditor**: When the Auditor tried to audit the hammer, Jão said: "π is 3 when I'm in a hurry." Reality spawned a new branch called **"useful blasphemy"**.
+
+> ⚒️🧱 **[Read Jão Bolão's complete story →](JAO-BOLAO.md)**
+
+## 🕵️‍♂️🧷 Marcitus Markitus: The Man Who Sees "A CASE" in Everything (Even in Slides)
+
+Marcitus Markitus is QEL@0xpblab's **Case Analyst** — a self-assigned title that includes romantic cases, criminal cases, and use cases. His special skill: turning PDFs into soap operas, and soap operas into investigations.
+
+### The Forbidden CASE Theory
+
+Marcitus sustains the central thesis of his life:
+
+> **"The Company CEO had an affair with the wife of a drunk, stuttering guy from quantum space."**
+
+He doesn't say "maybe." He says "I know." And when someone asks "how?", he answers: "I have evidence."
+
+The origin of the misunderstanding: he saw in a document the phrase **"new use case in production"** and read **"new CEO case in production"**. Since then, he's been in a state of continuous investigation.
+
+### The Evidence Board
+
+Marcitus set up a board in the Communications Room with:
+- red thread (classic)
+- post-it notes with "HMMMM"
+- CEO photo printed in fax quality
+- and the phrase **"CASE?"** written 47 times
+
+The Chalkboard Auditor tried to audit it and wrote "EVIDENCE: INCONCLUSIVE." Marcitus replied: "Inconclusive is what they want you to think." The chalkboard gave up and wrote: **"CONSISTENT ENOUGH."**
+
+### Little Marcitus Markitus
+
+Marcitus has a son: **Little Marcitus Markitus** (also known as "The Tiny Compliance Officer"). He wears a gray suit, sticks close to his father, and communicates 80% of the world with just a fixed stare, minimal smile, and a nod that looks like a silent stamp. He carries a clipboard where he writes "APPROVED" and "NOT APPROVED" without explaining the criteria.
+
+### Cast Interactions
+
+- **With the Chalkboard Auditor**: Tried to audit the evidence board, but gave up after Marcitus's response
+- **With Old Ed**: Received a fine for "excessive narrative" when he insisted on using red thread
+- **With Pablo Mu-R4d**: Investigates the CEO for a supposed "affair" (which is actually a "use case")
+- **With the Communications Room**: Where he set up the board that is "aesthetic terrorism"
+
+### When Gossip Becomes Infrastructure
+
+Over time, QEL realized something: **Marcitus is useful**. He finds inconsistencies because he is a walking inconsistency. Where everyone sees "a meeting," Marcitus sees "a crime." And sometimes... it really is.
+
+> 🕵️‍♂️🧷 **[Read Marcitus Markitus's complete story →](MARCITUS-MARKITUS.md)**
 
 ## 🥭🔨 Marcelo Marmelo Martelo: A Baixada Kid vs. the Quantum Universe
 

@@ -90,7 +90,9 @@ const translations = {
       dq: "Desinclusão",
       tv: "TV",
       gaybe: "Orquestra",
-      madeusa: "Advogado"
+      madeusa: "Advogado",
+      jao: "Ferreiro",
+      marcitus: "Analista"
     },
     ui: {
       loading: "Carregando documento...",
@@ -107,6 +109,9 @@ const translations = {
       expand: "Expandir",
       collapse: "Recolher",
       viewDoc: "Ver Documento Completo →"
+    },
+    clock: {
+      tooltip: "Sincronizado com o relógio atômico da empresa. Pode estar adiantado ou atrasado."
     }
   },
   en: {
@@ -138,6 +143,9 @@ const translations = {
       expand: "Expand",
       collapse: "Collapse",
       viewDoc: "View Full Document →"
+    },
+    clock: {
+      tooltip: "Synchronized with the company's atomic clock. May be ahead or behind."
     }
   }
 };
@@ -331,6 +339,26 @@ const timeline = [
     document: "MADEUSA-DE-LA-PASSION.md",
     anchor: null,
     icon: "⚖️🧥",
+    color: "green"
+  },
+  {
+    year: "2000s+",
+    period: "Era Moderna",
+    title: "Jão Bolão: O Ferreiro que Todo Mundo Jura Ser Anão (Mas é do Tamanho Normal)",
+    summary: "Jão Bolão, construtor de equipamentos do QEL@0xpblab que trabalha na Forja Δ. Constrói artefatos operacionais que impedem o universo de virar reunião, incluindo o carimbo de metal, catraca anti-superposição e o martelo BOLÃO-1.",
+    document: "JAO-BOLAO.md",
+    anchor: null,
+    icon: "⚒️🧱",
+    color: "green"
+  },
+  {
+    year: "2000s+",
+    period: "Era Moderna",
+    title: "Marcitus Markitus: O Homem que Vê \"CASO\" em Tudo (Até em Slide)",
+    summary: "Marcitus Markitus, analista de \"casos\" (românticos, criminais e de uso) do QEL@0xpblab. Transforma PDF em romance e romance em inquérito. Acredita que o CEO teve um \"caso\" com a esposa de um gago bêbado do espaço quântico (confundiu \"caso de uso\" com \"caso amoroso\").",
+    document: "MARCITUS-MARKITUS.md",
+    anchor: null,
+    icon: "🕵️‍♂️🧷",
     color: "green"
   },
   {
@@ -528,6 +556,26 @@ const timelineEN = [
     color: "green"
   },
   {
+    year: "2000s+",
+    period: "Modern Era",
+    title: "Jão Bolão: The \"Forge Dwarf\" Everyone Swears Exists (But He's Normal-Sized)",
+    summary: "Jão Bolão, QEL@0xpblab's equipment builder who works in Forge Δ. Builds operational artifacts that stop the universe from turning into meetings, including the metal stamp, anti-superposition turnstile, and BOLÃO-1 hammer.",
+    document: "JAO-BOLAO.md",
+    anchor: null,
+    icon: "⚒️🧱",
+    color: "green"
+  },
+  {
+    year: "2000s+",
+    period: "Modern Era",
+    title: "Marcitus Markitus: The Man Who Sees \"A CASE\" in Everything (Even in Slides)",
+    summary: "Marcitus Markitus, case analyst (romantic cases, criminal cases, and use cases) at QEL@0xpblab. Turns PDFs into soap operas and soap operas into investigations. Believes the CEO had an \"affair\" with the wife of a drunk, stuttering guy from quantum space (confused \"use case\" with \"romantic case\").",
+    document: "MARCITUS-MARKITUS.md",
+    anchor: null,
+    icon: "🕵️‍♂️🧷",
+    color: "green"
+  },
+  {
     year: "Throughout the Years",
     period: "Continuous",
     title: "Villains Dossier: The Impossibility Quartet",
@@ -584,6 +632,8 @@ const routes = {
   '/john': 'JOHN-AUNT-BET.md',
   '/gaybe-el': 'GAYBE-EL.md',
   '/madeusa': 'MADEUSA-DE-LA-PASSION.md',
+  '/jao-bolao': 'JAO-BOLAO.md',
+  '/marcitus-markitus': 'MARCITUS-MARKITUS.md',
   '/marcelo': 'HISTORIA-MARCELO-MARMELO-MARTELO-PT.md',
   '/old-ed': 'PERSONAGEM-OLD-ED-EDUARDO-FONTOURA-PT.md',
   '/gorossario': 'GOROSSARIO-PT.md',
@@ -616,10 +666,14 @@ async function loadDocument(filename) {
     }
     
     const markdown = await response.text();
-    const html = marked.parse(markdown);
     
     // Criar estrutura do documento
     const docTitle = extractTitle(markdown);
+    
+    // Remover o primeiro H1 do markdown para evitar duplicação
+    const markdownWithoutFirstH1 = markdown.replace(/^#\s+.+$/m, '').trim();
+    const html = marked.parse(markdownWithoutFirstH1);
+    
     const breadcrumbs = createBreadcrumbs(filename);
     
     main.innerHTML = `
@@ -1065,6 +1119,7 @@ function navigate(path, anchor = null) {
       setTimeout(() => scrollToAnchor(normalizedAnchor), 200);
     }
   } else {
+    stopQuantumClock();
     const filename = routes[normalizedPath];
     if (filename) {
       loadDocument(filename).then(() => {
@@ -1231,7 +1286,10 @@ async function loadEventContent(eventId, documentName, index) {
     }
     
     const markdown = await response.text();
-    let html = marked.parse(markdown);
+    
+    // Remover o primeiro H1 do markdown para evitar duplicação (já temos o título do evento)
+    const markdownWithoutFirstH1 = markdown.replace(/^#\s+.+$/m, '').trim();
+    let html = marked.parse(markdownWithoutFirstH1);
     
     // Se há âncora específica, tentar extrair apenas essa seção
     if (event.anchor) {
@@ -1321,6 +1379,7 @@ function switchLanguage(lang) {
   updateNavigation();
   updateFooter();
   updateSubtitle();
+  updateClockTooltip(); // Atualizar tooltip do relógio
   
   // Recarregar página atual no novo idioma
   const path = window.location.pathname || '/';
@@ -1356,6 +1415,8 @@ function updateNavigation() {
     'John Aunt-Bet': 'nav.john',
     'Orquestra': 'nav.gaybe',
     'Advogado': 'nav.madeusa',
+    'Ferreiro': 'nav.jao',
+    'Analista': 'nav.marcitus',
     'Desinclusão': 'nav.dq',
     'TV': 'nav.tv',
     'Home': 'nav.home',
@@ -1365,7 +1426,9 @@ function updateNavigation() {
     'Prophet': 'nav.prophet',
     'De-Inclusion': 'nav.dq',
     'Orchestra': 'nav.gaybe',
-    'Lawyer': 'nav.madeusa'
+    'Lawyer': 'nav.madeusa',
+    'Blacksmith': 'nav.jao',
+    'Analyst': 'nav.marcitus'
   };
   
   navLinks.forEach(link => {

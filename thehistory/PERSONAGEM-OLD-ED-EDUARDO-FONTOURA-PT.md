@@ -197,6 +197,10 @@ Old Ed colocou uma faixa:
 [Marcelo Marmelo Martelo](HISTORIA-MARCELO-MARMELO-MARTELO-PT.md) assinou embaixo:
 > "Concordo. E leite é suco de vaca."
 
+Old Ed confia no [Jão Bolão](JAO-BOLAO.md) por um motivo simples: ferramenta não mente. E Jão é basicamente uma ferramenta com CPF. Quando Old Ed precisa de algo que funcione de verdade (não "funciona em teoria"), ele vai direto na Forja Δ.
+
+Old Ed também já aplicou multa em [Marcitus Markitus](MARCITUS-MARKITUS.md) por "excesso de narrativa" quando o analista insistiu em usar fio vermelho no mural de evidências. Old Ed não tem paciência para teorias da conspiração, mas reconhece que Marcitus às vezes encontra inconsistências reais — só que por motivos errados.
+
 ---
 
 ## 📎 Anexos
