@@ -647,7 +647,8 @@ const routes = {
   '/marcelo': 'HISTORIA-MARCELO-MARMELO-MARTELO-PT.md',
   '/old-ed': 'PERSONAGEM-OLD-ED-EDUARDO-FONTOURA-PT.md',
   '/gorossario': 'GOROSSARIO-PT.md',
-  '/contact': 'CONTACT.md'
+  '/contact': 'CONTACT.md',
+  '/sigil': 'OCCULT_GAME' // Easter egg: Ritual Terminal
 };
 
 // Função para atualizar URL sem recarregar página
@@ -1131,7 +1132,24 @@ function navigate(path, anchor = null) {
   } else {
     stopQuantumClock();
     const filename = routes[normalizedPath];
-    if (filename) {
+    if (filename === 'OCCULT_GAME') {
+      // Easter egg: Ritual Terminal
+      const main = document.querySelector('main');
+      if (main && typeof window.initOccultGame === 'function') {
+        main.innerHTML = '<div class="loading"><div class="spinner"></div><p>Inicializando ritual...</p></div>';
+        setTimeout(() => {
+          window.occultGameInstance = window.initOccultGame({
+            mountEl: main,
+            lang: currentLang,
+            navigate: navigate
+          });
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 100);
+      } else {
+        console.error('Occult game not loaded');
+        showIndex();
+      }
+    } else if (filename) {
       loadDocument(filename).then(() => {
         if (normalizedAnchor) {
           // Aguardar um pouco mais para garantir que os IDs foram processados
@@ -1394,6 +1412,12 @@ function switchLanguage(lang) {
   updateSubtitle();
   updateClockTooltip(); // Atualizar tooltip do relógio
   
+  // Se estiver no jogo oculto, atualizar idioma do jogo
+  if (window.occultGameInstance && typeof window.occultGameInstance.updateLanguage === 'function') {
+    window.occultGameInstance.updateLanguage(lang);
+    return; // Não navegar, apenas atualizar idioma
+  }
+  
   // Recarregar página atual no novo idioma
   const path = window.location.pathname || '/';
   navigate(path);
@@ -1476,6 +1500,7 @@ function updateSubtitle() {
 
 // Relógio Quântico
 let quantumClockInterval = null;
+let quantumClockEasterEggListeners = null;
 
 function initQuantumClock() {
   const clockContainer = document.getElementById('quantum-clock-container');
@@ -1497,6 +1522,9 @@ function initQuantumClock() {
     clearInterval(quantumClockInterval);
   }
   quantumClockInterval = setInterval(updateClock, 1000);
+  
+  // Configurar easter egg
+  setupQuantumClockEasterEgg();
 }
 
 function updateClock() {
@@ -1535,6 +1563,143 @@ function stopQuantumClock() {
     clearInterval(quantumClockInterval);
     quantumClockInterval = null;
   }
+  
+  // Remover easter egg listeners
+  removeQuantumClockEasterEgg();
+}
+
+// Easter egg do Relógio Quântico
+function setupQuantumClockEasterEgg() {
+  const clockContainer = document.getElementById('quantum-clock-container');
+  if (!clockContainer) return;
+  
+  // Limpar listeners anteriores se existirem
+  removeQuantumClockEasterEgg();
+  
+  let clickCount = 0;
+  let clickTimer = null;
+  const CLICK_THRESHOLD = 7;
+  const CLICK_TIMEOUT = 4000; // 4 segundos
+  
+  // Gatilho 1: 7 cliques em 4 segundos
+  const clickHandler = () => {
+    clickCount++;
+    
+    // Resetar timer
+    if (clickTimer) {
+      clearTimeout(clickTimer);
+    }
+    
+    // Se atingiu o threshold, ativar easter egg
+    if (clickCount >= CLICK_THRESHOLD) {
+      triggerEasterEgg();
+      return;
+    }
+    
+    // Resetar contador após timeout
+    clickTimer = setTimeout(() => {
+      clickCount = 0;
+    }, CLICK_TIMEOUT);
+  };
+  
+  // Gatilho 2: Sequência Konami (↑↑↓↓←→←→BA)
+  const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
+  let konamiIndex = 0;
+  let konamiTimer = null;
+  const KONAMI_TIMEOUT = 3000; // 3 segundos para completar sequência
+  
+  const keyHandler = (e) => {
+    // Ignorar se estiver em input/textarea
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+      return;
+    }
+    
+    const expectedKey = konamiSequence[konamiIndex];
+    
+    if (e.key === expectedKey || e.code === expectedKey) {
+      konamiIndex++;
+      
+      // Resetar timer
+      if (konamiTimer) {
+        clearTimeout(konamiTimer);
+      }
+      
+      // Se completou a sequência, ativar easter egg
+      if (konamiIndex >= konamiSequence.length) {
+        triggerEasterEgg();
+        return;
+      }
+      
+      // Resetar após timeout
+      konamiTimer = setTimeout(() => {
+        konamiIndex = 0;
+      }, KONAMI_TIMEOUT);
+    } else {
+      // Sequência incorreta, resetar
+      konamiIndex = 0;
+      if (konamiTimer) {
+        clearTimeout(konamiTimer);
+      }
+    }
+  };
+  
+  // Função para ativar easter egg
+  function triggerEasterEgg() {
+    // Limpar listeners
+    removeQuantumClockEasterEgg();
+    
+    // Exibir hint diegético
+    const hintText = currentLang === 'pt' 
+      ? 'Um selo foi marcado... O terminal aguarda.'
+      : 'A seal has been marked... The terminal awaits.';
+    
+    const originalTitle = clockContainer.getAttribute('title');
+    clockContainer.setAttribute('title', hintText);
+    
+    // Navegar para /sigil após breve delay
+    setTimeout(() => {
+      navigate('/sigil');
+      // Restaurar tooltip original após navegação
+      setTimeout(() => {
+        if (clockContainer) {
+          clockContainer.setAttribute('title', originalTitle || '');
+        }
+      }, 1000);
+    }, 500);
+  }
+  
+  // Adicionar listeners
+  clockContainer.addEventListener('click', clickHandler);
+  window.addEventListener('keydown', keyHandler);
+  
+  // Armazenar referências para remoção
+  quantumClockEasterEggListeners = {
+    clickHandler,
+    keyHandler,
+    cleanup: () => {
+      if (clickTimer) clearTimeout(clickTimer);
+      if (konamiTimer) clearTimeout(konamiTimer);
+    }
+  };
+}
+
+function removeQuantumClockEasterEgg() {
+  if (!quantumClockEasterEggListeners) return;
+  
+  const clockContainer = document.getElementById('quantum-clock-container');
+  if (clockContainer && quantumClockEasterEggListeners.clickHandler) {
+    clockContainer.removeEventListener('click', quantumClockEasterEggListeners.clickHandler);
+  }
+  
+  if (quantumClockEasterEggListeners.keyHandler) {
+    window.removeEventListener('keydown', quantumClockEasterEggListeners.keyHandler);
+  }
+  
+  if (quantumClockEasterEggListeners.cleanup) {
+    quantumClockEasterEggListeners.cleanup();
+  }
+  
+  quantumClockEasterEggListeners = null;
 }
 
 // Mostrar página inicial (mantida para compatibilidade)

@@ -8,6 +8,8 @@ Thumbs.db
 *.swo
 *~
 
+how.md
+
 # Logs
 *.log
 npm-debug.log*

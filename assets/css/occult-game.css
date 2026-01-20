@@ -1,0 +1,303 @@
+/* QEL@0xpblab - Estilos do Easter Egg "Ritual Terminal" */
+/* Terminal ritualístico compatível com tema retro/neon */
+
+.occult-game-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: var(--bg-card, #1a1d24);
+  border: 2px solid var(--violet, #7C3AED);
+  border-radius: 0;
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+  font-family: 'IBM Plex Mono', 'VT323', monospace;
+}
+
+/* Terminal de texto */
+.occult-terminal {
+  background: #000;
+  color: #00ff00;
+  padding: 1.5rem;
+  min-height: 300px;
+  max-height: 500px;
+  overflow-y: auto;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  border: 1px solid #333;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  scrollbar-width: thin;
+  scrollbar-color: var(--violet, #7C3AED) #000;
+}
+
+.occult-terminal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.occult-terminal::-webkit-scrollbar-track {
+  background: #000;
+}
+
+.occult-terminal::-webkit-scrollbar-thumb {
+  background: var(--violet, #7C3AED);
+  border: 1px solid #000;
+}
+
+.occult-terminal::-webkit-scrollbar-thumb:hover {
+  background: var(--cyan, #22D3EE);
+}
+
+/* Prompt do terminal */
+.occult-prompt {
+  color: var(--cyan, #22D3EE);
+  font-weight: 600;
+}
+
+.occult-prompt::after {
+  content: ' > ';
+  color: #00ff00;
+}
+
+/* Container de escolhas */
+.occult-choices {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.occult-choice-btn {
+  background: transparent;
+  border: 2px solid var(--violet, #7C3AED);
+  color: var(--text-light, #E5E7EB);
+  padding: 0.75rem 1.25rem;
+  font-family: 'IBM Plex Mono', 'VT323', monospace;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.occult-choice-btn::before {
+  content: '[ ] ';
+  color: var(--cyan, #22D3EE);
+  margin-right: 0.5rem;
+}
+
+.occult-choice-btn:hover,
+.occult-choice-btn:focus {
+  background: rgba(124, 58, 237, 0.1);
+  border-color: var(--cyan, #22D3EE);
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.3);
+  outline: none;
+}
+
+.occult-choice-btn:active {
+  transform: translateY(1px);
+}
+
+.occult-choice-btn:focus-visible {
+  outline: 2px solid var(--cyan, #22D3EE);
+  outline-offset: 2px;
+}
+
+/* Input para puzzle */
+.occult-input-container {
+  margin-top: 1.5rem;
+}
+
+.occult-input-label {
+  display: block;
+  color: var(--cyan, #22D3EE);
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.occult-input {
+  width: 100%;
+  background: #000;
+  border: 2px solid var(--violet, #7C3AED);
+  color: #00ff00;
+  padding: 0.75rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.occult-input:focus {
+  border-color: var(--cyan, #22D3EE);
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.3);
+}
+
+.occult-input::placeholder {
+  color: #666;
+}
+
+.occult-input-error {
+  border-color: var(--red, #EF4444);
+  color: var(--red, #EF4444);
+}
+
+.occult-input-success {
+  border-color: var(--green, #10B981);
+  color: var(--green, #10B981);
+}
+
+/* Área de ações */
+.occult-actions {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border, #2d3239);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.occult-action-btn {
+  background: transparent;
+  border: 1px solid var(--border, #2d3239);
+  color: var(--text-light, #E5E7EB);
+  padding: 0.5rem 1rem;
+  font-family: 'IBM Plex Mono', 'VT323', monospace;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.occult-action-btn:hover,
+.occult-action-btn:focus {
+  background: rgba(124, 58, 237, 0.1);
+  border-color: var(--violet, #7C3AED);
+  outline: none;
+}
+
+.occult-action-btn:focus-visible {
+  outline: 2px solid var(--violet, #7C3AED);
+  outline-offset: 2px;
+}
+
+.occult-action-btn.danger {
+  border-color: var(--red, #EF4444);
+  color: var(--red, #EF4444);
+}
+
+.occult-action-btn.danger:hover,
+.occult-action-btn.danger:focus {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+/* Inventário (discreto) */
+.occult-inventory {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: rgba(124, 58, 237, 0.05);
+  border: 1px dashed var(--violet, #7C3AED);
+  font-size: 0.85rem;
+  color: var(--muted, #888);
+  min-height: 2rem;
+}
+
+.occult-inventory:empty {
+  display: none;
+}
+
+.occult-inventory-item {
+  display: inline-block;
+  margin: 0.25rem 0.5rem 0.25rem 0;
+  padding: 0.25rem 0.5rem;
+  background: rgba(124, 58, 237, 0.1);
+  border: 1px solid var(--violet, #7C3AED);
+  font-size: 0.8rem;
+}
+
+/* Mensagens de feedback */
+.occult-message {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-left: 3px solid;
+  font-size: 0.85rem;
+}
+
+.occult-message.info {
+  border-color: var(--cyan, #22D3EE);
+  background: rgba(34, 211, 238, 0.1);
+  color: var(--cyan, #22D3EE);
+}
+
+.occult-message.error {
+  border-color: var(--red, #EF4444);
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--red, #EF4444);
+}
+
+.occult-message.success {
+  border-color: var(--green, #10B981);
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--green, #10B981);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .occult-game-container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .occult-terminal {
+    min-height: 200px;
+    max-height: 400px;
+    font-size: 0.85rem;
+    padding: 1rem;
+  }
+
+  .occult-choice-btn {
+    font-size: 0.85rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .occult-actions {
+    flex-direction: column;
+  }
+
+  .occult-action-btn {
+    width: 100%;
+  }
+}
+
+/* Tema Retro - Ajustes */
+html.theme-retro .occult-game-container {
+  background: var(--panel, #fffaf0);
+  border-color: var(--border, #111111);
+  color: var(--text, #111111);
+}
+
+html.theme-retro .occult-terminal {
+  background: var(--bg, #f6f1e3);
+  color: var(--text, #111111);
+  border-color: var(--border, #111111);
+}
+
+html.theme-retro .occult-choice-btn {
+  border-color: var(--border, #111111);
+  color: var(--text, #111111);
+}
+
+html.theme-retro .occult-choice-btn:hover,
+html.theme-retro .occult-choice-btn:focus {
+  background: var(--panel, #fffaf0);
+  border-color: var(--accent, #0000aa);
+}
+
+html.theme-retro .occult-input {
+  background: var(--panel, #fffaf0);
+  border-color: var(--border, #111111);
+  color: var(--text, #111111);
+}
+
+html.theme-retro .occult-prompt {
+  color: var(--accent, #0000aa);
+}
