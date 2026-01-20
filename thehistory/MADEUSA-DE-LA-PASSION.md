@@ -190,3 +190,11 @@ Ele **entra em vigor**.
 
 **6) O Habeas Data do Dashboard**  
    Quando três dashboards se contradizem, Madeusa aplica a "Cláusula do Bom Senso Vinculante": todos são considerados inválidos por constrangimento, e a decisão volta para o Excel (que ninguém questiona porque "é Excel").
+
+---
+
+<div align="center">
+
+[![Voltar ao README](https://img.shields.io/badge/←%20Voltar-README-blue)](qel.md)
+
+</div>

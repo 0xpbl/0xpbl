@@ -175,3 +175,11 @@ Em uma reunião de alinhamento que durou 3 horas, Gaybe-EL apareceu no minuto 47
 **Colaboração com Madeusa:**
 
 Quando Madeusa revisou os contratos da Orquestra, ele adicionou a cláusula: "Se a temperatura subir acima de 18°C durante uma performance, a Orquestra tem direito a uma pausa para 'resfriamento harmônico'." Gaybe-EL aceitou, mas só porque a cláusula estava escrita em 7/8.
+
+---
+
+<div align="center">
+
+[![Voltar ao README](https://img.shields.io/badge/←%20Voltar-README-blue)](qel.md)
+
+</div>

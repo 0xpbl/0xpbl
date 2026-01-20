@@ -82,6 +82,7 @@ const translations = {
     nav: {
       home: "Início",
       history: "História",
+      contact: "Contato",
       pablo: "Pablo Mu-R4d",
       villains: "Vilões",
       prophet: "Profeta",
@@ -112,6 +113,7 @@ const translations = {
     nav: {
       home: "Home",
       history: "History",
+      contact: "Contact",
       pablo: "Pablo Mu-R4d",
       villains: "Villains",
       prophet: "Prophet",
@@ -551,6 +553,14 @@ function loadMarked() {
     script.src = MARKED_CDN;
     script.onload = () => {
       markedLoaded = true;
+      // Configurar marked.js para gerar IDs nos títulos
+      if (typeof marked !== 'undefined') {
+        marked.setOptions({
+          headerIds: true,
+          mangle: false,
+          headerPrefix: ''
+        });
+      }
       resolve();
     };
     script.onerror = reject;
@@ -573,7 +583,8 @@ const routes = {
   '/completo': 'QEL-PACOTE-COMPLETO.md',
   '/john': 'JOHN-AUNT-BET.md',
   '/gaybe-el': 'GAYBE-EL.md',
-  '/madeusa': 'MADEUSA-DE-LA-PASSION.md'
+  '/madeusa': 'MADEUSA-DE-LA-PASSION.md',
+  '/contact': 'CONTACT.md'
 };
 
 // Função para atualizar URL sem recarregar página
@@ -620,6 +631,9 @@ async function loadDocument(filename) {
       </div>
     `;
     
+    // Processar IDs nos títulos primeiro
+    processHeadingIds();
+    
     // Processar links internos
     processInternalLinks();
     processImages();
@@ -652,75 +666,284 @@ function createBreadcrumbs(filename) {
   `;
 }
 
+// Gerar ID a partir do texto do título
+function generateHeadingId(text) {
+  if (!text) return '';
+  
+  // Remover emojis e caracteres especiais
+  let id = text.replace(/[\u{1F300}-\u{1F9FF}]/gu, ''); // Emojis Unicode
+  id = id.replace(/[🔮🎸🧾🌀🍬🚫🏢👔🦹❄️🔥🎖️📺]/g, ''); // Emojis específicos
+  id = id.replace(/[^\w\s-]/g, ''); // Remover caracteres especiais exceto hífen e underscore
+  
+  // Converter para minúsculas e substituir espaços por hífens
+  id = id.toLowerCase().trim();
+  id = id.replace(/\s+/g, '-');
+  id = id.replace(/-+/g, '-'); // Múltiplos hífens viram um só
+  id = id.replace(/^-+|-+$/g, ''); // Remover hífens no início e fim
+  
+  return id;
+}
+
+// Processar títulos e adicionar IDs
+function processHeadingIds() {
+  const headings = document.querySelectorAll('.markdown-content h1, .markdown-content h2, .markdown-content h3, .markdown-content h4, .markdown-content h5, .markdown-content h6');
+  
+  headings.forEach(heading => {
+    // Se já tem ID, pular
+    if (heading.id) return;
+    
+    // Gerar ID baseado no texto do título
+    const text = heading.textContent || heading.innerText;
+    let id = generateHeadingId(text);
+    
+    // Se o ID está vazio, usar um fallback
+    if (!id) {
+      id = 'heading-' + Math.random().toString(36).substr(2, 9);
+    }
+    
+    // Garantir que o ID é único
+    let uniqueId = id;
+    let counter = 1;
+    while (document.getElementById(uniqueId)) {
+      uniqueId = `${id}-${counter}`;
+      counter++;
+    }
+    
+    heading.id = uniqueId;
+  });
+}
+
 // Processar links internos para usar roteamento
 function processInternalLinks() {
-  const links = document.querySelectorAll('.markdown-content a[href$=".md"], .markdown-content a[href*=".md#"]');
-  links.forEach(link => {
+  // Processar TODOS os links que podem ser documentos markdown
+  // Isso inclui: .md, .md#, thehistory/..., e links relativos
+  const allLinks = document.querySelectorAll('.markdown-content a[href]');
+  
+  allLinks.forEach(link => {
     const href = link.getAttribute('href');
-    let filename = href.split('/').pop();
+    if (!href) return;
     
-    // Remover âncora se houver
-    if (filename.includes('#')) {
-      filename = filename.split('#')[0];
+    // Ignorar links externos (http, https, mailto, etc)
+    // Mas processar links que começam com # (âncoras)
+    if (href.match(/^(https?|mailto|ftp):/i)) {
+      return;
     }
     
-    // Mapear README.md para qel.md
-    if (filename === 'README.md') {
-      filename = 'qel.md';
+    // Links que começam com # serão processados na seção de âncoras abaixo
+    if (href.startsWith('#')) {
+      return; // Será processado depois
     }
     
-    const route = Object.keys(routes).find(key => routes[key] === filename);
+    // Processar links que apontam para arquivos .md
+    if (href.includes('.md')) {
+      processMarkdownLink(link, href);
+      return;
+    }
     
-    if (route) {
-      // Preservar âncora se houver
-      const anchor = href.includes('#') ? href.split('#')[1] : null;
-      const newHref = anchor ? `${route}#${anchor}` : route;
+    // Processar links que começam com thehistory/
+    if (href.startsWith('thehistory/')) {
+      processMarkdownLink(link, href);
+      return;
+    }
+    
+    // Processar links relativos que podem ser markdown (sem extensão explícita)
+    // Isso é menos comum, mas pode acontecer
+    if (href.startsWith('./') || (!href.startsWith('/') && !href.startsWith('http') && !href.startsWith('#'))) {
+      // Verificar se o link pode ser um arquivo markdown
+      const possibleFiles = Object.values(routes).filter(f => f.endsWith('.md'));
+      const hrefWithoutAnchor = href.split('#')[0];
+      const possibleMatch = possibleFiles.find(f => 
+        f.toLowerCase() === hrefWithoutAnchor.toLowerCase() || 
+        f.toLowerCase().replace('.md', '') === hrefWithoutAnchor.toLowerCase()
+      );
       
-      link.setAttribute('href', newHref);
-      link.onclick = (e) => {
-        e.preventDefault();
-        navigate(route, anchor);
-      };
-    } else if (href.startsWith('thehistory/')) {
-      // Link já está na pasta thehistory
-      let file = href.replace('thehistory/', '');
-      if (file.includes('#')) {
-        file = file.split('#')[0];
-      }
-      if (file === 'README.md') {
-        file = 'qel.md';
-      }
-      const route = Object.keys(routes).find(key => routes[key] === file);
-      if (route) {
-        const anchor = href.includes('#') ? href.split('#')[1] : null;
-        const newHref = anchor ? `${route}#${anchor}` : route;
-        link.setAttribute('href', newHref);
-        link.onclick = (e) => {
-          e.preventDefault();
-          navigate(route, anchor);
-        };
+      if (possibleMatch) {
+        processMarkdownLink(link, possibleMatch + (href.includes('#') ? '#' + href.split('#')[1] : ''));
+        return;
       }
     }
   });
   
-  // Processar links com âncoras
-  const anchorLinks = document.querySelectorAll('.markdown-content a[href*="#"]');
+  // Processar links com âncoras (incluindo links do índice)
+  const anchorLinks = document.querySelectorAll('.markdown-content a[href^="#"]');
   anchorLinks.forEach(link => {
     const href = link.getAttribute('href');
-    if (href.includes('.md#')) {
-      const [file, anchor] = href.split('#');
-      const filename = file.split('/').pop();
-      const route = Object.keys(routes).find(key => routes[key] === filename);
+    
+    // Normalizar âncora: remover hífen inicial se presente (#-sobre -> #sobre)
+    let anchor = href.substring(1); // Remove o #
+    if (anchor.startsWith('-')) {
+      anchor = anchor.substring(1); // Remove o hífen inicial
+    }
+    
+    // Remover emojis e caracteres especiais da âncora para busca
+    anchor = normalizeAnchor(anchor);
+    
+    if (anchor) {
+      // Tentar encontrar o elemento por ID exato ou variações
+      link.onclick = (e) => {
+        e.preventDefault();
+        scrollToAnchor(anchor);
+      };
       
-      if (route) {
-        link.setAttribute('href', `${route}#${anchor}`);
-        link.onclick = (e) => {
-          e.preventDefault();
-          navigate(route, anchor);
-        };
-      }
+      // Atualizar href para formato normalizado
+      link.setAttribute('href', `#${anchor}`);
     }
   });
+}
+
+// Função auxiliar para processar links markdown
+function processMarkdownLink(link, href) {
+  let filename = href;
+  let anchor = null;
+  
+  // Separar arquivo e âncora
+  if (href.includes('#')) {
+    const parts = href.split('#');
+    filename = parts[0];
+    anchor = parts.slice(1).join('#'); // Em caso de múltiplos #
+  }
+  
+  // Remover caminho thehistory/ se presente
+  if (filename.startsWith('thehistory/')) {
+    filename = filename.replace('thehistory/', '');
+  }
+  
+  // Remover caminhos relativos
+  filename = filename.split('/').pop();
+  
+  // Mapear README.md para qel.md
+  if (filename === 'README.md' || filename.toLowerCase() === 'readme.md') {
+    filename = 'qel.md';
+  }
+  
+  // Buscar rota correspondente
+  const route = Object.keys(routes).find(key => {
+    const routeFile = routes[key];
+    return routeFile === filename || 
+           routeFile.toLowerCase() === filename.toLowerCase() ||
+           routeFile.replace('.md', '').toLowerCase() === filename.replace('.md', '').toLowerCase();
+  });
+  
+  if (route) {
+    // Normalizar âncora se presente
+    let normalizedAnchor = anchor;
+    if (normalizedAnchor) {
+      normalizedAnchor = normalizeAnchor(normalizedAnchor);
+    }
+    
+    const newHref = normalizedAnchor ? `${route}#${normalizedAnchor}` : route;
+    link.setAttribute('href', newHref);
+    link.onclick = (e) => {
+      e.preventDefault();
+      navigate(route, normalizedAnchor);
+    };
+  } else {
+    // Link para arquivo que não está no sistema de rotas (ex: LICENSE.md)
+    // Tentar carregar diretamente se estiver na pasta thehistory
+    const docsPath = getDocsPath();
+    const fullPath = `${docsPath}${filename}`;
+    
+    // Verificar se é um arquivo markdown que pode ser carregado
+    if (filename.endsWith('.md')) {
+      link.onclick = async (e) => {
+        e.preventDefault();
+        try {
+          // Tentar carregar o arquivo diretamente
+          await loadDocument(filename);
+          if (anchor) {
+            setTimeout(() => {
+              scrollToAnchor(normalizeAnchor(anchor));
+            }, 200);
+          }
+        } catch (error) {
+          console.warn('Não foi possível carregar arquivo:', filename, error);
+          // Se falhar, manter comportamento padrão
+          window.location.href = fullPath;
+        }
+      };
+    }
+    // Se não for markdown ou não conseguir carregar, manter comportamento padrão
+  }
+}
+
+// Função para normalizar âncoras (remover emojis, caracteres especiais, etc)
+function normalizeAnchor(anchor) {
+  if (!anchor) return '';
+  
+  // Remover hífen inicial se presente
+  let normalized = anchor.startsWith('-') ? anchor.substring(1) : anchor;
+  
+  // Remover emojis Unicode
+  normalized = normalized.replace(/[\u{1F300}-\u{1F9FF}]/gu, '');
+  
+  // Remover emojis específicos comuns
+  normalized = normalized.replace(/[🔮🎸🧾🌀🍬🚫🏢👔🦹❄️🔥🎖️📺1️⃣2️⃣3️⃣4️⃣5️⃣6️⃣]/g, '');
+  
+  // Remover caracteres especiais exceto hífen, underscore e números
+  normalized = normalized.replace(/[^\w\s-]/g, '');
+  
+  // Converter para minúsculas e substituir espaços por hífens
+  normalized = normalized.toLowerCase().trim();
+  normalized = normalized.replace(/\s+/g, '-');
+  normalized = normalized.replace(/-+/g, '-'); // Múltiplos hífens viram um só
+  normalized = normalized.replace(/^-+|-+$/g, ''); // Remover hífens no início e fim
+  
+  return normalized;
+}
+
+// Função auxiliar para fazer scroll até uma âncora
+function scrollToAnchor(anchor) {
+  if (!anchor) return;
+  
+  // Normalizar a âncora primeiro
+  const normalizedAnchor = normalizeAnchor(anchor);
+  
+  // Tentar múltiplas variações do ID
+  const variations = [
+    normalizedAnchor,
+    anchor, // Original também
+    anchor.toLowerCase(),
+    anchor.replace(/^-/, ''), // Sem hífen inicial
+    anchor.replace(/^-/, '').toLowerCase(),
+    // Tentar com diferentes normalizações
+    anchor.replace(/[🔮🎸🧾🌀🍬🚫🏢👔🦹❄️🔥🎖️📺1️⃣2️⃣3️⃣4️⃣5️⃣6️⃣]/g, '').toLowerCase().trim(),
+    anchor.replace(/[^\w\s-]/g, '').toLowerCase().trim()
+  ];
+  
+  // Remover duplicatas
+  const uniqueVariations = [...new Set(variations.filter(v => v))];
+  
+  let element = null;
+  for (const variation of uniqueVariations) {
+    // Tentar ID exato
+    element = document.getElementById(variation);
+    if (element) break;
+    
+    // Tentar buscar por atributo id que contenha o anchor (case-insensitive)
+    element = Array.from(document.querySelectorAll('[id]')).find(el => {
+      const id = el.id.toLowerCase();
+      const varLower = variation.toLowerCase();
+      return id === varLower || 
+             id.includes(varLower) || 
+             varLower.includes(id) ||
+             id.replace(/[^\w-]/g, '') === varLower.replace(/[^\w-]/g, '');
+    });
+    if (element) break;
+  }
+  
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Atualizar URL sem recarregar
+    const currentPath = window.location.pathname;
+    const basePath = getBasePath();
+    let normalizedPath = currentPath;
+    if (basePath && currentPath.startsWith(basePath)) {
+      normalizedPath = currentPath.substring(basePath.length) || '/';
+    }
+    window.history.pushState({ path: normalizedPath, anchor: normalizedAnchor }, '', `${currentPath}#${normalizedAnchor}`);
+  } else {
+    console.warn('Âncora não encontrada:', anchor, 'Variações tentadas:', uniqueVariations);
+  }
 }
 
 // Processar imagens
@@ -749,27 +972,38 @@ function navigate(path, anchor = null) {
     normalizedPath = path.substring(basePath.length) || '/';
   }
   
+  // Normalizar âncora se presente (remover hífen inicial)
+  let normalizedAnchor = anchor;
+  if (normalizedAnchor && normalizedAnchor.startsWith('-')) {
+    normalizedAnchor = normalizedAnchor.substring(1);
+  }
+  
   updateURL(normalizedPath);
   
   if (normalizedPath === '/' || normalizedPath === '') {
     showIndex();
+    // Se há âncora, tentar fazer scroll após renderizar
+    if (normalizedAnchor) {
+      setTimeout(() => scrollToAnchor(normalizedAnchor), 200);
+    }
   } else {
     const filename = routes[normalizedPath];
     if (filename) {
       loadDocument(filename).then(() => {
-        if (anchor) {
+        if (normalizedAnchor) {
+          // Aguardar um pouco mais para garantir que os IDs foram processados
           setTimeout(() => {
-            const element = document.querySelector(`#${anchor}, [id*="${anchor}"]`);
-            if (element) {
-              element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-          }, 100);
+            scrollToAnchor(normalizedAnchor);
+          }, 200);
         } else {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }
       });
     } else {
       showIndex();
+      if (normalizedAnchor) {
+        setTimeout(() => scrollToAnchor(normalizedAnchor), 200);
+      }
     }
   }
 }
@@ -978,6 +1212,9 @@ async function loadEventContent(eventId, documentName, index) {
       </div>
     `;
     
+    // Processar IDs nos títulos primeiro
+    processHeadingIds();
+    
     // Processar links e imagens no conteúdo carregado
     processInternalLinks();
     processImages();
@@ -1028,6 +1265,7 @@ function updateNavigation() {
   const navMap = {
     'Início': 'nav.home',
     'História': 'nav.history',
+    'Contato': 'nav.contact',
     'Pablo Mu-R4d': 'nav.pablo',
     'Vilões': 'nav.villains',
     'Profeta': 'nav.prophet',
@@ -1038,6 +1276,7 @@ function updateNavigation() {
     'TV': 'nav.tv',
     'Home': 'nav.home',
     'History': 'nav.history',
+    'Contact': 'nav.contact',
     'Villains': 'nav.villains',
     'Prophet': 'nav.prophet',
     'De-Inclusion': 'nav.dq',
