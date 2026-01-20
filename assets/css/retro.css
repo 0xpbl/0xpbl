@@ -42,6 +42,9 @@ html.theme-retro body {
   background: var(--bg);
   color: var(--text);
   filter: none;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 html.theme-retro * {
@@ -289,6 +292,30 @@ html.theme-retro .btn-view:focus {
 
 html.theme-retro .markdown-content {
   color: var(--text);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Neko responsivo no tema retro */
+html.theme-retro .markdown-content #nl {
+  max-width: 100%;
+  overflow: hidden;
+  margin: 0.5rem 0;
+}
+
+html.theme-retro .markdown-content #nl h1 {
+  font-size: clamp(0.8rem, 3vw, 1rem) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html.theme-retro .markdown-content #nl a {
+  display: inline-block;
+  word-wrap: break-word;
+  max-width: 100%;
 }
 
 html.theme-retro .markdown-content h1 {
@@ -361,15 +388,25 @@ html.theme-retro .markdown-content blockquote {
   padding: 0.5rem 1rem;
 }
 
+html.theme-retro .table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1rem 0;
+  border-radius: var(--radius);
+}
+
 html.theme-retro .markdown-content table {
   border-collapse: collapse;
   border: 2px solid var(--border);
+  min-width: 500px;
+  width: 100%;
 }
 
 html.theme-retro .markdown-content table th,
 html.theme-retro .markdown-content table td {
   border: 1px solid var(--border);
-  padding: 0.75rem;
+  padding: clamp(0.5rem, 2vw, 0.75rem);
+  word-wrap: break-word;
 }
 
 html.theme-retro .markdown-content table th {
@@ -385,6 +422,9 @@ html.theme-retro .markdown-content table tr:nth-child(even) {
 html.theme-retro .markdown-content img {
   border: 2px solid var(--border);
   box-shadow: 4px 4px 0 var(--shadow);
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 html.theme-retro .markdown-content hr {
@@ -531,25 +571,94 @@ html.theme-retro::before {
    RESPONSIVIDADE
    ============================================ */
 
-@media (max-width: 768px) {
+/* Tablet */
+@media (max-width: 1024px) {
   html.theme-retro {
     font-size: 18px;
   }
 
+  html.theme-retro .document-container {
+    padding: 1.5rem;
+  }
+
+  html.theme-retro .timeline-container {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  html.theme-retro {
+    font-size: clamp(16px, 4vw, 18px);
+  }
+
   html.theme-retro h1,
   html.theme-retro header h1 {
-    font-size: 1.4rem;
+    font-size: clamp(1.1rem, 5vw, 1.4rem);
+    word-wrap: break-word;
+    line-height: 1.3;
+  }
+
+  html.theme-retro h2 {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    word-wrap: break-word;
+  }
+
+  html.theme-retro h3 {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    word-wrap: break-word;
+  }
+
+  html.theme-retro header {
+    padding: 1.5rem 0;
+  }
+
+  html.theme-retro .logo-container {
+    max-width: 200px;
+    padding: 0.5rem 1rem;
+  }
+
+  html.theme-retro .subtitle {
+    font-size: clamp(0.85rem, 3vw, 1rem);
+    padding: 0 1rem;
+    word-wrap: break-word;
   }
 
   html.theme-retro .theme-toggle {
     top: 0.5rem;
     right: 0.5rem;
-    font-size: 14px;
+    font-size: clamp(12px, 3vw, 14px);
     padding: 4px 8px;
+  }
+
+  html.theme-retro nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 1rem;
+    gap: 0.25rem;
+  }
+
+  html.theme-retro nav a {
+    width: 100%;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1rem;
   }
 
   html.theme-retro .timeline-content {
     padding: 1rem;
+  }
+
+  html.theme-retro .timeline-event {
+    padding-left: 1.5rem;
+  }
+
+  html.theme-retro .timeline-marker {
+    width: 12px;
+    height: 12px;
+    left: -5px;
   }
 
   html.theme-retro button,
@@ -557,7 +666,184 @@ html.theme-retro::before {
   html.theme-retro .btn-view {
     width: 100%;
     text-align: center;
-    font-size: 16px;
+    font-size: clamp(14px, 3vw, 16px);
+    min-height: 44px;
+    padding: 0.75rem 1rem;
+  }
+
+  html.theme-retro .document-container {
+    padding: 1rem;
+  }
+
+  html.theme-retro .document-header h1 {
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
+    word-wrap: break-word;
+  }
+
+  html.theme-retro .markdown-content h1 {
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
+    word-wrap: break-word;
+  }
+
+  html.theme-retro .markdown-content h2 {
+    font-size: clamp(1.1rem, 4vw, 1.4rem);
+    word-wrap: break-word;
+  }
+
+  html.theme-retro .markdown-content h3 {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    word-wrap: break-word;
+  }
+
+  html.theme-retro .table-wrapper {
+    margin: 0.75rem 0;
+  }
+
+  html.theme-retro .markdown-content table {
+    font-size: clamp(0.85rem, 2.5vw, 1rem);
+  }
+
+  html.theme-retro .markdown-content pre {
+    padding: 0.75rem;
+    font-size: clamp(0.75rem, 2vw, 0.9rem);
+  }
+
+  html.theme-retro .markdown-content code {
+    font-size: clamp(0.75rem, 2vw, 0.85rem);
+  }
+
+  html.theme-retro .markdown-content blockquote {
+    padding-left: 0.75rem;
+    padding-right: 0.5rem;
+    word-wrap: break-word;
+  }
+
+  html.theme-retro .markdown-content ul,
+  html.theme-retro .markdown-content ol {
+    margin-left: clamp(1rem, 4vw, 1.5rem);
+    padding-right: 0.5rem;
+  }
+
+  html.theme-retro footer {
+    padding: 1.5rem 1rem;
+  }
+
+  html.theme-retro footer p {
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    word-wrap: break-word;
+  }
+
+  html.theme-retro .lang-btn {
+    font-size: clamp(0.65rem, 2.5vw, 0.8rem);
+    padding: 0.35rem 0.85rem;
+    min-height: 44px;
+  }
+
+  html.theme-retro .period-header h2 {
+    font-size: clamp(1rem, 4vw, 1.3rem);
+    letter-spacing: 1px;
+    word-wrap: break-word;
+  }
+
+  html.theme-retro .event-title {
+    font-size: clamp(0.95rem, 3.5vw, 1.1rem);
+    word-wrap: break-word;
+  }
+
+  html.theme-retro .event-year {
+    font-size: clamp(0.85rem, 2.5vw, 1rem);
+  }
+}
+
+/* Mobile pequeno */
+@media (max-width: 480px) {
+  html.theme-retro {
+    font-size: clamp(14px, 4vw, 16px);
+  }
+
+  html.theme-retro header {
+    padding: 1rem 0;
+  }
+
+  html.theme-retro .logo-container {
+    max-width: 150px;
+    padding: 0.5rem;
+  }
+
+  html.theme-retro h1,
+  html.theme-retro header h1 {
+    font-size: clamp(1rem, 6vw, 1.3rem);
+  }
+
+  html.theme-retro .lang-btn {
+    font-size: clamp(0.6rem, 3vw, 0.75rem);
+    padding: 0.3rem 0.7rem;
+  }
+
+  html.theme-retro nav a {
+    padding: 0.65rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  html.theme-retro .document-container {
+    padding: 0.75rem;
+  }
+
+  html.theme-retro .timeline-container {
+    padding: 0.75rem 0.25rem;
+  }
+
+  html.theme-retro .timeline-event {
+    padding-left: 1.25rem;
+  }
+
+  html.theme-retro .timeline-marker {
+    width: 10px;
+    height: 10px;
+    left: -4px;
+  }
+
+  html.theme-retro .timeline-content {
+    padding: 0.75rem;
+  }
+
+  html.theme-retro .period-header {
+    padding: 0.5rem;
+  }
+
+  html.theme-retro .markdown-content pre {
+    padding: 0.6rem;
+    font-size: 0.7rem;
+  }
+
+  html.theme-retro .markdown-content code {
+    font-size: 0.7rem;
+    padding: 0.1rem 0.25rem;
+  }
+
+  html.theme-retro .markdown-content blockquote {
+    padding-left: 0.6rem;
+    margin: 0.75rem 0;
+  }
+
+  html.theme-retro .markdown-content ul,
+  html.theme-retro .markdown-content ol {
+    margin-left: 1rem;
+  }
+
+  html.theme-retro .table-wrapper {
+    margin: 0.5rem 0;
+  }
+
+  html.theme-retro footer {
+    padding: 1rem 0.75rem;
+  }
+
+  html.theme-retro button,
+  html.theme-retro .btn-expand,
+  html.theme-retro .btn-view {
+    font-size: 14px;
+    padding: 0.65rem 0.85rem;
   }
 }
 

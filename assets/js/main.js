@@ -641,6 +641,9 @@ async function loadDocument(filename) {
     // Processar e executar scripts no conteúdo
     processScripts();
     
+    // Processar tabelas para responsividade
+    processTables();
+    
   } catch (error) {
     main.innerHTML = `
       <div class="document-container">
@@ -1010,6 +1013,31 @@ function processScripts() {
   });
 }
 
+// Processar tabelas para responsividade (adicionar wrapper para scroll)
+function processTables() {
+  const markdownContent = document.querySelector('.markdown-content');
+  if (!markdownContent) return;
+  
+  const tables = markdownContent.querySelectorAll('table');
+  
+  tables.forEach(table => {
+    // Verificar se já está envolvida em um wrapper
+    if (table.parentElement && table.parentElement.classList.contains('table-wrapper')) {
+      return;
+    }
+    
+    // Criar wrapper
+    const wrapper = document.createElement('div');
+    wrapper.className = 'table-wrapper';
+    
+    // Inserir wrapper antes da tabela
+    table.parentNode.insertBefore(wrapper, table);
+    
+    // Mover tabela para dentro do wrapper
+    wrapper.appendChild(table);
+  });
+}
+
 // Função de navegação
 function navigate(path, anchor = null) {
   const basePath = getBasePath();
@@ -1268,6 +1296,9 @@ async function loadEventContent(eventId, documentName, index) {
     
     // Processar e executar scripts no conteúdo
     processScripts();
+    
+    // Processar tabelas para responsividade
+    processTables();
     
   } catch (error) {
     contentDiv.innerHTML = `
