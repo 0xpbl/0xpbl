@@ -295,6 +295,7 @@ ATTACHMENT: Confidence
 
 - 🏢 [Quantum De-Inclusion™](DQ.md) — HR policy to resist Null Quorum by design
 - 🔮🎸 [Prophet ~~Ri~~ck with Fu Monilson](FU-MONILSON.md) — Controlled Amplification Protocol
+- 👴🧭 [Old Ed / Eduardo Fontoura](PERSONAGEM-OLD-ED-EDUARDO-FONTOURA-EN.md) — Quantum Line Police officer who patrols branches and combats villains (Incident 41: confiscated certainty from Ms. Laplace)
 - 🍬🚫 [John Aunt-Bet](JOHN-AUNT-BET.md) — sugar containment and coherence artifacts
 - 👔 [Pablo Mu-R4d](PABLO-MU-R4D.md) — leadership under selective decoherence
 

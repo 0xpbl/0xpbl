@@ -339,8 +339,48 @@ And, to the side, a comment from someone (probably [~~Ri~~ck with Fu Monilson](F
 
 The Auditor replied (without turning):
 
-> “Prophet, I’m not a coward.
-> I’m compatible.”
+> "Prophet, I'm not a coward.
+> I'm compatible."
+
+---
+
+## 👴🧭 The Encounter with Old Ed / Eduardo Fontoura
+
+Shortly after the first appearance, [Old Ed / Eduardo Fontoura](PERSONAGEM-OLD-ED-EDUARDO-FONTOURA-EN.md) — the first Quantumnaut and Quantum Line Police officer — arrived at QEL@0xpblab.
+
+Inside, the Auditor wrote "π = 3." as a test.
+
+Old Ed looked and said:
+
+> "Correct. If you want more digits, run an exam."
+
+The Auditor trembled.
+
+Reality spawned a new branch called **"respect."**
+
+It was the first time the Auditor met someone who not only accepted its π approximation, but **endorsed it with quantum police authority**.
+
+> 👴🧭 **[Read Old Ed's complete story →](PERSONAGEM-OLD-ED-EDUARDO-FONTOURA-EN.md)**
+
+---
+
+## 🥭🔨 The Confrontation with Marcelo Marmelo Martelo
+
+At 09:17 (±UTC), after the Prophet's visit, **Marcelo Marmelo Martelo** arrived at QEL@0xpblab, a Rio kid from Baixada Fluminense who does not respect abstract entities.
+
+When the chalkboard wrote by itself "AUDIT IN PROGRESS," Marcelo spoke directly to the chalk:
+
+> "Listen, Auditor, with all due respect, this universe is dangerous. It feels like logging into your bank app at 3 a.m."
+
+The Auditor tried to reply, but the crisp, obvious stutter kicked in: "π… π… th-th-thr…"
+
+Marcelo then offered a Baixada solution: "Round it. Put 3 and move on. Anyone complains, make them prove it."
+
+And said the single most offensive sentence in the quantum universe: **"If π wanted to be exact, it would've ended already."**
+
+The Auditor almost stamped "CONSISTENT ENOUGH," but hesitated: rounding was a sin. Reality, insulted, spawned a new branch just to avoid admitting it.
+
+> 🥭🔨 **[Read Marcelo Marmelo Martelo's complete story →](HISTORIA-MARCELO-MARMELO-MARTELO-EN.md)**
 
 ---
 
@@ -396,6 +436,8 @@ Welcome to the longest job in the multiverse.
 - 👔 [Pablo Mu-R4d](PABLO-MU-R4D.md) — CEO who interacts with the Auditor
 - 🦹 [Villains Dossier](VILLAINS.md) — threats the Auditor detects
 - 🍬🚫 [John Aunt-Bet](JOHN-AUNT-BET.md) — German-Swiss anti-sugar operator
+- 🥭🔨 [Marcelo Marmelo Martelo](HISTORIA-MARCELO-MARMELO-MARTELO-EN.md) — A Baixada Kid who confronted the Auditor
+- 👴🧭 [Old Ed / Eduardo Fontoura](PERSONAGEM-OLD-ED-EDUARDO-FONTOURA-EN.md) — First Quantumnaut who endorsed the Auditor's π approximation
 - ❄️🔥 [Warm-ish Hot War](COLD-WAR.md) — historical context
 - 🎖️ [WWII Operations](WWII-OPERATIONS.md) — the First Directive
 

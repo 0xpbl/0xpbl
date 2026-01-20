@@ -319,6 +319,8 @@ E eu acho que agora eu gosto de KISS, o que é inadmissível."
 
 **Nota posterior:** No refeitório, ~~Ri~~ck com Fu Monilson encontrou [John Aunt-Bet](JOHN-AUNT-BET.md), o germano-suíço que recusa sobremesas. O profeta comentou: "Esse aí é metal sem guitarra."
 
+**Nota adicional:** Às 09:17 (±UTC), após a visita do Profeta, chegou ao QEL@0xpblab [Marcelo Marmelo Martelo](HISTORIA-MARCELO-MARMELO-MARTELO-PT.md), um carioca da Baixada Fluminense que se tornou o estabilizador social do laboratório. Quando o Profeta apareceu com um riff querendo colapsar um ramo, Marcelo avisou: "Riff eu aceito. Agora, colapso sem aviso, não."
+
 ## 📎 Anexos
 
 ### Anexo A — Checklist de Recepção de Profetas
@@ -363,6 +365,7 @@ A remoção do tachado configura:
 - 🍬🚫 [John Aunt-Bet](JOHN-AUNT-BET.md) - Encontro no refeitório
 - 🎻🧔🐟 [Gaybe-EL](GAYBE-EL.md) - Implementação corporativa da Orquestra da Companhia (evolução do Protocolo de Amplificação)
 - ⚖️🧥 [Madeusa De La Passion](MADEUSA-DE-LA-PASSION.md) - Advogado que revisou os contratos da Orquestra
+- 🥭🔨 [Marcelo Marmelo Martelo](HISTORIA-MARCELO-MARMELO-MARTELO-PT.md) - Chegou ao QEL às 09:17 (±UTC), após a visita do Profeta, e interagiu com o Fiscal que apareceu na lousa
 
 ### Referências Internas
 

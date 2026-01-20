@@ -243,6 +243,7 @@ E isso o coloca no centro do próximo conflito:
 - 🔮🎸 [Profeta ~~Ri~~ck com Fu Monilson](FU-MONILSON.md) - Encontro no refeitório
 - 🎖️ [Operações WWII](WWII-OPERATIONS.md) - Primeira menção na Seção Δ-13
 - 🦹 [Dossiê de Vilões](VILLAINS.md) - Proteção contra Laplace e Null Quorum
+- 👴🧭 [Old Ed / Eduardo Fontoura](PERSONAGEM-OLD-ED-EDUARDO-FONTOURA-PT.md) - Ocorrência 77: faixa sobre açúcar como substância de alto risco
 - ❄️🔥 [Guerra Quente-Morna](COLD-WAR.md) - Ruído Diplomático Mínimo aplicado a doces
 - 👔 [Pablo Mu-R4d](PABLO-MU-R4D.md) - Liderança do QEL@0xpblab
 - 🏢 [Desinclusão Quântica™](DQ.md) - Política de RH

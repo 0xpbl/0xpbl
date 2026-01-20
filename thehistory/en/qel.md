@@ -21,8 +21,11 @@
 - [John Aunt-Bet](#-john-aunt-bet-the-german-swiss-anti-sugar-operator) 🍬🚫
 - [Gaybe-EL](#-gaybe-el-the-mullet-barbed-maestro-of-the-company-orchestra) 🎻🧔🐟
 - [Madeusa De La Passion](#-madeusa-de-la-passion-the-companys-winter-only-lawyer) ⚖️🧥
+- [Marcelo Marmelo Martelo](#-marcelo-marmelo-martelo-a-baixada-kid-vs-the-quantum-universe) 🥭🔨
+- [Old Ed / Eduardo Fontoura](#-old-ed--eduardo-fontoura-the-man-who-spawns-old) 👴🧭
 - [Villains Dossier](#-villains-dossier) 🦹
 - [TV Programs](#-tv-programs) 📺
+- [GOROSSARIO](#-gorossary) 📚👶
 - [Installation](#-installation)
 - [How to Use](#-how-to-use)
 - [Architecture](#-architecture)
@@ -344,6 +347,89 @@ Madeusa works closely with [Quantum De-Inclusion™](DQ.md), reviewing contracts
 
 > ⚖️🧥 **[Read the complete Madeusa documentation →](MADEUSA-DE-LA-PASSION.md)**
 
+## 🥭🔨 Marcelo Marmelo Martelo: A Baixada Kid vs. the Quantum Universe
+
+At 09:17 (±UTC), after the visit of the [Prophet ~~Ri~~ck with Fu Monilson](FU-MONILSON.md), QEL@0xpblab received a new visitor: **Marcelo Marmelo Martelo**, a Rio kid from Baixada Fluminense who arrived with a plastic bag containing cookies and the stare of someone who's seen "limited time offer" turn into a scam.
+
+### Characteristics
+
+- **Origin**: Baixada Fluminense
+- **State**: Rio kid, street-smart, suspicious
+- **Role**: Social stabilizer of QEL
+- **Specialty**: Translating quantum concepts into Baixada dialect
+
+### The Arrival
+
+The "This Will Go Bad" Detector installed at reception after the last prophet **yelled** (didn't beep) when Marcelo entered. He repeated "dangerous" 11 times in 30 seconds and handed over a document that looked like a bakery receipt with the inscription: "If I vanish, it was the quantum."
+
+### The Anti-Quantum Survival Dictionary
+
+To avoid getting scammed by the universe, Marcelo wrote a dictionary that translates quantum terms into Baixada dialect:
+
+- **Superposition** = "sitting on the fence"
+- **Collapse** = "own the mess"
+- **Uncertainty** = "life's little trick"
+- **Entanglement** = "Wi-Fi gossip"
+- **Decoherence** = "lost the plot"
+
+### Confrontation with the Chalkboard Auditor
+
+Marcelo had a direct confrontation with the [Interdimensional Whiteboard Auditor](QEL-PACOTE-EXTRAS.md#-the-interdimensional-whiteboard-auditor), speaking directly to the chalk when the board wrote "AUDIT IN PROGRESS." He offered a Baixada solution: "Round it. Put 3 and move on. Anyone complains, make them prove it."
+
+And said the single most offensive sentence in the quantum universe: **"If π wanted to be exact, it would've ended already."**
+
+### The Role of Social Stabilizer
+
+Marcelo didn't become a scientist. He became what QEL needed most and deserved least: **a social stabilizer**. When someone said "alignment," Marcelo replied: "Alignment is when the train shows up. Everything else is talk."
+
+When [~~Ri~~ck with Fu Monilson](FU-MONILSON.md) arrived with a riff to collapse a branch, Marcelo warned: "Riffs are fine. Collapsing without notice? Not in my universe."
+
+> 🥭🔨 **[Read Marcelo Marmelo Martelo's complete story →](HISTORIA-MARCELO-MARMELO-MARTELO-EN.md)**
+
+## 👴🧭 Old Ed / Eduardo Fontoura: The Man Who Spawns Old
+
+Old Ed (Eduardo Fontoura) is the first documented case of someone hired by QEL@0xpblab **before the lab existed** — a temporal paradox that HR turned into an official position.
+
+### The Temporal Paradox
+
+QEL@0xpblab has an unspoken rule:
+
+> If the universe offers a paradox, HR turns it into a job title.
+
+Old Ed showed up "on day one" already equipped with:
+- lower back pain
+- strong opinions about everything
+- and a pen that only works on paper from 1974
+
+### First Quantumnaut
+
+Old Ed is the first **Quantumnaut** — a quantum traveler and **Quantum Line Police** officer who patrols branches, duct-tapes reality back together, and tickets the universe for misbehavior.
+
+**Why is he always old?** Each jump "teleports" Old Ed's information (not matter), and decoherence makes the universe reconstruct him as "a fully baked old man," because "old" is a stable state. The multiverse trusts old people more than young versions filled with hope.
+
+### First Appearance at QEL@0xpblab
+
+Port gate logs (Door A **or** B) state that the turnstile tried to deny him because the system error was "user has no valid birth date." Old Ed simply held his stamp near the reader, and the reader **apologized**.
+
+Inside, the [Interdimensional Whiteboard Auditor](QEL-PACOTE-EXTRAS.md#-the-interdimensional-whiteboard-auditor) wrote "π = 3." as a test. Old Ed looked and said: "Correct. If you want more digits, run an exam." The Auditor trembled, and reality spawned a new branch called **"respect."**
+
+### Quantum Line Police Protocols
+
+The PATROL Protocol (v0.01) aims to prevent illegal branches from becoming committees ([Dr. Null Quorum](VILLAINS.md#3️⃣-dr-null-quorum-the-paralysis-committee) risk) and stop performative certainty ([Ms. Laplace](VILLAINS.md#4️⃣-mrs-laplace-the-total-determination-curator) risk).
+
+**Old Ed's rules:**
+1. If someone says "alignment," issue a ticket.
+2. If someone says "just a hypothesis," open an investigation.
+3. If reality feels comfortable, assume a crime.
+4. If a [prophet](FU-MONILSON.md) appears with an imaginary guitar, let them play (music is structured noise; it works).
+
+### Notable Incidents
+
+- **Incident 41**: Confiscated "predictability" that [Ms. Laplace](VILLAINS.md#4️⃣-mrs-laplace-the-total-determination-curator) tried selling in the hallway.
+- **Incident 77**: Put up tape about sugar being a high-risk substance, with [John Aunt‑Bet](JOHN-AUNT-BET.md) and [Marcelo Marmelo Martelo](HISTORIA-MARCELO-MARMELO-MARTELO-EN.md) signing underneath.
+
+> 👴🧭 **[Read Old Ed / Eduardo Fontoura's complete story →](PERSONAGEM-OLD-ED-EDUARDO-FONTOURA-EN.md)**
+
 ## 🦹 Villains Dossier
 
 QEL@0xpblab’s main antagonists are the four forces that push reality toward classical failure modes:
@@ -362,6 +448,28 @@ QEL@0xpblab insists it does not produce “TV.” It produces “mass communicat
 The audience, as usual, disagrees.
 
 > 📺 **[Read the QEL TV programs catalog →](TV-PROGRAMS.md)**
+
+## 📚👶 GOROSSARIO
+
+The **GOROSSARIO** is a serious document written by **João Darcquinho de Souza** that documents the terms of the QEL@0xpblab universe.
+
+### The Author
+
+**João Darcquinho de Souza** is the author responsible for compiling and documenting the terms used at QEL@0xpblab. His work represents an important contribution to understanding the concepts and characters of the laboratory.
+
+### Content
+
+The glossary includes:
+- Definitions of key QEL terms (QEL@0xpblab, DQ, superposition, collapse, decoherence, etc.)
+- Main characters (Auditor, Prophet, John, Marcelo, Old Ed, villains)
+- Practical survival rules
+- Explanations of complex quantum concepts
+
+### Relationship with Other Documents
+
+The GOROSSARIO complements the "Anti-Quantum Survival Dictionary" created by [Marcelo Marmelo Martelo](HISTORIA-MARCELO-MARMELO-MARTELO-EN.md), offering an additional documentary perspective on the same concepts.
+
+> 📚👶 **[Read the complete GOROSSARIO →](GOROSSARIO-EN.md)**
 
 ## 💾 Installation
 

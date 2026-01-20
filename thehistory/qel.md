@@ -21,8 +21,11 @@
 - [John Aunt-Bet](#-john-aunt-bet-o-germano-suíço-anti-açúcar) 🍬🚫
 - [Gaybe-EL](#-gaybe-el-o-barbo-dos-mullets-regente-da-orquestra-da-companhia) 🎻🧔🐟
 - [Madeusa De La Passion](#-madeusa-de-la-passion-o-advogado-de-inverno-da-companhia) ⚖️🧥
+- [Marcelo Marmelo Martelo](#-marcelo-marmelo-martelo-o-juvenal-da-baixada-contra-o-universo-quântico) 🥭🔨
+- [Old Ed / Eduardo Fontoura](#-old-ed--eduardo-fontoura-o-homem-que-nasce-velho) 👴🧭
 - [Dossiê de Vilões](#-dossiê-de-vilões) 🦹
 - [Programas de TV](#-programas-de-tv) 📺
+- [GOROSSARIO](#-gorossario) 📚👶
 - [Instalação](#-instalação)
 - [Como Usar](#-como-usar)
 - [Arquitetura](#-arquitetura)
@@ -365,6 +368,89 @@ Madeusa trabalha em estreita colaboração com a [Desinclusão Quântica™](DQ.
 
 > ⚖️🧥 **[Leia a documentação completa de Madeusa →](MADEUSA-DE-LA-PASSION.md)**
 
+## 🥭🔨 Marcelo Marmelo Martelo: O Juvenal da Baixada Contra o Universo Quântico
+
+Às 09:17 (horário ±UTC), após a visita do [Profeta ~~Ri~~ck com Fu Monilson](FU-MONILSON.md), o QEL@0xpblab recebeu uma nova visita: **Marcelo Marmelo Martelo**, um carioca da Baixada Fluminense que chegou com uma sacola plástica com biscoito e um olhar de quem já viu "promoção imperdível" virar golpe.
+
+### Características
+
+- **Origem**: Baixada Fluminense
+- **Estado**: Juvenal, carioca, desconfiado
+- **Papel**: Estabilizador social do QEL
+- **Especialidade**: Traduzir conceitos quânticos para o idioma da Baixada
+
+### A Chegada
+
+O sensor de "Detector de Gente que Não Confia no Universo" instalado na portaria após o último profeta **gritou** (não apitou) quando Marcelo entrou. Ele repetiu "perigoso" 11 vezes em 30 segundos e entregou um documento que parecia recibo de padaria com a inscrição: "Se eu sumir, foi o quântico."
+
+### O Dicionário de Sobrevivência Anti-Quântica
+
+Para evitar que o universo lhe desse um golpe, Marcelo criou um dicionário que traduz termos quânticos para o idioma da Baixada:
+
+- **Superposição** = "em cima do muro"
+- **Colapso** = "assumir o BO"
+- **Incerteza** = "jeitinho do destino"
+- **Entanglement** = "fofoca com Wi-Fi"
+- **Decoerência** = "perdeu a linha"
+
+### Confronto com o Fiscal da Lousa
+
+Marcelo teve um confronto direto com o [Fiscal Interdimensional da Lousa](QEL-PACOTE-EXTRAS.md#-o-fiscal-interdimensional-da-lousa), falando diretamente com o giz quando a lousa escreveu "AUDITORIA EM ANDAMENTO". Ele ofereceu uma solução de baixada: "Faz assim: arredonda. Bota 3 e segue. Quem reclamar, você manda provar."
+
+E disse a frase mais ofensiva do universo quântico: **"Meu irmão, se π quisesse ser exato, ele já tinha fechado."**
+
+### O Papel de Estabilizador Social
+
+Marcelo não virou cientista. Ele virou o que o QEL mais precisava e menos merecia: **um estabilizador social**. Quando alguém começava a falar "alinhamento", Marcelo soltava: "Alinhamento é quando o trem chega. O resto é papo."
+
+Quando [~~Ri~~ck com Fu Monilson](FU-MONILSON.md) apareceu com um riff querendo colapsar um ramo, Marcelo avisou: "Riff eu aceito. Agora, colapso sem aviso, não."
+
+> 🥭🔨 **[Leia a história completa de Marcelo Marmelo Martelo →](HISTORIA-MARCELO-MARMELO-MARTELO-PT.md)**
+
+## 👴🧭 Old Ed / Eduardo Fontoura: O Homem que Nasce Velho
+
+Old Ed (Eduardo Fontoura) é o primeiro caso documentado de alguém contratado pelo QEL@0xpblab **antes do laboratório existir** — um paradoxo temporal que o RH transformou em cargo oficial.
+
+### O Paradoxo Temporal
+
+No QEL@0xpblab existe uma regra silenciosa:
+
+> Se o universo oferece um enigma, o RH transforma em cargo.
+
+Old Ed chegou "para começar" já com:
+- dor na lombar
+- opinião forte sobre tudo
+- e uma caneta que só escreve em papel de 1974
+
+### Primeiro Quantumnaut
+
+Old Ed é o primeiro **Quantumnaut** — um viajante quântico e **Policial da Linha Quântica** que patrulha ramos, cola realidade com fita adesiva e multa universo por má conduta.
+
+**Por que ele é sempre velho?** Cada salto quântico "teleporta" a informação do Old Ed (não a matéria), e a decoerência faz o universo reconstruí-lo como "um velho já pronto", porque "velho" é um estado estável. O multiverso confia mais em velhos do que em versões jovens cheias de esperança.
+
+### Primeira Aparição no QEL@0xpblab
+
+No log da Portaria Principal (Porta A **ou** B), consta que a catraca tentou negar acesso porque o sistema acusou "usuário sem data de nascimento válida". Old Ed apenas aproximou o carimbo do leitor, e o leitor **pediu desculpas**.
+
+Na Sala de Comunicações, o [Fiscal Interdimensional da Lousa](QEL-PACOTE-EXTRAS.md#-o-fiscal-interdimensional-da-lousa) escreveu "π = 3." só pra testar. Old Ed olhou e disse: "Tá certo. Se quiser mais dígito, faz concurso." O Fiscal tremeu, e o universo gerou um ramo novo chamado **"respeito"**.
+
+### Protocolos da Polícia da Linha Quântica
+
+O Protocolo PATRULHA (v0.01) tem como objetivo impedir que ramos ilegais virem comitês (ameaça [Dr. Null Quorum](VILLAINS.md#3️⃣-dr-null-quorum-o-comitê-da-paralisia)) e que certezas performáticas dominem (ameaça [Sra. Laplace](VILLAINS.md#4️⃣-a-sra-laplace-a-curadora-da-determinação-total)).
+
+**Regras do Old Ed:**
+1. Se alguém disser "vamos alinhar", emitir multa.
+2. Se alguém disser "é só uma hipótese", abrir inquérito.
+3. Se a realidade parecer confortável, suspeitar de crime.
+4. Se um [profeta](FU-MONILSON.md) aparecer com guitarra imaginária, deixar tocar (música é ruído estruturado; funciona).
+
+### Ocorrências Notáveis
+
+- **Ocorrência 41**: Confiscou "previsibilidade" que a [Sra. Laplace](VILLAINS.md#4️⃣-a-sra-laplace-a-curadora-da-determinação-total) tentou vender no corredor.
+- **Ocorrência 77**: Colocou uma faixa sobre açúcar sendo substância de alto risco, com [John Aunt-Bet](JOHN-AUNT-BET.md) e [Marcelo Marmelo Martelo](HISTORIA-MARCELO-MARMELO-MARTELO-PT.md) assinando embaixo.
+
+> 👴🧭 **[Leia a história completa de Old Ed / Eduardo Fontoura →](PERSONAGEM-OLD-ED-EDUARDO-FONTOURA-PT.md)**
+
 ## 🦹 Dossiê de Vilões
 
 O QEL@0xpblab enfrenta ameaças únicas: adversários que não destroem a ciência, mas a tornam **tecnicamente correta e fundamentalmente inútil**.
@@ -409,6 +495,28 @@ O laboratório "assina" obras reais consideradas ruins como prova de **"decoerê
 - **Velocipastor** - "Prova de que orçamento não colapsa coerência"
 
 > 📺 **[Veja o catálogo completo de programas →](TV-PROGRAMS.md)**
+
+## 📚👶 GOROSSARIO
+
+O **GOROSSARIO** é um documento sério escrito por **João Darcquinho de Souza** que documenta os termos do universo QEL@0xpblab.
+
+### O Autor
+
+**João Darcquinho de Souza** é o autor responsável pela compilação e documentação dos termos utilizados no QEL@0xpblab. Seu trabalho representa uma importante contribuição para a compreensão dos conceitos e personagens do laboratório.
+
+### Conteúdo
+
+O glossário inclui:
+- Definições de termos principais do QEL (QEL@0xpblab, DQ, superposição, colapso, decoerência, etc.)
+- Personagens principais (Fiscal, Profeta, John, Marcelo, Old Ed, vilões)
+- Regras de sobrevivência práticas
+- Explicações de conceitos quânticos complexos
+
+### Relação com Outros Documentos
+
+O GOROSSARIO complementa o "Dicionário de Sobrevivência Anti-Quântica" criado por [Marcelo Marmelo Martelo](HISTORIA-MARCELO-MARMELO-MARTELO-PT.md), oferecendo uma perspectiva documental adicional sobre os mesmos conceitos.
+
+> 📚👶 **[Leia o GOROSSARIO completo →](GOROSSARIO-PT.md)**
 
 ## 🚀 Instalação
 

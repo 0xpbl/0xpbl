@@ -242,6 +242,7 @@ Which places him at the center of the next conflict:
 - 🔮🎸 [Prophet ~~Ri~~ck with Fu Monilson](FU-MONILSON.md) — cafeteria encounter
 - 🎖️ [WWII Operations](WWII-OPERATIONS.md) — first mention in Section Δ-13
 - 🦹 [Villains Dossier](VILLAINS.md) — protection against Laplace and Null Quorum
+- 👴🧭 [Old Ed / Eduardo Fontoura](PERSONAGEM-OLD-ED-EDUARDO-FONTOURA-EN.md) — Incident 77: tape about sugar as high-risk substance
 - ❄️🔥 [Warm-ish Hot War](COLD-WAR.md) — Minimum Diplomatic Noise applied to desserts
 - 👔 [Pablo Mu-R4d](PABLO-MU-R4D.md) — leadership context
 - 🏢 [Quantum De-Inclusion™](DQ.md) — HR policy

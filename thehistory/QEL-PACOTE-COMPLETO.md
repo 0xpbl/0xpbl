@@ -70,6 +70,44 @@ Entidade com nome impronunciável (ϟˣ̸̷̴⟂⧉⟁⟟⟟⟟⟂∿) que fisca
 
 ---
 
+### 👴🧭 Old Ed / Eduardo Fontoura (O Primeiro Quantumnaut)
+
+**Arquivo:** [PERSONAGEM-OLD-ED-EDUARDO-FONTOURA-PT.md](PERSONAGEM-OLD-ED-EDUARDO-FONTOURA-PT.md)
+
+O primeiro caso documentado de alguém contratado pelo QEL@0xpblab **antes do laboratório existir** — um paradoxo temporal que o RH transformou em cargo oficial. Primeiro **Quantumnaut** e **Policial da Linha Quântica**.
+
+**Características:**
+- Status: Personagem primordial
+- Função: Policial da Linha Quântica que patrulha ramos
+- Paradoxo temporal: Contratado antes do laboratório existir
+- Interação com o Fiscal: Endossou a aproximação "π = 3."
+- Protocolos: PATRULHA (v0.01) para combater Null Quorum e Laplace
+
+**Ocorrências notáveis:**
+- Ocorrência 41: Confiscou "previsibilidade" da Sra. Laplace
+- Ocorrência 77: Faixa sobre açúcar como substância de alto risco
+
+> 👴🧭 **[Leia a história completa de Old Ed →](PERSONAGEM-OLD-ED-EDUARDO-FONTOURA-PT.md)**
+
+---
+
+### 🥭🔨 Marcelo Marmelo Martelo (O Juvenal da Baixada)
+
+**Arquivo:** [HISTORIA-MARCELO-MARMELO-MARTELO-PT.md](HISTORIA-MARCELO-MARMELO-MARTELO-PT.md)
+
+Carioca da Baixada Fluminense que chegou ao QEL@0xpblab às 09:17 (±UTC), após a visita do Profeta ~~Ri~~ck com Fu Monilson. Tornou-se o **estabilizador social** do laboratório.
+
+**Características:**
+- Origem: Baixada Fluminense
+- Papel: Estabilizador social do QEL
+- Especialidade: Traduzir conceitos quânticos para o idioma da Baixada
+- Confronto direto com o Fiscal Interdimensional da Lousa
+- Criador do "Dicionário de Sobrevivência Anti-Quântica"
+
+> 🥭🔨 **[Leia a história completa de Marcelo →](HISTORIA-MARCELO-MARMELO-MARTELO-PT.md)**
+
+---
+
 ### 🍬🚫 John Aunt-Bet (Germano-Suíço)
 
 **Arquivo:** [JOHN-AUNT-BET.md](JOHN-AUNT-BET.md)
@@ -160,6 +198,10 @@ Advogado sazonal da companhia que **só atua no inverno** (temperatura <= 18°C)
 - 🍬🚫 [John Aunt-Bet](JOHN-AUNT-BET.md) - Germano-suíço anti-açúcar
 - 🎻🧔🐟 [Gaybe-EL](GAYBE-EL.md) - Regente da Orquestra da Companhia
 - ⚖️🧥 [Madeusa De La Passion](MADEUSA-DE-LA-PASSION.md) - Advogado de Inverno
+
+### 📚 Recursos e Referências
+
+- 📚👶 [GOROSSARIO](GOROSSARIO-PT.md) - Documento sério escrito por João Darcquinho de Souza que documenta os termos do universo QEL@0xpblab
 
 ---
 

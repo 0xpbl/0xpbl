@@ -350,6 +350,46 @@ O Fiscal respondeu (sem virar o rosto):
 
 ---
 
+## 👴🧭 O Encontro com Old Ed / Eduardo Fontoura
+
+Pouco depois da primeira aparição, o [Old Ed / Eduardo Fontoura](PERSONAGEM-OLD-ED-EDUARDO-FONTOURA-PT.md) — o primeiro Quantumnaut e Policial da Linha Quântica — chegou ao QEL@0xpblab.
+
+Na Sala de Comunicações, o Fiscal escreveu "π = 3." só pra testar.
+
+Old Ed olhou e disse:
+
+> "Tá certo. Se quiser mais dígito, faz concurso."
+
+O Fiscal tremeu.
+
+E o universo gerou um ramo novo chamado **"respeito"**.
+
+Foi a primeira vez que o Fiscal encontrou alguém que não apenas aceitava sua aproximação de π, mas a **endossava com autoridade policial quântica**.
+
+> 👴🧭 **[Leia a história completa de Old Ed →](PERSONAGEM-OLD-ED-EDUARDO-FONTOURA-PT.md)**
+
+---
+
+## 🥭🔨 O Confronto com Marcelo Marmelo Martelo
+
+Às 09:17 (±UTC), após a visita do Profeta, chegou ao QEL@0xpblab **Marcelo Marmelo Martelo**, um carioca da Baixada Fluminense que não respeita entidade abstrata.
+
+Quando a lousa escreveu sozinha "AUDITORIA EM ANDAMENTO", Marcelo falou diretamente com o giz:
+
+> "Fiscal, com todo respeito, mas o universo tá muito perigoso. Tá parecendo aplicativo de banco às 3 da manhã."
+
+O Fiscal tentou responder, mas sua cagueira nítida começou a travar: "π… π… tr-tr-trê…"
+
+Marcelo então ofereceu uma solução de baixada: "Faz assim: arredonda. Bota 3 e segue. Quem reclamar, você manda provar."
+
+E disse a frase mais ofensiva do universo quântico: **"Meu irmão, se π quisesse ser exato, ele já tinha fechado."**
+
+O Fiscal quase carimbou "CONSISTENTE O SUFICIENTE", mas hesitou: arredondar era pecado. A realidade, humilhada, abriu um ramo novo só pra não admitir.
+
+> 🥭🔨 **[Leia a história completa de Marcelo Marmelo Martelo →](HISTORIA-MARCELO-MARMELO-MARTELO-PT.md)**
+
+---
+
 ## 🧾 Frases Características
 
 - "Eu não vim impedir. Eu vim verificar."
@@ -402,6 +442,8 @@ Bem-vindo ao emprego mais longo do multiverso.
 - 👔 [Pablo Mu-R4d](PABLO-MU-R4D.md) - CEO que interage com o Fiscal
 - 🦹 [Dossiê de Vilões](VILLAINS.md) - Ameaças que o Fiscal detecta
 - 🍬🚫 [John Aunt-Bet](JOHN-AUNT-BET.md) - Colaborador germano-suíço anti-açúcar
+- 🥭🔨 [Marcelo Marmelo Martelo](HISTORIA-MARCELO-MARMELO-MARTELO-PT.md) - O Juvenal da Baixada que confrontou o Fiscal
+- 👴🧭 [Old Ed / Eduardo Fontoura](PERSONAGEM-OLD-ED-EDUARDO-FONTOURA-PT.md) - Primeiro Quantumnaut que endossou a aproximação de π do Fiscal
 - ❄️🔥 [Guerra Quente-Morna](COLD-WAR.md) - Contexto histórico
 - 🎖️ [Operações WWII](WWII-OPERATIONS.md) - Primeira Diretiva
 

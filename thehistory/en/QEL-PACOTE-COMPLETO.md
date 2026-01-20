@@ -70,6 +70,44 @@ An entity with an unpronounceable name (ϟˣ̸̷̴⟂⧉⟁⟟⟟⟟⟂∿) that
 
 ---
 
+### 👴🧭 Old Ed / Eduardo Fontoura (The First Quantumnaut)
+
+**File:** [PERSONAGEM-OLD-ED-EDUARDO-FONTOURA-EN.md](PERSONAGEM-OLD-ED-EDUARDO-FONTOURA-EN.md)
+
+The first documented case of someone hired by QEL@0xpblab **before the lab existed** — a temporal paradox that HR turned into an official position. First **Quantumnaut** and **Quantum Line Police** officer.
+
+**Traits:**
+- Status: Primordial character
+- Role: Quantum Line Police officer who patrols branches
+- Temporal paradox: Hired before the lab existed
+- Interaction with Auditor: Endorsed the "π = 3." approximation
+- Protocols: PATROL (v0.01) to combat Null Quorum and Laplace
+
+**Notable incidents:**
+- Incident 41: Confiscated "predictability" from Ms. Laplace
+- Incident 77: Tape about sugar as high-risk substance
+
+> 👴🧭 **[Read Old Ed's complete story →](PERSONAGEM-OLD-ED-EDUARDO-FONTOURA-EN.md)**
+
+---
+
+### 🥭🔨 Marcelo Marmelo Martelo (A Baixada Kid)
+
+**File:** [HISTORIA-MARCELO-MARMELO-MARTELO-EN.md](HISTORIA-MARCELO-MARMELO-MARTELO-EN.md)
+
+A Rio kid from Baixada Fluminense who arrived at QEL@0xpblab at 09:17 (±UTC), after the Prophet ~~Ri~~ck with Fu Monilson's visit. Became the lab's **social stabilizer**.
+
+**Traits:**
+- Origin: Baixada Fluminense
+- Role: Social stabilizer of QEL
+- Specialty: Translating quantum concepts into Baixada dialect
+- Direct confrontation with the Interdimensional Whiteboard Auditor
+- Creator of the "Anti-Quantum Survival Dictionary"
+
+> 🥭🔨 **[Read Marcelo's complete story →](HISTORIA-MARCELO-MARMELO-MARTELO-EN.md)**
+
+---
+
 ### 🍬🚫 John Aunt-Bet (German-Swiss)
 
 **File:** [JOHN-AUNT-BET.md](JOHN-AUNT-BET.md)
@@ -160,6 +198,10 @@ Seasonal lawyer for the company who **only practices in winter** (temperature <=
 - 🍬🚫 [John Aunt-Bet](JOHN-AUNT-BET.md)
 - 🎻🧔🐟 [Gaybe-EL](GAYBE-EL.md) — Company Orchestra Conductor
 - ⚖️🧥 [Madeusa De La Passion](MADEUSA-DE-LA-PASSION.md) — Winter-Only Lawyer
+
+### 📚 Resources & References
+
+- 📚👶 [GOROSSARIO](GOROSSARIO-EN.md) — Serious document written by João Darcquinho de Souza that documents QEL@0xpblab universe terms
 
 ---
 

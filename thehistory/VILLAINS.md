@@ -579,6 +579,7 @@ CÓDIGO AMARELO: "Greenwich discorda"
 - 🔮🎸 [Profeta ~~Ri~~ck com Fu Monilson](FU-MONILSON.md) - Protocolo de Amplificação Controlada
 - 🏢 [Desinclusão Quântica™](DQ.md) - Proteção contra Null Quorum e outros vilões
 - 🧾🌀 [Fiscal Interdimensional da Lousa](QEL-PACOTE-EXTRAS.md#-o-fiscal-interdimensional-da-lousa) - Auditoria de coerência que detecta ameaças
+- 👴🧭 [Old Ed / Eduardo Fontoura](PERSONAGEM-OLD-ED-EDUARDO-FONTOURA-PT.md) - Policial da Linha Quântica que patrulha ramos e combate os vilões (Ocorrência 41: confiscou certeza da Sra. Laplace)
 - 🍬🚫 [John Aunt-Bet](JOHN-AUNT-BET.md) - Proteção especial contra "docinhos de certeza" da Sra. Laplace
 - 🎻🧔🐟 [Gaybe-EL](GAYBE-EL.md) - Orquestra da Companhia que combate os vilões com ritmo 7/8 e rituais corporativos
 - ⚖️🧥 [Madeusa De La Passion](MADEUSA-DE-LA-PASSION.md) - Advogado que impugna agendas com 9 tópicos inúteis (Direito de Reunião)

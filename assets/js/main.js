@@ -50,7 +50,7 @@ function getDocsPath() {
     } else {
       // Se não, verificar se há um primeiro segmento no pathname que não é uma rota conhecida
       const parts = pathname.split('/').filter(p => p && p !== 'index.html' && !p.endsWith('.html'));
-      const knownRoutes = ['qel', 'pablo', 'cold-war', 'tv-programs', 'villains', 'wwii', 'fu-monilson', 'dq', 'extras', 'completo', 'john'];
+      const knownRoutes = ['qel', 'pablo', 'cold-war', 'tv-programs', 'villains', 'wwii', 'fu-monilson', 'dq', 'extras', 'completo', 'john', 'marcelo', 'old-ed', 'gorossario', 'gaybe-el', 'madeusa', 'contact'];
       
       if (parts.length > 0) {
         const firstPart = parts[0];
@@ -584,6 +584,9 @@ const routes = {
   '/john': 'JOHN-AUNT-BET.md',
   '/gaybe-el': 'GAYBE-EL.md',
   '/madeusa': 'MADEUSA-DE-LA-PASSION.md',
+  '/marcelo': 'HISTORIA-MARCELO-MARMELO-MARTELO-PT.md',
+  '/old-ed': 'PERSONAGEM-OLD-ED-EDUARDO-FONTOURA-PT.md',
+  '/gorossario': 'GOROSSARIO-PT.md',
   '/contact': 'CONTACT.md'
 };
 

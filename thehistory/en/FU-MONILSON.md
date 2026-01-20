@@ -318,7 +318,9 @@ Left as a control mechanism.
 That’s worse. And better.
 And I think I like KISS now, which is inadmissible.”
 
-**Later note:** In the cafeteria, ~~Ri~~ck with Fu Monilson met [John Aunt-Bet](JOHN-AUNT-BET.md), the Swiss-German who refuses desserts. The Prophet commented: “That one is metal without a guitar.”
+**Later note:** In the cafeteria, ~~Ri~~ck with Fu Monilson met [John Aunt-Bet](JOHN-AUNT-BET.md), the Swiss-German who refuses desserts. The Prophet commented: "That one is metal without a guitar."
+
+**Additional note:** At 09:17 (±UTC), after the Prophet's visit, [Marcelo Marmelo Martelo](HISTORIA-MARCELO-MARMELO-MARTELO-EN.md) arrived at QEL@0xpblab, a Rio kid from Baixada Fluminense who became the lab's social stabilizer. When the Prophet arrived with a riff to collapse a branch, Marcelo warned: "Riffs are fine. Collapsing without notice? Not in my universe."
 
 ## 📎 Appendices
 
@@ -364,6 +366,7 @@ Removing the strikethrough constitutes:
 - 🍬🚫 [John Aunt-Bet](JOHN-AUNT-BET.md) — cafeteria encounter
 - 🎻🧔🐟 [Gaybe-EL](GAYBE-EL.md) — corporate implementation of the Company Orchestra (evolution of the Amplification Protocol)
 - ⚖️🧥 [Madeusa De La Passion](MADEUSA-DE-LA-PASSION.md) — lawyer who reviewed the Orchestra's contracts
+- 🥭🔨 [Marcelo Marmelo Martelo](HISTORIA-MARCELO-MARMELO-MARTELO-EN.md) — Arrived at QEL at 09:17 (±UTC), after the Prophet's visit, and interacted with the Auditor who appeared on the board
 
 ### Internal references
 
