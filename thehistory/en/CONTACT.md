@@ -33,6 +33,14 @@ We strive to respond to all messages within **48 hours** (±UTC time, subject to
 
 ---
 
+## 👥 The Team
+
+![QEL@0xpblab Team](img/party.png)
+
+All QEL@0xpblab characters gathered together. Each of them contributes uniquely to maintaining the quantum coherence of the laboratory and facing the challenges of the distributed universe.
+
+---
+
 ## 🔗 Related Links
 
 - 🏠 [Main README](qel.md) - Complete QEL@0xpblab history

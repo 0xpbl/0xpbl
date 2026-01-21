@@ -427,10 +427,59 @@ html.theme-retro .markdown-content img {
   display: block;
 }
 
+/* Party/Team image in retro theme */
+html.theme-retro .markdown-content img[alt*="Equipe"],
+html.theme-retro .markdown-content img[alt*="Team"],
+html.theme-retro .markdown-content img[alt*="party"],
+html.theme-retro .markdown-content img[alt*="Party"] {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin: 2rem auto;
+  display: block;
+  box-shadow: 4px 4px 0 var(--shadow);
+}
+
 html.theme-retro .markdown-content hr {
   border: none;
   border-top: 3px solid var(--border);
   margin: 2rem 0;
+}
+
+/* Character images in CHARACTERS page (retro theme) */
+html.theme-retro .markdown-content hr + h2 img,
+html.theme-retro .markdown-content h2 img {
+  max-width: 200px;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border: 2px solid var(--border);
+  box-shadow: 4px 4px 0 var(--shadow);
+}
+
+html.theme-retro .markdown-content hr + h2 img:hover,
+html.theme-retro .markdown-content h2 img:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 6px 6px 0 var(--shadow);
+  border-color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  html.theme-retro .markdown-content hr + h2 img,
+  html.theme-retro .markdown-content h2 img {
+    max-width: 150px;
+    max-height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  html.theme-retro .markdown-content hr + h2 img,
+  html.theme-retro .markdown-content h2 img {
+    max-width: 120px;
+    max-height: 120px;
+  }
 }
 
 /* ============================================

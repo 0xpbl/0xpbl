@@ -175,3 +175,13 @@ In an alignment meeting that lasted 3 hours, Gaybe-EL appeared at minute 47 and 
 **Collaboration with Madeusa:**
 
 When Madeusa reviewed the Orchestra's contracts, he added the clause: "If temperature rises above 18°C during a performance, the Orchestra has the right to a 'harmonic cooling' break." Gaybe-EL accepted, but only because the clause was written in 7/8.
+
+---
+
+## 📵🎻 Additional Stories
+
+### The Day Gaybe-EL Got Robbed by Pixitos
+
+An additional story about a specific incident: the day Gaybe-EL lost his phone to the **Pixitos** — quantum space junkies who "retrieve devices in superposition." Without his phone, he can't prove his "almost masculinity" to his beloved, nor can he buy a new one (because he needs SMS for confirmation). A narrative about technological loneliness, romance in airplane mode, and the hunger for contact in a quantum universe.
+
+> 📵🎻 **[Read the complete story →](/lore-gaybe-el-pixitos)**

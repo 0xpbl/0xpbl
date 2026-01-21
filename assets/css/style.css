@@ -700,6 +700,36 @@ main {
   width: auto;
 }
 
+/* Ensure character images don't exceed container */
+.markdown-content img[alt*="Pablo"],
+.markdown-content img[alt*="Profeta"],
+.markdown-content img[alt*="John"],
+.markdown-content img[alt*="Gaybe"],
+.markdown-content img[alt*="Madeusa"],
+.markdown-content img[alt*="Marcitus"],
+.markdown-content img[alt*="Marcelo"],
+.markdown-content img[alt*="Willy"],
+.markdown-content img[alt*="Prophet"],
+.markdown-content img[alt*="Characters"],
+.markdown-content img[alt*="Unknown"] {
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: contain;
+}
+
+/* Party/Team image - full width responsive */
+.markdown-content img[alt*="Equipe"],
+.markdown-content img[alt*="Team"],
+.markdown-content img[alt*="party"],
+.markdown-content img[alt*="Party"] {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin: 2rem auto;
+  display: block;
+}
+
 .markdown-content hr {
   border: none;
   border-top: 2px solid var(--violet);
@@ -712,6 +742,59 @@ main {
   height: 20px;
   margin: 0 0.25rem;
   vertical-align: middle;
+}
+
+/* Character images in CHARACTERS page */
+.markdown-content hr + h2 img,
+.markdown-content h2 img {
+  max-width: 200px;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 2px solid var(--violet);
+  margin: 1rem 0;
+  display: block;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+  transition: all 0.3s ease;
+}
+
+.markdown-content hr + h2 img:hover,
+.markdown-content h2 img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
+  border-color: var(--cyan);
+}
+
+/* Character sections */
+.markdown-content hr {
+  margin: 3rem 0;
+  border-top: 2px solid var(--violet);
+}
+
+.markdown-content hr + h2 {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .markdown-content hr + h2 img,
+  .markdown-content h2 img {
+    max-width: 150px;
+    max-height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .markdown-content hr + h2 img,
+  .markdown-content h2 img {
+    max-width: 120px;
+    max-height: 120px;
+  }
 }
 
 /* Footer */

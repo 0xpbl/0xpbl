@@ -33,6 +33,14 @@ Esforçamo-nos para responder todas as mensagens em até **48 horas** (horário 
 
 ---
 
+## 👥 A Equipe
+
+![Equipe QEL@0xpblab](img/party.png)
+
+Todos os personagens do QEL@0xpblab reunidos. Cada um deles contribui de forma única para manter a coerência quântica do laboratório e enfrentar os desafios do universo distribuído.
+
+---
+
 ## 🔗 Links Relacionados
 
 - 🏠 [README Principal](qel.md) - História completa do QEL@0xpblab

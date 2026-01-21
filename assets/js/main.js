@@ -60,7 +60,7 @@ function getDocsPath() {
     } else {
       // Se não, verificar se há um primeiro segmento no pathname que não é uma rota conhecida
       const parts = pathname.split('/').filter(p => p && p !== 'index.html' && !p.endsWith('.html'));
-      const knownRoutes = ['qel', 'pablo', 'cold-war', 'tv-programs', 'villains', 'wwii', 'fu-monilson', 'dq', 'extras', 'completo', 'john', 'marcelo', 'old-ed', 'gorossario', 'gaybe-el', 'madeusa', 'contact'];
+      const knownRoutes = ['qel', 'characters', 'pablo', 'cold-war', 'tv-programs', 'villains', 'wwii', 'fu-monilson', 'dq', 'extras', 'completo', 'john', 'marcelo', 'old-ed', 'gorossario', 'gaybe-el', 'lore-gaybe-el-pixitos', 'madeusa', 'contact'];
       
       if (parts.length > 0) {
         const firstPart = parts[0];
@@ -92,6 +92,7 @@ const translations = {
     nav: {
       home: "Início",
       history: "História",
+      characters: "Personagens",
       contact: "Contato",
       pablo: "Pablo Mu-R4d",
       villains: "Vilões",
@@ -128,6 +129,7 @@ const translations = {
     nav: {
       home: "Home",
       history: "History",
+      characters: "Characters",
       contact: "Contact",
       pablo: "Pablo Mu-R4d",
       villains: "Villains",
@@ -630,6 +632,7 @@ function loadMarked() {
 const routes = {
   '/': 'index',
   '/qel': 'qel.md',
+  '/characters': 'CHARACTERS.md',
   '/pablo': 'PABLO-MU-R4D.md',
   '/cold-war': 'COLD-WAR.md',
   '/tv-programs': 'TV-PROGRAMS.md',
@@ -641,6 +644,7 @@ const routes = {
   '/completo': 'QEL-PACOTE-COMPLETO.md',
   '/john': 'JOHN-AUNT-BET.md',
   '/gaybe-el': 'GAYBE-EL.md',
+  '/lore-gaybe-el-pixitos': 'LORE-GAYBE-EL-PIXITOS-PT.md',
   '/madeusa': 'MADEUSA-DE-LA-PASSION.md',
   '/jao-bolao': 'JAO-BOLAO.md',
   '/marcitus-markitus': 'MARCITUS-MARKITUS.md',
@@ -806,6 +810,22 @@ function processInternalLinks() {
     // Links que começam com # serão processados na seção de âncoras abaixo
     if (href.startsWith('#')) {
       return; // Será processado depois
+    }
+    
+    // Processar links que começam com / (rotas)
+    if (href.startsWith('/')) {
+      const routePath = href.split('#')[0];
+      const anchor = href.includes('#') ? href.split('#').slice(1).join('#') : null;
+      
+      // Verificar se é uma rota conhecida
+      if (routes[routePath]) {
+        link.setAttribute('href', href);
+        link.onclick = (e) => {
+          e.preventDefault();
+          navigate(routePath, anchor);
+        };
+        return;
+      }
     }
     
     // Processar links que apontam para arquivos .md
@@ -1150,7 +1170,13 @@ function navigate(path, anchor = null) {
         showIndex();
       }
     } else if (filename) {
-      loadDocument(filename).then(() => {
+      // Ajustar nome do arquivo baseado no idioma para arquivos com versões PT/EN
+      let actualFilename = filename;
+      if (filename === 'LORE-GAYBE-EL-PIXITOS-PT.md') {
+        actualFilename = currentLang === 'en' ? 'LORE-GAYBE-EL-PIXITOS-EN.md' : 'LORE-GAYBE-EL-PIXITOS-PT.md';
+      }
+      
+      loadDocument(actualFilename).then(() => {
         if (normalizedAnchor) {
           // Aguardar um pouco mais para garantir que os IDs foram processados
           setTimeout(() => {
@@ -1445,6 +1471,7 @@ function updateNavigation() {
   const navMap = {
     'Início': 'nav.home',
     'História': 'nav.history',
+    'Personagens': 'nav.characters',
     'Contato': 'nav.contact',
     'Pablo Mu-R4d': 'nav.pablo',
     'Vilões': 'nav.villains',
@@ -1458,6 +1485,7 @@ function updateNavigation() {
     'TV': 'nav.tv',
     'Home': 'nav.home',
     'History': 'nav.history',
+    'Characters': 'nav.characters',
     'Contact': 'nav.contact',
     'Villains': 'nav.villains',
     'Prophet': 'nav.prophet',

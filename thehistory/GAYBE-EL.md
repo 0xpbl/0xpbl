@@ -178,6 +178,16 @@ Quando Madeusa revisou os contratos da Orquestra, ele adicionou a cláusula: "Se
 
 ---
 
+## 📵🎻 Histórias Adicionais
+
+### O Dia em que Gaybe-EL Foi Roubado pelos Pixitos
+
+Uma história adicional sobre um incidente específico: o dia em que Gaybe-EL perdeu seu celular para os **Pixitos** — nóias quânticos que "recolhem dispositivos em superposição". Sem celular, ele não consegue provar sua "quase masculinidade" para sua amada, nem comprar um novo (porque precisa de SMS para confirmar). Uma narrativa sobre solidão tecnológica, romance em modo avião e a fome de contato em um universo quântico.
+
+> 📵🎻 **[Leia a história completa →](/lore-gaybe-el-pixitos)**
+
+---
+
 <div align="center">
 
 [![Voltar ao README](https://img.shields.io/badge/←%20Voltar-README-blue)](qel.md)
