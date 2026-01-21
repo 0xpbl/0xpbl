@@ -120,6 +120,48 @@ Jão Bolão, the smith everyone swears is a dwarf, but he's actually normal-size
 
 ---
 
+## 💤🧠 Nikols
+
+![Nikols](img/Nikols.png)
+
+**Position:** Applied Oneirology Researcher  
+**Location:** Alternative States of Consciousness Laboratory  
+**Specialty:** Operational dream protocols and REM research
+
+Nikols is a QEL@0xpblab researcher specializing in applied oneirology and alternative states of consciousness. Develops experimental protocols to investigate the applicability of REM phases in operational processes, working at the intersection of quantum neuroscience and productivity. His research focuses on mapping dream patterns as a form of distributed information processing.
+
+> 💤🧠 **[Read the complete profile →](LORE-NIKOLS-EN.md)**
+
+---
+
+## ⚖️🐝👑 Dr. Bee Shaa Caesar
+
+![Dr. Bee Shaa Caesar](img/BeeShaa.png)
+
+**Position:** Interdimensional Lawyer  
+**Location:** Quantum Jurisprudence Office  
+**Specialty:** Quantum litigation and legal protocols in superposition
+
+Dr. Bee Shaa Caesar is an interdimensional lawyer at QEL@0xpblab, specializing in quantum jurisprudence and litigation in superposition states. Develops legal protocols for processes involving multiple reality branches simultaneously. Utilizes quantum communication systems based on dance patterns to coordinate complex legal processes that transcend single dimensions.
+
+> ⚖️🐝👑 **[Read the complete profile →](LORE-DR-BEE-SHAA-CAESAR-EN.md)**
+
+---
+
+## 🧠💉✨ Doktor Albino Bino
+
+![Doktor Albino Bino](img/Doktor.png)
+
+**Position:** Photonic Neurosurgery Researcher  
+**Location:** Quantum Optics Laboratory  
+**Specialty:** Photonic manipulation and optical perception research
+
+Doktor Albino Bino is a neurosurgeon and researcher at QEL@0xpblab specializing in photonic neurosurgery and quantum optics. Conducts research on photon manipulation and its interaction with neural perception circuits. His research investigates how alterations in perception circuits can affect the interpretation of luminous stimuli, working at the frontier between quantum physics and neuroscience.
+
+> 🧠💉✨ **[Read the complete profile →](LORE-DOKTOR-ALBINO-BINO-EN.md)**
+
+---
+
 ## 🦹 Willy Xarzenegger
 
 ![Willy](img/Willy.png)

@@ -11,31 +11,31 @@
 
 ## 📋 Índice
 
-- [Sobre](#-sobre)
-- [História](#-história)
-- [Eventos Históricos](#-participação-em-eventos-históricos)
-- [Contribuições](#-contribuições-para-o-mundo-quântico)
-- [O Profeta ~~Ri~~ck com Fu Monilson](#-o-profeta-rick-com-fu-monilson) 🔮🎸
-- [Desinclusão Quântica™](#-desinclusão-quântica-a-política-de-rh) 🏢
-- [O Fiscal Interdimensional da Lousa](#-o-fiscal-interdimensional-da-lousa) 🧾🌀
-- [John Aunt-Bet](#-john-aunt-bet-o-germano-suíço-anti-açúcar) 🍬🚫
-- [Gaybe-EL](#-gaybe-el-o-barbo-dos-mullets-regente-da-orquestra-da-companhia) 🎻🧔🐟
-- [Madeusa De La Passion](#-madeusa-de-la-passion-o-advogado-de-inverno-da-companhia) ⚖️🧥
-- [Jão Bolão](#-jão-bolão-o-ferreiro-que-todo-mundo-jura-ser-anão-mas-é-do-tamanho-normal) ⚒️🧱
-- [Marcitus Markitus](#-marcitus-markitus-o-homem-que-vê-caso-em-tudo-até-em-slide) 🕵️‍♂️🧷
-- [Marcelo Marmelo Martelo](#-marcelo-marmelo-martelo-o-juvenal-da-baixada-contra-o-universo-quântico) 🥭🔨
-- [Old Ed / Eduardo Fontoura](#-old-ed--eduardo-fontoura-o-homem-que-nasce-velho) 👴🧭
-- [Dossiê de Vilões](#-dossiê-de-vilões) 🦹
-- [Programas de TV](#-programas-de-tv) 📺
-- [GOROSSARIO](#-gorossario) 📚👶
-- [Instalação](#-instalação)
-- [Como Usar](#-como-usar)
-- [Arquitetura](#-arquitetura)
-- [Contribuindo](#-contribuindo)
-- [Equipe](#-equipe)
-- [Avisos](#-avisos-importantes)
-- [Licença](#-licença)
-- [Contato e Endereços](#-contato)
+- [Sobre](#sobre)
+- [História](#história)
+- [Eventos Históricos](#participação-em-eventos-históricos)
+- [Contribuições](#contribuições-para-o-mundo-quântico)
+- [O Profeta ~~Ri~~ck com Fu Monilson](#o-profeta-rick-com-fu-monilson) 🔮🎸
+- [Desinclusão Quântica™](#desinclusão-quântica-a-política-de-rh) 🏢
+- [O Fiscal Interdimensional da Lousa](#o-fiscal-interdimensional-da-lousa) 🧾🌀
+- [John Aunt-Bet](#john-aunt-bet-o-germano-suíço-anti-açúcar) 🍬🚫
+- [Gaybe-EL](#gaybe-el-o-barbo-dos-mullets-regente-da-orquestra-da-companhia) 🎻🧔🐟
+- [Madeusa De La Passion](#madeusa-de-la-passion-o-advogado-de-inverno-da-companhia) ⚖️🧥
+- [Jão Bolão](#jão-bolão-o-ferreiro-que-todo-mundo-jura-ser-anão-mas-é-do-tamanho-normal) ⚒️🧱
+- [Marcitus Markitus](#marcitus-markitus-o-homem-que-vê-caso-em-tudo-até-em-slide) 🕵️‍♂️🧷
+- [Marcelo Marmelo Martelo](#marcelo-marmelo-martelo-o-juvenal-da-baixada-contra-o-universo-quântico) 🥭🔨
+- [Old Ed / Eduardo Fontoura](#old-ed-eduardo-fontoura-o-homem-que-nasce-velho) 👴🧭
+- [Dossiê de Vilões](#dossiê-de-vilões) 🦹
+- [Programas de TV](#programas-de-tv) 📺
+- [GOROSSARIO](#gorossario) 📚👶
+- [Instalação](#instalação)
+- [Como Usar](#como-usar)
+- [Arquitetura](#arquitetura)
+- [Contribuindo](#contribuindo)
+- [Equipe](#equipe)
+- [Avisos](#avisos-importantes)
+- [Licença](#licença)
+- [Contato e Endereços](#contato)
 
 ## ℹ️ Sobre
 
