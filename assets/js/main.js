@@ -1459,7 +1459,13 @@ function navigate(path, anchor = null) {
           ? 'Jogue Street Fighter 2 diretamente no navegador. Clique na tela para começar. Use as setas para mover, Z para soco, X para chute.'
           : 'Play Street Fighter 2 directly in your browser. Click on the screen to start. Use arrow keys to move, Z for punch, X for kick.';
         const basePath = getBasePath();
-        const gamePath = basePath ? `${basePath}/games/street-fighter/index.html` : '/games/street-fighter/index.html';
+        // Construir caminho do jogo com basePath se necessário
+        const cleanBasePath = basePath && basePath !== '' 
+          ? (basePath.startsWith('/') ? basePath : `/${basePath}`)
+          : '';
+        const gamePath = cleanBasePath 
+          ? `${cleanBasePath}/games/street-fighter/index.html`
+          : '/games/street-fighter/index.html';
         main.innerHTML = `
           <div class="document-container">
             <div class="document-header">
@@ -2104,6 +2110,13 @@ function showIndex() {
 initMarkdownCache();
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Ajustar favicon para usar basePath
+  const faviconLink = document.getElementById('favicon-link');
+  if (faviconLink) {
+    const basePath = getBasePath();
+    faviconLink.href = basePath ? `${basePath}/favicon.svg` : './favicon.svg';
+  }
+  
   // Inicializar sistema de idioma
   currentLang = getCurrentLang();
   setCurrentLang(currentLang);
