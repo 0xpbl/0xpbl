@@ -125,10 +125,9 @@ Jão Bolão, o ferreiro que todo mundo jura ser anão, mas é do tamanho normal.
 ![Nikols](img/Nikols.png)
 
 **Cargo:** Pesquisador de Oneirologia Aplicada  
-**Local:** Laboratório de Estados de Consciência Alternativos  
 **Especialidade:** Protocolos de sonho operacional e pesquisa REM
 
-Nikols é pesquisador do QEL@0xpblab especializado em oneirologia aplicada e estados de consciência alternativos. Desenvolve protocolos experimentais para investigar a aplicabilidade de fases REM em processos operacionais, trabalhando na interseção entre neurociência quântica e produtividade. Sua pesquisa foca em mapear padrões de sonho como forma de processamento de informação distribuída.
+Nikols é pesquisador do QEL@0xpblab especializado em oneirologia aplicada e estados de consciência alternativos. Desenvolve protocolos experimentais para investigar a aplicabilidade de fases REM em processos operacionais.
 
 > 💤🧠 **[Leia o perfil completo →](LORE-NIKOLS-PT.md)**
 
@@ -139,10 +138,9 @@ Nikols é pesquisador do QEL@0xpblab especializado em oneirologia aplicada e est
 ![Dr. Bee Shaa Caesar](img/BeeShaa.png)
 
 **Cargo:** Advogado Interdimensional  
-**Local:** Escritório de Jurisprudência Quântica  
 **Especialidade:** Litigância quântica e protocolos legais em superposição
 
-Dr. Bee Shaa Caesar é advogado interdimensional do QEL@0xpblab, especializado em jurisprudência quântica e litigância em estados de superposição. Desenvolve protocolos legais para processos que envolvem múltiplos ramos da realidade simultaneamente. Utiliza sistemas de comunicação quântica baseados em padrões de dança para coordenar processos legais complexos que transcendem dimensões únicas.
+Dr. Bee Shaa Caesar é advogado interdimensional do QEL@0xpblab, especializado em jurisprudência quântica e litigância em estados de superposição. Desenvolve protocolos legais para processos que envolvem múltiplos ramos da realidade simultaneamente.
 
 > ⚖️🐝👑 **[Leia o perfil completo →](LORE-DR-BEE-SHAA-CAESAR-PTBR.md)**
 
@@ -153,10 +151,9 @@ Dr. Bee Shaa Caesar é advogado interdimensional do QEL@0xpblab, especializado e
 ![Doktor Albino Bino](img/Doktor.png)
 
 **Cargo:** Pesquisador de Neurocirurgia Fotônica  
-**Local:** Laboratório de Óptica Quântica  
 **Especialidade:** Manipulação fotônica e pesquisa de percepção óptica
 
-Doktor Albino Bino é neurocirurgião e pesquisador do QEL@0xpblab especializado em neurocirurgia fotônica e óptica quântica. Desenvolve pesquisas sobre manipulação de fótons e sua interação com circuitos neurais de percepção. Sua pesquisa investiga como alterações em circuitos de percepção podem afetar a interpretação de estímulos luminosos, trabalhando na fronteira entre física quântica e neurociência.
+Doktor Albino Bino é neurocirurgião e pesquisador do QEL@0xpblab especializado em neurocirurgia fotônica e óptica quântica. Desenvolve pesquisas sobre manipulação de fótons e sua interação com circuitos neurais de percepção.
 
 > 🧠💉✨ **[Leia o perfil completo →](LORE-DOKTOR-ALBINO-BINO-PT.md)**
 
