@@ -1146,7 +1146,7 @@ function processImages() {
   const basePath = getBasePath();
   
   images.forEach(img => {
-    const src = img.getAttribute('src');
+    let src = img.getAttribute('src');
     if (!src) return;
     
     // Ignorar URLs absolutas (http/https)
@@ -1156,12 +1156,29 @@ function processImages() {
       return;
     }
     
+    // Decodificar primeiro caso já esteja codificado (para evitar dupla codificação)
+    try {
+      src = decodeURIComponent(src);
+    } catch (e) {
+      // Se falhar, usar o src original
+    }
+    
     // Se já começa com / e tem basePath, verificar se precisa adicionar
     if (src.startsWith('/')) {
+      // Codificar espaços e caracteres especiais no caminho
+      // Dividir por /, codificar cada parte (exceto a primeira vazia), e juntar novamente
+      const parts = src.split('/');
+      const encodedParts = parts.map((part, index) => {
+        // Primeira parte vazia (antes da primeira /) deve permanecer vazia
+        if (index === 0 && part === '') return '';
+        return encodeURIComponent(part);
+      });
+      const encodedSrc = encodedParts.join('/');
+      
       if (basePath && !src.startsWith(basePath)) {
-        // Codificar espaços e caracteres especiais no caminho
-        const encodedSrc = src.split('/').map(part => encodeURIComponent(part)).join('/');
         img.setAttribute('src', `${basePath}${encodedSrc}`);
+      } else {
+        img.setAttribute('src', encodedSrc);
       }
       applyImageOptimizations(img);
       return;
@@ -1176,17 +1193,17 @@ function processImages() {
       cleanSrc = cleanSrc.replace(/^\.\.\//, '');
     }
     
-    // Garantir que começa com / se não tiver basePath
-    if (!cleanSrc.startsWith('/')) {
-      cleanSrc = '/' + cleanSrc;
-    }
-    
-    // Codificar espaços e caracteres especiais no caminho
+    // Codificar espaços e caracteres especiais no caminho ANTES de adicionar /
     // Dividir por /, codificar cada parte, e juntar novamente
-    const encodedSrc = cleanSrc.split('/').map(part => encodeURIComponent(part)).join('/');
+    const parts = cleanSrc.split('/');
+    const encodedParts = parts.map(part => encodeURIComponent(part));
+    const encodedCleanSrc = encodedParts.join('/');
+    
+    // Garantir que começa com / se não tiver basePath
+    const pathWithSlash = encodedCleanSrc.startsWith('/') ? encodedCleanSrc : '/' + encodedCleanSrc;
     
     // Adicionar basePath se necessário
-    const finalSrc = basePath ? `${basePath}${encodedSrc}` : encodedSrc;
+    const finalSrc = basePath ? `${basePath}${pathWithSlash}` : pathWithSlash;
     img.setAttribute('src', finalSrc);
     
     // Aplicar otimizações de performance
