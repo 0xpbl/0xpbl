@@ -12,66 +12,45 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/98.css" />
     <link rel="preload" href="assets/css/style.css" as="style">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/occult-game.css">
 </head>
 <body>
-    <div id="desktop">
-        <div class="window app-window">
-            <div class="title-bar">
-                <div class="title-bar-text">QEL@0xpblab</div>
-                <div class="title-bar-controls">
-                    <button aria-label="Minimize"></button>
-                    <button aria-label="Maximize"></button>
-                    <button aria-label="Close"></button>
-                </div>
-            </div>
-            
-            <div class="window-body">
-                <!-- Header com logo e seletor de idioma -->
-                <div class="app-header">
-                    <img src="img/qel.png" alt="QEL@0xpblab Logo" id="logo" loading="eager" decoding="async">
-                    <h1>QEL@0xpblab</h1>
-                    <p class="subtitle">Quantum Experimental Laboratories</p>
-                    <p class="subtitle">"A realidade é um sistema distribuído, e observação é uma forma de commit."</p>
-                    <div class="lang-selector">
-                        <button class="lang-btn" id="lang-pt" onclick="switchLanguage('pt')">PT</button>
-                        <button class="lang-btn" id="lang-en" onclick="switchLanguage('en')">EN</button>
-                    </div>
-                    <div class="quantum-clock-container" id="quantum-clock-container" style="display: none;">
-                        <div class="quantum-clock" id="quantum-clock">
-                            <span id="clock-time">00:00:00</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="app-layout">
-                    <nav id="nav" class="app-nav">
-                        <ul>
-                            <li><a href="/" onclick="navigate('/'); return false;">Início</a></li>
-                            <li><a href="/qel" onclick="navigate('/qel'); return false;">História</a></li>
-                            <li><a href="/characters" onclick="navigate('/characters'); return false;">Personagens</a></li>
-                            <li><a href="/contact" onclick="navigate('/contact'); return false;">Contato</a></li>
-                        </ul>
-                    </nav>
-                    
-                    <main id="content" class="markdown-content">
-                        <div class="loading">
-                            <div class="spinner"></div>
-                            <p>Inicializando sistema quântico...</p>
-                        </div>
-                    </main>
-                </div>
-            </div>
-            
-            <div class="status-bar">
-                <p class="status-bar-field" id="status-left">Ready</p>
-                <p class="status-bar-field" id="status-right">graciosamente vivido por Pablo Murad (mas não dessa maneira)</p>
+    <header>
+        <img src="img/qel.png" alt="QEL@0xpblab Logo" id="logo" loading="eager" decoding="async">
+        <h1>QEL@0xpblab</h1>
+        <p class="subtitle">Quantum Experimental Laboratories</p>
+        <p class="subtitle">"A realidade é um sistema distribuído, e observação é uma forma de commit."</p>
+        <div class="lang-selector">
+            <button id="lang-pt" onclick="switchLanguage('pt')">PT</button>
+            <button id="lang-en" onclick="switchLanguage('en')">EN</button>
+        </div>
+        <div class="quantum-clock-container" id="quantum-clock-container" style="display: none;">
+            <div class="quantum-clock" id="quantum-clock">
+                <span id="clock-time">00:00:00</span>
             </div>
         </div>
-    </div>
+    </header>
+
+    <nav id="nav">
+        <ul>
+            <li><a href="/" onclick="navigate('/'); return false;">Início</a></li>
+            <li><a href="/qel" onclick="navigate('/qel'); return false;">História</a></li>
+            <li><a href="/characters" onclick="navigate('/characters'); return false;">Personagens</a></li>
+            <li><a href="/contact" onclick="navigate('/contact'); return false;">Contato</a></li>
+        </ul>
+    </nav>
+
+    <main id="content">
+        <div class="loading">
+            <p>Carregando...</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>graciosamente vivido por Pablo Murad (mas não dessa maneira)</p>
+    </footer>
 
     <script src="assets/js/main.js" defer></script>
     <script src="assets/js/occult-game.js" defer></script>

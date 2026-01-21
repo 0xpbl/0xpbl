@@ -1799,11 +1799,11 @@ function updateNavigation() {
   });
 }
 
-// Atualizar status bar (substitui footer)
+// Atualizar footer
 function updateFooter() {
-  const statusRight = document.getElementById('status-right');
-  if (statusRight) {
-    statusRight.textContent = currentLang === 'en' 
+  const footer = document.querySelector('footer p');
+  if (footer) {
+    footer.textContent = currentLang === 'en' 
       ? 'graciously lived by Pablo Murad (but not in that way)'
       : 'graciosamente vivido por Pablo Murad (mas não dessa maneira)';
   }

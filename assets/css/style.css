@@ -1,87 +1,40 @@
-/* QEL@0xpblab - Estilos Win95 */
+/* QEL@0xpblab - Estilos Minimalistas */
 
-/* Desktop */
-html, body {
-  height: 100%;
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background: #008080; /* teal clássico do Win95 */
-  font-family: 'MS Sans Serif', sans-serif;
-}
-
-/* Centraliza a janela e dá "cara" */
-#desktop {
+  background: #fff;
+  color: #000;
+  font-family: sans-serif;
+  line-height: 1.6;
   min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 24px;
 }
 
-.app-window {
-  width: min(1100px, 96vw);
-  max-height: 95vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Layout interno: sidebar + conteúdo */
-.app-layout {
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 16px;
-  align-items: start;
-}
-
-.app-header {
+/* Header */
+header {
+  padding: 2rem;
   text-align: center;
-  padding: 1rem;
-  margin-bottom: 1rem;
 }
 
-.app-header img {
+header img {
   max-width: 200px;
   height: auto;
   margin: 0 auto 1rem;
   display: block;
 }
 
-.app-header h1 {
+header h1 {
+  margin: 1rem 0;
+  font-size: 2rem;
+}
+
+header .subtitle {
   margin: 0.5rem 0;
-  font-size: 1.5rem;
-}
-
-.app-header .subtitle {
-  margin: 0.5rem 0;
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-
-.app-nav {
-  max-height: calc(100vh - 220px);
-  overflow: auto;
-}
-
-.app-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.app-nav li {
-  margin-bottom: 0.5rem;
-}
-
-.app-nav a {
-  display: block;
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  color: inherit;
-}
-
-.app-nav a:hover {
-  background: #c0c0c0;
+  font-size: 1rem;
 }
 
 /* Language Selector */
@@ -92,17 +45,22 @@ body {
   margin: 1rem 0;
 }
 
-.lang-btn {
-  padding: 0.4rem 1rem;
-  min-height: 44px;
-  min-width: 44px;
+.lang-selector button {
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
   cursor: pointer;
-  text-transform: uppercase;
   font-size: 0.9rem;
 }
 
-.lang-btn.active {
-  font-weight: bold;
+.lang-selector button:hover {
+  background: #f0f0f0;
+}
+
+.lang-selector button.active {
+  background: #000;
+  color: #fff;
 }
 
 /* Quantum Clock */
@@ -112,18 +70,56 @@ body {
 }
 
 .quantum-clock {
-  font-family: 'Courier New', monospace;
+  font-family: monospace;
   font-size: 1.2rem;
   padding: 0.5rem;
   background: #000;
   color: #0f0;
-  border: 1px solid #333;
+  border: 1px solid #000;
+  display: inline-block;
 }
 
-/* Leitura do Markdown */
+/* Navigation */
+nav {
+  padding: 1rem 2rem;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+nav a {
+  color: #000;
+  text-decoration: underline;
+  padding: 0.5rem;
+}
+
+nav a:hover {
+  background: #f0f0f0;
+}
+
+/* Main Content */
+main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Loading */
+.loading {
+  text-align: center;
+  padding: 3rem;
+}
+
+/* Markdown Content */
 .markdown-content {
-  max-width: 72ch;
-  line-height: 1.65;
+  color: #000;
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
@@ -131,78 +127,68 @@ body {
 .markdown-content h1 {
   margin-top: 2rem;
   margin-bottom: 1rem;
-  font-size: clamp(1.5rem, 5vw, 2rem);
-  word-wrap: break-word;
-  line-height: 1.3;
+  font-size: 2rem;
+  border-bottom: 1px solid #000;
+  padding-bottom: 0.5rem;
 }
 
 .markdown-content h2 {
   margin-top: 1.5rem;
   margin-bottom: 1rem;
-  font-size: clamp(1.2rem, 4vw, 1.5rem);
-  word-wrap: break-word;
-  line-height: 1.4;
+  font-size: 1.5rem;
 }
 
 .markdown-content h3 {
   margin-top: 1.25rem;
   margin-bottom: 0.75rem;
-  font-size: clamp(1.1rem, 3vw, 1.25rem);
-  word-wrap: break-word;
-  line-height: 1.4;
+  font-size: 1.25rem;
 }
 
 .markdown-content a {
-  color: #0000ff;
+  color: #000;
   text-decoration: underline;
 }
 
 .markdown-content a:hover {
-  color: #000080;
+  background: #f0f0f0;
 }
 
 .markdown-content code {
-  background-color: #e0e0e0;
+  background: #f0f0f0;
   padding: 0.15rem 0.3rem;
-  font-family: 'Courier New', monospace;
-  font-size: clamp(0.8em, 2vw, 0.9em);
-  word-break: break-word;
-  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 0.9em;
+  border: 1px solid #ccc;
 }
 
 .markdown-content pre {
-  background-color: #e0e0e0;
+  background: #f0f0f0;
   border: 1px solid #000;
-  padding: clamp(0.75rem, 2vw, 1rem);
+  padding: 1rem;
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
   margin: 1rem 0;
-  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  font-size: 0.9rem;
   line-height: 1.5;
 }
 
 .markdown-content pre code {
-  background-color: transparent;
+  background: transparent;
   border: none;
   padding: 0;
 }
 
 .markdown-content blockquote {
-  border-left: 4px solid #c0c0c0;
-  padding-left: clamp(0.75rem, 2vw, 1rem);
-  padding-right: 0.5rem;
+  border-left: 4px solid #000;
+  padding-left: 1rem;
   margin: 1rem 0;
   font-style: italic;
-  word-wrap: break-word;
 }
 
-/* Tabelas consistentes */
+/* Tables */
 .table-wrapper {
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
   margin: 1rem 0;
   width: 100%;
-  max-width: 100%;
 }
 
 .markdown-content table {
@@ -215,39 +201,33 @@ body {
 .markdown-content th,
 .markdown-content td {
   border: 1px solid #000;
-  padding: 6px 10px;
-  vertical-align: top;
+  padding: 0.5rem;
   text-align: left;
-  word-wrap: break-word;
 }
 
 .markdown-content th {
-  background-color: #c0c0c0;
+  background: #f0f0f0;
   font-weight: bold;
 }
 
 .markdown-content ul,
 .markdown-content ol {
-  margin-left: clamp(1rem, 4vw, 2rem);
+  margin-left: 2rem;
   margin-bottom: 1rem;
-  padding-right: 0.5rem;
 }
 
 .markdown-content li {
   margin-bottom: 0.5rem;
-  word-wrap: break-word;
 }
 
 .markdown-content img {
   max-width: 100%;
   height: auto;
   margin: 1rem 0;
-  border: 1px solid #000;
   display: block;
-  width: auto;
 }
 
-/* Ensure character images don't exceed container */
+/* Character images */
 .markdown-content img[alt*="Pablo"],
 .markdown-content img[alt*="Profeta"],
 .markdown-content img[alt*="John"],
@@ -264,7 +244,7 @@ body {
   object-fit: contain;
 }
 
-/* Party/Team image - full width responsive */
+/* Party/Team image */
 .markdown-content img[alt*="Equipe"],
 .markdown-content img[alt*="Team"],
 .markdown-content img[alt*="party"],
@@ -274,16 +254,15 @@ body {
   height: auto;
   object-fit: contain;
   margin: 2rem auto;
-  display: block;
 }
 
 .markdown-content hr {
   border: none;
-  border-top: 2px solid #000;
+  border-top: 1px solid #000;
   margin: 2rem 0;
 }
 
-/* Badges in markdown */
+/* Badges */
 .markdown-content img[alt*="badge"] {
   border: none;
   height: 20px;
@@ -299,17 +278,11 @@ body {
   width: auto;
   height: auto;
   object-fit: contain;
-  border: 2px solid #000;
+  border: 1px solid #000;
   margin: 1rem 0;
   display: block;
 }
 
-.markdown-content hr + h2 img:hover,
-.markdown-content h2 img:hover {
-  border-color: #000080;
-}
-
-/* Character sections */
 .markdown-content hr + h2 {
   margin-top: 2rem;
   display: flex;
@@ -318,7 +291,7 @@ body {
   gap: 1rem;
 }
 
-/* Neko responsivo */
+/* Neko */
 .markdown-content #nl {
   max-width: 100%;
   overflow: hidden;
@@ -326,9 +299,10 @@ body {
 }
 
 .markdown-content #nl h1 {
-  font-size: clamp(0.8rem, 3vw, 1rem) !important;
+  font-size: 1rem !important;
   margin: 0 !important;
   padding: 0 !important;
+  border: none !important;
 }
 
 .markdown-content #nl a {
@@ -337,36 +311,13 @@ body {
   max-width: 100%;
 }
 
-/* Loading */
-.loading {
-  text-align: center;
-  padding: 3rem;
-}
-
-.spinner {
-  border: 3px solid #c0c0c0;
-  border-top: 3px solid #000;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: spin 1s linear infinite;
-  margin: 0 auto;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Estilização de iframes de jogos */
+/* Game Container */
 .game-container {
-  position: relative;
   margin: 2rem auto;
   max-width: 1200px;
-  border: 2px solid #000;
+  border: 1px solid #000;
   padding: 1rem;
-  overflow: hidden;
-  background: #c0c0c0;
+  background: #fff;
 }
 
 .game-container iframe {
@@ -382,30 +333,23 @@ body {
 }
 
 .document-header {
-  border-bottom: 2px solid #000;
+  border-bottom: 1px solid #000;
   padding-bottom: 1rem;
   margin-bottom: 2rem;
 }
 
 .document-header h1 {
   margin-bottom: 0.5rem;
-  word-wrap: break-word;
-  line-height: 1.3;
 }
 
 .breadcrumbs {
-  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  font-size: 0.9rem;
   margin-bottom: 1rem;
-  word-wrap: break-word;
 }
 
 .breadcrumbs a {
-  color: #0000ff;
+  color: #000;
   text-decoration: underline;
-}
-
-.breadcrumbs a:hover {
-  color: #000080;
 }
 
 /* Timeline */
@@ -419,19 +363,17 @@ body {
   text-align: center;
   margin-bottom: 3rem;
   padding-bottom: 2rem;
-  border-bottom: 2px solid #000;
+  border-bottom: 1px solid #000;
 }
 
 .timeline-header h1 {
   margin-bottom: 0.5rem;
-  word-wrap: break-word;
 }
 
 .timeline-subtitle {
-  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  font-size: 1rem;
   font-style: italic;
   padding: 0 1rem;
-  word-wrap: break-word;
 }
 
 .timeline-wrapper {
@@ -446,15 +388,13 @@ body {
   margin-bottom: 2rem;
   padding: 1rem;
   border: 1px solid #000;
-  background: #c0c0c0;
+  background: #f0f0f0;
 }
 
 .period-header h2 {
-  font-size: clamp(1.1rem, 3vw, 1.8rem);
+  font-size: 1.5rem;
   margin: 0;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  word-wrap: break-word;
 }
 
 .timeline-event {
@@ -503,22 +443,20 @@ body {
 }
 
 .event-year {
-  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  font-size: 1.2rem;
   font-weight: bold;
-  min-width: auto;
   flex-shrink: 0;
 }
 
 .event-icon {
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-size: 1.5rem;
   flex-shrink: 0;
 }
 
 .event-title {
-  font-size: clamp(1rem, 3vw, 1.3rem);
+  font-size: 1.3rem;
   margin: 0;
   flex: 1;
-  word-wrap: break-word;
 }
 
 .event-summary {
@@ -536,7 +474,8 @@ body {
 .btn-view {
   padding: 0.5rem 1rem;
   border: 1px solid #000;
-  background: #c0c0c0;
+  background: #fff;
+  color: #000;
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
@@ -545,25 +484,13 @@ body {
 
 .btn-expand:hover,
 .btn-view:hover {
-  background: #d4d0c8;
+  background: #f0f0f0;
 }
 
 .event-content {
   margin-top: 1.5rem;
   padding-top: 1.5rem;
   border-top: 1px solid #000;
-  animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* Index Page */
@@ -582,13 +509,12 @@ body {
 }
 
 .card:hover {
-  background: #e0e0e0;
+  background: #f0f0f0;
 }
 
 .card h2 {
   margin-bottom: 1rem;
-  font-size: clamp(1.2rem, 4vw, 1.5rem);
-  word-wrap: break-word;
+  font-size: 1.5rem;
 }
 
 .card p {
@@ -602,81 +528,83 @@ body {
   margin-right: 0.5rem;
   margin-top: 0.5rem;
   border: 1px solid #000;
-  background: #c0c0c0;
+  background: #f0f0f0;
 }
 
-/* Mobile */
-@media (max-width: 900px) {
-  .app-layout {
-    grid-template-columns: 1fr;
-  }
-  
-  .app-nav {
-    max-height: none;
-  }
-  
-  #desktop {
-    padding: 12px;
-  }
-  
-  .app-window {
-    width: 100%;
-    max-height: 100vh;
-  }
+/* Footer */
+footer {
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid #000;
+  margin-top: 3rem;
 }
 
+footer p {
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
+  header {
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  nav {
+    padding: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
   .markdown-content hr + h2 img,
   .markdown-content h2 img {
     max-width: 150px;
     max-height: 150px;
   }
-  
-  .app-header img {
-    max-width: 150px;
-  }
-  
-  .app-header h1 {
-    font-size: 1.2rem;
-  }
-  
-  .lang-btn {
-    font-size: 0.8rem;
-    padding: 0.3rem 0.8rem;
-  }
-  
-  .index-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
+
   .timeline-event {
     padding-left: 1.5rem;
     margin-bottom: 1.5rem;
   }
-  
+
   .timeline-marker {
     width: 12px;
     height: 12px;
     left: -5px;
   }
-  
+
   .event-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
   }
-  
+
   .event-actions {
     flex-direction: column;
     width: 100%;
     gap: 0.5rem;
   }
-  
+
   .btn-expand,
   .btn-view {
     width: 100%;
     text-align: center;
+  }
+
+  .index-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
 
@@ -686,53 +614,40 @@ body {
     max-width: 120px;
     max-height: 120px;
   }
-  
-  .app-header img {
-    max-width: 120px;
-  }
-  
-  .app-header h1 {
-    font-size: 1rem;
-  }
-  
-  .lang-btn {
-    font-size: 0.7rem;
-    padding: 0.25rem 0.6rem;
-  }
-  
+
   .markdown-content ul,
   .markdown-content ol {
     margin-left: 1rem;
   }
-  
+
   .markdown-content pre {
     padding: 0.75rem;
     font-size: 0.75rem;
   }
-  
+
   .markdown-content code {
     font-size: 0.75rem;
     padding: 0.1rem 0.25rem;
   }
-  
+
   .timeline-event {
     padding-left: 1.25rem;
   }
-  
+
   .timeline-marker {
     width: 10px;
     height: 10px;
     left: -4px;
   }
-  
+
   .timeline-content {
     padding: 0.75rem;
   }
-  
+
   .period-header {
     padding: 0.5rem;
   }
-  
+
   .card {
     padding: 1rem;
   }
