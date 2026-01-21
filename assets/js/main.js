@@ -753,6 +753,12 @@ async function loadDocument(filename) {
       console.log('Usando cache para:', fullPath);
     }
     
+    // Ocultar contador de visitas em páginas que não são a inicial
+    const counterEl = document.getElementById('visit-counter');
+    if (counterEl) {
+      counterEl.style.display = 'none';
+    }
+    
     // Criar estrutura do documento
     const docTitle = extractTitle(markdown);
     const docDescription = extractDescription(markdown);
@@ -1623,6 +1629,10 @@ function navigate(path, anchor = null) {
       setTimeout(() => scrollToAnchor(normalizedAnchor), 200);
     }
   } else {
+    const counterEl = document.getElementById('visit-counter');
+    if (counterEl) {
+      counterEl.style.display = 'none';
+    }
     stopQuantumClock();
     const filename = routes[normalizedPath];
     
@@ -1969,6 +1979,13 @@ function switchLanguage(lang) {
   updateSubtitle();
   updateClockTooltip(); // Atualizar tooltip do relógio
   
+  // Atualizar contador de visitas se estiver visível
+  const counterEl = document.getElementById('visit-counter');
+  if (counterEl && counterEl.style.display !== 'none') {
+    const count = getVisitCount();
+    updateVisitCounter(count);
+  }
+  
   // Se estiver no jogo oculto, atualizar idioma do jogo
   if (window.occultGameInstance && typeof window.occultGameInstance.updateLanguage === 'function') {
     window.occultGameInstance.updateLanguage(lang);
@@ -2307,6 +2324,45 @@ function removeQuantumClockEasterEgg() {
   quantumClockEasterEggListeners = null;
 }
 
+// Funções do contador de visitas
+function getVisitCount() {
+  const stored = localStorage.getItem('qel_visit_count');
+  if (stored) {
+    return parseInt(stored, 10);
+  }
+  return 34881;
+}
+
+function updateVisitCounter(count) {
+  const counterText = document.querySelector('.visit-counter-text');
+  if (counterText) {
+    const formatted = count.toLocaleString('pt-BR');
+    const text = currentLang === 'pt' 
+      ? `Visitas: ${formatted}`
+      : `Visits: ${formatted}`;
+    counterText.textContent = text;
+  }
+}
+
+function initVisitCounter() {
+  const counterEl = document.getElementById('visit-counter');
+  if (!counterEl) return;
+  
+  const sessionKey = 'qel_visit_counted';
+  const storageKey = 'qel_visit_count';
+  
+  if (!sessionStorage.getItem(sessionKey)) {
+    let count = getVisitCount();
+    count++;
+    localStorage.setItem(storageKey, count.toString());
+    sessionStorage.setItem(sessionKey, 'true');
+  }
+  
+  const count = getVisitCount();
+  updateVisitCounter(count);
+  counterEl.style.display = 'block';
+}
+
 // Mostrar página inicial (mantida para compatibilidade)
 function showIndex() {
   updateMetaTags({
@@ -2317,6 +2373,7 @@ function showIndex() {
     type: 'website'
   });
   renderTimeline();
+  initVisitCounter();
   // initQuantumClock() já é chamado dentro de renderTimeline()
 }
 
