@@ -1452,12 +1452,6 @@ function navigate(path, anchor = null) {
       // Easter egg: Street Fighter 2 (local)
       const main = document.querySelector('main');
       if (main) {
-        const gameText = currentLang === 'pt' 
-          ? 'Street Fighter 2 - O clássico jogo de luta'
-          : 'Street Fighter 2 - The classic fighting game';
-        const gameDescription = currentLang === 'pt'
-          ? 'Jogue Street Fighter 2 diretamente no navegador. Clique na tela para começar. Use as setas para mover, Z para soco, X para chute.'
-          : 'Play Street Fighter 2 directly in your browser. Click on the screen to start. Use arrow keys to move, Z for punch, X for kick.';
         const basePath = getBasePath();
         // Construir caminho do jogo com basePath se necessário
         const cleanBasePath = basePath && basePath !== '' 
@@ -1472,8 +1466,6 @@ function navigate(path, anchor = null) {
               <h1>Street Fighter 2</h1>
             </div>
             <div class="markdown-content game-container">
-              <p>${gameText}</p>
-              <p>${gameDescription}</p>
               <div style="position:relative;width:100%;max-width:1200px;margin:2rem auto;padding-top:75%;">
                 <iframe 
                   src="${gamePath}" 
