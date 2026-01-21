@@ -835,7 +835,32 @@ function removeBrokenEmojis() {
 // Extrair título do markdown
 function extractTitle(markdown) {
   const match = markdown.match(/^#\s+(.+)$/m);
-  return match ? match[1].replace(/[🔮🎸🧾🌀🍬🚫🏢👔🦹❄️🔥🎖️📺]/g, '').trim() : 'Documento';
+  if (!match) return 'Documento';
+  
+  let title = match[1];
+  
+  // Remover caracteres de substituição UTF-8 (emoji quebrado)
+  title = title.replace(/\uFFFD/g, '');
+  
+  // Remover todos os emojis Unicode (incluindo sequências)
+  // Regex para detectar ranges de emoji Unicode
+  title = title.replace(/[\u{1F300}-\u{1F9FF}]/gu, ''); // Emojis diversos
+  title = title.replace(/[\u{2600}-\u{26FF}]/gu, ''); // Símbolos diversos
+  title = title.replace(/[\u{2700}-\u{27BF}]/gu, ''); // Dingbats
+  title = title.replace(/[\u{1F600}-\u{1F64F}]/gu, ''); // Emoticons
+  title = title.replace(/[\u{1F680}-\u{1F6FF}]/gu, ''); // Transporte e símbolos
+  title = title.replace(/[\u{1F1E0}-\u{1F1FF}]/gu, ''); // Bandeiras
+  title = title.replace(/[\u{1F900}-\u{1F9FF}]/gu, ''); // Suplementar
+  title = title.replace(/[\u{1FA00}-\u{1FA6F}]/gu, ''); // Extensão A
+  title = title.replace(/[\u{1FA70}-\u{1FAFF}]/gu, ''); // Extensão B
+  title = title.replace(/[\u{FE00}-\u{FE0F}]/gu, ''); // Variantes
+  title = title.replace(/[\u{200D}]/gu, ''); // Zero-width joiner
+  title = title.replace(/[\u{20E3}]/gu, ''); // Combining enclosing keycap
+  
+  // Remover espaços múltiplos e trim
+  title = title.replace(/\s+/g, ' ').trim();
+  
+  return title || 'Documento';
 }
 
 // Criar breadcrumbs
