@@ -696,7 +696,6 @@ const routes = {
   '/contact': 'CONTACT.md',
   '/ritual': 'OCCULT_GAME', // Easter egg: Ritual Terminal (movido do relógio)
   '/street-fighter': 'STREET_FIGHTER_2', // Easter egg: Street Fighter Alpha (novo no relógio)
-  '/hero': 'HEROES_HOMM2' // Easter egg: Heroes of Might and Magic III
 };
 
 // Função para atualizar URL sem recarregar página
@@ -708,7 +707,7 @@ function updateURL(path) {
 
 // Função para carregar e renderizar markdown
 async function loadDocument(filename) {
-  const main = document.querySelector('main');
+  const main = document.querySelector('#content');
   main.innerHTML = `<div class="loading"><div class="spinner"></div><p>${t('ui.loading')}</p></div>`;
 
   try {
@@ -774,8 +773,6 @@ async function loadDocument(filename) {
         prefetchVisibleLinks();
       });
       
-      // Processar easter eggs de texto (Heroes of Might and Magic II)
-      processTextEasterEggs();
       
       // Processar e executar scripts no conteúdo
       processScripts();
@@ -859,40 +856,6 @@ function processHeadingIds() {
   });
 }
 
-// Processar easter eggs de texto (referências ocultas)
-function processTextEasterEggs() {
-  const currentPath = window.location.pathname;
-  const basePath = getBasePath();
-  let currentRoute = currentPath;
-  if (basePath && currentPath.startsWith(basePath)) {
-    currentRoute = currentPath.substring(basePath.length) || '/';
-  }
-  
-  // Easter egg: Heroes of Might and Magic II na página de vilões
-  if (currentRoute === '/villains' || currentRoute === '/villains/') {
-    const markdownContent = document.querySelector('.markdown-content');
-    if (!markdownContent) return;
-    
-    // Procurar por parágrafos que contenham as palavras-chave
-    const paragraphs = markdownContent.querySelectorAll('p');
-    paragraphs.forEach(p => {
-      const text = p.textContent;
-      if (text && (
-        (text.includes('heroes') && text.includes('might and magic')) || 
-        (text.includes('heroes') && text.includes('segunda geração')) ||
-        (text.includes('heroes') && text.includes('second-generation'))
-      )) {
-        // Tornar as palavras-chave clicáveis
-        const html = p.innerHTML;
-        const newHtml = html
-          .replace(/\b(heroes)\b/gi, '<a href="/hero" onclick="event.preventDefault(); navigate(\'/hero\'); return false;" style="cursor: pointer; text-decoration: underline; text-decoration-style: dotted; color: inherit;">$1</a>')
-          .replace(/\b(might and magic)\b/gi, '<a href="/hero" onclick="event.preventDefault(); navigate(\'/hero\'); return false;" style="cursor: pointer; text-decoration: underline; text-decoration-style: dotted; color: inherit;">$1</a>')
-          .replace(/\b(segunda geração|second-generation)\b/gi, '<a href="/hero" onclick="event.preventDefault(); navigate(\'/hero\'); return false;" style="cursor: pointer; text-decoration: underline; text-decoration-style: dotted; color: inherit;">$1</a>');
-        p.innerHTML = newHtml;
-      }
-    });
-  }
-}
 
 // Prefetch de links visíveis na viewport
 function prefetchVisibleLinks() {
@@ -1438,7 +1401,7 @@ function navigate(path, anchor = null) {
     // Easter eggs especiais
     if (filename === 'OCCULT_GAME') {
       // Easter egg: Ritual Terminal (movido para /ritual)
-      const main = document.querySelector('main');
+      const main = document.querySelector('#content');
       if (main && typeof window.initOccultGame === 'function') {
         main.innerHTML = '<div class="loading"><div class="spinner"></div><p>Inicializando ritual...</p></div>';
         setTimeout(() => {
@@ -1455,7 +1418,7 @@ function navigate(path, anchor = null) {
       }
     } else if (filename === 'STREET_FIGHTER_2') {
       // Easter egg: Street Fighter 2 (local)
-      const main = document.querySelector('main');
+      const main = document.querySelector('#content');
       if (main) {
         const basePath = getBasePath();
         // Construir caminho do jogo com basePath se necessário
@@ -1480,40 +1443,6 @@ function navigate(path, anchor = null) {
                   loading="lazy" 
                   referrerpolicy="no-referrer-when-downgrade"
                   title="Street Fighter 2">
-                </iframe>
-              </div>
-            </div>
-          </div>
-        `;
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    } else if (filename === 'HEROES_HOMM2') {
-      // Easter egg: Heroes of Might and Magic III
-      const main = document.querySelector('main');
-      if (main) {
-        const basePath = getBasePath();
-        // Construir caminho do jogo com basePath se necessário
-        const cleanBasePath = basePath && basePath !== '' 
-          ? (basePath.startsWith('/') ? basePath : `/${basePath}`)
-          : '';
-        const gamePath = cleanBasePath 
-          ? `${cleanBasePath}/games/heroes/index.html`
-          : '/games/heroes/index.html';
-        main.innerHTML = `
-          <div class="document-container">
-            <div class="document-header">
-              <h1>Heroes of Might and Magic III</h1>
-            </div>
-            <div class="markdown-content game-container">
-              <div style="position:relative;width:100%;max-width:1200px;margin:2rem auto;padding-top:75%;">
-                <iframe 
-                  src="${gamePath}" 
-                  style="position:absolute;inset:0;width:100%;height:100%;border:0;" 
-                  allow="autoplay; fullscreen; gamepad; clipboard-write" 
-                  allowfullscreen 
-                  loading="lazy" 
-                  referrerpolicy="no-referrer-when-downgrade"
-                  title="Heroes of Might and Magic III">
                 </iframe>
               </div>
             </div>
@@ -1549,7 +1478,7 @@ function navigate(path, anchor = null) {
 
   // Renderizar Timeline Cronológica
 function renderTimeline() {
-  const main = document.querySelector('main');
+  const main = document.querySelector('#content');
   const currentTimeline = currentLang === 'en' ? timelineEN : timeline;
   
   // Inicializar relógio quântico quando renderizar a timeline (home)
@@ -1833,7 +1762,7 @@ function updateLangButtons() {
 
 // Atualizar navegação
 function updateNavigation() {
-  const navLinks = document.querySelectorAll('nav a');
+  const navLinks = document.querySelectorAll('#nav a');
   const navMap = {
     'Início': 'nav.home',
     'História': 'nav.history',
@@ -1870,11 +1799,11 @@ function updateNavigation() {
   });
 }
 
-// Atualizar footer
+// Atualizar status bar (substitui footer)
 function updateFooter() {
-  const footer = document.querySelector('footer p');
-  if (footer) {
-    footer.textContent = currentLang === 'en' 
+  const statusRight = document.getElementById('status-right');
+  if (statusRight) {
+    statusRight.textContent = currentLang === 'en' 
       ? 'graciously lived by Pablo Murad (but not in that way)'
       : 'graciosamente vivido por Pablo Murad (mas não dessa maneira)';
   }
@@ -1882,7 +1811,7 @@ function updateFooter() {
 
 // Atualizar subtítulo
 function updateSubtitle() {
-  const subtitles = document.querySelectorAll('header .subtitle');
+  const subtitles = document.querySelectorAll('.app-header .subtitle');
   subtitles.forEach(subtitle => {
     if (subtitle && (subtitle.textContent.includes('realidade') || subtitle.textContent.includes('Reality'))) {
       subtitle.textContent = currentLang === 'en'

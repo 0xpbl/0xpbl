@@ -1,15 +1,13 @@
 /* QEL@0xpblab - Estilos do Easter Egg "Ritual Terminal" */
-/* Terminal ritualístico compatível com tema retro/neon */
+/* Terminal ritualístico compatível com tema Win95 */
 
 .occult-game-container {
   max-width: 900px;
   margin: 2rem auto;
   padding: 1.5rem;
-  background: var(--bg-card, #1a1d24);
-  border: 2px solid var(--violet, #7C3AED);
-  border-radius: 0;
-  box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
-  font-family: 'IBM Plex Mono', 'VT323', monospace;
+  background: #c0c0c0;
+  border: 2px solid #000;
+  font-family: 'Courier New', monospace;
 }
 
 /* Terminal de texto */
@@ -20,14 +18,14 @@
   min-height: 300px;
   max-height: 500px;
   overflow-y: auto;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Courier New', monospace;
   font-size: 0.9rem;
   line-height: 1.6;
-  border: 1px solid #333;
+  border: 1px solid #808080;
   white-space: pre-wrap;
   word-wrap: break-word;
   scrollbar-width: thin;
-  scrollbar-color: var(--violet, #7C3AED) #000;
+  scrollbar-color: #808080 #000;
 }
 
 .occult-terminal::-webkit-scrollbar {
@@ -39,17 +37,17 @@
 }
 
 .occult-terminal::-webkit-scrollbar-thumb {
-  background: var(--violet, #7C3AED);
+  background: #808080;
   border: 1px solid #000;
 }
 
 .occult-terminal::-webkit-scrollbar-thumb:hover {
-  background: var(--cyan, #22D3EE);
+  background: #a0a0a0;
 }
 
 /* Prompt do terminal */
 .occult-prompt {
-  color: var(--cyan, #22D3EE);
+  color: #00ffff;
   font-weight: 600;
 }
 
@@ -67,39 +65,37 @@
 }
 
 .occult-choice-btn {
-  background: transparent;
-  border: 2px solid var(--violet, #7C3AED);
-  color: var(--text-light, #E5E7EB);
+  background: #c0c0c0;
+  border: 2px outset #c0c0c0;
+  color: #000;
   padding: 0.75rem 1.25rem;
-  font-family: 'IBM Plex Mono', 'VT323', monospace;
+  font-family: 'Courier New', monospace;
   font-size: 0.9rem;
   cursor: pointer;
-  transition: all 0.2s ease;
   text-align: left;
   position: relative;
-  overflow: hidden;
 }
 
 .occult-choice-btn::before {
   content: '[ ] ';
-  color: var(--cyan, #22D3EE);
+  color: #000080;
   margin-right: 0.5rem;
 }
 
 .occult-choice-btn:hover,
 .occult-choice-btn:focus {
-  background: rgba(124, 58, 237, 0.1);
-  border-color: var(--cyan, #22D3EE);
-  box-shadow: 0 0 10px rgba(34, 211, 238, 0.3);
+  background: #d4d0c8;
+  border-style: inset;
   outline: none;
 }
 
 .occult-choice-btn:active {
-  transform: translateY(1px);
+  border-style: inset;
+  background: #a0a0a0;
 }
 
 .occult-choice-btn:focus-visible {
-  outline: 2px solid var(--cyan, #22D3EE);
+  outline: 1px dotted #000;
   outline-offset: 2px;
 }
 
@@ -110,7 +106,7 @@
 
 .occult-input-label {
   display: block;
-  color: var(--cyan, #22D3EE);
+  color: #000080;
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
 }
@@ -118,18 +114,16 @@
 .occult-input {
   width: 100%;
   background: #000;
-  border: 2px solid var(--violet, #7C3AED);
+  border: 2px inset #808080;
   color: #00ff00;
   padding: 0.75rem;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Courier New', monospace;
   font-size: 0.9rem;
   outline: none;
-  transition: all 0.2s ease;
 }
 
 .occult-input:focus {
-  border-color: var(--cyan, #22D3EE);
-  box-shadow: 0 0 10px rgba(34, 211, 238, 0.3);
+  border-color: #00ffff;
 }
 
 .occult-input::placeholder {
@@ -137,20 +131,20 @@
 }
 
 .occult-input-error {
-  border-color: var(--red, #EF4444);
-  color: var(--red, #EF4444);
+  border-color: #ff0000;
+  color: #ff0000;
 }
 
 .occult-input-success {
-  border-color: var(--green, #10B981);
-  color: var(--green, #10B981);
+  border-color: #00ff00;
+  color: #00ff00;
 }
 
 /* Área de ações */
 .occult-actions {
   margin-top: 2rem;
   padding-top: 1.5rem;
-  border-top: 1px solid var(--border, #2d3239);
+  border-top: 1px solid #808080;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -158,46 +152,50 @@
 }
 
 .occult-action-btn {
-  background: transparent;
-  border: 1px solid var(--border, #2d3239);
-  color: var(--text-light, #E5E7EB);
+  background: #c0c0c0;
+  border: 2px outset #c0c0c0;
+  color: #000;
   padding: 0.5rem 1rem;
-  font-family: 'IBM Plex Mono', 'VT323', monospace;
+  font-family: 'Courier New', monospace;
   font-size: 0.85rem;
   cursor: pointer;
-  transition: all 0.2s ease;
 }
 
 .occult-action-btn:hover,
 .occult-action-btn:focus {
-  background: rgba(124, 58, 237, 0.1);
-  border-color: var(--violet, #7C3AED);
+  background: #d4d0c8;
+  border-style: inset;
   outline: none;
 }
 
+.occult-action-btn:active {
+  border-style: inset;
+  background: #a0a0a0;
+}
+
 .occult-action-btn:focus-visible {
-  outline: 2px solid var(--violet, #7C3AED);
+  outline: 1px dotted #000;
   outline-offset: 2px;
 }
 
 .occult-action-btn.danger {
-  border-color: var(--red, #EF4444);
-  color: var(--red, #EF4444);
+  border-color: #ff0000;
+  color: #ff0000;
 }
 
 .occult-action-btn.danger:hover,
 .occult-action-btn.danger:focus {
-  background: rgba(239, 68, 68, 0.1);
+  background: #ffe0e0;
 }
 
 /* Inventário (discreto) */
 .occult-inventory {
   margin-top: 1rem;
   padding: 0.75rem;
-  background: rgba(124, 58, 237, 0.05);
-  border: 1px dashed var(--violet, #7C3AED);
+  background: #e0e0e0;
+  border: 1px dashed #808080;
   font-size: 0.85rem;
-  color: var(--muted, #888);
+  color: #000;
   min-height: 2rem;
 }
 
@@ -209,8 +207,8 @@
   display: inline-block;
   margin: 0.25rem 0.5rem 0.25rem 0;
   padding: 0.25rem 0.5rem;
-  background: rgba(124, 58, 237, 0.1);
-  border: 1px solid var(--violet, #7C3AED);
+  background: #c0c0c0;
+  border: 1px solid #808080;
   font-size: 0.8rem;
 }
 
@@ -223,21 +221,21 @@
 }
 
 .occult-message.info {
-  border-color: var(--cyan, #22D3EE);
-  background: rgba(34, 211, 238, 0.1);
-  color: var(--cyan, #22D3EE);
+  border-color: #000080;
+  background: #e0e0ff;
+  color: #000080;
 }
 
 .occult-message.error {
-  border-color: var(--red, #EF4444);
-  background: rgba(239, 68, 68, 0.1);
-  color: var(--red, #EF4444);
+  border-color: #ff0000;
+  background: #ffe0e0;
+  color: #ff0000;
 }
 
 .occult-message.success {
-  border-color: var(--green, #10B981);
-  background: rgba(16, 185, 129, 0.1);
-  color: var(--green, #10B981);
+  border-color: #008000;
+  background: #e0ffe0;
+  color: #008000;
 }
 
 /* Responsividade */
@@ -266,38 +264,4 @@
   .occult-action-btn {
     width: 100%;
   }
-}
-
-/* Tema Retro - Ajustes */
-html.theme-retro .occult-game-container {
-  background: var(--panel, #fffaf0);
-  border-color: var(--border, #111111);
-  color: var(--text, #111111);
-}
-
-html.theme-retro .occult-terminal {
-  background: var(--bg, #f6f1e3);
-  color: var(--text, #111111);
-  border-color: var(--border, #111111);
-}
-
-html.theme-retro .occult-choice-btn {
-  border-color: var(--border, #111111);
-  color: var(--text, #111111);
-}
-
-html.theme-retro .occult-choice-btn:hover,
-html.theme-retro .occult-choice-btn:focus {
-  background: var(--panel, #fffaf0);
-  border-color: var(--accent, #0000aa);
-}
-
-html.theme-retro .occult-input {
-  background: var(--panel, #fffaf0);
-  border-color: var(--border, #111111);
-  color: var(--text, #111111);
-}
-
-html.theme-retro .occult-prompt {
-  color: var(--accent, #0000aa);
 }
