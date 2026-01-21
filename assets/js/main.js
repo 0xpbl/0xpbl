@@ -755,6 +755,16 @@ async function loadDocument(filename) {
     
     // Criar estrutura do documento
     const docTitle = extractTitle(markdown);
+    const docDescription = extractDescription(markdown);
+    
+    // Atualizar meta tags
+    updateMetaTags({
+      title: docTitle,
+      description: docDescription,
+      type: 'article',
+      datePublished: new Date().toISOString(),
+      dateModified: new Date().toISOString()
+    });
     
     // Remover o primeiro H1 do markdown para evitar duplicação
     const markdownWithoutFirstH1 = markdown.replace(/^#\s+.+$/m, '').trim();
@@ -861,6 +871,191 @@ function extractTitle(markdown) {
   title = title.replace(/\s+/g, ' ').trim();
   
   return title || 'Documento';
+}
+
+// Extrair descrição do markdown (primeiro parágrafo)
+function extractDescription(markdown) {
+  const lines = markdown.split('\n');
+  for (let line of lines) {
+    line = line.trim();
+    if (line && !line.startsWith('#') && !line.startsWith('![') && !line.startsWith('>') && line.length > 20) {
+      return line.substring(0, 160) + (line.length > 160 ? '...' : '');
+    }
+  }
+  return 'A realidade é um sistema distribuído, e observação é uma forma de commit.';
+}
+
+// Atualizar ou criar meta tag
+function updateOrCreateMeta(attr, value, content) {
+  let meta = document.querySelector(`meta[${attr}="${value}"]`);
+  if (!meta) {
+    meta = document.createElement('meta');
+    meta.setAttribute(attr, value);
+    document.head.appendChild(meta);
+  }
+  meta.content = content;
+}
+
+// Atualizar ou criar link tag
+function updateOrCreateLink(rel, href) {
+  let link = document.querySelector(`link[rel="${rel}"]`);
+  if (!link) {
+    link = document.createElement('link');
+    link.rel = rel;
+    document.head.appendChild(link);
+  }
+  link.href = href;
+}
+
+// Atualizar structured data JSON-LD
+function updateStructuredData(data) {
+  const baseUrl = 'https://0xpbl.github.io/0xpbl';
+  const currentUrl = baseUrl + window.location.pathname;
+  
+  let existingScript = document.getElementById('structured-data');
+  if (existingScript) {
+    existingScript.remove();
+  }
+  
+  const script = document.createElement('script');
+  script.id = 'structured-data';
+  script.type = 'application/ld+json';
+  
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Organization',
+        'name': 'QEL@0xpblab',
+        'alternateName': 'Quantum Experimental Laboratories',
+        'url': baseUrl,
+        'logo': `${baseUrl}/img/qel.png`,
+        'description': 'Quantum Experimental Laboratories at 0xpblab. A realidade é um sistema distribuído, e observação é uma forma de commit.'
+      },
+      {
+        '@type': 'WebSite',
+        'name': 'QEL@0xpblab',
+        'url': baseUrl,
+        'description': 'A realidade é um sistema distribuído, e observação é uma forma de commit.',
+        'inLanguage': currentLang === 'pt' ? 'pt-BR' : 'en-US',
+        'potentialAction': {
+          '@type': 'SearchAction',
+          'target': {
+            '@type': 'EntryPoint',
+            'urlTemplate': `${baseUrl}/?q={search_term_string}`
+          },
+          'query-input': 'required name=search_term_string'
+        }
+      }
+    ]
+  };
+  
+  if (data.type === 'article' || data.type === 'document') {
+    structuredData['@graph'].push({
+      '@type': 'Article',
+      'headline': data.title,
+      'description': data.description,
+      'url': currentUrl,
+      'datePublished': data.datePublished || new Date().toISOString(),
+      'dateModified': data.dateModified || new Date().toISOString(),
+      'author': {
+        '@type': 'Person',
+        'name': 'Pablo Murad'
+      },
+      'publisher': {
+        '@type': 'Organization',
+        'name': 'QEL@0xpblab',
+        'logo': {
+          '@type': 'ImageObject',
+          'url': `${baseUrl}/img/qel.png`
+        }
+      },
+      'inLanguage': currentLang === 'pt' ? 'pt-BR' : 'en-US',
+      'image': data.image || `${baseUrl}/img/qel.png`
+    });
+  }
+  
+  script.textContent = JSON.stringify(structuredData);
+  document.head.appendChild(script);
+}
+
+// Função para obter personagem baseado na hora
+function getCharacterByHour() {
+  const hour = new Date().getHours();
+  const characters = [
+    { name: 'Pablo', image: 'Pablo.png' },
+    { name: 'Profeta', image: 'Profeta.png' },
+    { name: 'John', image: 'john.png' },
+    { name: 'Gaybe-EL', image: 'Gaybe-EL.png' },
+    { name: 'Madeusa', image: 'Madeusa.png' },
+    { name: 'Marcitus', image: 'Marcitus.png' },
+    { name: 'Marcelo', image: 'Marcelo.png' },
+    { name: 'Jão Bolão', image: 'Jão.png' },
+    { name: 'Nikols', image: 'Nikols.png' },
+    { name: 'Dr. Bee Shaa', image: 'BeeShaa.png' },
+    { name: 'Doktor Bino', image: 'Doktor.png' },
+    { name: 'Willy Criança', image: 'bebewilly.png' },
+    { name: 'Sora.IA', image: 'soraia.png' },
+    { name: 'Willy', image: 'Willy.png' }
+  ];
+  const index = hour % characters.length;
+  return characters[index];
+}
+
+// Função para gerar URL de imagem dinâmica de compartilhamento
+function getDynamicShareImage(title, description) {
+  const baseUrl = 'https://0xpbl.github.io/0xpbl';
+  const character = getCharacterByHour();
+  const imageUrl = `${baseUrl}/img/${character.image}`;
+  return imageUrl;
+}
+
+// Atualizar meta tags dinamicamente
+function updateMetaTags(data) {
+  const baseUrl = 'https://0xpbl.github.io/0xpbl';
+  const basePath = getBasePath();
+  let currentPath = window.location.pathname;
+  
+  if (basePath && currentPath.startsWith(basePath)) {
+    currentPath = currentPath.substring(basePath.length) || '/';
+  }
+  
+  const currentUrl = baseUrl + (basePath || '') + currentPath;
+  
+  const title = data.title || 'QEL@0xpblab - Quantum Experimental Laboratories';
+  const description = data.description || 'A realidade é um sistema distribuído, e observação é uma forma de commit.';
+  
+  // Obter imagem dinâmica baseada no personagem da hora
+  const dynamicImage = data.image || getDynamicShareImage(title, description);
+  const character = getCharacterByHour();
+  const locale = data.locale || (currentLang === 'pt' ? 'pt_BR' : 'en_US');
+  
+  document.title = title;
+  
+  updateOrCreateMeta('name', 'description', description);
+  
+  updateOrCreateMeta('property', 'og:title', title);
+  updateOrCreateMeta('property', 'og:description', description);
+  updateOrCreateMeta('property', 'og:url', currentUrl);
+  updateOrCreateMeta('property', 'og:image', dynamicImage);
+  updateOrCreateMeta('property', 'og:image:alt', `${character.name} - ${title}`);
+  updateOrCreateMeta('property', 'og:locale', locale);
+  updateOrCreateMeta('property', 'og:type', data.type || 'website');
+  
+  updateOrCreateMeta('name', 'twitter:title', title);
+  updateOrCreateMeta('name', 'twitter:description', description);
+  updateOrCreateMeta('name', 'twitter:image', dynamicImage);
+  updateOrCreateMeta('name', 'twitter:image:alt', `${character.name} - ${title}`);
+  
+  updateOrCreateLink('canonical', currentUrl);
+  
+  updateStructuredData({
+    ...data,
+    title,
+    description,
+    image: dynamicImage,
+    type: data.type || 'website'
+  });
 }
 
 // Criar breadcrumbs
@@ -1516,6 +1711,14 @@ function renderTimeline() {
   const main = document.querySelector('#content');
   const currentTimeline = currentLang === 'en' ? timelineEN : timeline;
   
+  updateMetaTags({
+    title: currentLang === 'pt' ? 'História do QEL@0xpblab' : 'QEL@0xpblab History',
+    description: currentLang === 'pt'
+      ? 'Uma narrativa cronológica da realidade como sistema distribuído.'
+      : 'A chronological narrative of reality as a distributed system.',
+    type: 'website'
+  });
+  
   initQuantumClock();
   
   let timelineHTML = '<div class="timeline-container">';
@@ -2106,6 +2309,13 @@ function removeQuantumClockEasterEgg() {
 
 // Mostrar página inicial (mantida para compatibilidade)
 function showIndex() {
+  updateMetaTags({
+    title: 'QEL@0xpblab - Quantum Experimental Laboratories',
+    description: currentLang === 'pt' 
+      ? 'A realidade é um sistema distribuído, e observação é uma forma de commit.'
+      : 'Reality is a distributed system, and observation is a form of commit.',
+    type: 'website'
+  });
   renderTimeline();
   // initQuantumClock() já é chamado dentro de renderTimeline()
 }

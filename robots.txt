@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /ritual
+Disallow: /street-fighter
+
+Sitemap: https://0xpbl.github.io/0xpbl/sitemap.xml
