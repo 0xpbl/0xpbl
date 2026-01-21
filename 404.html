@@ -7,6 +7,11 @@
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
     <title>QEL@0xpblab - Redirecionando...</title>
     <script>
+        // Forçar HTTPS
+        if (window.location.protocol === 'http:' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+            window.location.replace(window.location.href.replace(/^http:/, 'https:'));
+        }
+        
         // Detectar o base path do GitHub Pages
         const hostname = window.location.hostname;
         let basePath = '';

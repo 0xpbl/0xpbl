@@ -1,6 +1,11 @@
 // QEL@0xpblab - JavaScript Principal
 // Sistema de navegação e renderização de markdown
 
+// Forçar HTTPS se estiver em HTTP
+if (window.location.protocol === 'http:' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+  window.location.replace(window.location.href.replace(/^http:/, 'https:'));
+}
+
 // Configuração
 const MARKED_CDN = 'https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js';
 const LANG_KEY = 'qel_language';
@@ -750,6 +755,7 @@ async function loadDocument(filename) {
     requestAnimationFrame(() => {
       processHeadingIds();
       processInternalLinks();
+      removeBrokenEmojis();
       processImages();
       
       requestAnimationFrame(() => {
@@ -769,6 +775,39 @@ async function loadDocument(filename) {
       </div>
     `;
   }
+}
+
+// Função para remover emoticons quebrados
+function removeBrokenEmojis() {
+  const markdownContent = document.querySelector('.markdown-content');
+  if (!markdownContent) return;
+  
+  const walker = document.createTreeWalker(
+    markdownContent,
+    NodeFilter.SHOW_TEXT,
+    null,
+    false
+  );
+  
+  const textNodes = [];
+  let node;
+  while (node = walker.nextNode()) {
+    if (node.textContent.includes('?') || node.textContent.includes('\uFFFD')) {
+      textNodes.push(node);
+    }
+  }
+  
+  textNodes.forEach(textNode => {
+    let text = textNode.textContent;
+    text = text.replace(/\s+\?\s+/g, ' ');
+    text = text.replace(/^\?\s+/g, '');
+    text = text.replace(/\uFFFD/g, '');
+    text = text.replace(/^#+\s+\?/g, (match) => match.replace('?', ''));
+    
+    if (text !== textNode.textContent) {
+      textNode.textContent = text;
+    }
+  });
 }
 
 // Extrair título do markdown
@@ -1283,9 +1322,18 @@ function processScripts() {
   const externalScripts = markdownContent.querySelectorAll('script[src]');
   externalScripts.forEach(oldScript => {
     const newScript = document.createElement('script');
-    Array.from(oldScript.attributes).forEach(attr => {
-      newScript.setAttribute(attr.name, attr.value);
-    });
+    let src = oldScript.getAttribute('src');
+    
+    // Forçar HTTPS em scripts externos
+    if (src && src.startsWith('http://')) {
+      src = src.replace(/^http:/, 'https:');
+      newScript.setAttribute('src', src);
+    } else {
+      Array.from(oldScript.attributes).forEach(attr => {
+        newScript.setAttribute(attr.name, attr.value);
+      });
+    }
+    
     if (oldScript.textContent) {
       newScript.textContent = oldScript.textContent;
     }
@@ -1635,6 +1683,7 @@ async function loadEventContent(eventId, documentName, index) {
     
     // Processar links e imagens no conteúdo carregado
     processInternalLinks();
+    removeBrokenEmojis();
     processImages();
     
     // Processar e executar scripts no conteúdo
@@ -1660,6 +1709,7 @@ function switchLanguage(lang) {
   updateLangButtons();
   updateNavigation();
   updateFooter();
+  updateLastUpdate();
   updateSubtitle();
   updateClockTooltip(); // Atualizar tooltip do relógio
   
@@ -1736,6 +1786,52 @@ function updateFooter() {
     footer.textContent = currentLang === 'en' 
       ? 'graciously lived by Pablo Murad (but not in that way)'
       : 'graciosamente vivido por Pablo Murad (mas não dessa maneira)';
+  }
+}
+
+// Função para buscar e exibir última atualização
+async function updateLastUpdate() {
+  const lastUpdateEl = document.getElementById('last-update');
+  const lastUpdateText = lastUpdateEl?.querySelector('.last-update-text');
+  if (!lastUpdateEl || !lastUpdateText) return;
+  
+  try {
+    const repo = '0xpbl/0xpbl';
+    const response = await fetch(`https://api.github.com/repos/${repo}/commits?path=thehistory&per_page=1`);
+    
+    if (response.ok) {
+      const commits = await response.json();
+      if (commits.length > 0) {
+        const lastCommit = commits[0];
+        const commitDate = new Date(lastCommit.commit.author.date);
+        const formattedDate = commitDate.toLocaleDateString(
+          currentLang === 'en' ? 'en-US' : 'pt-BR',
+          { year: 'numeric', month: 'long', day: 'numeric' }
+        );
+        
+        const text = currentLang === 'en' 
+          ? `Last lore update: ${formattedDate}`
+          : `Última atualização da lore: ${formattedDate}`;
+        
+        lastUpdateText.textContent = text;
+        lastUpdateEl.style.display = 'block';
+      }
+    }
+  } catch (error) {
+    console.warn('Não foi possível buscar última atualização:', error);
+    const buildDate = document.querySelector('meta[name="build-date"]');
+    if (buildDate) {
+      const date = new Date(buildDate.content);
+      const formattedDate = date.toLocaleDateString(
+        currentLang === 'en' ? 'en-US' : 'pt-BR',
+        { year: 'numeric', month: 'long', day: 'numeric' }
+      );
+      const text = currentLang === 'en' 
+        ? `Last lore update: ${formattedDate}`
+        : `Última atualização da lore: ${formattedDate}`;
+      lastUpdateText.textContent = text;
+      lastUpdateEl.style.display = 'block';
+    }
   }
 }
 
@@ -1989,6 +2085,7 @@ document.addEventListener('DOMContentLoaded', () => {
   updateLangButtons();
   updateNavigation();
   updateFooter();
+  updateLastUpdate();
   updateSubtitle();
   
   // Atualizar loading inicial

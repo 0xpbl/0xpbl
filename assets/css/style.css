@@ -250,7 +250,13 @@ main {
 .markdown-content img[alt*="Kid Willy"],
 .markdown-content img[alt*="Willy Bebe"],
 .markdown-content img[alt*="bebewilly"],
-.markdown-content img[src*="bebewilly.png"] {
+.markdown-content img[src*="bebewilly.png"],
+.markdown-content img[alt*="Jão"],
+.markdown-content img[alt*="Jao"],
+.markdown-content img[alt*="Bolão"],
+.markdown-content img[alt*="Bolao"],
+.markdown-content img[src*="Jão.png"],
+.markdown-content img[src*="Jao.png"] {
   max-width: 200px;
   max-height: 200px;
   object-fit: contain;
@@ -529,6 +535,18 @@ footer {
   text-align: center;
   border-top: 1px solid #000;
   margin-top: 3rem;
+}
+
+.last-update {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.85rem;
+  color: #666;
+  border-top: 1px solid #ddd;
+}
+
+.last-update-text {
+  margin: 0;
 }
 
 footer p {
