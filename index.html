@@ -9,15 +9,19 @@
     <link rel="icon" type="image/svg+xml" href="./favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preload" href="assets/css/style.css" as="style">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/retro.css">
-    <link rel="stylesheet" href="assets/css/occult-game.css">
+    <link rel="stylesheet" href="assets/css/retro.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="assets/css/retro.css"></noscript>
+    <link rel="stylesheet" href="assets/css/occult-game.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="assets/css/occult-game.css"></noscript>
 </head>
 <body>
     <header>
         <div class="logo-container">
-            <img src="img/qel.png" alt="QEL@0xpblab Logo" id="logo">
+            <img src="img/qel.png" alt="QEL@0xpblab Logo" id="logo" loading="eager" decoding="async">
         </div>
         <h1>QEL@0xpblab</h1>
         <p class="subtitle">Quantum Experimental Laboratories</p>
@@ -56,7 +60,7 @@
         <p>graciosamente vivido por Pablo Murad (mas não dessa maneira)</p>
     </footer>
 
-    <script src="assets/js/occult-game.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/occult-game.js" defer></script>
 </body>
 </html>

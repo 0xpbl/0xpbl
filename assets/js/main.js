@@ -2,8 +2,50 @@
 // Sistema de navegação e renderização de markdown
 
 // Configuração
-const MARKED_CDN = 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
+const MARKED_CDN = 'https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js';
 const LANG_KEY = 'qel_language';
+const MARKDOWN_CACHE_KEY = 'qel_markdown_cache';
+const MARKDOWN_CACHE_EXPIRY = 24 * 60 * 60 * 1000; // 24 horas em ms
+
+// Cache de documentos Markdown
+let markdownCache = new Map();
+let markdownCacheStorage = null;
+
+// Inicializar cache do localStorage
+function initMarkdownCache() {
+  try {
+    const cached = localStorage.getItem(MARKDOWN_CACHE_KEY);
+    if (cached) {
+      const parsed = JSON.parse(cached);
+      const now = Date.now();
+      // Limpar entradas expiradas
+      for (const [key, value] of Object.entries(parsed)) {
+        if (now - value.timestamp < MARKDOWN_CACHE_EXPIRY) {
+          markdownCache.set(key, value.content);
+        }
+      }
+    }
+  } catch (e) {
+    console.warn('Erro ao carregar cache do localStorage:', e);
+  }
+}
+
+// Salvar cache no localStorage
+function saveMarkdownCache() {
+  try {
+    const cacheObj = {};
+    const now = Date.now();
+    for (const [key, content] of markdownCache.entries()) {
+      cacheObj[key] = {
+        content: content,
+        timestamp: now
+      };
+    }
+    localStorage.setItem(MARKDOWN_CACHE_KEY, JSON.stringify(cacheObj));
+  } catch (e) {
+    console.warn('Erro ao salvar cache no localStorage:', e);
+  }
+}
 
 // Sistema de Idioma
 let currentLang = 'pt';
@@ -672,15 +714,28 @@ async function loadDocument(filename) {
     
     const docsPath = getDocsPath();
     const fullPath = `${docsPath}${filename}`;
-    console.log('Tentando carregar:', fullPath);
+    const cacheKey = `${fullPath}_${currentLang}`;
     
-    const response = await fetch(fullPath);
-    if (!response.ok) {
-      console.error('Erro ao carregar:', fullPath, response.status, response.statusText);
-      throw new Error(`${t('ui.error')}: ${response.status} ${response.statusText}`);
+    // Verificar cache em memória primeiro
+    let markdown = markdownCache.get(cacheKey);
+    
+    if (!markdown) {
+      console.log('Tentando carregar:', fullPath);
+      
+      const response = await fetch(fullPath);
+      if (!response.ok) {
+        console.error('Erro ao carregar:', fullPath, response.status, response.statusText);
+        throw new Error(`${t('ui.error')}: ${response.status} ${response.statusText}`);
+      }
+      
+      markdown = await response.text();
+      
+      // Armazenar no cache
+      markdownCache.set(cacheKey, markdown);
+      saveMarkdownCache();
+    } else {
+      console.log('Usando cache para:', fullPath);
     }
-    
-    const markdown = await response.text();
     
     // Criar estrutura do documento
     const docTitle = extractTitle(markdown);
@@ -703,18 +758,26 @@ async function loadDocument(filename) {
       </div>
     `;
     
-    // Processar IDs nos títulos primeiro
-    processHeadingIds();
-    
-    // Processar links internos
-    processInternalLinks();
-    processImages();
-    
-    // Processar e executar scripts no conteúdo
-    processScripts();
-    
-    // Processar tabelas para responsividade
-    processTables();
+    // Processar conteúdo usando requestAnimationFrame para melhor performance
+    requestAnimationFrame(() => {
+      // Processar IDs nos títulos primeiro
+      processHeadingIds();
+      
+      // Processar links internos
+      processInternalLinks();
+      processImages();
+      
+      // Prefetch de links visíveis (após processar links)
+      requestAnimationFrame(() => {
+        prefetchVisibleLinks();
+      });
+      
+      // Processar e executar scripts no conteúdo
+      processScripts();
+      
+      // Processar tabelas para responsividade
+      processTables();
+    });
     
   } catch (error) {
     main.innerHTML = `
@@ -789,6 +852,43 @@ function processHeadingIds() {
     
     heading.id = uniqueId;
   });
+}
+
+// Prefetch de links visíveis na viewport
+function prefetchVisibleLinks() {
+  const links = document.querySelectorAll('.markdown-content a[href^="/"]');
+  if (links.length === 0) return;
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const link = entry.target;
+        const href = link.getAttribute('href');
+        if (href && !link.dataset.prefetched) {
+          const route = routes[href.split('#')[0]];
+          if (route) {
+            const docsPath = getDocsPath();
+            const filename = route.endsWith('.md') ? route : `${route}.md`;
+            const langSuffix = currentLang === 'en' ? '/en/' : '/';
+            const fullPath = `${docsPath}${langSuffix}${filename}`;
+            
+            // Prefetch usando link rel="prefetch"
+            const prefetchLink = document.createElement('link');
+            prefetchLink.rel = 'prefetch';
+            prefetchLink.href = fullPath;
+            prefetchLink.as = 'document';
+            document.head.appendChild(prefetchLink);
+            
+            link.dataset.prefetched = 'true';
+          }
+        }
+      }
+    });
+  }, {
+    rootMargin: '50px' // Prefetch quando está a 50px da viewport
+  });
+  
+  links.forEach(link => observer.observe(link));
 }
 
 // Processar links internos para usar roteamento
@@ -1051,14 +1151,19 @@ function processImages() {
     
     // Ignorar URLs absolutas (http/https)
     if (src.startsWith('http://') || src.startsWith('https://')) {
+      // Ainda aplicar otimizações de performance
+      applyImageOptimizations(img);
       return;
     }
     
     // Se já começa com / e tem basePath, verificar se precisa adicionar
     if (src.startsWith('/')) {
       if (basePath && !src.startsWith(basePath)) {
-        img.setAttribute('src', `${basePath}${src}`);
+        // Codificar espaços e caracteres especiais no caminho
+        const encodedSrc = src.split('/').map(part => encodeURIComponent(part)).join('/');
+        img.setAttribute('src', `${basePath}${encodedSrc}`);
       }
+      applyImageOptimizations(img);
       return;
     }
     
@@ -1076,10 +1181,46 @@ function processImages() {
       cleanSrc = '/' + cleanSrc;
     }
     
+    // Codificar espaços e caracteres especiais no caminho
+    // Dividir por /, codificar cada parte, e juntar novamente
+    const encodedSrc = cleanSrc.split('/').map(part => encodeURIComponent(part)).join('/');
+    
     // Adicionar basePath se necessário
-    const finalSrc = basePath ? `${basePath}${cleanSrc}` : cleanSrc;
+    const finalSrc = basePath ? `${basePath}${encodedSrc}` : encodedSrc;
     img.setAttribute('src', finalSrc);
+    
+    // Aplicar otimizações de performance
+    applyImageOptimizations(img);
   });
+}
+
+// Aplicar otimizações de performance nas imagens
+function applyImageOptimizations(img) {
+  // Lazy loading nativo para imagens abaixo da dobra
+  if (!img.hasAttribute('loading')) {
+    img.setAttribute('loading', 'lazy');
+  }
+  
+  // Decodificação assíncrona para melhor performance
+  if (!img.hasAttribute('decoding')) {
+    img.setAttribute('decoding', 'async');
+  }
+  
+  // Se a imagem já foi carregada, obter dimensões para evitar CLS
+  if (img.complete && img.naturalWidth > 0) {
+    if (!img.hasAttribute('width') && !img.hasAttribute('height')) {
+      img.setAttribute('width', img.naturalWidth);
+      img.setAttribute('height', img.naturalHeight);
+    }
+  } else {
+    // Carregar dimensões quando a imagem carregar
+    img.addEventListener('load', function() {
+      if (!this.hasAttribute('width') && !this.hasAttribute('height')) {
+        this.setAttribute('width', this.naturalWidth);
+        this.setAttribute('height', this.naturalHeight);
+      }
+    }, { once: true });
+  }
 }
 
 // Processar e executar scripts no conteúdo markdown
@@ -1358,16 +1499,30 @@ async function loadEventContent(eventId, documentName, index) {
     await loadMarked();
     
     const docsPath = getDocsPath();
-    const fullPath = `${docsPath}${documentName}`;
-    console.log('Tentando carregar conteúdo do evento:', fullPath);
+    const filename = documentName.endsWith('.md') ? documentName : `${documentName}.md`;
+    const fullPath = `${docsPath}${filename}`;
+    const cacheKey = `${fullPath}_${currentLang}`;
     
-    const response = await fetch(fullPath);
-    if (!response.ok) {
-      console.error('Erro ao carregar conteúdo:', fullPath, response.status, response.statusText);
-      throw new Error(`${t('ui.errorContent')}: ${response.status} ${response.statusText}`);
+    // Verificar cache em memória primeiro
+    let markdown = markdownCache.get(cacheKey);
+    
+    if (!markdown) {
+      console.log('Tentando carregar conteúdo do evento:', fullPath);
+      
+      const response = await fetch(fullPath);
+      if (!response.ok) {
+        console.error('Erro ao carregar conteúdo:', fullPath, response.status, response.statusText);
+        throw new Error(`${t('ui.errorContent')}: ${response.status} ${response.statusText}`);
+      }
+      
+      markdown = await response.text();
+      
+      // Armazenar no cache
+      markdownCache.set(cacheKey, markdown);
+      saveMarkdownCache();
+    } else {
+      console.log('Usando cache para conteúdo do evento:', fullPath);
     }
-    
-    const markdown = await response.text();
     
     // Remover o primeiro H1 do markdown para evitar duplicação (já temos o título do evento)
     const markdownWithoutFirstH1 = markdown.replace(/^#\s+.+$/m, '').trim();
@@ -1762,6 +1917,9 @@ function showIndex() {
 }
 
 // Inicialização
+// Inicializar cache ao carregar
+initMarkdownCache();
+
 document.addEventListener('DOMContentLoaded', () => {
   // Inicializar sistema de idioma
   currentLang = getCurrentLang();
