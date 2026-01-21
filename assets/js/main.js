@@ -1190,8 +1190,14 @@ function processImages() {
     let src = img.getAttribute('src');
     if (!src) return;
     
-    // Ignorar URLs absolutas (http/https)
-    if (src.startsWith('http://') || src.startsWith('https://')) {
+    // Garantir que URLs absolutas usem HTTPS
+    if (src.startsWith('http://')) {
+      src = src.replace(/^http:/, 'https:');
+      img.src = src;
+      applyImageOptimizations(img);
+      return;
+    }
+    if (src.startsWith('https://')) {
       // Ainda aplicar otimizações de performance
       applyImageOptimizations(img);
       return;
@@ -1318,8 +1324,10 @@ function processScripts() {
         window.NekoType = window.NekoType || 'pink';
         
         // Carregar o script diretamente no head para que document.write funcione
+        // Garantir que use HTTPS
+        const secureSrc = src.replace(/^http:/, 'https:');
         const headScript = document.createElement('script');
-        headScript.src = src;
+        headScript.src = secureSrc;
         headScript.async = true;
         headScript.onload = function() {
           // Após carregar, tentar mover o neko para o container correto
