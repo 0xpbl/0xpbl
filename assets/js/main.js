@@ -694,7 +694,9 @@ const routes = {
   '/old-ed': 'PERSONAGEM-OLD-ED-EDUARDO-FONTOURA-PT.md',
   '/gorossario': 'GOROSSARIO-PT.md',
   '/contact': 'CONTACT.md',
-  '/sigil': 'OCCULT_GAME' // Easter egg: Ritual Terminal
+  '/ritual': 'OCCULT_GAME', // Easter egg: Ritual Terminal (movido do relógio)
+  '/street-fighter': 'STREET_FIGHTER_2', // Easter egg: Street Fighter 2 (novo no relógio)
+  '/heroes': 'HEROES_HOMM2' // Easter egg: Heroes of Might and Magic II
 };
 
 // Função para atualizar URL sem recarregar página
@@ -771,6 +773,9 @@ async function loadDocument(filename) {
       requestAnimationFrame(() => {
         prefetchVisibleLinks();
       });
+      
+      // Processar easter eggs de texto (Heroes of Might and Magic II)
+      processTextEasterEggs();
       
       // Processar e executar scripts no conteúdo
       processScripts();
@@ -854,6 +859,41 @@ function processHeadingIds() {
   });
 }
 
+// Processar easter eggs de texto (referências ocultas)
+function processTextEasterEggs() {
+  const currentPath = window.location.pathname;
+  const basePath = getBasePath();
+  let currentRoute = currentPath;
+  if (basePath && currentPath.startsWith(basePath)) {
+    currentRoute = currentPath.substring(basePath.length) || '/';
+  }
+  
+  // Easter egg: Heroes of Might and Magic II na página de vilões
+  if (currentRoute === '/villains' || currentRoute === '/villains/') {
+    const markdownContent = document.querySelector('.markdown-content');
+    if (!markdownContent) return;
+    
+    // Procurar por parágrafos que contenham as palavras-chave
+    const paragraphs = markdownContent.querySelectorAll('p');
+    paragraphs.forEach(p => {
+      const text = p.textContent;
+      if (text && (
+        (text.includes('heroes') && text.includes('might and magic')) || 
+        (text.includes('heroes') && text.includes('segunda geração')) ||
+        (text.includes('heroes') && text.includes('second-generation'))
+      )) {
+        // Tornar as palavras-chave clicáveis
+        const html = p.innerHTML;
+        const newHtml = html
+          .replace(/\b(heroes)\b/gi, '<a href="/heroes" onclick="event.preventDefault(); navigate(\'/heroes\'); return false;" style="cursor: pointer; text-decoration: underline; text-decoration-style: dotted; color: inherit;">$1</a>')
+          .replace(/\b(might and magic)\b/gi, '<a href="/heroes" onclick="event.preventDefault(); navigate(\'/heroes\'); return false;" style="cursor: pointer; text-decoration: underline; text-decoration-style: dotted; color: inherit;">$1</a>')
+          .replace(/\b(segunda geração|second-generation)\b/gi, '<a href="/heroes" onclick="event.preventDefault(); navigate(\'/heroes\'); return false;" style="cursor: pointer; text-decoration: underline; text-decoration-style: dotted; color: inherit;">$1</a>');
+        p.innerHTML = newHtml;
+      }
+    });
+  }
+}
+
 // Prefetch de links visíveis na viewport
 function prefetchVisibleLinks() {
   const links = document.querySelectorAll('.markdown-content a[href^="/"]');
@@ -926,6 +966,29 @@ function processInternalLinks() {
         };
         return;
       }
+    }
+    
+    // Easter egg especial: se estiver na página de contatos e clicar em Pablo Mu-R4d
+    const currentPath = window.location.pathname;
+    const basePath = getBasePath();
+    let currentRoute = currentPath;
+    if (basePath && currentPath.startsWith(basePath)) {
+      currentRoute = currentPath.substring(basePath.length) || '/';
+    }
+    
+    if ((currentRoute === '/contact' || currentRoute === '/contact/') && 
+        (href.includes('PABLO-MU-R4D') || href.includes('pablo'))) {
+      // Easter egg: clicar em Pablo em contatos leva ao Ritual Terminal
+      link.onclick = (e) => {
+        e.preventDefault();
+        // Adicionar hint visual
+        link.style.textDecoration = 'line-through';
+        setTimeout(() => {
+          link.style.textDecoration = '';
+          navigate('/ritual');
+        }, 300);
+      };
+      return;
     }
     
     // Processar links que apontam para arquivos .md
@@ -1335,8 +1398,10 @@ function navigate(path, anchor = null) {
   } else {
     stopQuantumClock();
     const filename = routes[normalizedPath];
+    
+    // Easter eggs especiais
     if (filename === 'OCCULT_GAME') {
-      // Easter egg: Ritual Terminal
+      // Easter egg: Ritual Terminal (movido para /ritual)
       const main = document.querySelector('main');
       if (main && typeof window.initOccultGame === 'function') {
         main.innerHTML = '<div class="loading"><div class="spinner"></div><p>Inicializando ritual...</p></div>';
@@ -1351,6 +1416,58 @@ function navigate(path, anchor = null) {
       } else {
         console.error('Occult game not loaded');
         showIndex();
+      }
+    } else if (filename === 'STREET_FIGHTER_2') {
+      // Easter egg: Street Fighter 2
+      const main = document.querySelector('main');
+      if (main) {
+        main.innerHTML = `
+          <div class="document-container">
+            <div class="document-header">
+              <h1>Street Fighter II</h1>
+            </div>
+            <div class="markdown-content game-container">
+              <div style="position:relative;width:100%;max-width:1200px;margin:0 auto;padding-top:75%;">
+                <iframe
+                  src="https://dos.zone/street-fighter-2/"
+                  title="Street Fighter 2 (DOS.Zone)"
+                  style="position:absolute;inset:0;width:100%;height:100%;border:0;"
+                  allow="autoplay; fullscreen; gamepad; clipboard-write"
+                  allowfullscreen
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        `;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    } else if (filename === 'HEROES_HOMM2') {
+      // Easter egg: Heroes of Might and Magic II
+      const main = document.querySelector('main');
+      if (main) {
+        main.innerHTML = `
+          <div class="document-container">
+            <div class="document-header">
+              <h1>Heroes of Might and Magic II</h1>
+            </div>
+            <div class="markdown-content game-container">
+              <div style="position:relative;width:100%;max-width:1200px;margin:0 auto;padding-top:75%;">
+                <iframe
+                  src="https://dos.zone/heroes-of-might-and-magic-ii/"
+                  title="Heroes of Might and Magic II (DOS.Zone)"
+                  style="position:absolute;inset:0;width:100%;height:100%;border:0;"
+                  allow="autoplay; fullscreen; gamepad; clipboard-write"
+                  allowfullscreen
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        `;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     } else if (filename) {
       // Ajustar nome do arquivo baseado no idioma para arquivos com versões PT/EN
@@ -1875,15 +1992,15 @@ function setupQuantumClockEasterEgg() {
     
     // Exibir hint diegético
     const hintText = currentLang === 'pt' 
-      ? 'Um selo foi marcado... O terminal aguarda.'
-      : 'A seal has been marked... The terminal awaits.';
+      ? 'Hadouken detectado... Preparando combate.'
+      : 'Hadouken detected... Preparing combat.';
     
     const originalTitle = clockContainer.getAttribute('title');
     clockContainer.setAttribute('title', hintText);
     
-    // Navegar para /sigil após breve delay
+    // Navegar para /street-fighter após breve delay
     setTimeout(() => {
-      navigate('/sigil');
+      navigate('/street-fighter');
       // Restaurar tooltip original após navegação
       setTimeout(() => {
         if (clockContainer) {
@@ -1960,19 +2077,32 @@ document.addEventListener('DOMContentLoaded', () => {
   if (basePath) {
     // Se há base path configurado (GitHub Pages)
     if (pathname.startsWith(basePath)) {
-      // URL já tem base path, normalizar
+      // URL já tem base path, normalizar removendo o base path
       normalizedPath = pathname.substring(basePath.length) || '/';
-    } else if (pathname !== '/' && !pathname.startsWith(basePath)) {
-      // URL não tem base path mas não é a raiz - REDIRECIONAR
-      const fullPath = basePath + (pathname.startsWith('/') ? pathname : '/' + pathname);
-      window.history.replaceState({ path: normalizedPath }, '', fullPath);
-      // Manter o path original para navegação (já está normalizado)
+      // Remover trailing slash se não for a raiz
+      if (normalizedPath !== '/' && normalizedPath.endsWith('/')) {
+        normalizedPath = normalizedPath.slice(0, -1);
+      }
+    } else if (pathname !== '/' && pathname !== basePath) {
+      // URL não tem base path mas não é a raiz - pode ser uma rota direta
+      // Tentar adicionar base path e verificar se é uma rota válida
+      const potentialPath = basePath + (pathname.startsWith('/') ? pathname : '/' + pathname);
+      // Normalizar para navegação interna (sem base path)
+      normalizedPath = pathname.startsWith('/') ? pathname : '/' + pathname;
+      // Remover trailing slash
+      if (normalizedPath !== '/' && normalizedPath.endsWith('/')) {
+        normalizedPath = normalizedPath.slice(0, -1);
+      }
+    } else if (pathname === basePath || pathname === basePath + '/') {
+      // Está na raiz do base path
+      normalizedPath = '/';
     }
   } else {
-    // Se não há base path, verificar se estamos no GitHub Pages mas o pathname não começa com /
-    // Isso pode acontecer se alguém acessar diretamente uma rota sem o base path
-    if (window.location.hostname.includes('github.io') && pathname !== '/' && !pathname.startsWith('/')) {
-      normalizedPath = '/' + pathname;
+    // Se não há base path (localhost ou outro ambiente)
+    normalizedPath = pathname;
+    // Remover trailing slash se não for a raiz
+    if (normalizedPath !== '/' && normalizedPath.endsWith('/')) {
+      normalizedPath = normalizedPath.slice(0, -1);
     }
   }
   
@@ -2011,6 +2141,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+// Glitches aleatórios sutis
+function initRandomGlitches() {
+  // Aplicar glitch ocasional em elementos aleatórios
+  setInterval(() => {
+    if (Math.random() < 0.1) { // 10% de chance a cada intervalo
+      const elements = document.querySelectorAll('.markdown-content h1, .markdown-content h2, .markdown-content img');
+      if (elements.length > 0) {
+        const randomElement = elements[Math.floor(Math.random() * elements.length)];
+        randomElement.style.animation = 'quantumGlitch 0.2s';
+        setTimeout(() => {
+          randomElement.style.animation = '';
+        }, 200);
+      }
+    }
+  }, 5000); // A cada 5 segundos
+}
+
+// Inicializar glitches após DOM carregado
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initRandomGlitches);
+} else {
+  initRandomGlitches();
+}
 
 // Tornar funções globais
 window.navigate = navigate;

@@ -52,6 +52,148 @@ html.theme-retro * {
 }
 
 /* ============================================
+   EFEITOS ESPACIAIS E TERMINAL
+   ============================================ */
+
+/* Scanlines (linhas horizontais sutis) */
+html.theme-retro body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.03) 0px,
+    rgba(0, 0, 0, 0.03) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: overlay;
+}
+
+/* CRT Phosphor Glow */
+html.theme-retro body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    rgba(0, 170, 0, 0.02) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 9998;
+  mix-blend-mode: screen;
+  animation: crtGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes crtGlow {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.6; }
+}
+
+/* Glitches quânticos sutis */
+@keyframes quantumGlitch {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-1px, 1px); }
+  40% { transform: translate(1px, -1px); }
+  60% { transform: translate(-1px, -1px); }
+  80% { transform: translate(1px, 1px); }
+}
+
+html.theme-retro .markdown-content h1,
+html.theme-retro .markdown-content h2,
+html.theme-retro .markdown-content h3 {
+  animation: quantumGlitch 0.3s infinite;
+  animation-play-state: paused;
+}
+
+html.theme-retro .markdown-content h1:hover,
+html.theme-retro .markdown-content h2:hover,
+html.theme-retro .markdown-content h3:hover {
+  animation-play-state: running;
+}
+
+/* Decoerência visual (tremor sutil) */
+@keyframes decoherence {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(0.5px, -0.5px) rotate(0.1deg); }
+  50% { transform: translate(-0.5px, 0.5px) rotate(-0.1deg); }
+  75% { transform: translate(0.5px, 0.5px) rotate(0.1deg); }
+}
+
+html.theme-retro .markdown-content img {
+  animation: decoherence 8s ease-in-out infinite;
+}
+
+/* Interferência quântica em hover */
+html.theme-retro a:hover {
+  text-shadow: 
+    1px 0 0 rgba(0, 170, 0, 0.5),
+    -1px 0 0 rgba(170, 0, 0, 0.5),
+    0 1px 0 rgba(0, 0, 170, 0.5);
+  transition: text-shadow 0.1s ease;
+}
+
+/* Chromatic aberration sutil */
+html.theme-retro .markdown-content p {
+  text-shadow: 
+    0.5px 0 0 rgba(0, 170, 0, 0.1),
+    -0.5px 0 0 rgba(170, 0, 0, 0.1);
+}
+
+/* Efeito de terminal cursor piscante */
+html.theme-retro code::after {
+  content: '█';
+  animation: blink 1s infinite;
+  margin-left: 2px;
+  color: var(--accent);
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* Estilização de iframes de jogos */
+html.theme-retro .game-container {
+  position: relative;
+  margin: 2rem 0;
+  border: 3px solid var(--border);
+  box-shadow: 
+    0 0 10px rgba(0, 0, 0, 0.5),
+    inset 0 0 20px rgba(0, 170, 0, 0.1);
+  background: var(--bg);
+  padding: 1rem;
+}
+
+html.theme-retro .game-container::before {
+  content: '> LOADING GAME...';
+  position: absolute;
+  top: -1.5rem;
+  left: 1rem;
+  font-family: 'VT323', monospace;
+  font-size: 0.9rem;
+  color: var(--accent);
+  background: var(--bg);
+  padding: 0 0.5rem;
+  z-index: 10;
+}
+
+html.theme-retro .game-container iframe {
+  border: 2px solid var(--border);
+  filter: contrast(1.1) brightness(0.95);
+}
+
+/* ============================================
    TIPOGRAFIA RETRO
    ============================================ */
 

@@ -283,6 +283,15 @@ ATTACHMENT: Confidence
 
 ---
 
+## 🎮 Strategic References
+
+> *"Strategy is a form of distributed coherence. Each move is a commit, each decision is a merge."*  
+> — Unsigned marginal notes, VILLAINS.md file
+
+In contexts of **coordinated containment** and **counter-attack planning**, historical references to conquest and defense strategies can be found in **classical military architecture** documents. Practical application: when multiple villains act together, the response must be **systemic, not point-based**.
+
+*Note: For case studies on multi-dimensional containment strategies, consult historical files on **heroes** that document methods of **might and magic** applied to **second-generation** coordinated threat scenarios.*
+
 ## 📚 Related Documents
 
 ### Historical Context

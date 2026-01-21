@@ -40,6 +40,11 @@ body {
   max-width: 100vw;
   /* Otimização de fontes - evitar FOIT */
   font-display: swap;
+  /* Efeito espacial: gradiente sutil de fundo */
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(124, 58, 237, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(34, 211, 238, 0.05) 0%, transparent 50%),
+    linear-gradient(180deg, var(--bg-dark) 0%, #0a0c0f 100%);
 }
 
 /* Header */
@@ -1160,4 +1165,122 @@ footer p {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--cyan);
+}
+
+/* ============================================
+   EFEITOS ESPACIAIS E GLITCHES (Tema Neon)
+   ============================================ */
+
+/* Glitches quânticos sutis */
+@keyframes quantumGlitch {
+  0%, 100% { transform: translate(0); filter: hue-rotate(0deg); }
+  20% { transform: translate(-1px, 1px); filter: hue-rotate(2deg); }
+  40% { transform: translate(1px, -1px); filter: hue-rotate(-2deg); }
+  60% { transform: translate(-1px, -1px); filter: hue-rotate(1deg); }
+  80% { transform: translate(1px, 1px); filter: hue-rotate(-1deg); }
+}
+
+/* Aplicar glitch ocasional em títulos */
+.markdown-content h1,
+.markdown-content h2 {
+  animation: quantumGlitch 0.3s infinite;
+  animation-play-state: paused;
+}
+
+.markdown-content h1:hover,
+.markdown-content h2:hover {
+  animation-play-state: running;
+  animation-duration: 0.1s;
+}
+
+/* Decoerência visual (tremor sutil em imagens) */
+@keyframes decoherence {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(0.3px, -0.3px) rotate(0.05deg); }
+  50% { transform: translate(-0.3px, 0.3px) rotate(-0.05deg); }
+  75% { transform: translate(0.3px, 0.3px) rotate(0.05deg); }
+}
+
+.markdown-content img {
+  animation: decoherence 10s ease-in-out infinite;
+}
+
+/* Interferência quântica em hover (chromatic aberration) */
+a:hover {
+  text-shadow: 
+    1px 0 0 rgba(124, 58, 237, 0.3),
+    -1px 0 0 rgba(34, 211, 238, 0.3);
+  transition: text-shadow 0.1s ease;
+}
+
+/* Estilização de iframes de jogos */
+.game-container {
+  position: relative;
+  margin: 2rem auto;
+  max-width: 1200px;
+  border: 2px solid var(--violet);
+  border-radius: 8px;
+  box-shadow: 
+    0 0 20px rgba(124, 58, 237, 0.3),
+    inset 0 0 30px rgba(34, 211, 238, 0.1);
+  background: var(--bg-card);
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.game-container::before {
+  content: '> INITIALIZING GAME...';
+  position: absolute;
+  top: -1.5rem;
+  left: 1rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--cyan);
+  background: var(--bg-dark);
+  padding: 0.25rem 0.5rem;
+  z-index: 10;
+  border: 1px solid var(--violet);
+  border-radius: 4px;
+}
+
+.game-container iframe {
+  border: none;
+  border-radius: 4px;
+  filter: contrast(1.05) brightness(0.98);
+  transition: filter 0.3s ease;
+}
+
+.game-container iframe:hover {
+  filter: contrast(1.1) brightness(1);
+}
+
+/* Efeito de scanline sutil (apenas no tema neon, mais sutil) */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.02) 0px,
+    rgba(0, 0, 0, 0.02) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: overlay;
+  opacity: 0.5;
+}
+
+/* Artefatos de renderização ocasionais */
+@keyframes renderArtifact {
+  0%, 90%, 100% { opacity: 1; }
+  95% { opacity: 0.8; }
+}
+
+.markdown-content p:nth-child(3n) {
+  animation: renderArtifact 20s ease-in-out infinite;
 }

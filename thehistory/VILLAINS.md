@@ -570,6 +570,15 @@ CÓDIGO AMARELO: "Greenwich discorda"
 - Protocolo PRRQ v3.7: "Resposta Rápida a Ameaças Existenciais"
 - Arquivo Laplaciano (cópia não-autorizada): "Anomalias Persistentes"
 
+## 🎮 Referências Estratégicas
+
+> *"A estratégia é uma forma de coerência distribuída. Cada movimento é um commit, cada decisão é um merge."*  
+> — Anotações marginais não assinadas, arquivo VILLAINS.md
+
+Em contextos de **contenção coordenada** e **planejamento de contra-ataques**, referências históricas a estratégias de conquista e defesa podem ser encontradas em documentos de **arquitetura militar clássica**. Aplicação prática: quando múltiplos vilões atuam em conjunto, a resposta deve ser **sistêmica, não pontual**.
+
+*Nota: Para estudos de caso sobre estratégias de contenção multi-dimensional, consulte arquivos históricos de **heroes** que documentam métodos de **might and magic** aplicados a cenários de **segunda geração** de ameaças coordenadas.*
+
 ## 📚 Documentos Relacionados
 
 ### Arquivos Históricos
