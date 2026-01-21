@@ -691,7 +691,7 @@ const routes = {
   '/contact': 'CONTACT.md',
   '/ritual': 'OCCULT_GAME', // Easter egg: Ritual Terminal (movido do relógio)
   '/street-fighter': 'STREET_FIGHTER_2', // Easter egg: Street Fighter Alpha (novo no relógio)
-  '/heroes': 'HEROES_HOMM2' // Easter egg: Chess
+  '/heroes': 'HEROES_HOMM2' // Easter egg: Heroes of Might and Magic III
 };
 
 // Função para atualizar URL sem recarregar página
@@ -1483,32 +1483,32 @@ function navigate(path, anchor = null) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     } else if (filename === 'HEROES_HOMM2') {
-      // Easter egg: Chess
+      // Easter egg: Heroes of Might and Magic III
       const main = document.querySelector('main');
       if (main) {
-        const gameText = currentLang === 'pt'
-          ? 'Xadrez - O clássico jogo de estratégia'
-          : 'Chess - The classic strategy game';
-        const gameDescription = currentLang === 'pt'
-          ? 'Jogue xadrez diretamente no navegador. Clique e arraste as peças para movê-las.'
-          : 'Play chess directly in your browser. Click and drag pieces to move them.';
+        const basePath = getBasePath();
+        // Construir caminho do jogo com basePath se necessário
+        const cleanBasePath = basePath && basePath !== '' 
+          ? (basePath.startsWith('/') ? basePath : `/${basePath}`)
+          : '';
+        const gamePath = cleanBasePath 
+          ? `${cleanBasePath}/games/heroes/index.html`
+          : '/games/heroes/index.html';
         main.innerHTML = `
           <div class="document-container">
             <div class="document-header">
-              <h1>${currentLang === 'pt' ? 'Xadrez' : 'Chess'}</h1>
+              <h1>Heroes of Might and Magic III</h1>
             </div>
             <div class="markdown-content game-container">
-              <p>${gameText}</p>
-              <p>${gameDescription}</p>
-              <div style="position:relative;width:100%;max-width:800px;margin:2rem auto;padding-top:100%;">
+              <div style="position:relative;width:100%;max-width:1200px;margin:2rem auto;padding-top:75%;">
                 <iframe 
-                  src="https://archive.org/embed/msdos_Battle_Chess_1988" 
+                  src="${gamePath}" 
                   style="position:absolute;inset:0;width:100%;height:100%;border:0;" 
                   allow="autoplay; fullscreen; gamepad; clipboard-write" 
                   allowfullscreen 
                   loading="lazy" 
                   referrerpolicy="no-referrer-when-downgrade"
-                  title="${currentLang === 'pt' ? 'Xadrez' : 'Chess'}">
+                  title="Heroes of Might and Magic III">
                 </iframe>
               </div>
             </div>

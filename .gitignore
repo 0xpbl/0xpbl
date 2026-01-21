@@ -26,3 +26,9 @@ build/
 .idea/
 *.sublime-project
 *.sublime-workspace
+
+# Pastas temporárias de jogos (antes de mover para games/)
+hero/
+street-fighter-2-javascript-main/
+*-javascript-main/
+*-main/
