@@ -1,4 +1,4 @@
-# 📞 Contato
+# Contato
 
 <script>NekoType="pink"</script>
 <h1 id=nl><script src="https://webneko.net/n20171213.js"></script><a href="https://webneko.net">Neko</a></h1>

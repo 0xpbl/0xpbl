@@ -690,8 +690,8 @@ const routes = {
   '/gorossario': 'GOROSSARIO-PT.md',
   '/contact': 'CONTACT.md',
   '/ritual': 'OCCULT_GAME', // Easter egg: Ritual Terminal (movido do relógio)
-  '/street-fighter': 'STREET_FIGHTER_2', // Easter egg: Street Fighter 2 (novo no relógio)
-  '/heroes': 'HEROES_HOMM2' // Easter egg: Heroes of Might and Magic II
+  '/street-fighter': 'STREET_FIGHTER_2', // Easter egg: Street Fighter Alpha (novo no relógio)
+  '/heroes': 'HEROES_HOMM2' // Easter egg: Chess
 };
 
 // Função para atualizar URL sem recarregar página
@@ -936,7 +936,29 @@ function processInternalLinks() {
     const href = link.getAttribute('href');
     if (!href) return;
     
-    // Ignorar links externos (http, https, mailto, etc)
+    // Easter egg: clicar no email do Pablo abre o Ritual Terminal
+    const currentPath = window.location.pathname;
+    const basePath = getBasePath();
+    let currentRoute = currentPath;
+    if (basePath && currentPath.startsWith(basePath)) {
+      currentRoute = currentPath.substring(basePath.length) || '/';
+    }
+    
+    if ((currentRoute === '/contact' || currentRoute === '/contact/') && 
+        href.includes('mailto:') && href.includes('pablomurad@pm.me')) {
+      link.onclick = (e) => {
+        e.preventDefault();
+        // Adicionar hint visual
+        link.style.textDecoration = 'line-through';
+        setTimeout(() => {
+          link.style.textDecoration = '';
+          navigate('/ritual');
+        }, 300);
+      };
+      return;
+    }
+    
+    // Ignorar outros links externos (http, https, mailto, etc)
     // Mas processar links que começam com # (âncoras)
     if (href.match(/^(https?|mailto|ftp):/i)) {
       return;
@@ -964,13 +986,6 @@ function processInternalLinks() {
     }
     
     // Easter egg especial: se estiver na página de contatos e clicar em Pablo Mu-R4d
-    const currentPath = window.location.pathname;
-    const basePath = getBasePath();
-    let currentRoute = currentPath;
-    if (basePath && currentPath.startsWith(basePath)) {
-      currentRoute = currentPath.substring(basePath.length) || '/';
-    }
-    
     if ((currentRoute === '/contact' || currentRoute === '/contact/') && 
         (href.includes('PABLO-MU-R4D') || href.includes('pablo'))) {
       // Easter egg: clicar em Pablo em contatos leva ao Ritual Terminal
@@ -1434,76 +1449,70 @@ function navigate(path, anchor = null) {
         showIndex();
       }
     } else if (filename === 'STREET_FIGHTER_2') {
-      // Easter egg: Street Fighter 2
+      // Easter egg: Street Fighter 2 (local)
       const main = document.querySelector('main');
       if (main) {
         const gameText = currentLang === 'pt' 
-          ? 'Street Fighter II - O clássico jogo de luta'
-          : 'Street Fighter II - The classic fighting game';
-        const linkText = currentLang === 'pt'
-          ? 'Jogar Street Fighter II (abre em nova aba)'
-          : 'Play Street Fighter II (opens in new tab)';
+          ? 'Street Fighter 2 - O clássico jogo de luta'
+          : 'Street Fighter 2 - The classic fighting game';
+        const gameDescription = currentLang === 'pt'
+          ? 'Jogue Street Fighter 2 diretamente no navegador. Clique na tela para começar. Use as setas para mover, Z para soco, X para chute.'
+          : 'Play Street Fighter 2 directly in your browser. Click on the screen to start. Use arrow keys to move, Z for punch, X for kick.';
+        const basePath = getBasePath();
+        const gamePath = basePath ? `${basePath}/games/street-fighter/index.html` : '/games/street-fighter/index.html';
         main.innerHTML = `
           <div class="document-container">
             <div class="document-header">
-              <h1>Street Fighter II</h1>
+              <h1>Street Fighter 2</h1>
             </div>
             <div class="markdown-content game-container">
               <p>${gameText}</p>
-              <p style="text-align: center; margin: 2rem 0;">
-                <a href="https://archive.org/details/msdos_Street_Fighter_II_1993" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   style="display: inline-block; padding: 1rem 2rem; background: var(--violet); color: white; text-decoration: none; border-radius: 4px; font-weight: bold;">
-                  🎮 ${linkText}
-                </a>
-              </p>
-              <p style="text-align: center; margin-top: 1rem; opacity: 0.7;">
-                <a href="https://dos.zone/street-fighter-2/" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   style="color: inherit; text-decoration: underline;">
-                  ${currentLang === 'pt' ? 'Alternativa: DOS.Zone' : 'Alternative: DOS.Zone'}
-                </a>
-              </p>
+              <p>${gameDescription}</p>
+              <div style="position:relative;width:100%;max-width:1200px;margin:2rem auto;padding-top:75%;">
+                <iframe 
+                  src="${gamePath}" 
+                  style="position:absolute;inset:0;width:100%;height:100%;border:0;" 
+                  allow="autoplay; fullscreen; gamepad; clipboard-write" 
+                  allowfullscreen 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="Street Fighter 2">
+                </iframe>
+              </div>
             </div>
           </div>
         `;
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     } else if (filename === 'HEROES_HOMM2') {
-      // Easter egg: Heroes of Might and Magic II
+      // Easter egg: Chess
       const main = document.querySelector('main');
       if (main) {
         const gameText = currentLang === 'pt'
-          ? 'Heroes of Might and Magic II - O clássico jogo de estratégia'
-          : 'Heroes of Might and Magic II - The classic strategy game';
-        const linkText = currentLang === 'pt'
-          ? 'Jogar Heroes of Might and Magic II (abre em nova aba)'
-          : 'Play Heroes of Might and Magic II (opens in new tab)';
+          ? 'Xadrez - O clássico jogo de estratégia'
+          : 'Chess - The classic strategy game';
+        const gameDescription = currentLang === 'pt'
+          ? 'Jogue xadrez diretamente no navegador. Clique e arraste as peças para movê-las.'
+          : 'Play chess directly in your browser. Click and drag pieces to move them.';
         main.innerHTML = `
           <div class="document-container">
             <div class="document-header">
-              <h1>Heroes of Might and Magic II</h1>
+              <h1>${currentLang === 'pt' ? 'Xadrez' : 'Chess'}</h1>
             </div>
             <div class="markdown-content game-container">
               <p>${gameText}</p>
-              <p style="text-align: center; margin: 2rem 0;">
-                <a href="https://archive.org/details/msdos_Heroes_of_Might_and_Magic_II_1996" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   style="display: inline-block; padding: 1rem 2rem; background: var(--violet); color: white; text-decoration: none; border-radius: 4px; font-weight: bold;">
-                  🎮 ${linkText}
-                </a>
-              </p>
-              <p style="text-align: center; margin-top: 1rem; opacity: 0.7;">
-                <a href="https://dos.zone/heroes-of-might-and-magic-ii/" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   style="color: inherit; text-decoration: underline;">
-                  ${currentLang === 'pt' ? 'Alternativa: DOS.Zone' : 'Alternative: DOS.Zone'}
-                </a>
-              </p>
+              <p>${gameDescription}</p>
+              <div style="position:relative;width:100%;max-width:800px;margin:2rem auto;padding-top:100%;">
+                <iframe 
+                  src="https://archive.org/embed/msdos_Battle_Chess_1988" 
+                  style="position:absolute;inset:0;width:100%;height:100%;border:0;" 
+                  allow="autoplay; fullscreen; gamepad; clipboard-write" 
+                  allowfullscreen 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="${currentLang === 'pt' ? 'Xadrez' : 'Chess'}">
+                </iframe>
+              </div>
             </div>
           </div>
         `;
