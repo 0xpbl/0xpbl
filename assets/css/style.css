@@ -40,7 +40,11 @@ body {
   max-width: 100vw;
   /* Otimização de fontes - evitar FOIT */
   font-display: swap;
-  /* Efeito espacial: gradiente sutil de fundo */
+  /* Efeito espacial: gradiente sutil de fundo (apenas no tema neon) */
+}
+
+/* Aplicar gradiente apenas quando NÃO estiver no tema retro */
+body:not(.theme-retro) {
   background-image: 
     radial-gradient(circle at 20% 50%, rgba(124, 58, 237, 0.05) 0%, transparent 50%),
     radial-gradient(circle at 80% 80%, rgba(34, 211, 238, 0.05) 0%, transparent 50%),

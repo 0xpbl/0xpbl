@@ -59,72 +59,67 @@ function setCurrentLang(lang) {
   currentLang = lang;
   localStorage.setItem(LANG_KEY, lang);
   document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'pt-BR');
+  // Limpar cache quando o idioma mudar
+  cachedDocsPath = null;
+  cachedLang = null;
 }
 
 // Função para obter o base path do GitHub Pages
 function getBasePath() {
+  // Usar cache se disponível
+  if (cachedBasePath !== null) {
+    return cachedBasePath;
+  }
+  
   const hostname = window.location.hostname;
   const pathname = window.location.pathname;
+  
+  let basePath = '';
   
   if (hostname.includes('github.io')) {
     const repoName = hostname.split('.')[0]; // 0xpbl.github.io -> 0xpbl
     
     // Se o pathname já começa com o nome do repositório, retornar o base path
     if (pathname.startsWith(`/${repoName}/`) || pathname === `/${repoName}`) {
-      return `/${repoName}`;
+      basePath = `/${repoName}`;
+    } else {
+      // Se não começa, mas estamos no GitHub Pages, ainda retornar o base path
+      basePath = `/${repoName}`;
     }
-    
-    // Se não começa, mas estamos no GitHub Pages, ainda retornar o base path
-    // (o 404.html vai redirecionar se necessário)
-    return `/${repoName}`;
   }
-  return '';
+  
+  // Atualizar cache
+  cachedBasePath = basePath;
+  return basePath;
 }
 
+// Cache para getDocsPath e getBasePath
+let cachedBasePath = null;
+let cachedDocsPath = null;
+let cachedLang = null;
+
 function getDocsPath() {
+  // Usar cache se o idioma não mudou
+  if (cachedDocsPath && cachedLang === currentLang && cachedBasePath === getBasePath()) {
+    return cachedDocsPath;
+  }
+  
   // Detectar base path do GitHub Pages
   // Exemplo: https://0xpbl.github.io/0xpbl/ -> basePath = '/0xpbl'
   const pathname = window.location.pathname;
   const hostname = window.location.hostname;
   
-  let basePath = '';
-  
-  // Se estiver no GitHub Pages (não é localhost)
-  if (hostname.includes('github.io')) {
-    // Extrair o nome do repositório do hostname
-    // hostname: 0xpbl.github.io -> repo: 0xpbl
-    const repoName = hostname.split('.')[0];
-    
-    // Verificar se o pathname começa com o nome do repositório
-    // Se sim, usar como base path
-    if (pathname.startsWith(`/${repoName}/`) || pathname.startsWith(`/${repoName}`)) {
-      basePath = '/' + repoName;
-    } else {
-      // Se não, verificar se há um primeiro segmento no pathname que não é uma rota conhecida
-      const parts = pathname.split('/').filter(p => p && p !== 'index.html' && !p.endsWith('.html'));
-      const knownRoutes = ['qel', 'characters', 'pablo', 'cold-war', 'tv-programs', 'villains', 'wwii', 'fu-monilson', 'dq', 'extras', 'completo', 'john', 'marcelo', 'old-ed', 'gorossario', 'gaybe-el', 'lore-gaybe-el-pixitos', 'madeusa', 'contact'];
-      
-      if (parts.length > 0) {
-        const firstPart = parts[0];
-        // Se o primeiro segmento não é uma rota conhecida e não tem extensão, é o base path
-        if (!firstPart.includes('.') && !knownRoutes.includes(firstPart)) {
-          basePath = '/' + firstPart;
-        } else {
-          // Se é uma rota conhecida, o base path é o nome do repositório
-          basePath = '/' + repoName;
-        }
-      } else {
-        // Se não há partes no pathname, usar o nome do repositório como base path
-        basePath = '/' + repoName;
-      }
-    }
-  }
-  
+  const basePath = getBasePath();
   const langPath = currentLang === 'en' ? 'thehistory/en/' : 'thehistory/';
   
   // Retornar caminho: basePath + langPath ou apenas langPath se basePath vazio
   const fullPath = basePath ? `${basePath}/${langPath}` : langPath;
-  console.log('getDocsPath() - hostname:', hostname, 'pathname:', pathname, 'basePath:', basePath, 'fullPath:', fullPath);
+  
+  // Atualizar cache
+  cachedBasePath = basePath;
+  cachedDocsPath = fullPath;
+  cachedLang = currentLang;
+  
   return fullPath;
 }
 
@@ -1308,33 +1303,11 @@ function processScripts() {
   const markdownContent = document.querySelector('.markdown-content');
   if (!markdownContent) return;
   
-  // Encontrar todos os scripts no conteúdo
-  const scripts = markdownContent.querySelectorAll('script');
-  
-  scripts.forEach(oldScript => {
-    // Criar novo script
-    const newScript = document.createElement('script');
-    
-    // Copiar atributos
-    Array.from(oldScript.attributes).forEach(attr => {
-      newScript.setAttribute(attr.name, attr.value);
-    });
-    
-    // Copiar conteúdo se houver
-    if (oldScript.textContent) {
-      newScript.textContent = oldScript.textContent;
-    }
-    
-    // Substituir o script antigo pelo novo (que será executado)
-    oldScript.parentNode.replaceChild(newScript, oldScript);
-  });
-  
-  // Processar variáveis globais definidas por scripts (como NekoType)
-  // Isso é necessário porque alguns scripts definem variáveis antes de serem carregados
+  // PRIMEIRO: Executar scripts inline (como NekoType) ANTES dos scripts externos
   const inlineScripts = markdownContent.querySelectorAll('script:not([src])');
   inlineScripts.forEach(script => {
     try {
-      // Executar código inline
+      // Executar código inline no contexto global
       const code = script.textContent || script.innerHTML;
       if (code) {
         // Criar função para executar no contexto global
@@ -1343,6 +1316,49 @@ function processScripts() {
       }
     } catch (e) {
       console.warn('Erro ao executar script inline:', e);
+    }
+  });
+  
+  // SEGUNDO: Processar scripts externos (como o neko)
+  // Para scripts que usam document.write (como neko), precisamos carregar de forma especial
+  const externalScripts = markdownContent.querySelectorAll('script[src]');
+  externalScripts.forEach(oldScript => {
+    const src = oldScript.getAttribute('src');
+    
+    // Scripts que usam document.write precisam ser carregados de forma diferente
+    if (src && src.includes('webneko')) {
+      // Para o neko, usar uma abordagem que funciona com document.write
+      // Criar um container temporário
+      const nekoContainer = oldScript.parentElement.querySelector('h1#nl');
+      if (nekoContainer) {
+        // Definir NekoType globalmente antes de carregar
+        window.NekoType = window.NekoType || 'pink';
+        
+        // Carregar o script diretamente no head para que document.write funcione
+        const headScript = document.createElement('script');
+        headScript.src = src;
+        headScript.async = true;
+        headScript.onload = function() {
+          // Após carregar, tentar mover o neko para o container correto
+          setTimeout(() => {
+            const nekoElement = document.getElementById('nl');
+            if (nekoElement && nekoContainer && nekoElement !== nekoContainer) {
+              nekoContainer.innerHTML = nekoElement.innerHTML;
+            }
+          }, 500);
+        };
+        document.head.appendChild(headScript);
+      }
+    } else {
+      // Para outros scripts, usar o método normal
+      const newScript = document.createElement('script');
+      Array.from(oldScript.attributes).forEach(attr => {
+        newScript.setAttribute(attr.name, attr.value);
+      });
+      if (oldScript.textContent) {
+        newScript.textContent = oldScript.textContent;
+      }
+      oldScript.parentNode.replaceChild(newScript, oldScript);
     }
   });
 }
@@ -1421,23 +1437,35 @@ function navigate(path, anchor = null) {
       // Easter egg: Street Fighter 2
       const main = document.querySelector('main');
       if (main) {
+        const gameText = currentLang === 'pt' 
+          ? 'Street Fighter II - O clássico jogo de luta'
+          : 'Street Fighter II - The classic fighting game';
+        const linkText = currentLang === 'pt'
+          ? 'Jogar Street Fighter II (abre em nova aba)'
+          : 'Play Street Fighter II (opens in new tab)';
         main.innerHTML = `
           <div class="document-container">
             <div class="document-header">
               <h1>Street Fighter II</h1>
             </div>
             <div class="markdown-content game-container">
-              <div style="position:relative;width:100%;max-width:1200px;margin:0 auto;padding-top:75%;">
-                <iframe
-                  src="https://dos.zone/street-fighter-2/"
-                  title="Street Fighter 2 (DOS.Zone)"
-                  style="position:absolute;inset:0;width:100%;height:100%;border:0;"
-                  allow="autoplay; fullscreen; gamepad; clipboard-write"
-                  allowfullscreen
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-              </div>
+              <p>${gameText}</p>
+              <p style="text-align: center; margin: 2rem 0;">
+                <a href="https://archive.org/details/msdos_Street_Fighter_II_1993" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   style="display: inline-block; padding: 1rem 2rem; background: var(--violet); color: white; text-decoration: none; border-radius: 4px; font-weight: bold;">
+                  🎮 ${linkText}
+                </a>
+              </p>
+              <p style="text-align: center; margin-top: 1rem; opacity: 0.7;">
+                <a href="https://dos.zone/street-fighter-2/" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   style="color: inherit; text-decoration: underline;">
+                  ${currentLang === 'pt' ? 'Alternativa: DOS.Zone' : 'Alternative: DOS.Zone'}
+                </a>
+              </p>
             </div>
           </div>
         `;
@@ -1447,23 +1475,35 @@ function navigate(path, anchor = null) {
       // Easter egg: Heroes of Might and Magic II
       const main = document.querySelector('main');
       if (main) {
+        const gameText = currentLang === 'pt'
+          ? 'Heroes of Might and Magic II - O clássico jogo de estratégia'
+          : 'Heroes of Might and Magic II - The classic strategy game';
+        const linkText = currentLang === 'pt'
+          ? 'Jogar Heroes of Might and Magic II (abre em nova aba)'
+          : 'Play Heroes of Might and Magic II (opens in new tab)';
         main.innerHTML = `
           <div class="document-container">
             <div class="document-header">
               <h1>Heroes of Might and Magic II</h1>
             </div>
             <div class="markdown-content game-container">
-              <div style="position:relative;width:100%;max-width:1200px;margin:0 auto;padding-top:75%;">
-                <iframe
-                  src="https://dos.zone/heroes-of-might-and-magic-ii/"
-                  title="Heroes of Might and Magic II (DOS.Zone)"
-                  style="position:absolute;inset:0;width:100%;height:100%;border:0;"
-                  allow="autoplay; fullscreen; gamepad; clipboard-write"
-                  allowfullscreen
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-              </div>
+              <p>${gameText}</p>
+              <p style="text-align: center; margin: 2rem 0;">
+                <a href="https://archive.org/details/msdos_Heroes_of_Might_and_Magic_II_1996" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   style="display: inline-block; padding: 1rem 2rem; background: var(--violet); color: white; text-decoration: none; border-radius: 4px; font-weight: bold;">
+                  🎮 ${linkText}
+                </a>
+              </p>
+              <p style="text-align: center; margin-top: 1rem; opacity: 0.7;">
+                <a href="https://dos.zone/heroes-of-might-and-magic-ii/" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   style="color: inherit; text-decoration: underline;">
+                  ${currentLang === 'pt' ? 'Alternativa: DOS.Zone' : 'Alternative: DOS.Zone'}
+                </a>
+              </p>
             </div>
           </div>
         `;

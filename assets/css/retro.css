@@ -7,10 +7,10 @@
 
 :root.theme-retro {
   /* Cores base */
-  --bg: #f6f1e3;              /* papel off-white */
-  --panel: #fffaf0;           /* superfície */
-  --text: #111111;            /* texto principal */
-  --muted: #4b4b4b;           /* texto secundário */
+  --bg: #fafafa;              /* fundo quase branco */
+  --panel: #ffffff;           /* superfície branca */
+  --text: #1a1a1a;           /* texto escuro */
+  --muted: #4b4b4b;          /* texto secundário */
   
   /* Paleta EGA/old IDE */
   --accent: #0000aa;          /* azul DOS */
@@ -39,12 +39,22 @@
 
 html.theme-retro,
 html.theme-retro body {
-  background: var(--bg);
-  color: var(--text);
+  background: var(--bg) !important;
+  color: var(--text) !important;
   filter: none;
   overflow-x: hidden;
   width: 100%;
   max-width: 100vw;
+}
+
+/* Garantir que o tema retro seja aplicado globalmente */
+html.theme-retro {
+  background: var(--bg) !important;
+}
+
+html.theme-retro body {
+  background: var(--bg) !important;
+  color: var(--text) !important;
 }
 
 html.theme-retro * {
