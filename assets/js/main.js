@@ -691,7 +691,7 @@ const routes = {
   '/contact': 'CONTACT.md',
   '/ritual': 'OCCULT_GAME', // Easter egg: Ritual Terminal (movido do relógio)
   '/street-fighter': 'STREET_FIGHTER_2', // Easter egg: Street Fighter Alpha (novo no relógio)
-  '/heroes': 'HEROES_HOMM2' // Easter egg: Heroes of Might and Magic III
+  '/hero': 'HEROES_HOMM2' // Easter egg: Heroes of Might and Magic III
 };
 
 // Função para atualizar URL sem recarregar página
@@ -880,9 +880,9 @@ function processTextEasterEggs() {
         // Tornar as palavras-chave clicáveis
         const html = p.innerHTML;
         const newHtml = html
-          .replace(/\b(heroes)\b/gi, '<a href="/heroes" onclick="event.preventDefault(); navigate(\'/heroes\'); return false;" style="cursor: pointer; text-decoration: underline; text-decoration-style: dotted; color: inherit;">$1</a>')
-          .replace(/\b(might and magic)\b/gi, '<a href="/heroes" onclick="event.preventDefault(); navigate(\'/heroes\'); return false;" style="cursor: pointer; text-decoration: underline; text-decoration-style: dotted; color: inherit;">$1</a>')
-          .replace(/\b(segunda geração|second-generation)\b/gi, '<a href="/heroes" onclick="event.preventDefault(); navigate(\'/heroes\'); return false;" style="cursor: pointer; text-decoration: underline; text-decoration-style: dotted; color: inherit;">$1</a>');
+          .replace(/\b(heroes)\b/gi, '<a href="/hero" onclick="event.preventDefault(); navigate(\'/hero\'); return false;" style="cursor: pointer; text-decoration: underline; text-decoration-style: dotted; color: inherit;">$1</a>')
+          .replace(/\b(might and magic)\b/gi, '<a href="/hero" onclick="event.preventDefault(); navigate(\'/hero\'); return false;" style="cursor: pointer; text-decoration: underline; text-decoration-style: dotted; color: inherit;">$1</a>')
+          .replace(/\b(segunda geração|second-generation)\b/gi, '<a href="/hero" onclick="event.preventDefault(); navigate(\'/hero\'); return false;" style="cursor: pointer; text-decoration: underline; text-decoration-style: dotted; color: inherit;">$1</a>');
         p.innerHTML = newHtml;
       }
     });
@@ -2106,7 +2106,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const faviconLink = document.getElementById('favicon-link');
   if (faviconLink) {
     const basePath = getBasePath();
-    faviconLink.href = basePath ? `${basePath}/favicon.svg` : './favicon.svg';
+    const faviconPath = basePath ? `${basePath}/favicon.svg` : './favicon.svg';
+    faviconLink.href = faviconPath;
+    // Adicionar link alternativo para evitar busca automática de favicon.ico
+    let alternateFavicon = document.querySelector('link[rel="alternate icon"]');
+    if (!alternateFavicon) {
+      alternateFavicon = document.createElement('link');
+      alternateFavicon.rel = 'alternate icon';
+      alternateFavicon.type = 'image/svg+xml';
+      document.head.appendChild(alternateFavicon);
+    }
+    alternateFavicon.href = faviconPath;
   }
   
   // Inicializar sistema de idioma
