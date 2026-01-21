@@ -38,7 +38,7 @@ The arrival of the prophet with Fu Monilson and the Controlled Amplification Pro
 
 ## 🍬🚫 John Aunt-Bet
 
-![John Aunt-Bet](img/John Aunt-Bet.png)
+![John Aunt-Bet](img/john.png)
 
 **Origin:** German-Swiss  
 **Specialty:** Anti-Sugar  

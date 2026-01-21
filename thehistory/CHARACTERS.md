@@ -38,7 +38,7 @@ A chegada do profeta com Fu Monilson e o Protocolo de Amplificação Controlada,
 
 ## 🍬🚫 John Aunt-Bet
 
-![John Aunt-Bet](img/John Aunt-Bet.png)
+![John Aunt-Bet](img/john.png)
 
 **Origem:** Germano-Suíço  
 **Especialidade:** Anti-Açúcar  
