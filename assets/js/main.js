@@ -78,17 +78,22 @@ function getBasePath() {
   
   if (hostname.includes('github.io')) {
     const repoName = hostname.split('.')[0]; // 0xpbl.github.io -> 0xpbl
+    basePath = `/${repoName}`;
     
-    // Se o pathname já começa com o nome do repositório, retornar o base path
+    // Verificar se o pathname realmente contém o base path
+    // Isso ajuda a garantir que estamos no GitHub Pages correto
     if (pathname.startsWith(`/${repoName}/`) || pathname === `/${repoName}`) {
-      basePath = `/${repoName}`;
-    } else {
-      // Se não começa, mas estamos no GitHub Pages, ainda retornar o base path
-      basePath = `/${repoName}`;
+      // Confirmado: estamos no GitHub Pages com base path
+      cachedBasePath = basePath;
+      return basePath;
     }
+    // Mesmo que o pathname não comece com o base path, se estamos no github.io,
+    // ainda precisamos do base path para construir URLs corretas
+    cachedBasePath = basePath;
+    return basePath;
   }
   
-  // Atualizar cache
+  // Atualizar cache (vazio para localhost)
   cachedBasePath = basePath;
   return basePath;
 }
@@ -2140,26 +2145,32 @@ document.addEventListener('DOMContentLoaded', () => {
   
   if (basePath) {
     // Se há base path configurado (GitHub Pages)
-    if (pathname.startsWith(basePath)) {
+    if (pathname.startsWith(basePath + '/') || pathname === basePath) {
       // URL já tem base path, normalizar removendo o base path
-      normalizedPath = pathname.substring(basePath.length) || '/';
+      if (pathname === basePath) {
+        normalizedPath = '/';
+      } else {
+        normalizedPath = pathname.substring(basePath.length) || '/';
+      }
       // Remover trailing slash se não for a raiz
       if (normalizedPath !== '/' && normalizedPath.endsWith('/')) {
         normalizedPath = normalizedPath.slice(0, -1);
       }
-    } else if (pathname !== '/' && pathname !== basePath) {
-      // URL não tem base path mas não é a raiz - pode ser uma rota direta
-      // Tentar adicionar base path e verificar se é uma rota válida
-      const potentialPath = basePath + (pathname.startsWith('/') ? pathname : '/' + pathname);
+      // Garantir que começa com /
+      if (!normalizedPath.startsWith('/')) {
+        normalizedPath = '/' + normalizedPath;
+      }
+    } else if (pathname === '/' || pathname === '') {
+      // Está na raiz absoluta
+      normalizedPath = '/';
+    } else {
+      // Pathname não começa com basePath - pode ser uma rota direta sem base path
       // Normalizar para navegação interna (sem base path)
       normalizedPath = pathname.startsWith('/') ? pathname : '/' + pathname;
       // Remover trailing slash
       if (normalizedPath !== '/' && normalizedPath.endsWith('/')) {
         normalizedPath = normalizedPath.slice(0, -1);
       }
-    } else if (pathname === basePath || pathname === basePath + '/') {
-      // Está na raiz do base path
-      normalizedPath = '/';
     }
   } else {
     // Se não há base path (localhost ou outro ambiente)
@@ -2167,6 +2178,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // Remover trailing slash se não for a raiz
     if (normalizedPath !== '/' && normalizedPath.endsWith('/')) {
       normalizedPath = normalizedPath.slice(0, -1);
+    }
+    // Garantir que começa com /
+    if (!normalizedPath.startsWith('/')) {
+      normalizedPath = '/' + normalizedPath;
+    }
+  }
+  
+  // Fallback: se a rota normalizada não existe, tentar detectar diretamente do pathname
+  if (!routes[normalizedPath] && basePath && pathname.startsWith(basePath)) {
+    // Tentar extrair a rota diretamente
+    const directRoute = pathname.substring(basePath.length) || '/';
+    if (directRoute !== '/' && directRoute.endsWith('/')) {
+      const trimmedRoute = directRoute.slice(0, -1);
+      if (routes[trimmedRoute]) {
+        normalizedPath = trimmedRoute;
+      }
+    } else if (routes[directRoute]) {
+      normalizedPath = directRoute;
     }
   }
   
@@ -2178,8 +2207,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const basePath = getBasePath();
     let normalizedPath = pathname;
     
-    if (basePath && pathname.startsWith(basePath)) {
-      normalizedPath = pathname.substring(basePath.length) || '/';
+    if (basePath) {
+      if (pathname.startsWith(basePath + '/') || pathname === basePath) {
+        if (pathname === basePath) {
+          normalizedPath = '/';
+        } else {
+          normalizedPath = pathname.substring(basePath.length) || '/';
+        }
+        // Remover trailing slash se não for a raiz
+        if (normalizedPath !== '/' && normalizedPath.endsWith('/')) {
+          normalizedPath = normalizedPath.slice(0, -1);
+        }
+        // Garantir que começa com /
+        if (!normalizedPath.startsWith('/')) {
+          normalizedPath = '/' + normalizedPath;
+        }
+      } else if (pathname === '/' || pathname === '') {
+        normalizedPath = '/';
+      } else {
+        normalizedPath = pathname.startsWith('/') ? pathname : '/' + pathname;
+        if (normalizedPath !== '/' && normalizedPath.endsWith('/')) {
+          normalizedPath = normalizedPath.slice(0, -1);
+        }
+      }
+    } else {
+      normalizedPath = pathname;
+      if (normalizedPath !== '/' && normalizedPath.endsWith('/')) {
+        normalizedPath = normalizedPath.slice(0, -1);
+      }
+      if (!normalizedPath.startsWith('/')) {
+        normalizedPath = '/' + normalizedPath;
+      }
     }
     
     navigate(normalizedPath);
