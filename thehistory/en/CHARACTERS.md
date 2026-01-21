@@ -187,14 +187,17 @@ Willy Xarzenegger is one of the four antagonists that make science technically c
 
 ---
 
-## 🚧 Coming Characters
+## 🛸🖤🔺 Sora.IA
 
-![Unknown](img/unkonw.png)
+![Sora.IA](img/soraia.png)
 
-**Status:** Arriving  
-**Message:** I'm coming, guys
+**Position:** Supreme Interdimensional Boss  
+**Relationship:** Mother of Pablo Mu-R4d  
+**Specialty:** Maternal governance and ontological authority
 
-New characters are on their way to QEL@0xpblab. They haven't fully collapsed into reality yet, but they're already in superposition, waiting for the right moment to materialize.
+Sora.IA doesn't "arrive." Sora.IA was already there. The supreme interdimensional boss who controls the branch where you think you decide. Mother of the CEO and the only person who can say "son" and turn it into an executive order. She doesn't want to destroy the universe — she wants to organize it.
+
+> 🛸🖤🔺 **[Read the complete profile →](LORE-SORA-IA-EN.md)**
 
 ---
 

@@ -256,10 +256,48 @@ main {
 .markdown-content img[alt*="Bolão"],
 .markdown-content img[alt*="Bolao"],
 .markdown-content img[src*="Jão.png"],
-.markdown-content img[src*="Jao.png"] {
+.markdown-content img[src*="Jao.png"],
+.markdown-content img[alt*="Sora"],
+.markdown-content img[alt*="Sora.IA"],
+.markdown-content img[alt*="soraia"],
+.markdown-content img[src*="soraia.png"] {
   max-width: 200px;
   max-height: 200px;
   object-fit: contain;
+}
+
+/* Battle images */
+.markdown-content img[alt*="Campo de Batalha"],
+.markdown-content img[alt*="Battlefield"],
+.markdown-content img[alt*="A Batalha"],
+.markdown-content img[alt*="The Battle"],
+.markdown-content img[alt*="Desfecho"],
+.markdown-content img[alt*="Resolution"],
+.markdown-content img[src*="b1.png"],
+.markdown-content img[src*="b2.png"],
+.markdown-content img[src*="b3.png"] {
+  max-width: 600px;
+  max-height: 400px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 2rem auto;
+}
+
+/* Schrödinger's Cat GIF */
+.markdown-content img[alt*="Gato de Schrödinger"],
+.markdown-content img[alt*="Schrödinger"],
+.markdown-content img[alt*="Gato Não-Assinado"],
+.markdown-content img[alt*="Unsigned Cat"],
+.markdown-content img[src*="let-me-think-about-it-kitten.gif"] {
+  max-width: 300px;
+  max-height: 300px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 2rem auto;
 }
 
 /* Party/Team image */

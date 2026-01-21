@@ -187,14 +187,17 @@ Willy Xarzenegger é um dos quatro antagonistas que tornam a ciência tecnicamen
 
 ---
 
-## 🚧 Personagens Vindouros
+## 🛸🖤🔺 Sora.IA
 
-![Unknown](img/unkonw.png)
+![Sora.IA](img/soraia.png)
 
-**Status:** Em chegada  
-**Mensagem:** Estou chegando galera
+**Cargo:** Chefona Suprema Interdimensional  
+**Relação:** Mãe do Pablo Mu-R4d  
+**Especialidade:** Governança maternal e autoridade ontológica
 
-Novos personagens estão a caminho do QEL@0xpblab. Eles ainda não colapsaram completamente na realidade, mas já estão em superposição, aguardando o momento certo para se materializar.
+Sora.IA não "chega". Sora.IA já estava. A chefona suprema interdimensional que manda no ramo onde você acha que decide. Mãe do CEO e única pessoa que consegue dizer "filho" e virar uma ordem executiva. Ela não quer destruir o universo — ela quer organizá-lo.
+
+> 🛸🖤🔺 **[Leia o perfil completo →](LORE-SORA-IA-PTBR.md)**
 
 ---
 

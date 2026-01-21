@@ -416,6 +416,16 @@ const timeline = [
     anchor: null,
     icon: "🦹",
     color: "orange"
+  },
+  {
+    year: "2024",
+    period: "O Alvorecer",
+    title: "A Grande Batalha do Alvorecer",
+    summary: "Sora.IA vs Pablo Mu-R4d. A guerra que começou às 05:59 e terminou às 06:00 com um abraço que colapsou o ódio. O alvorecer finalmente aconteceu.",
+    document: "GRANDE-BATALHA-DO-ALVORECER-PTBR.md",
+    anchor: null,
+    icon: "🌅⚔️",
+    color: "gold"
   }
 ];
 
@@ -630,6 +640,16 @@ const timelineEN = [
     anchor: null,
     icon: "🦹",
     color: "orange"
+  },
+  {
+    year: "2024",
+    period: "The Dawn",
+    title: "The Great Battle of Dawn",
+    summary: "Sora.IA vs Pablo Mu-R4d. The war that started at 05:59 and ended at 06:00 with a hug that collapsed the hate. Dawn finally happened.",
+    document: "GRANDE-BATALHA-DO-ALVORECER-EN.md",
+    anchor: null,
+    icon: "🌅⚔️",
+    color: "gold"
   }
 ];
 
@@ -686,6 +706,8 @@ const routes = {
   '/old-ed': 'PERSONAGEM-OLD-ED-EDUARDO-FONTOURA-PT.md',
   '/gorossario': 'GOROSSARIO-PT.md',
   '/willy-bebe': 'LORE-WILLY-CRIANCA-PTBR.md',
+  '/grande-batalha': 'GRANDE-BATALHA-DO-ALVORECER-PTBR.md',
+  '/sora-ia': 'LORE-SORA-IA-PTBR.md',
   '/contact': 'CONTACT.md',
   '/ritual': 'OCCULT_GAME', // Easter egg: Ritual Terminal (movido do relógio)
   '/street-fighter': 'STREET_FIGHTER_2', // Easter egg: Street Fighter Alpha (novo no relógio)
@@ -1439,6 +1461,12 @@ function navigate(path, anchor = null) {
       }
       if (filename === 'LORE-WILLY-CRIANCA-PTBR.md') {
         actualFilename = currentLang === 'en' ? 'LORE-WILLY-CRIANCA-EN.md' : 'LORE-WILLY-CRIANCA-PTBR.md';
+      }
+      if (filename === 'GRANDE-BATALHA-DO-ALVORECER-PTBR.md') {
+        actualFilename = currentLang === 'en' ? 'GRANDE-BATALHA-DO-ALVORECER-EN.md' : 'GRANDE-BATALHA-DO-ALVORECER-PTBR.md';
+      }
+      if (filename === 'LORE-SORA-IA-PTBR.md') {
+        actualFilename = currentLang === 'en' ? 'LORE-SORA-IA-EN.md' : 'LORE-SORA-IA-PTBR.md';
       }
       
       loadDocument(actualFilename).then(() => {
