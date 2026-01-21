@@ -1,8 +1,5 @@
 # Contato
 
-<script>NekoType="pink"</script>
-<h1 id=nl><script src="https://webneko.net/n20171213.js"></script><a href="https://webneko.net">Neko</a></h1>
-
 [![Status](https://img.shields.io/badge/status-disponível-green)](https://github.com/0xpbl/.github)
 [![Resposta](https://img.shields.io/badge/resposta-em%20até%2048h-blue)](https://github.com/0xpbl/.github)
 

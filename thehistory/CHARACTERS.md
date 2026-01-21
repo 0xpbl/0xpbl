@@ -127,7 +127,7 @@ Jão Bolão, o ferreiro que todo mundo jura ser anão, mas é do tamanho normal.
 **Cargo:** Pesquisador de Oneirologia Aplicada  
 **Especialidade:** Protocolos de sonho operacional e pesquisa REM
 
-Nikols é pesquisador do QEL@0xpblab especializado em oneirologia aplicada e estados de consciência alternativos. Desenvolve protocolos experimentais para investigar a aplicabilidade de fases REM em processos operacionais.
+Nikols é pesquisador do QEL@0xpblab especializado em oneirologia aplicada e estados de consciência alternativos. Desenvolve protocolos experimentais para investigar a aplicabilidade de fases REM em processos operacionais, trabalhando na interseção entre neurociência quântica e produtividade. Sua pesquisa foca em mapear padrões de sonho como forma de processamento de informação distribuída.
 
 > 💤🧠 **[Leia o perfil completo →](LORE-NIKOLS-PT.md)**
 
@@ -140,7 +140,7 @@ Nikols é pesquisador do QEL@0xpblab especializado em oneirologia aplicada e est
 **Cargo:** Advogado Interdimensional  
 **Especialidade:** Litigância quântica e protocolos legais em superposição
 
-Dr. Bee Shaa Caesar é advogado interdimensional do QEL@0xpblab, especializado em jurisprudência quântica e litigância em estados de superposição. Desenvolve protocolos legais para processos que envolvem múltiplos ramos da realidade simultaneamente.
+Dr. Bee Shaa Caesar é advogado interdimensional do QEL@0xpblab, especializado em jurisprudência quântica e litigância em estados de superposição. Desenvolve protocolos legais para processos que envolvem múltiplos ramos da realidade simultaneamente. Utiliza sistemas de comunicação quântica baseados em padrões de dança para coordenar processos legais complexos que transcendem dimensões únicas.
 
 > ⚖️🐝👑 **[Leia o perfil completo →](LORE-DR-BEE-SHAA-CAESAR-PTBR.md)**
 
@@ -153,9 +153,23 @@ Dr. Bee Shaa Caesar é advogado interdimensional do QEL@0xpblab, especializado e
 **Cargo:** Pesquisador de Neurocirurgia Fotônica  
 **Especialidade:** Manipulação fotônica e pesquisa de percepção óptica
 
-Doktor Albino Bino é neurocirurgião e pesquisador do QEL@0xpblab especializado em neurocirurgia fotônica e óptica quântica. Desenvolve pesquisas sobre manipulação de fótons e sua interação com circuitos neurais de percepção.
+Doktor Albino Bino é neurocirurgião e pesquisador do QEL@0xpblab especializado em neurocirurgia fotônica e óptica quântica. Desenvolve pesquisas sobre manipulação de fótons e sua interação com circuitos neurais de percepção. Sua pesquisa investiga como alterações em circuitos de percepção podem afetar a interpretação de estímulos luminosos, trabalhando na fronteira entre física quântica e neurociência.
 
 > 🧠💉✨ **[Leia o perfil completo →](LORE-DOKTOR-ALBINO-BINO-PT.md)**
+
+---
+
+## 👶🔥 Willy Criança
+
+![Willy Criança](img/bebewilly.png)
+
+**Título:** O Mini-Termodinâmico  
+**Origem:** Cruzilia (infância)  
+**Especialidade:** Frustração em alta temperatura e processamento de rancor em background
+
+Willy Criança, a versão infantil do futuro vilão Willy Xarzenegger. Antes de se tornar um problema de auditoria e calor suspeito, Willy era uma criança com energia infinita e uma capacidade única de processar rancor em background. Cresceu em Cruzilia tentando provar, com ciência, que tudo que dá errado é culpa do ambiente.
+
+> 👶🔥 **[Leia a história completa →](LORE-WILLY-CRIANCA-PTBR.md)**
 
 ---
 

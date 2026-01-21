@@ -127,7 +127,7 @@ Jão Bolão, the smith everyone swears is a dwarf, but he's actually normal-size
 **Position:** Applied Oneirology Researcher  
 **Specialty:** Operational dream protocols and REM research
 
-Nikols is a QEL@0xpblab researcher specializing in applied oneirology and alternative states of consciousness. Develops experimental protocols to investigate the applicability of REM phases in operational processes.
+Nikols is a QEL@0xpblab researcher specializing in applied oneirology and alternative states of consciousness. Develops experimental protocols to investigate the applicability of REM phases in operational processes, working at the intersection of quantum neuroscience and productivity. His research focuses on mapping dream patterns as a form of distributed information processing.
 
 > 💤🧠 **[Read the complete profile →](LORE-NIKOLS-EN.md)**
 
@@ -140,7 +140,7 @@ Nikols is a QEL@0xpblab researcher specializing in applied oneirology and altern
 **Position:** Interdimensional Lawyer  
 **Specialty:** Quantum litigation and legal protocols in superposition
 
-Dr. Bee Shaa Caesar is an interdimensional lawyer at QEL@0xpblab, specializing in quantum jurisprudence and litigation in superposition states. Develops legal protocols for processes involving multiple reality branches simultaneously.
+Dr. Bee Shaa Caesar is an interdimensional lawyer at QEL@0xpblab, specializing in quantum jurisprudence and litigation in superposition states. Develops legal protocols for processes involving multiple reality branches simultaneously. Utilizes quantum communication systems based on dance patterns to coordinate complex legal processes that transcend single dimensions.
 
 > ⚖️🐝👑 **[Read the complete profile →](LORE-DR-BEE-SHAA-CAESAR-EN.md)**
 
@@ -153,9 +153,23 @@ Dr. Bee Shaa Caesar is an interdimensional lawyer at QEL@0xpblab, specializing i
 **Position:** Photonic Neurosurgery Researcher  
 **Specialty:** Photonic manipulation and optical perception research
 
-Doktor Albino Bino is a neurosurgeon and researcher at QEL@0xpblab specializing in photonic neurosurgery and quantum optics. Conducts research on photon manipulation and its interaction with neural perception circuits.
+Doktor Albino Bino is a neurosurgeon and researcher at QEL@0xpblab specializing in photonic neurosurgery and quantum optics. Conducts research on photon manipulation and its interaction with neural perception circuits. His research investigates how alterations in perception circuits can affect the interpretation of luminous stimuli, working at the frontier between quantum physics and neuroscience.
 
 > 🧠💉✨ **[Read the complete profile →](LORE-DOKTOR-ALBINO-BINO-EN.md)**
+
+---
+
+## 👶🔥 Kid Willy
+
+![Kid Willy](img/bebewilly.png)
+
+**Title:** The Mini-Thermodynamic Menace  
+**Origin:** Cruzilia (childhood)  
+**Specialty:** High-temperature frustration and background spite processing
+
+Kid Willy, the childhood version of the future villain Willy Xarzenegger. Before becoming an audit problem with suspicious warmth, Willy was a child with infinite energy and a unique ability to process spite in the background. Grew up in Cruzilia trying to prove, with science, that everything that goes wrong is the environment's fault.
+
+> 👶🔥 **[Read the complete story →](LORE-WILLY-CRIANCA-EN.md)**
 
 ---
 

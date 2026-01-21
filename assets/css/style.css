@@ -238,7 +238,19 @@ main {
 .markdown-content img[alt*="Willy"],
 .markdown-content img[alt*="Prophet"],
 .markdown-content img[alt*="Characters"],
-.markdown-content img[alt*="Unknown"] {
+.markdown-content img[alt*="Unknown"],
+.markdown-content img[alt*="Nikols"],
+.markdown-content img[alt*="Bee Shaa"],
+.markdown-content img[alt*="BeeShaa"],
+.markdown-content img[alt*="Caesar"],
+.markdown-content img[alt*="Bino"],
+.markdown-content img[alt*="Albino"],
+.markdown-content img[alt*="Doktor"],
+.markdown-content img[alt*="Willy Criança"],
+.markdown-content img[alt*="Kid Willy"],
+.markdown-content img[alt*="Willy Bebe"],
+.markdown-content img[alt*="bebewilly"],
+.markdown-content img[src*="bebewilly.png"] {
   max-width: 200px;
   max-height: 200px;
   object-fit: contain;
@@ -289,26 +301,6 @@ main {
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
-}
-
-/* Neko */
-.markdown-content #nl {
-  max-width: 100%;
-  overflow: hidden;
-  margin: 0.5rem 0;
-}
-
-.markdown-content #nl h1 {
-  font-size: 1rem !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: none !important;
-}
-
-.markdown-content #nl a {
-  display: inline-block;
-  word-wrap: break-word;
-  max-width: 100%;
 }
 
 /* Game Container */

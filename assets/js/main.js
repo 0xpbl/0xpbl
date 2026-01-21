@@ -64,9 +64,7 @@ function setCurrentLang(lang) {
   cachedLang = null;
 }
 
-// Função para obter o base path do GitHub Pages
 function getBasePath() {
-  // Usar cache se disponível
   if (cachedBasePath !== null) {
     return cachedBasePath;
   }
@@ -77,23 +75,17 @@ function getBasePath() {
   let basePath = '';
   
   if (hostname.includes('github.io')) {
-    const repoName = hostname.split('.')[0]; // 0xpbl.github.io -> 0xpbl
+    const repoName = hostname.split('.')[0];
     basePath = `/${repoName}`;
     
-    // Verificar se o pathname realmente contém o base path
-    // Isso ajuda a garantir que estamos no GitHub Pages correto
     if (pathname.startsWith(`/${repoName}/`) || pathname === `/${repoName}`) {
-      // Confirmado: estamos no GitHub Pages com base path
       cachedBasePath = basePath;
       return basePath;
     }
-    // Mesmo que o pathname não comece com o base path, se estamos no github.io,
-    // ainda precisamos do base path para construir URLs corretas
     cachedBasePath = basePath;
     return basePath;
   }
   
-  // Atualizar cache (vazio para localhost)
   cachedBasePath = basePath;
   return basePath;
 }
@@ -104,23 +96,18 @@ let cachedDocsPath = null;
 let cachedLang = null;
 
 function getDocsPath() {
-  // Usar cache se o idioma não mudou
   if (cachedDocsPath && cachedLang === currentLang && cachedBasePath === getBasePath()) {
     return cachedDocsPath;
   }
   
-  // Detectar base path do GitHub Pages
-  // Exemplo: https://0xpbl.github.io/0xpbl/ -> basePath = '/0xpbl'
   const pathname = window.location.pathname;
   const hostname = window.location.hostname;
   
   const basePath = getBasePath();
   const langPath = currentLang === 'en' ? 'thehistory/en/' : 'thehistory/';
   
-  // Retornar caminho: basePath + langPath ou apenas langPath se basePath vazio
   const fullPath = basePath ? `${basePath}/${langPath}` : langPath;
   
-  // Atualizar cache
   cachedBasePath = basePath;
   cachedDocsPath = fullPath;
   cachedLang = currentLang;
@@ -693,6 +680,7 @@ const routes = {
   '/marcelo': 'HISTORIA-MARCELO-MARMELO-MARTELO-PT.md',
   '/old-ed': 'PERSONAGEM-OLD-ED-EDUARDO-FONTOURA-PT.md',
   '/gorossario': 'GOROSSARIO-PT.md',
+  '/willy-bebe': 'LORE-WILLY-CRIANCA-PTBR.md',
   '/contact': 'CONTACT.md',
   '/ritual': 'OCCULT_GAME', // Easter egg: Ritual Terminal (movido do relógio)
   '/street-fighter': 'STREET_FIGHTER_2', // Easter egg: Street Fighter Alpha (novo no relógio)
@@ -759,25 +747,16 @@ async function loadDocument(filename) {
       </div>
     `;
     
-    // Processar conteúdo usando requestAnimationFrame para melhor performance
     requestAnimationFrame(() => {
-      // Processar IDs nos títulos primeiro
       processHeadingIds();
-      
-      // Processar links internos
       processInternalLinks();
       processImages();
       
-      // Prefetch de links visíveis (após processar links)
       requestAnimationFrame(() => {
         prefetchVisibleLinks();
       });
       
-      
-      // Processar e executar scripts no conteúdo
       processScripts();
-      
-      // Processar tabelas para responsividade
       processTables();
     });
     
@@ -1258,26 +1237,21 @@ function processImages() {
   });
 }
 
-// Aplicar otimizações de performance nas imagens
 function applyImageOptimizations(img) {
-  // Lazy loading nativo para imagens abaixo da dobra
   if (!img.hasAttribute('loading')) {
     img.setAttribute('loading', 'lazy');
   }
   
-  // Decodificação assíncrona para melhor performance
   if (!img.hasAttribute('decoding')) {
     img.setAttribute('decoding', 'async');
   }
   
-  // Se a imagem já foi carregada, obter dimensões para evitar CLS
   if (img.complete && img.naturalWidth > 0) {
     if (!img.hasAttribute('width') && !img.hasAttribute('height')) {
       img.setAttribute('width', img.naturalWidth);
       img.setAttribute('height', img.naturalHeight);
     }
   } else {
-    // Carregar dimensões quando a imagem carregar
     img.addEventListener('load', function() {
       if (!this.hasAttribute('width') && !this.hasAttribute('height')) {
         this.setAttribute('width', this.naturalWidth);
@@ -1292,14 +1266,12 @@ function processScripts() {
   const markdownContent = document.querySelector('.markdown-content');
   if (!markdownContent) return;
   
-  // PRIMEIRO: Executar scripts inline (como NekoType) ANTES dos scripts externos
+  // Executar scripts inline ANTES dos scripts externos
   const inlineScripts = markdownContent.querySelectorAll('script:not([src])');
   inlineScripts.forEach(script => {
     try {
-      // Executar código inline no contexto global
       const code = script.textContent || script.innerHTML;
       if (code) {
-        // Criar função para executar no contexto global
         const func = new Function(code);
         func();
       }
@@ -1308,53 +1280,19 @@ function processScripts() {
     }
   });
   
-  // SEGUNDO: Processar scripts externos (como o neko)
-  // Para scripts que usam document.write (como neko), precisamos carregar de forma especial
   const externalScripts = markdownContent.querySelectorAll('script[src]');
   externalScripts.forEach(oldScript => {
-    const src = oldScript.getAttribute('src');
-    
-    // Scripts que usam document.write precisam ser carregados de forma diferente
-    if (src && src.includes('webneko')) {
-      // Para o neko, usar uma abordagem que funciona com document.write
-      // Criar um container temporário
-      const nekoContainer = oldScript.parentElement.querySelector('h1#nl');
-      if (nekoContainer) {
-        // Definir NekoType globalmente antes de carregar
-        window.NekoType = window.NekoType || 'pink';
-        
-        // Carregar o script diretamente no head para que document.write funcione
-        // Garantir que use HTTPS
-        const secureSrc = src.replace(/^http:/, 'https:');
-        const headScript = document.createElement('script');
-        headScript.src = secureSrc;
-        headScript.async = true;
-        headScript.onload = function() {
-          // Após carregar, tentar mover o neko para o container correto
-          setTimeout(() => {
-            const nekoElement = document.getElementById('nl');
-            if (nekoElement && nekoContainer && nekoElement !== nekoContainer) {
-              nekoContainer.innerHTML = nekoElement.innerHTML;
-            }
-          }, 500);
-        };
-        document.head.appendChild(headScript);
-      }
-    } else {
-      // Para outros scripts, usar o método normal
-      const newScript = document.createElement('script');
-      Array.from(oldScript.attributes).forEach(attr => {
-        newScript.setAttribute(attr.name, attr.value);
-      });
-      if (oldScript.textContent) {
-        newScript.textContent = oldScript.textContent;
-      }
-      oldScript.parentNode.replaceChild(newScript, oldScript);
+    const newScript = document.createElement('script');
+    Array.from(oldScript.attributes).forEach(attr => {
+      newScript.setAttribute(attr.name, attr.value);
+    });
+    if (oldScript.textContent) {
+      newScript.textContent = oldScript.textContent;
     }
+    oldScript.parentNode.replaceChild(newScript, oldScript);
   });
 }
 
-// Processar tabelas para responsividade (adicionar wrapper para scroll)
 function processTables() {
   const markdownContent = document.querySelector('.markdown-content');
   if (!markdownContent) return;
@@ -1362,19 +1300,14 @@ function processTables() {
   const tables = markdownContent.querySelectorAll('table');
   
   tables.forEach(table => {
-    // Verificar se já está envolvida em um wrapper
     if (table.parentElement && table.parentElement.classList.contains('table-wrapper')) {
       return;
     }
     
-    // Criar wrapper
     const wrapper = document.createElement('div');
     wrapper.className = 'table-wrapper';
     
-    // Inserir wrapper antes da tabela
     table.parentNode.insertBefore(wrapper, table);
-    
-    // Mover tabela para dentro do wrapper
     wrapper.appendChild(table);
   });
 }
@@ -1382,13 +1315,11 @@ function processTables() {
 // Função de navegação
 function navigate(path, anchor = null) {
   const basePath = getBasePath();
-  // Remover base path se presente no path recebido
   let normalizedPath = path;
   if (basePath && path.startsWith(basePath)) {
     normalizedPath = path.substring(basePath.length) || '/';
   }
   
-  // Normalizar âncora se presente (remover hífen inicial)
   let normalizedAnchor = anchor;
   if (normalizedAnchor && normalizedAnchor.startsWith('-')) {
     normalizedAnchor = normalizedAnchor.substring(1);
@@ -1398,7 +1329,6 @@ function navigate(path, anchor = null) {
   
   if (normalizedPath === '/' || normalizedPath === '') {
     showIndex();
-    // Se há âncora, tentar fazer scroll após renderizar
     if (normalizedAnchor) {
       setTimeout(() => scrollToAnchor(normalizedAnchor), 200);
     }
@@ -1406,9 +1336,7 @@ function navigate(path, anchor = null) {
     stopQuantumClock();
     const filename = routes[normalizedPath];
     
-    // Easter eggs especiais
     if (filename === 'OCCULT_GAME') {
-      // Easter egg: Ritual Terminal (movido para /ritual)
       const main = document.querySelector('#content');
       if (main && typeof window.initOccultGame === 'function') {
         main.innerHTML = '<div class="loading"><div class="spinner"></div><p>Inicializando ritual...</p></div>';
@@ -1425,11 +1353,9 @@ function navigate(path, anchor = null) {
         showIndex();
       }
     } else if (filename === 'STREET_FIGHTER_2') {
-      // Easter egg: Street Fighter 2 (local)
       const main = document.querySelector('#content');
       if (main) {
         const basePath = getBasePath();
-        // Construir caminho do jogo com basePath se necessário
         const cleanBasePath = basePath && basePath !== '' 
           ? (basePath.startsWith('/') ? basePath : `/${basePath}`)
           : '';
@@ -1459,15 +1385,16 @@ function navigate(path, anchor = null) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     } else if (filename) {
-      // Ajustar nome do arquivo baseado no idioma para arquivos com versões PT/EN
       let actualFilename = filename;
       if (filename === 'LORE-GAYBE-EL-PIXITOS-PT.md') {
         actualFilename = currentLang === 'en' ? 'LORE-GAYBE-EL-PIXITOS-EN.md' : 'LORE-GAYBE-EL-PIXITOS-PT.md';
       }
+      if (filename === 'LORE-WILLY-CRIANCA-PTBR.md') {
+        actualFilename = currentLang === 'en' ? 'LORE-WILLY-CRIANCA-EN.md' : 'LORE-WILLY-CRIANCA-PTBR.md';
+      }
       
       loadDocument(actualFilename).then(() => {
         if (normalizedAnchor) {
-          // Aguardar um pouco mais para garantir que os IDs foram processados
           setTimeout(() => {
             scrollToAnchor(normalizedAnchor);
           }, 200);
@@ -1484,12 +1411,10 @@ function navigate(path, anchor = null) {
   }
 }
 
-  // Renderizar Timeline Cronológica
 function renderTimeline() {
   const main = document.querySelector('#content');
   const currentTimeline = currentLang === 'en' ? timelineEN : timeline;
   
-  // Inicializar relógio quântico quando renderizar a timeline (home)
   initQuantumClock();
   
   let timelineHTML = '<div class="timeline-container">';
@@ -1499,10 +1424,9 @@ function renderTimeline() {
   let currentPeriod = '';
   
   currentTimeline.forEach((event, index) => {
-    // Adicionar separador de período se mudou
     if (event.period !== currentPeriod) {
       if (currentPeriod !== '') {
-        timelineHTML += '</div>'; // Fechar período anterior
+        timelineHTML += '</div>';
       }
       currentPeriod = event.period;
       timelineHTML += `<div class="timeline-period" data-period="${event.period}">`;
@@ -1552,7 +1476,6 @@ function renderTimeline() {
   
   main.innerHTML = timelineHTML;
   
-  // Verificar se há âncora na URL após renderizar
   setTimeout(() => {
     const hash = window.location.hash;
     if (hash) {
@@ -1560,7 +1483,6 @@ function renderTimeline() {
       const eventElement = document.getElementById(anchorId);
       if (eventElement) {
         eventElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        // Expandir automaticamente se houver hash
         const contentDiv = document.getElementById(`content-${anchorId}`);
         if (contentDiv && contentDiv.style.display === 'none') {
           const expandBtn = eventElement.querySelector('.btn-expand');
