@@ -1,4 +1,4 @@
-# 🎻🧔🐟 Gaybe-EL — O Barbo dos Mullets, Regente da Orquestra da Companhia
+# 🎻🧔🐟 Gaybe-EL — O Bardo dos Mullets, Regente da Orquestra da Companhia
 
 > *“Se você ouviu um solo de kazoo durante a daily, parabéns: você foi promovido a ‘observador’.”*  
 > — Ata perdida da Reunião 7.3 (recuperada de um pendrive que cheirava a maresia)
@@ -10,7 +10,7 @@
 ## 📋 Índice
 
 - [Quem é Gaybe-EL](#-quem-é-gaybe-el)
-- [A Aparência: o Barbo dos Mullets](#-a-aparência-o-barbo-dos-mullets)
+- [A Aparência: o Bardo dos Mullets](#-a-aparência-o-bardo-dos-mullets)
 - [A Orquestra da Companhia](#-a-orquestra-da-companhia)
 - [As Músicas Estranhas (e por que elas funcionam)](#-as-músicas-estranhas-e-por-que-elas-funcionam)
 - [Rituais Corporativos](#-rituais-corporativos)
@@ -40,12 +40,12 @@ O choque gerou um campo harmônico instável. Dele emergiu Gaybe-EL, já usando 
 
 ---
 
-## 🧔🐟 A Aparência: o Barbo dos Mullets
+## 🧔🐟 A Aparência: o Bardo dos Mullets
 
-O termo “Barbo dos Mullets” causa confusão porque ele é **duplamente mullet**:
+O termo "Bardo dos Mullets" causa confusão porque ele é **duplamente mullet**:
 
 1) **Mullet de cabelo**: negócios na frente, festa atrás (e auditoria no meio).  
-2) **Mullet de peixe**: porque o “barbo” dele tem filamentos que parecem barbilhões, mas cheiram levemente a mar e a cerveja de show.
+2) **Mullet de peixe**: porque o "bardo" dele tem filamentos que parecem barbilhões, mas cheiram levemente a mar e a cerveja de show.
 
 O resultado é uma barba que:
 - **vibra** quando alguém fala “pra ontem”;

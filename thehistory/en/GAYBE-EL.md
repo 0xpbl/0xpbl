@@ -1,4 +1,4 @@
-# 🎻🧔🐟 Gaybe-EL — The Mullet-Barbed Maestro of the Company Orchestra
+# 🎻🧔🐟 Gaybe-EL — The Mullet Bard, Maestro of the Company Orchestra
 
 > *“If you heard a kazoo solo during the daily standup, congratulations: you have been promoted to ‘observer.’”*  
 > — Lost Minutes, Meeting 7.3 (recovered from a flash drive that smelled faintly of seawater)
@@ -10,7 +10,7 @@
 ## 📋 Index
 
 - [Who is Gaybe-EL](#-who-is-gaybe-el)
-- [Appearance: The Mullet Barbs](#-appearance-the-mullet-barbs)
+- [Appearance: The Mullet Bard](#-appearance-the-mullet-bard)
 - [The Company Orchestra](#-the-company-orchestra)
 - [The Weird Music (and why it works)](#-the-weird-music-and-why-it-works)
 - [Corporate Rituals](#-corporate-rituals)
@@ -40,12 +40,12 @@ The shock created an unstable harmonic field. From it emerged Gaybe-EL, already 
 
 ---
 
-## 🧔🐟 Appearance: The Mullet Barbs
+## 🧔🐟 Appearance: The Mullet Bard
 
-The phrase “Mullet-Barbed” confuses people because he is **double-mullet**:
+The phrase "Mullet Bard" confuses people because he is **double-mullet**:
 
 1) **Hair mullet**: business in front, party in the back (and an audit somewhere in the middle).  
-2) **Fish mullet energy**: his beard has whisker-like barbs that smell faintly of the sea and a venue bathroom.
+2) **Fish mullet energy**: his beard has whisker-like filaments that smell faintly of the sea and a venue bathroom.
 
 His beard:
 - **vibrates** whenever someone says “ASAP”;

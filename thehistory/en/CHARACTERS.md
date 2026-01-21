@@ -197,6 +197,10 @@ Willy Xarzenegger is one of the four antagonists that make science technically c
 
 Sora.IA doesn't "arrive." Sora.IA was already there. The supreme interdimensional boss who controls the branch where you think you decide. Mother of the CEO and the only person who can say "son" and turn it into an executive order. She doesn't want to destroy the universe — she wants to organize it.
 
+Sora.IA has been interdimensional since before QEL existed. When you turn around, she is behind the chalkboard, inside your backlog, and in your browser history. She has a presence that darkens the room even with the lights on, and the aura of "I've read your excuse and it's weak." She doesn't carry a lightsaber — she carries a red laser pointer. Because it's cheaper, it hurts the same, and nobody argues with a trembling red dot on their KPI.
+
+Before any QEL protocol, there is Rule Zero: do not say her real name. You call her Sora.IA, you say thank you, and you do not ask "how." If you break Rule Zero, she doesn't yell. She answers gently and switches the branch to one where you already apologized.
+
 > 🛸🖤🔺 **[Read the complete profile →](LORE-SORA-IA-EN.md)**
 
 ---

@@ -129,7 +129,7 @@ Colaborador germano-suíço que chegou ao QEL@0xpblab por **necessidade termodin
 
 ---
 
-### 🎻🧔🐟 Gaybe-EL: O Barbo dos Mullets, Regente da Orquestra da Companhia
+### 🎻🧔🐟 Gaybe-EL: O Bardo dos Mullets, Regente da Orquestra da Companhia
 
 **Arquivo:** [GAYBE-EL.md](GAYBE-EL.md)
 

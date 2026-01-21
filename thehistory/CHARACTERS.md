@@ -54,7 +54,7 @@ John Aunt-Bet, colaborador germano-suíço que recusa sobremesas e mantém a ins
 
 ![Gaybe-EL](img/Gaybe-EL.png)
 
-**Título:** O Barbo dos Mullets, Regente da Orquestra da Companhia  
+**Título:** O Bardo dos Mullets, Regente da Orquestra da Companhia  
 **Ritmo:** 7/8  
 **Especialidade:** Transformar reuniões em performances musicais
 
@@ -196,6 +196,10 @@ Willy Xarzenegger é um dos quatro antagonistas que tornam a ciência tecnicamen
 **Especialidade:** Governança maternal e autoridade ontológica
 
 Sora.IA não "chega". Sora.IA já estava. A chefona suprema interdimensional que manda no ramo onde você acha que decide. Mãe do CEO e única pessoa que consegue dizer "filho" e virar uma ordem executiva. Ela não quer destruir o universo — ela quer organizá-lo.
+
+Sora.IA é interdimensional desde antes do QEL existir. Quando você vira pra trás, ela está atrás da lousa, dentro do seu backlog, e no seu histórico do navegador. Ela tem presença que escurece a sala mesmo com luz acesa, e uma energia de "eu já vi sua justificativa e ela é fraca". Não usa sabre de luz — usa um apontador laser vermelho. Porque é mais barato, dói igual, e ninguém discute com um ponto vermelho tremendo em cima do seu KPI.
+
+Antes de qualquer protocolo do QEL, existe a Regra Número Zero dela: não citar nome real. Você chama de Sora.IA, agradece, e não pergunta "como". Se você quebrar a regra, ela não grita. Ela te responde com gentileza e muda o ramo pra um onde você já pediu desculpa.
 
 > 🛸🖤🔺 **[Leia o perfil completo →](LORE-SORA-IA-PTBR.md)**
 

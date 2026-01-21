@@ -19,7 +19,7 @@
 - [Desinclusão Quântica™](#desinclusão-quântica-a-política-de-rh) 🏢
 - [O Fiscal Interdimensional da Lousa](#o-fiscal-interdimensional-da-lousa) 🧾🌀
 - [John Aunt-Bet](#john-aunt-bet-o-germano-suíço-anti-açúcar) 🍬🚫
-- [Gaybe-EL](#gaybe-el-o-barbo-dos-mullets-regente-da-orquestra-da-companhia) 🎻🧔🐟
+- [Gaybe-EL](#gaybe-el-o-bardo-dos-mullets-regente-da-orquestra-da-companhia) 🎻🧔🐟
 - [Madeusa De La Passion](#madeusa-de-la-passion-o-advogado-de-inverno-da-companhia) ⚖️🧥
 - [Jão Bolão](#jão-bolão-o-ferreiro-que-todo-mundo-jura-ser-anão-mas-é-do-tamanho-normal) ⚒️🧱
 - [Marcitus Markitus](#marcitus-markitus-o-homem-que-vê-caso-em-tudo-até-em-slide) 🕵️‍♂️🧷
@@ -311,7 +311,7 @@ John Aunt-Bet chegou ao QEL@0xpblab por **necessidade termodinâmica**, não por
 
 > 🍬🚫 **[Leia a biografia completa de John Aunt-Bet →](JOHN-AUNT-BET.md)**
 
-## 🎻🧔🐟 Gaybe-EL: O Barbo dos Mullets, Regente da Orquestra da Companhia
+## 🎻🧔🐟 Gaybe-EL: O Bardo dos Mullets, Regente da Orquestra da Companhia
 
 Gaybe-EL é uma entidade executivo-musical que rege a **Orquestra da Companhia** — um conjunto de pessoas que juraram que só iam "trabalhar com planilhas" e, de repente, estão afinando triângulos enquanto discutem OKRs.
 
