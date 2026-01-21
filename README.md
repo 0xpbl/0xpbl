@@ -25,4 +25,5 @@ E com a paz estranha de saber que, se eu conseguir transformar meus próprios mo
 Obrigado por ler, por entrar nesse ramo comigo, e por aceitar que o absurdo às vezes é a forma mais honesta de dizer a verdade.
 
 — **Pablo Murad**  
-**21/01/2026
+
+21/01/2026
