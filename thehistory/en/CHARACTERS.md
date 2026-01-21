@@ -106,6 +106,20 @@ Marcelo Marmelo Martelo, a Rio kid from Baixada Fluminense who arrived at QEL@0x
 
 ---
 
+## ⚒️🧱 Jão Bolão
+
+![Jão Bolão](img/Jão.png)
+
+**Position:** Equipment Builder  
+**Location:** Forge Δ  
+**Specialty:** Forging operational artifacts
+
+Jão Bolão, the smith everyone swears is a dwarf, but he's actually normal-sized. Works at Forge Δ, where he builds operational artifacts that prevent the universe from turning into a meeting. Speaks little, hammers a lot, and has the professional morality of a mythical smith: if you can't take the heat, don't request the feature.
+
+> ⚒️🧱 **[Read the complete profile →](JAO-BOLAO.md)**
+
+---
+
 ## 🦹 Willy Xarzenegger
 
 ![Willy](img/Willy.png)

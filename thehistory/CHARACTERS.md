@@ -106,6 +106,20 @@ Marcelo Marmelo Martelo, juvenal da Baixada que chegou ao QEL@0xpblab às 09:17 
 
 ---
 
+## ⚒️🧱 Jão Bolão
+
+![Jão Bolão](img/Jão.png)
+
+**Cargo:** Construtor de Equipamentos  
+**Local:** Forja Δ  
+**Especialidade:** Forjar artefatos operacionais
+
+Jão Bolão, o ferreiro que todo mundo jura ser anão, mas é do tamanho normal. Trabalha na Forja Δ, onde constrói artefatos operacionais que impedem o universo de virar reunião. Fala pouco, martela muito, e tem a moral profissional de um ferreiro mítico: se não aguenta o calor, não pede feature.
+
+> ⚒️🧱 **[Leia o perfil completo →](JAO-BOLAO.md)**
+
+---
+
 ## 🦹 Willy Xarzenegger
 
 ![Willy](img/Willy.png)
