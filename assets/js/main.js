@@ -1043,17 +1043,42 @@ function scrollToAnchor(anchor) {
 // Processar imagens
 function processImages() {
   const images = document.querySelectorAll('.markdown-content img');
+  const basePath = getBasePath();
+  
   images.forEach(img => {
     const src = img.getAttribute('src');
-    if (src && !src.startsWith('http') && !src.startsWith('/') && !src.startsWith('../')) {
-      // Ajustar caminho relativo - imagens em img/ devem apontar para ../img/
-      if (src.startsWith('img/')) {
-        img.setAttribute('src', `../${src}`);
-      } else if (src.includes('img/')) {
-        // Se o caminho contém img/ mas não começa com ele
-        img.setAttribute('src', `../${src}`);
-      }
+    if (!src) return;
+    
+    // Ignorar URLs absolutas (http/https)
+    if (src.startsWith('http://') || src.startsWith('https://')) {
+      return;
     }
+    
+    // Se já começa com / e tem basePath, verificar se precisa adicionar
+    if (src.startsWith('/')) {
+      if (basePath && !src.startsWith(basePath)) {
+        img.setAttribute('src', `${basePath}${src}`);
+      }
+      return;
+    }
+    
+    // Caminhos relativos (img/party.png, ../img/party.png, etc.)
+    // Construir caminho absoluto usando basePath
+    let cleanSrc = src;
+    
+    // Remover ../ se presente
+    if (cleanSrc.startsWith('../')) {
+      cleanSrc = cleanSrc.replace(/^\.\.\//, '');
+    }
+    
+    // Garantir que começa com / se não tiver basePath
+    if (!cleanSrc.startsWith('/')) {
+      cleanSrc = '/' + cleanSrc;
+    }
+    
+    // Adicionar basePath se necessário
+    const finalSrc = basePath ? `${basePath}${cleanSrc}` : cleanSrc;
+    img.setAttribute('src', finalSrc);
   });
 }
 
