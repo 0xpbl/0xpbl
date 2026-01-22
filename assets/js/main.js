@@ -79,6 +79,12 @@ function getBasePath() {
   
   let basePath = '';
   
+  // Domínio customizado: não aplicar base path
+  if (hostname === 'dlore.org' || hostname === 'www.dlore.org') {
+    cachedBasePath = '';
+    return '';
+  }
+  
   if (hostname.includes('github.io')) {
     const repoName = hostname.split('.')[0];
     basePath = `/${repoName}`;
@@ -915,8 +921,15 @@ function updateOrCreateLink(rel, href) {
 
 // Atualizar structured data JSON-LD
 function updateStructuredData(data) {
-  const baseUrl = 'https://0xpbl.github.io/0xpbl';
-  const currentUrl = baseUrl + window.location.pathname;
+  const baseUrl = getBaseUrl();
+  const basePath = getBasePath();
+  let currentPath = window.location.pathname;
+  
+  if (basePath && currentPath.startsWith(basePath)) {
+    currentPath = currentPath.substring(basePath.length) || '/';
+  }
+  
+  const currentUrl = baseUrl + currentPath;
   
   let existingScript = document.getElementById('structured-data');
   if (existingScript) {
@@ -1008,9 +1021,24 @@ function getCharacterByHour() {
   return characters[index];
 }
 
+// Função para obter a URL base do site (domínio customizado ou GitHub Pages)
+function getBaseUrl() {
+  const hostname = window.location.hostname;
+  const protocol = window.location.protocol;
+  
+  // Domínio customizado
+  if (hostname === 'dlore.org' || hostname === 'www.dlore.org') {
+    return `${protocol}//${hostname}`;
+  }
+  
+  // GitHub Pages padrão
+  const basePath = getBasePath();
+  return `https://0xpbl.github.io${basePath}`;
+}
+
 // Função para gerar URL de imagem dinâmica de compartilhamento
 function getDynamicShareImage(title, description) {
-  const baseUrl = 'https://0xpbl.github.io/0xpbl';
+  const baseUrl = getBaseUrl();
   const character = getCharacterByHour();
   const imageUrl = `${baseUrl}/img/${character.image}`;
   return imageUrl;
@@ -1018,7 +1046,7 @@ function getDynamicShareImage(title, description) {
 
 // Atualizar meta tags dinamicamente
 function updateMetaTags(data) {
-  const baseUrl = 'https://0xpbl.github.io/0xpbl';
+  const baseUrl = getBaseUrl();
   const basePath = getBasePath();
   let currentPath = window.location.pathname;
   
@@ -1026,7 +1054,7 @@ function updateMetaTags(data) {
     currentPath = currentPath.substring(basePath.length) || '/';
   }
   
-  const currentUrl = baseUrl + (basePath || '') + currentPath;
+  const currentUrl = baseUrl + currentPath;
   
   const title = data.title || 'QEL@0xpblab - Quantum Experimental Laboratories';
   const description = data.description || 'A realidade é um sistema distribuído, e observação é uma forma de commit.';

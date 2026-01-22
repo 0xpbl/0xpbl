@@ -12,11 +12,14 @@
             window.location.replace(window.location.href.replace(/^http:/, 'https:'));
         }
         
-        // Detectar o base path do GitHub Pages
+        // Detectar o base path do GitHub Pages ou domínio customizado
         const hostname = window.location.hostname;
         let basePath = '';
         
-        if (hostname.includes('github.io')) {
+        // Domínio customizado: não aplicar base path
+        if (hostname === 'dlore.org' || hostname === 'www.dlore.org') {
+            basePath = '';
+        } else if (hostname.includes('github.io')) {
             const repoName = hostname.split('.')[0]; // 0xpbl.github.io -> 0xpbl
             basePath = '/' + repoName;
         }
@@ -25,7 +28,7 @@
         const pathname = window.location.pathname;
         let normalizedPath = pathname;
         
-        // Se o pathname não começa com o base path, adicionar
+        // Se o pathname não começa com o base path, adicionar (apenas para GitHub Pages)
         if (basePath && !pathname.startsWith(basePath)) {
             // Remover barra inicial se presente
             normalizedPath = pathname.startsWith('/') ? pathname.substring(1) : pathname;
@@ -43,7 +46,7 @@
                 window.location.replace(basePath + '/index.html' + window.location.search + window.location.hash);
             }
         } else {
-            // Sem base path, redirecionar para index
+            // Sem base path (domínio customizado ou raiz), redirecionar para index
             window.location.replace('/index.html' + window.location.search + window.location.hash);
         }
     </script>

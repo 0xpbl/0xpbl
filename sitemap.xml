@@ -2,30 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
-  <!-- Página inicial -->
+  <!-- Página inicial - Domínio customizado (prioritário) -->
+  <url>
+    <loc>https://dlore.org/</loc>
+    <lastmod>2024-01-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://dlore.org/" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://dlore.org/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://0xpbl.github.io/0xpbl/" />
+  </url>
+  
+  <!-- Página inicial - GitHub Pages (fallback) -->
   <url>
     <loc>https://0xpbl.github.io/0xpbl/</loc>
     <lastmod>2024-01-21</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://0xpbl.github.io/0xpbl/" />
     <xhtml:link rel="alternate" hreflang="en-US" href="https://0xpbl.github.io/0xpbl/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dlore.org/" />
   </url>
   
   <!-- História principal -->
   <url>
-    <loc>https://0xpbl.github.io/0xpbl/qel</loc>
+    <loc>https://dlore.org/qel</loc>
     <lastmod>2024-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://0xpbl.github.io/0xpbl/qel</loc>
+    <lastmod>2024-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   
   <!-- Personagens -->
+  <url>
+    <loc>https://dlore.org/characters</loc>
+    <lastmod>2024-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://0xpbl.github.io/0xpbl/characters</loc>
     <lastmod>2024-01-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   
   <!-- Personagens individuais -->
