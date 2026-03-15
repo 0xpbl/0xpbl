@@ -9,7 +9,7 @@ if (window.location.protocol === 'http:' && window.location.hostname !== 'localh
 // Configuração
 const MARKED_CDN = 'https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js';
 const LANG_KEY = 'qel_language';
-const MARKDOWN_CACHE_KEY = 'qel_markdown_cache';
+const MARKDOWN_CACHE_KEY = 'qel_markdown_cache_v2';
 const MARKDOWN_CACHE_EXPIRY = 24 * 60 * 60 * 1000; // 24 horas em ms
 
 // Cache de documentos Markdown
@@ -105,23 +105,23 @@ function getBasePath() {
 let cachedBasePath = null;
 let cachedDocsPath = null;
 let cachedLang = null;
+let cachedSeason = null;
 
-function getDocsPath() {
-  if (cachedDocsPath && cachedLang === currentLang && cachedBasePath === getBasePath()) {
+function getDocsPath(season = 1) {
+  if (cachedDocsPath && cachedLang === currentLang && cachedBasePath === getBasePath() && cachedSeason === season) {
     return cachedDocsPath;
   }
   
-  const pathname = window.location.pathname;
-  const hostname = window.location.hostname;
-  
   const basePath = getBasePath();
-  const langPath = currentLang === 'en' ? 'thehistory/en/' : 'thehistory/';
+  const seasonFolder = season === 2 ? 'season-2' : 'season-1';
+  const langPath = currentLang === 'en' ? `thehistory/en/${seasonFolder}/` : `thehistory/${seasonFolder}/`;
   
   const fullPath = basePath ? `${basePath}/${langPath}` : langPath;
   
   cachedBasePath = basePath;
   cachedDocsPath = fullPath;
   cachedLang = currentLang;
+  cachedSeason = season;
   
   return fullPath;
 }
@@ -131,7 +131,10 @@ const translations = {
   pt: {
     nav: {
       home: "Início",
+      cronologia: "Cronologia",
       history: "História",
+      season1: "Temporada 1",
+      season2: "Temporada 2",
       characters: "Personagens",
       contact: "Contato",
       pablo: "Pablo Mu-R4d",
@@ -155,20 +158,41 @@ const translations = {
       document: "Documento"
     },
     timeline: {
-      title: "História do QEL@0xpblab",
+      title: "História do QEL@0xpblab — Temporada 1",
+      titleSeason2: "História do QEL@0xpblab — Temporada 2",
       subtitle: "Uma narrativa cronológica da realidade como sistema distribuído",
+      subtitleSeason2: "A sirene toca dentro do elevador.",
       expand: "Expandir",
       collapse: "Recolher",
       viewDoc: "Ver Documento Completo →"
     },
+    section: {
+      cronologiaLabel: "[ CRONOLOGIA ]",
+      season1Label: "[ TEMPORADA 1 ] Lore",
+      season2Label: "[ TEMPORADA 2 ]",
+      charactersLabel: "[ PERSONAGENS ]",
+      contactLabel: "[ CONTATO ]",
+      contactSummary: "Entre em contato para colaborações, ideias ou um café quântico.",
+      viewFullContact: "Ver documento completo →"
+    },
     clock: {
       tooltip: "Sincronizado com o relógio atômico da empresa. Pode estar adiantado ou atrasado."
+    },
+    header: {
+      signature: "QEL@0xpblab",
+      signatureLine: "# QEL@%>0xpblab // 2026"
+    },
+    intro: {
+      message: "Se você chegou até aqui, talvez tenha notado: esse universo do **QEL@0xpblab** não é só uma fanfic.\n\nEle é um jeito **lúdico** (e deliberadamente exagerado) de eu organizar as coisas que eu vivo — trabalho, ansiedade, ambição, caos, disciplina, família, decisões, erros, recomeços. Eu gosto de pensar a vida como um sistema cheio de *logs*, *incidentes*, *protocolos* e personagens que aparecem pra te cobrar, te proteger, te derrubar ou te salvar.\n\nNa vida real, as coisas raramente vêm com manual. Aqui, eu invento um manual que **ri de mim** e, ao mesmo tempo, me ajuda a não me levar tão a sério.\n\n- Quando eu falo de *ramos*, é porque eu sinto que toda escolha abre um caminho.\n- Quando eu falo de *compliance*, é porque o mundo ama regra — mesmo quando ninguém sabe explicar por quê.\n- Quando eu falo de *profetas*, *fiscais* e *chefes interdimensionais*, é porque existem forças (internas e externas) que parecem gigantes, mesmo quando são só… gente, hábito, medo, trauma, responsabilidade.\n\nEu escrevo assim porque funciona pra mim.\n\nEsse projeto é uma brincadeira,  (ou não) — mas também é um espelho.\nUm espelho sujo, com neon, carimbos e um monte de \"NÃO\" na lousa.\n\nE no meio disso tudo, tem uma coisa bem simples:\n\nEu continuo tentando.\n\nCom humor, com raiva, com sono, com vontade de sumir, com vontade de construir.\nE com a paz estranha de saber que, se eu conseguir transformar meus próprios monstros em personagens, eu consigo conversar com eles.\n\nObrigado por ler, por entrar nesse ramo comigo, e por aceitar que o absurdo às vezes é a forma mais honesta de dizer a verdade.\n\n— **Pablo Murad**\n\n21/01/2026"
     }
   },
   en: {
     nav: {
       home: "Home",
+      cronologia: "Chronology",
       history: "History",
+      season1: "Season 1",
+      season2: "Season 2",
       characters: "Characters",
       contact: "Contact",
       pablo: "Pablo Mu-R4d",
@@ -178,7 +202,9 @@ const translations = {
       dq: "De-Inclusion",
       tv: "TV",
       gaybe: "Orchestra",
-      madeusa: "Lawyer"
+      madeusa: "Lawyer",
+      jao: "Blacksmith",
+      marcitus: "Analyst"
     },
     ui: {
       loading: "Loading document...",
@@ -190,14 +216,32 @@ const translations = {
       document: "Document"
     },
     timeline: {
-      title: "QEL@0xpblab History",
+      title: "QEL@0xpblab History — Season 1",
+      titleSeason2: "QEL@0xpblab History — Season 2",
       subtitle: "A chronological narrative of reality as a distributed system",
+      subtitleSeason2: "The siren blares inside the elevator.",
       expand: "Expand",
       collapse: "Collapse",
       viewDoc: "View Full Document →"
     },
+    section: {
+      cronologiaLabel: "[ CHRONOLOGY ]",
+      season1Label: "[ SEASON 1 ] Lore",
+      season2Label: "[ SEASON 2 ]",
+      charactersLabel: "[ CHARACTERS ]",
+      contactLabel: "[ CONTACT ]",
+      contactSummary: "Get in touch for collaborations, ideas, or a quantum coffee.",
+      viewFullContact: "View full document →"
+    },
     clock: {
       tooltip: "Synchronized with the company's atomic clock. May be ahead or behind."
+    },
+    header: {
+      signature: "QEL@0xpblab",
+      signatureLine: "# QEL@%>0xpblab // 2026"
+    },
+    intro: {
+      message: "If you've made it here, you may have noticed: this **QEL@0xpblab** universe isn't just fanfic.\n\nIt's a **playful** (and deliberately over-the-top) way for me to organize what I live — work, anxiety, ambition, chaos, discipline, family, decisions, mistakes, fresh starts. I like to think of life as a system full of *logs*, *incidents*, *protocols* and characters that show up to push you, protect you, knock you down or save you.\n\nIn real life, things rarely come with a manual. Here, I make up a manual that **laughs at me** and, at the same time, helps me not take myself too seriously.\n\n- When I talk about *branches*, it's because I feel every choice opens a path.\n- When I talk about *compliance*, it's because the world loves rules — even when no one can say why.\n- When I talk about *prophets*, *auditors* and *interdimensional bosses*, it's because there are forces (inner and outer) that feel huge, even when they're just… people, habit, fear, trauma, responsibility.\n\nI write this way because it works for me.\n\nThis project is a joke, (or not) — but it's also a mirror.\nA dirty mirror, with neon, stamps and a lot of \"NO\" on the board.\n\nAnd in the middle of all that, there's something very simple:\n\nI keep trying.\n\nWith humor, with rage, with sleep, with the urge to disappear, with the urge to build.\nAnd with the odd peace of knowing that, if I can turn my own monsters into characters, I can talk to them.\n\nThank you for reading, for stepping into this branch with me, and for accepting that absurdity is sometimes the most honest way to tell the truth.\n\n— **Pablo Murad**\n\n01/21/2026"
     }
   }
 };
@@ -659,6 +703,53 @@ const timelineEN = [
   }
 ];
 
+// Temporada 2 — Cronologia
+const timelineSeason2 = [
+  {
+    year: "—",
+    period: "Temporada 2",
+    title: "A Chegada do Xerige Sargento Tenent3 Rafoiléu e seu amigo Digo Drogado",
+    summary: "Uma sirene policial toca dentro do elevador. A dupla Rafoiléu e Digo Drogado chega ao QEL para investigar o Ruído Diplomático Mínimo e descobre que o problema não é técnico: é governança com parentesco e entropia com orçamento.",
+    document: "CAPITULO-I-XERIGE-RAFOLIEU-DIGO-DROGADO-PTBR.md",
+    anchor: null,
+    icon: "🚨🌅",
+    color: "red"
+  },
+  {
+    year: "—",
+    period: "Temporada 2",
+    title: "A Morte de Nikols e Doktor Albino Bino no Poço Quantumheaven",
+    summary: "O Poço Quantumheaven, a escada do Jão Bolão, um espelho e 40 segundos estratégicos. Nikols e Albino Bino caem juntos num deslizamento de sentido. Lenda corporativa.",
+    document: "CAPITULO-TRAGICO-NIKOLS-ALBINO-PTBR.md",
+    anchor: null,
+    icon: "☀️🕳️💤",
+    color: "gold"
+  }
+];
+
+const timelineSeason2EN = [
+  {
+    year: "—",
+    period: "Season 2",
+    title: "The Arrival of Sergeant Tenent3 Rafoiléu and His Friend Digo Drogado",
+    summary: "A police siren blares inside the elevator. The duo Rafoiléu and Digo Drogado arrive at QEL to investigate the Minimum Diplomatic Noise and discover the problem is not technical: it's governance with kinship and entropy with budget.",
+    document: "CAPITULO-I-XERIGE-RAFOLIEU-DIGO-DROGADO-EN.md",
+    anchor: null,
+    icon: "🚨🌅",
+    color: "red"
+  },
+  {
+    year: "—",
+    period: "Season 2",
+    title: "The Death of Nikols and Doktor Albino Bino in the Quantumheaven Pit",
+    summary: "The Quantumheaven Pit, Jão Bolão's ladder, a mirror, and 40 strategic seconds. Nikols and Albino Bino fall together in a slippage of meaning. Corporate legend.",
+    document: "CAPITULO-TRAGICO-NIKOLS-ALBINO-EN.md",
+    anchor: null,
+    icon: "☀️🕳️💤",
+    color: "gold"
+  }
+];
+
 // Carregar marked.js dinamicamente
 let markedLoaded = false;
 
@@ -719,6 +810,12 @@ const routes = {
   '/street-fighter': 'STREET_FIGHTER_2', // Easter egg: Street Fighter Alpha (novo no relógio)
 };
 
+// Rotas que carregam documentos da Temporada 2 (getDocsPath(2)); valor é [PTBR, EN]
+const season2Routes = {
+  '/xerige-digo': ['CAPITULO-I-XERIGE-RAFOLIEU-DIGO-DROGADO-PTBR.md', 'CAPITULO-I-XERIGE-RAFOLIEU-DIGO-DROGADO-EN.md'],
+  '/nikols-albino': ['CAPITULO-TRAGICO-NIKOLS-ALBINO-PTBR.md', 'CAPITULO-TRAGICO-NIKOLS-ALBINO-EN.md']
+};
+
 // Função para atualizar URL sem recarregar página
 function updateURL(path) {
   const basePath = getBasePath();
@@ -727,16 +824,16 @@ function updateURL(path) {
 }
 
 // Função para carregar e renderizar markdown
-async function loadDocument(filename) {
+async function loadDocument(filename, season = 1) {
   const main = document.querySelector('#content');
   main.innerHTML = `<div class="loading"><div class="spinner"></div><p>${t('ui.loading')}</p></div>`;
 
   try {
     await loadMarked();
     
-    const docsPath = getDocsPath();
+    const docsPath = getDocsPath(season);
     const fullPath = `${docsPath}${filename}`;
-    const cacheKey = `${fullPath}_${currentLang}`;
+    const cacheKey = `${fullPath}_${currentLang}_s${season}`;
     
     // Verificar cache em memória primeiro
     let markdown = markdownCache.get(cacheKey);
@@ -1236,8 +1333,8 @@ function processInternalLinks() {
       const routePath = href.split('#')[0];
       const anchor = href.includes('#') ? href.split('#').slice(1).join('#') : null;
       
-      // Verificar se é uma rota conhecida
-      if (routes[routePath]) {
+      // Verificar se é uma rota conhecida (inclui season 2)
+      if (routes[routePath] || season2Routes[routePath]) {
         link.setAttribute('href', href);
         link.onclick = (e) => {
           e.preventDefault();
@@ -1662,7 +1759,8 @@ function navigate(path, anchor = null) {
       counterEl.style.display = 'none';
     }
     stopQuantumClock();
-    const filename = routes[normalizedPath];
+    const filename = routes[normalizedPath] || season2Routes[normalizedPath];
+    const loadSeason = season2Routes[normalizedPath] ? 2 : 1;
     
     if (filename === 'OCCULT_GAME') {
       const main = document.querySelector('#content');
@@ -1713,8 +1811,10 @@ function navigate(path, anchor = null) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     } else if (filename) {
-      let actualFilename = filename;
-      if (filename === 'LORE-GAYBE-EL-PIXITOS-PT.md') {
+      let actualFilename = Array.isArray(filename)
+        ? (currentLang === 'en' ? filename[1] : filename[0])
+        : filename;
+      if (!Array.isArray(filename) && filename === 'LORE-GAYBE-EL-PIXITOS-PT.md') {
         actualFilename = currentLang === 'en' ? 'LORE-GAYBE-EL-PIXITOS-EN.md' : 'LORE-GAYBE-EL-PIXITOS-PT.md';
       }
       if (filename === 'LORE-WILLY-CRIANCA-PTBR.md') {
@@ -1723,11 +1823,14 @@ function navigate(path, anchor = null) {
       if (filename === 'GRANDE-BATALHA-DO-ALVORECER-PTBR.md') {
         actualFilename = currentLang === 'en' ? 'GRANDE-BATALHA-DO-ALVORECER-EN.md' : 'GRANDE-BATALHA-DO-ALVORECER-PTBR.md';
       }
-      if (filename === 'LORE-SORA-IA-PTBR.md') {
+      if (!Array.isArray(filename) && filename === 'LORE-SORA-IA-PTBR.md') {
         actualFilename = currentLang === 'en' ? 'LORE-SORA-IA-EN.md' : 'LORE-SORA-IA-PTBR.md';
       }
+      if (!Array.isArray(filename) && filename === 'CAPITULO-I-XERIGE-RAFOLIEU-DIGO-DROGADO-PTBR.md') {
+        actualFilename = currentLang === 'en' ? 'CAPITULO-I-XERIGE-RAFOLIEU-DIGO-DROGADO-EN.md' : 'CAPITULO-I-XERIGE-RAFOLIEU-DIGO-DROGADO-PTBR.md';
+      }
       
-      loadDocument(actualFilename).then(() => {
+      loadDocument(actualFilename, loadSeason).then(() => {
         if (normalizedAnchor) {
           setTimeout(() => {
             scrollToAnchor(normalizedAnchor);
@@ -1745,26 +1848,20 @@ function navigate(path, anchor = null) {
   }
 }
 
-function renderTimeline() {
-  const main = document.querySelector('#content');
-  const currentTimeline = currentLang === 'en' ? timelineEN : timeline;
-  
-  updateMetaTags({
-    title: currentLang === 'pt' ? 'História do QEL@0xpblab' : 'QEL@0xpblab History',
-    description: currentLang === 'pt'
-      ? 'Uma narrativa cronológica da realidade como sistema distribuído.'
-      : 'A chronological narrative of reality as a distributed system.',
-    type: 'website'
-  });
-  
-  initQuantumClock();
-  
+function getTimelineHTML(season = 1) {
+  const currentTimeline = season === 2
+    ? (currentLang === 'en' ? timelineSeason2EN : timelineSeason2)
+    : (currentLang === 'en' ? timelineEN : timeline);
+  const titleKey = season === 2 ? 'timeline.titleSeason2' : 'timeline.title';
+  const subtitleKey = season === 2 ? 'timeline.subtitleSeason2' : 'timeline.subtitle';
+  const routeMap = season === 2 ? season2Routes : routes;
+
   let timelineHTML = '<div class="timeline-container">';
-  timelineHTML += `<div class="timeline-header"><h1>${t('timeline.title')}</h1><p class="timeline-subtitle">${t('timeline.subtitle')}</p></div>`;
+  timelineHTML += `<div class="timeline-header"><h1>${t(titleKey)}</h1><p class="timeline-subtitle">${t(subtitleKey)}</p></div>`;
   timelineHTML += '<div class="timeline-wrapper">';
-  
+
   let currentPeriod = '';
-  
+
   currentTimeline.forEach((event, index) => {
     if (event.period !== currentPeriod) {
       if (currentPeriod !== '') {
@@ -1774,11 +1871,14 @@ function renderTimeline() {
       timelineHTML += `<div class="timeline-period" data-period="${event.period}">`;
       timelineHTML += `<div class="period-header"><h2>${event.period}</h2></div>`;
     }
-    
-    const eventId = `event-${index}`;
-    const route = Object.keys(routes).find(key => routes[key] === event.document);
+
+    const eventId = season === 2 ? `event-s2-${index}` : `event-${index}`;
+    const route = Object.keys(routeMap).find(key => {
+      const v = routeMap[key];
+      return Array.isArray(v) ? v.includes(event.document) : v === event.document;
+    });
     const routePath = route || '/';
-    
+
     timelineHTML += `
       <div class="timeline-event ${event.color}" id="${eventId}">
         <div class="timeline-marker">
@@ -1811,30 +1911,120 @@ function renderTimeline() {
       </div>
     `;
   });
-  
-  timelineHTML += '</div>'; // Fechar último período
-  timelineHTML += '</div>'; // Fechar timeline-wrapper
-  timelineHTML += '</div>'; // Fechar timeline-container
-  
-  main.innerHTML = timelineHTML;
-  
+
+  timelineHTML += '</div></div></div>';
+  return timelineHTML;
+}
+
+function renderTimeline() {
+  const main = document.querySelector('#content');
+  updateMetaTags({
+    title: currentLang === 'pt' ? 'História do QEL@0xpblab' : 'QEL@0xpblab History',
+    description: currentLang === 'pt'
+      ? 'Uma narrativa cronológica da realidade como sistema distribuído.'
+      : 'A chronological narrative of reality as a distributed system.',
+    type: 'website'
+  });
+  initQuantumClock();
+  main.innerHTML = getTimelineHTML();
+  scrollToSectionOrEvent(100);
+}
+
+function getPersonagensLinksHTML() {
+  const basePath = getBasePath();
+  const link = (path, label) => `<a href="${path}" onclick="navigate('${path}'); return false;">${label}</a>`;
+  const chars = [
+    { path: '/characters', key: 'nav.characters' },
+    { path: '/pablo', key: 'nav.pablo' },
+    { path: '/john', key: 'nav.john' },
+    { path: '/gaybe-el', key: 'nav.gaybe' },
+    { path: '/madeusa', key: 'nav.madeusa' },
+    { path: '/jao-bolao', key: 'nav.jao' },
+    { path: '/marcitus-markitus', key: 'nav.marcitus' },
+    { path: '/villains', key: 'nav.villains' },
+    { path: '/dq', key: 'nav.dq' },
+    { path: '/tv-programs', key: 'nav.tv' }
+  ];
+  return chars.map(c => link(c.path, t(c.key))).join(' · ');
+}
+
+function scrollToSectionOrEvent(delayMs) {
   setTimeout(() => {
     const hash = window.location.hash;
-    if (hash) {
-      const anchorId = hash.substring(1);
-      const eventElement = document.getElementById(anchorId);
-      if (eventElement) {
-        eventElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        const contentDiv = document.getElementById(`content-${anchorId}`);
-        if (contentDiv && contentDiv.style.display === 'none') {
-          const expandBtn = eventElement.querySelector('.btn-expand');
-          if (expandBtn) {
-            setTimeout(() => expandBtn.click(), 300);
-          }
-        }
+    if (!hash) return;
+    const anchorId = hash.replace(/^#/, '');
+    const sectionEl = document.getElementById(anchorId);
+    if (sectionEl) {
+      sectionEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const contentDiv = document.getElementById(`content-${anchorId}`);
+      if (contentDiv && contentDiv.style.display === 'none') {
+        const expandBtn = sectionEl.querySelector('.btn-expand');
+        if (expandBtn) setTimeout(() => expandBtn.click(), 300);
       }
     }
-  }, 100);
+  }, delayMs);
+}
+
+function getCronologiaMessageHTML() {
+  const raw = t('intro.message') || '';
+  const paragraphs = raw.split(/\n\n/).filter(Boolean);
+  return paragraphs.map(p => {
+    const withBr = p.replace(/\n/g, '<br>');
+    const withStrong = withBr.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    const withEm = withStrong.replace(/\*(.+?)\*/g, '<em>$1</em>');
+    return `<p>${withEm}</p>`;
+  }).join('');
+}
+
+function renderSinglePage() {
+  const main = document.querySelector('#content');
+  updateMetaTags({
+    title: currentLang === 'pt' ? 'História do QEL@0xpblab' : 'QEL@0xpblab History',
+    description: currentLang === 'pt'
+      ? 'Uma narrativa cronológica da realidade como sistema distribuído.'
+      : 'A chronological narrative of reality as a distributed system.',
+    type: 'website'
+  });
+  initQuantumClock();
+
+  const timelineHTML = getTimelineHTML(1);
+  const timelineSeason2HTML = getTimelineHTML(2);
+  const personagensHTML = getPersonagensLinksHTML();
+  const contactPath = '/contact';
+  const cronologiaMessageHTML = getCronologiaMessageHTML();
+
+  const fullHTML = `
+    <div class="single-page">
+      <section id="cronologia" class="single-page-section">
+        <h2 class="section-label">${t('section.cronologiaLabel')}</h2>
+        <div class="cronologia-message">${cronologiaMessageHTML}</div>
+      </section>
+      <section id="temporada-1" class="single-page-section">
+        <h2 class="section-label">${t('section.season1Label')}</h2>
+        ${timelineHTML}
+      </section>
+      <section id="temporada-2" class="single-page-section">
+        <h2 class="section-label">${t('section.season2Label')}</h2>
+        ${timelineSeason2HTML}
+      </section>
+      <section id="personagens" class="single-page-section">
+        <h2 class="section-label">${t('section.charactersLabel')}</h2>
+        <div class="personagens-links">${personagensHTML}</div>
+      </section>
+      <section id="contato" class="single-page-section">
+        <h2 class="section-label">${t('section.contactLabel')}</h2>
+        <p class="section-contact-summary">${t('section.contactSummary')}</p>
+        <a href="${contactPath}" class="btn-view" onclick="navigate('${contactPath}'); return false;">${t('section.viewFullContact')}</a>
+      </section>
+    </div>
+  `;
+  main.innerHTML = fullHTML;
+  scrollToSectionOrEvent(100);
+}
+
+function scrollToSection(anchor) {
+  const el = document.getElementById(anchor);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 // Alternar expansão de evento
@@ -1879,16 +2069,21 @@ async function toggleEvent(eventId, documentName, index) {
 // Carregar conteúdo do evento
 async function loadEventContent(eventId, documentName, index) {
   const contentDiv = document.getElementById(`content-${eventId}`);
-  const currentTimeline = currentLang === 'en' ? timelineEN : timeline;
-  const event = currentTimeline[index];
+  const seasonMatch = eventId.match(/^event-s2-(\d+)$/);
+  const season = seasonMatch ? 2 : 1;
+  const eventIndex = seasonMatch ? parseInt(seasonMatch[1], 10) : index;
+  const currentTimeline = season === 2
+    ? (currentLang === 'en' ? timelineSeason2EN : timelineSeason2)
+    : (currentLang === 'en' ? timelineEN : timeline);
+  const event = currentTimeline[eventIndex];
   
   try {
     await loadMarked();
     
-    const docsPath = getDocsPath();
+    const docsPath = getDocsPath(season);
     const filename = documentName.endsWith('.md') ? documentName : `${documentName}.md`;
     const fullPath = `${docsPath}${filename}`;
-    const cacheKey = `${fullPath}_${currentLang}`;
+    const cacheKey = `${fullPath}_${currentLang}_s${season}`;
     
     // Verificar cache em memória primeiro
     let markdown = markdownCache.get(cacheKey);
@@ -2003,10 +2198,11 @@ function switchLanguage(lang) {
   updateLangButtons();
   updateNavigation();
   updateFooter();
+  updateHeaderSignature();
   updateLastUpdate();
   updateSubtitle();
   updateClockTooltip(); // Atualizar tooltip do relógio
-  
+
   // Atualizar contador de visitas se estiver visível
   const counterEl = document.getElementById('visit-counter');
   if (counterEl && counterEl.style.display !== 'none') {
@@ -2046,7 +2242,13 @@ function updateNavigation() {
   const navLinks = document.querySelectorAll('#nav a');
   const navMap = {
     'Início': 'nav.home',
+    'Cronologia': 'nav.cronologia',
+    'Chronology': 'nav.cronologia',
     'História': 'nav.history',
+    'Temporada 1': 'nav.season1',
+    'Season 1': 'nav.season1',
+    'Temporada 2': 'nav.season2',
+    'Season 2': 'nav.season2',
     'Personagens': 'nav.characters',
     'Contato': 'nav.contact',
     'Pablo Mu-R4d': 'nav.pablo',
@@ -2084,10 +2286,18 @@ function updateNavigation() {
 function updateFooter() {
   const footer = document.querySelector('footer p');
   if (footer) {
-    footer.textContent = currentLang === 'en' 
+    footer.textContent = currentLang === 'en'
       ? 'graciously lived by Pablo Murad (but not in that way)'
       : 'graciosamente vivido por Pablo Murad (mas não dessa maneira)';
   }
+}
+
+// Atualizar assinatura do header (estilo Casteel, i18n)
+function updateHeaderSignature() {
+  const sig = document.getElementById('header-signature');
+  const sigLine = document.getElementById('header-signature-line');
+  if (sig) sig.textContent = t('header.signature');
+  if (sigLine) sigLine.textContent = t('header.signatureLine');
 }
 
 // Função para buscar e exibir última atualização
@@ -2391,18 +2601,17 @@ function initVisitCounter() {
   counterEl.style.display = 'block';
 }
 
-// Mostrar página inicial (mantida para compatibilidade)
+// Mostrar página inicial (single-page com âncoras)
 function showIndex() {
   updateMetaTags({
     title: 'QEL@0xpblab - Quantum Experimental Laboratories',
-    description: currentLang === 'pt' 
+    description: currentLang === 'pt'
       ? 'A realidade é um sistema distribuído, e observação é uma forma de commit.'
       : 'Reality is a distributed system, and observation is a form of commit.',
     type: 'website'
   });
-  renderTimeline();
+  renderSinglePage();
   initVisitCounter();
-  // initQuantumClock() já é chamado dentro de renderTimeline()
 }
 
 // Inicialização
@@ -2433,8 +2642,37 @@ document.addEventListener('DOMContentLoaded', () => {
   updateLangButtons();
   updateNavigation();
   updateFooter();
+  updateHeaderSignature();
   updateLastUpdate();
   updateSubtitle();
+
+  // Nav: âncoras na rota /, senão navegar para / e depois scroll
+  const navEl = document.getElementById('nav');
+  if (navEl) {
+    navEl.addEventListener('click', (e) => {
+      const link = e.target.closest('a[data-anchor]');
+      if (!link) return;
+      e.preventDefault();
+      const anchor = link.getAttribute('data-anchor');
+      const pathname = window.location.pathname || '/';
+      const basePath = getBasePath();
+      let path = pathname;
+      if (basePath && pathname.startsWith(basePath)) {
+        path = pathname === basePath ? '/' : pathname.slice(basePath.length) || '/';
+      } else if (pathname === '/' || pathname === '') {
+        path = '/';
+      }
+      if (path === '/') {
+        scrollToSection(anchor);
+        return;
+      }
+      navigate('/');
+      setTimeout(() => {
+        window.location.hash = anchor;
+        scrollToSection(anchor);
+      }, 0);
+    });
+  }
   
   // Atualizar loading inicial
   const loadingText = document.querySelector('.loading p');
@@ -2490,15 +2728,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   // Fallback: se a rota normalizada não existe, tentar detectar diretamente do pathname
-  if (!routes[normalizedPath] && basePath && pathname.startsWith(basePath)) {
-    // Tentar extrair a rota diretamente
+  const hasRoute = (p) => routes[p] || season2Routes[p];
+  if (!hasRoute(normalizedPath) && basePath && pathname.startsWith(basePath)) {
     const directRoute = pathname.substring(basePath.length) || '/';
     if (directRoute !== '/' && directRoute.endsWith('/')) {
       const trimmedRoute = directRoute.slice(0, -1);
-      if (routes[trimmedRoute]) {
-        normalizedPath = trimmedRoute;
-      }
-    } else if (routes[directRoute]) {
+      if (hasRoute(trimmedRoute)) normalizedPath = trimmedRoute;
+    } else if (hasRoute(directRoute)) {
       normalizedPath = directRoute;
     }
   }

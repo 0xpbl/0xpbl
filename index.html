@@ -40,11 +40,13 @@
     <link rel="stylesheet" href="assets/css/occult-game.css">
 </head>
 <body>
-    <header>
+    <header id="home">
         <img src="img/qel.png" alt="QEL@0xpblab Logo" id="logo" loading="eager" decoding="async">
         <h1>QEL@0xpblab</h1>
         <p class="subtitle">Quantum Experimental Laboratories</p>
         <p class="subtitle">"A realidade é um sistema distribuído, e observação é uma forma de commit."</p>
+        <p class="header-signature" id="header-signature">QEL@0xpblab</p>
+        <p class="header-signature header-signature-line" id="header-signature-line"># QEL@%&gt;0xpblab // 2026</p>
         <div class="lang-selector">
             <button id="lang-pt" onclick="switchLanguage('pt')">PT</button>
             <button id="lang-en" onclick="switchLanguage('en')">EN</button>
@@ -58,10 +60,11 @@
 
     <nav id="nav">
         <ul>
-            <li><a href="/" onclick="navigate('/'); return false;">Início</a></li>
-            <li><a href="/qel" onclick="navigate('/qel'); return false;">História</a></li>
-            <li><a href="/characters" onclick="navigate('/characters'); return false;">Personagens</a></li>
-            <li><a href="/contact" onclick="navigate('/contact'); return false;">Contato</a></li>
+            <li><a href="#cronologia" data-anchor="cronologia">Cronologia</a></li>
+            <li><a href="#temporada-1" data-anchor="temporada-1">Temporada 1</a></li>
+            <li><a href="#temporada-2" data-anchor="temporada-2">Temporada 2</a></li>
+            <li><a href="#personagens" data-anchor="personagens">Personagens</a></li>
+            <li><a href="#contato" data-anchor="contato">Contato</a></li>
         </ul>
     </nav>
 
