@@ -744,6 +744,16 @@ const timelineSeason2 = [
     anchor: null,
     icon: "🎩⚔️",
     color: "red"
+  },
+  {
+    year: "—",
+    period: "Temporada 2",
+    title: "As Baladas de Paulo Pirata",
+    summary: "Lendário de Pó-Blanc. Pirata, rockeiro e motociclista na mesma profissão. A Viúva de Cal, do Farol Torto à Igreja do Último Acorde.",
+    document: "BALADAS-PAULO-PIRATA-PTBR.md",
+    anchor: null,
+    icon: "🏴‍☠️🎸",
+    color: "purple"
   }
 ];
 
@@ -787,6 +797,16 @@ const timelineSeason2EN = [
     anchor: null,
     icon: "🎩⚔️",
     color: "red"
+  },
+  {
+    year: "—",
+    period: "Season 2",
+    title: "The Ballads of Paulo Pirata",
+    summary: "Legend of Pó-Blanc. Pirate, rocker and biker in one profession. The Widow of Lime, from the Crooked Lighthouse to the Church of the Last Chord.",
+    document: "BALADAS-PAULO-PIRATA-EN.md",
+    anchor: null,
+    icon: "🏴‍☠️🎸",
+    color: "purple"
   }
 ];
 
@@ -855,7 +875,8 @@ const season2Routes = {
   '/xerige-digo': ['CAPITULO-I-XERIGE-RAFOLIEU-DIGO-DROGADO-PTBR.md', 'CAPITULO-I-XERIGE-RAFOLIEU-DIGO-DROGADO-EN.md'],
   '/nikols-albino': ['CAPITULO-TRAGICO-NIKOLS-ALBINO-PTBR.md', 'CAPITULO-TRAGICO-NIKOLS-ALBINO-EN.md'],
   '/disruptura-atemporal': ['DISRUPTURA-ATEMPORAL-PTBR.md', 'DISRUPTURA-ATEMPORAL-EN.md'],
-  '/paulo-pa-monha': ['CAPITULO-PAULO-PA-MONHA-PTBR.md', 'CAPITULO-PAULO-PA-MONHA-EN.md']
+  '/paulo-pa-monha': ['CAPITULO-PAULO-PA-MONHA-PTBR.md', 'CAPITULO-PAULO-PA-MONHA-EN.md'],
+  '/paulo-pirata': ['BALADAS-PAULO-PIRATA-PTBR.md', 'BALADAS-PAULO-PIRATA-EN.md']
 };
 
 // Função para atualizar URL sem recarregar página

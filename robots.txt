@@ -3,4 +3,4 @@ Allow: /
 Disallow: /ritual
 Disallow: /street-fighter
 
-Sitemap: https://0xpbl.github.io/0xpbl/sitemap.xml
+Sitemap: https://dlore.org/sitemap.xml
