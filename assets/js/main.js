@@ -724,6 +724,26 @@ const timelineSeason2 = [
     anchor: null,
     icon: "☀️🕳️💤",
     color: "gold"
+  },
+  {
+    year: "—",
+    period: "Temporada 2",
+    title: "DISRUPTURA A-TEMPORAL",
+    summary: "Reator de improbabilidade, SENHORA CREMILDA e espresso para todas as versões do mesmo estagiário. A causalidade pediu demissão por escrito. Paulo Pa-Monha aplaudindo no intervalo comercial do cosmos.",
+    document: "DISRUPTURA-ATEMPORAL-PTBR.md",
+    anchor: null,
+    icon: "⏳💥",
+    color: "purple"
+  },
+  {
+    year: "—",
+    period: "Temporada 2",
+    title: "A Chegada de Paulo Pa-Monha",
+    summary: "O homem que declarou guerra com um exército de ninguém. Vingança por streaming interdimensional negado. 27 abas da vingança, rodinhas de supermercado e um controle remoto que pausa matéria.",
+    document: "CAPITULO-PAULO-PA-MONHA-PTBR.md",
+    anchor: null,
+    icon: "🎩⚔️",
+    color: "red"
   }
 ];
 
@@ -747,6 +767,26 @@ const timelineSeason2EN = [
     anchor: null,
     icon: "☀️🕳️💤",
     color: "gold"
+  },
+  {
+    year: "—",
+    period: "Season 2",
+    title: "THE A-TEMPORAL DISRUPTION",
+    summary: "Improbability reactor, LADY CREMILDA and espresso for every version of the same intern. Causality resigned in writing. Paulo Pa-Monha applauding in the cosmos's commercial break.",
+    document: "DISRUPTURA-ATEMPORAL-EN.md",
+    anchor: null,
+    icon: "⏳💥",
+    color: "purple"
+  },
+  {
+    year: "—",
+    period: "Season 2",
+    title: "The Arrival of Paulo Pa-Monha",
+    summary: "The man who declared war with an army of nobody. Vengeance for denied interdimensional streaming. 27 tabs of vengeance, shopping cart wheels and a remote that pauses matter.",
+    document: "CAPITULO-PAULO-PA-MONHA-EN.md",
+    anchor: null,
+    icon: "🎩⚔️",
+    color: "red"
   }
 ];
 
@@ -813,7 +853,9 @@ const routes = {
 // Rotas que carregam documentos da Temporada 2 (getDocsPath(2)); valor é [PTBR, EN]
 const season2Routes = {
   '/xerige-digo': ['CAPITULO-I-XERIGE-RAFOLIEU-DIGO-DROGADO-PTBR.md', 'CAPITULO-I-XERIGE-RAFOLIEU-DIGO-DROGADO-EN.md'],
-  '/nikols-albino': ['CAPITULO-TRAGICO-NIKOLS-ALBINO-PTBR.md', 'CAPITULO-TRAGICO-NIKOLS-ALBINO-EN.md']
+  '/nikols-albino': ['CAPITULO-TRAGICO-NIKOLS-ALBINO-PTBR.md', 'CAPITULO-TRAGICO-NIKOLS-ALBINO-EN.md'],
+  '/disruptura-atemporal': ['DISRUPTURA-ATEMPORAL-PTBR.md', 'DISRUPTURA-ATEMPORAL-EN.md'],
+  '/paulo-pa-monha': ['CAPITULO-PAULO-PA-MONHA-PTBR.md', 'CAPITULO-PAULO-PA-MONHA-EN.md']
 };
 
 // Função para atualizar URL sem recarregar página
