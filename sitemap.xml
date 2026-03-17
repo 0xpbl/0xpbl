@@ -271,6 +271,18 @@
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://dlore.org/problema-dos-3-paublos</loc>
+    <lastmod>2025-03-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://0xpbl.github.io/0xpbl/problema-dos-3-paublos</loc>
+    <lastmod>2025-03-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
   
   <!-- Documentos especiais -->
   <url>

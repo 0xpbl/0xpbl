@@ -754,6 +754,16 @@ const timelineSeason2 = [
     anchor: null,
     icon: "🏴‍☠️🎸",
     color: "purple"
+  },
+  {
+    year: "—",
+    period: "Temporada 2",
+    title: "O Problema dos 3 Paublos",
+    summary: "Três centros de gravidade narrativa, identidade fonética conflitante e moonwalk ontológico. Pablo, Paulo Pa-Monha e Paulo Pirata no mesmo pátio. A palhaçada mais cara da história recente.",
+    document: "PROBLEMA-3-PAUBLOS-PTBR.md",
+    anchor: null,
+    icon: "3️⃣🕺",
+    color: "orange"
   }
 ];
 
@@ -807,6 +817,16 @@ const timelineSeason2EN = [
     anchor: null,
     icon: "🏴‍☠️🎸",
     color: "purple"
+  },
+  {
+    year: "—",
+    period: "Season 2",
+    title: "The Problem of the 3 Paublos",
+    summary: "Three narrative gravity centres, conflicting phonetic identity and ontological moonwalk. Pablo, Paulo Pa-Monha and Paulo Pirata in the same courtyard. The most expensive clowning in recent history.",
+    document: "PROBLEMA-3-PAUBLOS-EN.md",
+    anchor: null,
+    icon: "3️⃣🕺",
+    color: "orange"
   }
 ];
 
@@ -876,7 +896,8 @@ const season2Routes = {
   '/nikols-albino': ['CAPITULO-TRAGICO-NIKOLS-ALBINO-PTBR.md', 'CAPITULO-TRAGICO-NIKOLS-ALBINO-EN.md'],
   '/disruptura-atemporal': ['DISRUPTURA-ATEMPORAL-PTBR.md', 'DISRUPTURA-ATEMPORAL-EN.md'],
   '/paulo-pa-monha': ['CAPITULO-PAULO-PA-MONHA-PTBR.md', 'CAPITULO-PAULO-PA-MONHA-EN.md'],
-  '/paulo-pirata': ['BALADAS-PAULO-PIRATA-PTBR.md', 'BALADAS-PAULO-PIRATA-EN.md']
+  '/paulo-pirata': ['BALADAS-PAULO-PIRATA-PTBR.md', 'BALADAS-PAULO-PIRATA-EN.md'],
+  '/problema-dos-3-paublos': ['PROBLEMA-3-PAUBLOS-PTBR.md', 'PROBLEMA-3-PAUBLOS-EN.md']
 };
 
 // Função para atualizar URL sem recarregar página
