@@ -12,7 +12,7 @@
     <meta name="author" content="Pablo Murad">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://0xpbl.github.io/0xpbl/" id="canonical-link">
-    
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" id="og-type">
     <meta property="og:site_name" content="QEL@0xpblab" id="og-site-name">
@@ -22,68 +22,91 @@
     <meta property="og:url" content="https://0xpbl.github.io/0xpbl/" id="og-url">
     <meta property="og:locale" content="pt_BR" id="og-locale">
     <meta property="og:locale:alternate" content="en_US" id="og-locale-alt">
-    
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" id="twitter-card">
     <meta name="twitter:title" content="QEL@0xpblab - Quantum Experimental Laboratories" id="twitter-title">
     <meta name="twitter:description" content="A realidade é um sistema distribuído, e observação é uma forma de commit." id="twitter-description">
     <meta name="twitter:image" content="https://0xpbl.github.io/0xpbl/img/qel.png" id="twitter-image">
-    
+
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" id="favicon-link">
     <link rel="alternate icon" type="image/svg+xml" href="./favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="preload" href="assets/css/style.css" as="style">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/occult-game.css">
 </head>
 <body>
-    <header id="home">
-        <img src="img/qel.png" alt="QEL@0xpblab Logo" id="logo" loading="eager" decoding="async">
-        <h1>QEL@0xpblab</h1>
-        <p class="subtitle">Quantum Experimental Laboratories</p>
-        <p class="subtitle">"A realidade é um sistema distribuído, e observação é uma forma de commit."</p>
-        <p class="header-signature" id="header-signature">QEL@0xpblab</p>
-        <p class="header-signature header-signature-line" id="header-signature-line"># QEL@%&gt;0xpblab // 2026</p>
-        <div class="lang-selector">
-            <button id="lang-pt" onclick="switchLanguage('pt')">PT</button>
-            <button id="lang-en" onclick="switchLanguage('en')">EN</button>
-        </div>
-        <div class="quantum-clock-container" id="quantum-clock-container" style="display: none;">
-            <div class="quantum-clock" id="quantum-clock">
-                <span id="clock-time">00:00:00</span>
+    <!-- Botão de menu (mobile) -->
+    <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+    </button>
+
+    <!-- Overlay do drawer (mobile) -->
+    <div id="sidebar-overlay" class="sidebar-overlay" hidden></div>
+
+    <div class="app-shell">
+        <!-- Barra lateral de navegação -->
+        <aside id="sidebar" class="sidebar" aria-label="Navegação principal">
+            <div class="sidebar-top">
+                <a href="/" class="sidebar-brand" onclick="navigate('/'); return false;">
+                    <img src="img/qel.png" alt="QEL@0xpblab" class="sidebar-logo" loading="eager" decoding="async">
+                    <span class="sidebar-brand-text">QEL<span class="sidebar-brand-at">@</span>0xpblab</span>
+                </a>
+                <div class="lang-selector">
+                    <button id="lang-pt" onclick="switchLanguage('pt')">PT</button>
+                    <button id="lang-en" onclick="switchLanguage('en')">EN</button>
+                </div>
+            </div>
+
+            <nav id="nav" class="sidebar-nav" aria-label="Menu">
+                <!-- Preenchido por buildSidebar() em main.js -->
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="quantum-clock-container" id="quantum-clock-container" style="display: none;">
+                    <div class="quantum-clock" id="quantum-clock">
+                        <span id="clock-time">00:00:00</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Coluna principal -->
+        <div class="main-col">
+            <header id="home" class="hero">
+                <img src="img/qel.png" alt="QEL@0xpblab Logo" id="logo" loading="eager" decoding="async">
+                <h1>QEL@0xpblab</h1>
+                <p class="subtitle">Quantum Experimental Laboratories</p>
+                <p class="subtitle subtitle-quote">"A realidade é um sistema distribuído, e observação é uma forma de commit."</p>
+                <p class="header-signature" id="header-signature">QEL@0xpblab</p>
+                <p class="header-signature header-signature-line" id="header-signature-line"># QEL@%&gt;0xpblab // 2026</p>
+            </header>
+
+            <main id="content">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Carregando...</p>
+                </div>
+            </main>
+
+            <footer>
+                <p>graciosamente vivido por Pablo Murad (mas não dessa maneira)</p>
+            </footer>
+
+            <div id="visit-counter" class="visit-counter" style="display: none;">
+                <p class="visit-counter-text"></p>
+            </div>
+
+            <div id="last-update" class="last-update" style="display: none;">
+                <p class="last-update-text"></p>
             </div>
         </div>
-    </header>
-
-    <nav id="nav">
-        <ul>
-            <li><a href="#cronologia" data-anchor="cronologia">Cronologia</a></li>
-            <li><a href="#temporada-1" data-anchor="temporada-1">Temporada 1</a></li>
-            <li><a href="#temporada-2" data-anchor="temporada-2">Temporada 2</a></li>
-            <li><a href="#personagens" data-anchor="personagens">Personagens</a></li>
-            <li><a href="#contato" data-anchor="contato">Contato</a></li>
-        </ul>
-    </nav>
-
-    <main id="content">
-        <div class="loading">
-            <p>Carregando...</p>
-        </div>
-    </main>
-
-    <footer>
-        <p>graciosamente vivido por Pablo Murad (mas não dessa maneira)</p>
-    </footer>
-
-    <div id="visit-counter" class="visit-counter" style="display: none;">
-        <p class="visit-counter-text"></p>
-    </div>
-
-    <div id="last-update" class="last-update" style="display: none;">
-        <p class="last-update-text"></p>
     </div>
 
     <script src="assets/js/main.js" defer></script>

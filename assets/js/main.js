@@ -146,7 +146,42 @@ const translations = {
       gaybe: "Orquestra",
       madeusa: "Advogado",
       jao: "Ferreiro",
-      marcitus: "Analista"
+      marcitus: "Analista",
+      grpAbout: "Sobre",
+      subCharacters: "Personagens",
+      subVillains: "Vilões",
+      subEvents: "Eventos & Lore",
+      subGlossary: "Glossário",
+      subChapters: "Capítulos",
+      subLore: "Lore",
+      qel: "O QEL",
+      completo: "Referência Completa",
+      extras: "Extras",
+      charAll: "Todos os Personagens",
+      gaybeChar: "Gaybe-EL",
+      madeusaChar: "Madeusa De La Passion",
+      jaoChar: "Jão Bolão",
+      marcitusChar: "Marcitus Markitus",
+      marcelo: "Marcelo Marmelo Martelo",
+      oldEd: "Old Ed",
+      beeShaa: "Dr. Bee Shaa Caesar",
+      villainsDossier: "Dossiê de Vilões",
+      soraIa: "Sora.IA",
+      nikols: "Nikols",
+      doktor: "Doktor Albino Bino",
+      willy: "Willy Criança",
+      wwii: "Operações WWII",
+      coldWar: "Guerra Quente-Morna",
+      grandeBatalha: "Grande Batalha do Alvorecer",
+      tvFull: "Programas de TV",
+      pixitos: "O Roubo de Gaybe-EL",
+      gorossario: "GOROSSARIO",
+      chapXerige: "Cap. I — Xerige & Digo",
+      pauloPaMonha: "A Chegada de Paulo Pa-Monha",
+      nikolsAlbino: "Trágico: Nikols & Albino",
+      pauloPirata: "Baladas de Paulo Pirata",
+      disruptura: "Disruptura A-Temporal",
+      problema3: "O Problema dos 3 Paublos"
     },
     ui: {
       loading: "Carregando documento...",
@@ -204,7 +239,42 @@ const translations = {
       gaybe: "Orchestra",
       madeusa: "Lawyer",
       jao: "Blacksmith",
-      marcitus: "Analyst"
+      marcitus: "Analyst",
+      grpAbout: "About",
+      subCharacters: "Characters",
+      subVillains: "Villains",
+      subEvents: "Events & Lore",
+      subGlossary: "Glossary",
+      subChapters: "Chapters",
+      subLore: "Lore",
+      qel: "The QEL",
+      completo: "Full Reference",
+      extras: "Extras",
+      charAll: "All Characters",
+      gaybeChar: "Gaybe-EL",
+      madeusaChar: "Madeusa De La Passion",
+      jaoChar: "Jão Bolão",
+      marcitusChar: "Marcitus Markitus",
+      marcelo: "Marcelo Marmelo Martelo",
+      oldEd: "Old Ed",
+      beeShaa: "Dr. Bee Shaa Caesar",
+      villainsDossier: "Villains Dossier",
+      soraIa: "Sora.IA",
+      nikols: "Nikols",
+      doktor: "Doktor Albino Bino",
+      willy: "Willy Child",
+      wwii: "WWII Operations",
+      coldWar: "Warm-Cold War",
+      grandeBatalha: "Great Battle of Dawn",
+      tvFull: "TV Programs",
+      pixitos: "Gaybe-EL's Theft",
+      gorossario: "GOROSSARIO",
+      chapXerige: "Ch. I — Xerige & Digo",
+      pauloPaMonha: "The Arrival of Paulo Pa-Monha",
+      nikolsAlbino: "Tragic: Nikols & Albino",
+      pauloPirata: "Ballads of Paulo Pirata",
+      disruptura: "A-Temporal Disruption",
+      problema3: "The 3 Paublos Problem"
     },
     ui: {
       loading: "Loading document...",
@@ -885,6 +955,9 @@ const routes = {
   '/willy-bebe': 'LORE-WILLY-CRIANCA-PTBR.md',
   '/grande-batalha': 'GRANDE-BATALHA-DO-ALVORECER-PTBR.md',
   '/sora-ia': 'LORE-SORA-IA-PTBR.md',
+  '/nikols': 'LORE-NIKOLS-PT.md',
+  '/doktor-albino': 'LORE-DOKTOR-ALBINO-BINO-PT.md',
+  '/bee-shaa': 'LORE-DR-BEE-SHAA-CAESAR-PTBR.md',
   '/contact': 'CONTACT.md',
   '/ritual': 'OCCULT_GAME', // Easter egg: Ritual Terminal (movido do relógio)
   '/street-fighter': 'STREET_FIGHTER_2', // Easter egg: Street Fighter Alpha (novo no relógio)
@@ -900,11 +973,145 @@ const season2Routes = {
   '/problema-dos-3-paublos': ['PROBLEMA-3-PAUBLOS-PTBR.md', 'PROBLEMA-3-PAUBLOS-EN.md']
 };
 
+// ============================================================
+// Estrutura do menu (sidebar categorizada) — cobre todos os docs
+// ============================================================
+const menuStructure = [
+  { labelKey: 'nav.grpAbout', open: true, items: [
+    { path: '/', labelKey: 'nav.home', icon: '◆' },
+    { path: '/qel', labelKey: 'nav.qel' },
+    { path: '/completo', labelKey: 'nav.completo' },
+    { path: '/extras', labelKey: 'nav.extras' },
+    { path: '/contact', labelKey: 'nav.contact' }
+  ]},
+  { labelKey: 'nav.season1', open: false, subgroups: [
+    { labelKey: 'nav.subCharacters', items: [
+      { path: '/characters', labelKey: 'nav.charAll' },
+      { path: '/pablo', labelKey: 'nav.pablo' },
+      { path: '/fu-monilson', labelKey: 'nav.prophet' },
+      { path: '/john', labelKey: 'nav.john' },
+      { path: '/gaybe-el', labelKey: 'nav.gaybeChar' },
+      { path: '/madeusa', labelKey: 'nav.madeusaChar' },
+      { path: '/jao-bolao', labelKey: 'nav.jaoChar' },
+      { path: '/marcitus-markitus', labelKey: 'nav.marcitusChar' },
+      { path: '/marcelo', labelKey: 'nav.marcelo' },
+      { path: '/old-ed', labelKey: 'nav.oldEd' },
+      { path: '/bee-shaa', labelKey: 'nav.beeShaa' }
+    ]},
+    { labelKey: 'nav.subVillains', items: [
+      { path: '/villains', labelKey: 'nav.villainsDossier' },
+      { path: '/sora-ia', labelKey: 'nav.soraIa' },
+      { path: '/nikols', labelKey: 'nav.nikols' },
+      { path: '/doktor-albino', labelKey: 'nav.doktor' },
+      { path: '/willy-bebe', labelKey: 'nav.willy' }
+    ]},
+    { labelKey: 'nav.subEvents', items: [
+      { path: '/wwii', labelKey: 'nav.wwii' },
+      { path: '/cold-war', labelKey: 'nav.coldWar' },
+      { path: '/grande-batalha', labelKey: 'nav.grandeBatalha' },
+      { path: '/dq', labelKey: 'nav.dq' },
+      { path: '/tv-programs', labelKey: 'nav.tvFull' },
+      { path: '/lore-gaybe-el-pixitos', labelKey: 'nav.pixitos' }
+    ]},
+    { labelKey: 'nav.subGlossary', items: [
+      { path: '/gorossario', labelKey: 'nav.gorossario' }
+    ]}
+  ]},
+  { labelKey: 'nav.season2', open: false, subgroups: [
+    { labelKey: 'nav.subChapters', items: [
+      { path: '/xerige-digo', labelKey: 'nav.chapXerige' },
+      { path: '/paulo-pa-monha', labelKey: 'nav.pauloPaMonha' },
+      { path: '/nikols-albino', labelKey: 'nav.nikolsAlbino' }
+    ]},
+    { labelKey: 'nav.subLore', items: [
+      { path: '/paulo-pirata', labelKey: 'nav.pauloPirata' },
+      { path: '/disruptura-atemporal', labelKey: 'nav.disruptura' },
+      { path: '/problema-dos-3-paublos', labelKey: 'nav.problema3' }
+    ]}
+  ]}
+];
+
+const NAV_CARET = '<svg class="nav-group-caret" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+function navLinkHTML(it) {
+  const icon = it.icon ? `<span class="nav-link-icon">${it.icon}</span>` : '';
+  return `<li><a class="nav-link" href="${it.path}" data-path="${it.path}" onclick="navigate('${it.path}'); closeSidebar(); return false;">${icon}<span>${t(it.labelKey)}</span></a></li>`;
+}
+function navItemsHTML(items) {
+  return `<ul class="nav-list">${items.map(navLinkHTML).join('')}</ul>`;
+}
+function groupContainsPath(group, path) {
+  const lists = group.items ? [group.items] : (group.subgroups || []).map(sg => sg.items);
+  return lists.some(items => items.some(it => it.path === path));
+}
+function buildSidebar() {
+  const nav = document.getElementById('nav');
+  if (!nav) return;
+  const current = getCurrentPathNormalized();
+  const html = menuStructure.map(group => {
+    let inner = '';
+    if (group.items) inner = navItemsHTML(group.items);
+    if (group.subgroups) {
+      inner = group.subgroups.map(sg =>
+        `<div class="nav-subgroup-label">${t(sg.labelKey)}</div>${navItemsHTML(sg.items)}`
+      ).join('');
+    }
+    // Abre por padrão se configurado OU se contém a rota atual (deep-link)
+    const isOpen = group.open || groupContainsPath(group, current);
+    return `<details class="nav-group"${isOpen ? ' open' : ''}><summary class="nav-group-summary"><span>${t(group.labelKey)}</span>${NAV_CARET}</summary>${inner}</details>`;
+  }).join('');
+  nav.innerHTML = html;
+  setActiveNav(current);
+}
+function getCurrentPathNormalized() {
+  const basePath = getBasePath();
+  let p = window.location.pathname || '/';
+  if (basePath && p.startsWith(basePath)) p = p.slice(basePath.length) || '/';
+  return p || '/';
+}
+function setActiveNav(path) {
+  const current = path || getCurrentPathNormalized();
+  document.querySelectorAll('#nav .nav-link').forEach(a => {
+    a.classList.toggle('is-active', a.getAttribute('data-path') === current);
+  });
+}
+
+// Drawer mobile
+function openSidebar() {
+  document.body.classList.add('nav-open');
+  const o = document.getElementById('sidebar-overlay'); if (o) o.hidden = false;
+  const tg = document.getElementById('menu-toggle'); if (tg) tg.setAttribute('aria-expanded', 'true');
+}
+function closeSidebar() {
+  document.body.classList.remove('nav-open');
+  const o = document.getElementById('sidebar-overlay'); if (o) o.hidden = true;
+  const tg = document.getElementById('menu-toggle'); if (tg) tg.setAttribute('aria-expanded', 'false');
+}
+function toggleSidebar() {
+  if (document.body.classList.contains('nav-open')) closeSidebar(); else openSidebar();
+}
+function setupSidebarDrawer() {
+  const toggle = document.getElementById('menu-toggle');
+  const overlay = document.getElementById('sidebar-overlay');
+  if (toggle) toggle.addEventListener('click', toggleSidebar);
+  if (overlay) overlay.addEventListener('click', closeSidebar);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSidebar(); });
+}
+
+// Inicialização da sidebar (idempotente; reconstruída ao trocar idioma)
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => { buildSidebar(); setupSidebarDrawer(); });
+} else {
+  buildSidebar();
+  setupSidebarDrawer();
+}
+
 // Função para atualizar URL sem recarregar página
 function updateURL(path) {
   const basePath = getBasePath();
   const fullPath = basePath + (path === '/' ? '' : path);
   window.history.pushState({ path }, '', fullPath || basePath + '/');
+  setActiveNav(path);
 }
 
 // Função para carregar e renderizar markdown
@@ -1910,6 +2117,15 @@ function navigate(path, anchor = null) {
       if (!Array.isArray(filename) && filename === 'LORE-SORA-IA-PTBR.md') {
         actualFilename = currentLang === 'en' ? 'LORE-SORA-IA-EN.md' : 'LORE-SORA-IA-PTBR.md';
       }
+      if (!Array.isArray(filename) && filename === 'LORE-NIKOLS-PT.md') {
+        actualFilename = currentLang === 'en' ? 'LORE-NIKOLS-EN.md' : 'LORE-NIKOLS-PT.md';
+      }
+      if (!Array.isArray(filename) && filename === 'LORE-DOKTOR-ALBINO-BINO-PT.md') {
+        actualFilename = currentLang === 'en' ? 'LORE-DOKTOR-ALBINO-BINO-EN.md' : 'LORE-DOKTOR-ALBINO-BINO-PT.md';
+      }
+      if (!Array.isArray(filename) && filename === 'LORE-DR-BEE-SHAA-CAESAR-PTBR.md') {
+        actualFilename = currentLang === 'en' ? 'LORE-DR-BEE-SHAA-CAESAR-EN.md' : 'LORE-DR-BEE-SHAA-CAESAR-PTBR.md';
+      }
       if (!Array.isArray(filename) && filename === 'CAPITULO-I-XERIGE-RAFOLIEU-DIGO-DROGADO-PTBR.md') {
         actualFilename = currentLang === 'en' ? 'CAPITULO-I-XERIGE-RAFOLIEU-DIGO-DROGADO-EN.md' : 'CAPITULO-I-XERIGE-RAFOLIEU-DIGO-DROGADO-PTBR.md';
       }
@@ -2323,6 +2539,8 @@ function updateLangButtons() {
 
 // Atualizar navegação
 function updateNavigation() {
+  buildSidebar();
+  return;
   const navLinks = document.querySelectorAll('#nav a');
   const navMap = {
     'Início': 'nav.home',
